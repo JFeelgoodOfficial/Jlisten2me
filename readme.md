@@ -34,6 +34,13 @@ Single-page landing site for listen2me.com - offering confidential, non-judgment
 <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
 ```
 
+## crystal.html
+Standalone, private intake questionnaire at `/crystal.html` (marked `noindex`). It gathers the material for an executive assistant landing page: resume basics, repeatable role blocks, tools, differentiator stories, fit preferences, and what she's comfortable publishing.
+
+- Answers autosave to the browser's `localStorage` under the key `crystal-ea-profile-v1`. Nothing leaves the browser.
+- **Export Markdown** downloads `crystal-ea-profile-YYYY-MM-DD.md` with every question and answer; unanswered ones are marked `_No answer yet_`. A copy-to-clipboard button covers browsers that block downloads.
+- Questions live in the `SECTIONS` array near the top of the script. Add, reorder, or reword there.
+
 ## Meta Tags
 - OpenGraph/Twitter cards ready
 - Keywords target Austin active listening search
