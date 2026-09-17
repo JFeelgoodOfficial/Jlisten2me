@@ -35,11 +35,12 @@ Single-page landing site for listen2me.com - offering confidential, non-judgment
 ```
 
 ## crystal.html
-Standalone, private intake questionnaire at `/crystal.html` (marked `noindex`). It gathers the material for an executive assistant landing page: resume basics, repeatable role blocks, tools, differentiator stories, fit preferences, and what she's comfortable publishing.
+Standalone, private review page at `/crystal.html` (marked `noindex`) for Crystal M. Pratt's landing page. It carries the review notes into a form she can answer: the two outstanding questions, the seven changes made to her answers, four judgement calls, what the page deliberately leaves out, and ten ways to get more out of eight to ten hours a week.
 
-- Answers autosave to the browser's `localStorage` under the key `crystal-ea-profile-v1`. Nothing leaves the browser.
-- **Export Markdown** downloads `crystal-ea-profile-YYYY-MM-DD.md` with every question and answer; unanswered ones are marked `_No answer yet_`. A copy-to-clipboard button covers browsers that block downloads.
-- Questions live in the `SECTIONS` array near the top of the script. Add, reorder, or reword there.
+- Field types are `text`, `textarea`, `select`, `radio` (single choice) and `checks` (multi-select). Long-form questions carry **starter chips** that drop suggested wording into the box; clicking a second chip appends rather than replaces.
+- Answers autosave to the browser's `localStorage` under the key `crystal-page-review-v1`. Nothing leaves the browser.
+- **Export Markdown** downloads `crystal-page-review-YYYY-MM-DD.md` with every question and answer; unanswered ones are marked `_No answer yet_`. A copy-to-clipboard button covers browsers that block downloads.
+- Content lives in the `SECTIONS` array near the top of the script. Blocks are `note` (context callout), `field` (a question) or `idea` (a suggestion card, which generates its own interest radio and note field).
 
 ## Meta Tags
 - OpenGraph/Twitter cards ready
