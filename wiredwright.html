@@ -116,6 +116,17 @@
   details.preview summary { cursor: pointer; font-size: .87rem; color: var(--blue-700); font-weight: 500; }
   pre#previewBox { margin-top: .7rem; background: #082444; color: #dbeafb; border-radius: 10px; padding: 1rem; overflow: auto; max-height: 420px; font-size: .78rem; line-height: 1.55; white-space: pre-wrap; word-break: break-word; }
 
+  .findings { margin-top: 1.6rem; border-top: 1px solid var(--blue-200); padding-top: 1.3rem; }
+  .findings h3 { font-size: 1.02rem; font-weight: 600; color: var(--blue-900); }
+  .findings > p { font-size: .88rem; color: var(--ink-soft); margin-top: .3rem; max-width: 68ch; }
+  .find-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: .7rem; margin-top: 1.1rem; }
+  .find { background: var(--white); border: 1px solid var(--line); border-radius: 12px; padding: .85rem .9rem; display: flex; flex-direction: column; }
+  .find .stat { font-size: 1.5rem; font-weight: 700; letter-spacing: -.03em; color: var(--blue-700); line-height: 1.1; }
+  .find .stat small { font-size: .95rem; font-weight: 600; color: var(--blue-600); letter-spacing: 0; }
+  .find p { font-size: .87rem; color: var(--ink); margin-top: .35rem; }
+  .find .cite { display: block; font-size: .73rem; color: var(--ink-faint); margin-top: auto; padding-top: .5rem; letter-spacing: .02em; }
+  .findings .caveat { font-size: .82rem; color: var(--ink-soft); margin-top: 1rem; border-left: 3px solid var(--blue-200); padding-left: .8rem; max-width: 72ch; }
+
   .sources { margin-top: 2.6rem; border-top: 1px solid var(--line); padding-top: 1.4rem; }
   .sources h2 { font-size: 1.05rem; font-weight: 600; color: var(--blue-900); margin-bottom: .5rem; }
   .sources p { font-size: .86rem; color: var(--ink-soft); max-width: 72ch; }
@@ -187,6 +198,69 @@
       <summary>Preview the Markdown</summary>
       <pre id="previewBox"></pre>
     </details>
+
+    <div class="findings">
+      <h3>What the research says, before you write a word</h3>
+      <p>Eleven findings from the landing-page and local-search research behind these questions. They are the reason the questions are the questions.</p>
+      <div class="find-grid">
+        <div class="find">
+          <div class="stat">5–15% <small>vs 1–3%</small></div>
+          <p>A landing page built for one job converts several times better than pointing the same traffic at a homepage. This is the whole argument for building the page at all.</p>
+          <span class="cite">ResultCalls; ServiceTitan</span>
+        </div>
+        <div class="find">
+          <div class="stat">+14%</div>
+          <p>Naming the credential beats claiming it. “Licensed Master Electrician, TECL #…” outperforms a generic “licensed and insured” badge.</p>
+          <span class="cite">Web Tonic</span>
+        </div>
+        <div class="find">
+          <div class="stat">56% <small>of 1,200+ sites</small></div>
+          <p>A 2024 audit of electrician websites found most hide their license number, and 42% never mention being licensed or insured at all. The bar is low.</p>
+          <span class="cite">BuiltRight Digital</span>
+        </div>
+        <div class="find">
+          <div class="stat">74% <small>mobile</small></div>
+          <p>Three quarters of electrical-service traffic arrives on a phone, often mid-problem. The phone layout is the layout.</p>
+          <span class="cite">Web Tonic</span>
+        </div>
+        <div class="find">
+          <div class="stat">+15–25%</div>
+          <p>Moving the tap-to-call button into a sticky mobile header is the single highest-leverage layout change vendors report.</p>
+          <span class="cite">Web Tonic</span>
+        </div>
+        <div class="find">
+          <div class="stat">68% <small>hire first responder</small></div>
+          <p>Most home-service customers go with whoever answers first, not whoever is best. Speed beats polish.</p>
+          <span class="cite">Scorpion</span>
+        </div>
+        <div class="find">
+          <div class="stat">+10–18%</div>
+          <p>A real job photo in the hero outperforms stock imagery. A rebuilt panel or a before/after shot does more work than a model in a toolbelt.</p>
+          <span class="cite">Web Tonic</span>
+        </div>
+        <div class="find">
+          <div class="stat">60–70% <small>form abandonment</small></div>
+          <p>Contractor forms lose most of the people who start them, and multi-step forms perform worst. Four fields: name, phone, service type, urgency.</p>
+          <span class="cite">Web Tonic</span>
+        </div>
+        <div class="find">
+          <div class="stat">28% <small>vs 65% told</small></div>
+          <p>J.D. Power found only 28% of EV owners genuinely needed panel work, while 65% were told they did. Saying so out loud is a trust play competitors will not copy.</p>
+          <span class="cite">ChargeRight, citing J.D. Power</span>
+        </div>
+        <div class="find">
+          <div class="stat">$1,200 <small>Austin Energy rebate</small></div>
+          <p>Austin Energy pays 50% of charger plus labor, up to $1,200 for an OCPP smart charger. It requires a licensed electrician and, for hardwired units, a City of Austin permit and inspection. Verify current terms before publishing.</p>
+          <span class="cite">Austin Energy</span>
+        </div>
+        <div class="find">
+          <div class="stat">47 <small>reviews</small></div>
+          <p>Top-ranking local businesses average roughly 47 Google reviews. Volume tends to beat a perfect score: 200 at 4.6 outranks 30 at 5.0 on competitive queries.</p>
+          <span class="cite">Rank Planners</span>
+        </div>
+      </div>
+      <p class="caveat">Calibration: the percentage lifts come from marketing-agency and vendor blogs reporting their own client results, not from peer-reviewed or independently audited studies. Treat the direction as sound and the decimal points as marketing. The Austin Energy figures come from the utility's own program pages; funding and caps change, so re-check them before any of it goes on a public site.</p>
+    </div>
   </section>
 
   <section class="sources">

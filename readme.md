@@ -54,6 +54,7 @@ Standalone, private page at `/wiredwright.html` (marked `noindex`) for Wired Wri
 - Each question has **tap-to-load recommended answers** that drop into the composer for editing, a **chat box** that saves answers as a thread, and per-answer edit and delete.
 - Everything autosaves to `localStorage` under `wiredwright-content-v1`. Nothing leaves the browser.
 - **Download Markdown** writes `wiredwright-content-YYYY-MM-DD.md` with every answer, the research note per question, a build order for the page, the still-open questions, and the source list. Copy-to-clipboard and a live preview sit beside it.
+- Beneath the export buttons sits a **research panel**: eleven findings as stat cards (conversion lift, license-badge specificity, mobile share, form abandonment, the Austin Energy rebate, review volume) with the source named on each.
 - Conversion figures come from marketing-agency and vendor blogs, not audited research, and the page says so. Austin Energy rebate caps and funding change, so re-verify before publishing them anywhere public.
 - Content lives in the `SECTIONS` and `BUILD_ORDER` arrays at the top of the second script block.
 
