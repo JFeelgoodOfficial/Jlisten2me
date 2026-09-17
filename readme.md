@@ -47,8 +47,9 @@ Standalone, private page at `/crystal.html` (marked `noindex`) for Crystal M. Pr
 - Content lives in the `SECTIONS` and `SPINOFFS` arrays near the top of the script. The footer carries a version stamp; bump it with each change.
 
 ## wiredwright.html
-Standalone, private page at `/wiredwright.html` (marked `noindex`) for Wired Wright, an electrical contractor covering greater Austin. It is a content-intake tool, not the public landing page: he answers it once, exports the brief, and whoever builds the site works from that.
+Standalone, private page at `/wiredwright.html` (marked `noindex`) for Wired Wright, an electrical contractor covering greater Austin. It is a content-intake tool, not the public landing page: he answers it once, exports the brief, and Jonny builds the site from that.
 
+- Typeface is Source Sans 3 at 17px, chosen for reading comfort over Inter's tighter grotesque.
 - **Hero**: a three.js particle plug (body, three prongs, curving cord) that morphs into the words WIRED WRIGHT on a loop. Falls back to plain styled type if WebGL or the CDN fails, and holds the text still under `prefers-reduced-motion`.
 - **28 questions** in seven parts, ordered the way a visitor reads a landing page: first screen, trust strip, services, proof, price and form, FAQ, footer and local search. Each question carries the research note behind it (license-badge lift, four-field forms, Austin Energy EV rebate rules, TECL placement).
 - Each question has **tap-to-load recommended answers** that drop into the composer for editing, a **chat box** that saves answers as a thread, and per-answer edit and delete.
