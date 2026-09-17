@@ -187,7 +187,8 @@
     .note-actions { display: flex; align-items: center; gap: 0.8rem; flex-wrap: wrap; margin-top: 0.8rem; }
     .note-tip { font-size: 0.75rem; color: var(--text-muted); }
 
-    footer { padding: 2rem; border-top: 1px solid var(--border); text-align: center; font-size: 0.72rem; color: var(--text-muted); }
+    footer { padding: 2rem; border-top: 1px solid var(--border); text-align: center; font-size: 0.72rem; color: var(--text-muted); line-height: 1.9; }
+    #pageVersion { color: var(--accent-deep); font-weight: 600; letter-spacing: 0.05em; }
 
     #printSheet { display: none; }
 
@@ -304,7 +305,7 @@
 
 <div id="printSheet" aria-hidden="true"></div>
 
-<footer>Private review page · Answers stay in this browser · Nothing is sent anywhere</footer>
+<footer>Private review page · Answers stay in this browser · Nothing is sent anywhere<br><span id="pageVersion">Version 6 · 17 September 2026</span></footer>
 
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
