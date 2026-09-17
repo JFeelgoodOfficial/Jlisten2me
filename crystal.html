@@ -4,8 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="robots" content="noindex, nofollow" />
-  <title>Crystal · Page Review</title>
-  <meta name="description" content="Review notes and open questions for Crystal M. Pratt's landing page. Answers save in this browser and export to markdown." />
+  <title>Crystal · Ideas and Plans</title>
+  <meta name="description" content="Ideas and month-by-month plans for Crystal M. Pratt. Notes save in this browser and export to markdown." />
   <meta name="theme-color" content="#ffe3ec" />
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 22'%3E%3Cg fill='%23e8112d'%3E%3Cpath d='M13.6 11 2.4 3.3C1 2.4.2 3.2.6 5.3l.7 3.5c.2.9.2 1.5 0 2.4l-.7 3.5c-.4 2.1.4 2.9 1.8 2L13.6 11Z'/%3E%3Cpath d='M18.4 11l11.2 7.7c1.4.9 2.2.1 1.8-2l-.7-3.5a6 6 0 0 1 0-2.4l.7-3.5c.4-2.1-.4-2.9-1.8-2L18.4 11Z'/%3E%3Ccircle cx='16' cy='11' r='3.4'/%3E%3C/g%3E%3C/svg%3E" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -103,12 +103,6 @@
     .choice input { accent-color: var(--accent); margin-top: 0.28rem; flex-shrink: 0; }
     .choice.checked { border-color: var(--accent); background: rgba(255,227,236,0.8); color: var(--text-primary); }
 
-    .starters { margin-bottom: 0.85rem; }
-    .starters-label { font-size: 0.74rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent-deep); font-weight: 600; margin-bottom: 0.5rem; }
-    .starter-row { display: flex; flex-wrap: wrap; gap: 0.45rem; }
-    .starter { padding: 0.45rem 0.95rem; background: #fff; border: 1px dashed var(--accent-soft); border-radius: 999px; font-size: 0.79rem; color: var(--accent-deep); font-family: var(--font); cursor: pointer; transition: all 0.15s; line-height: 1.3; }
-    .starter:hover { background: var(--accent); border-style: solid; border-color: var(--accent); color: #fff; }
-    .starter.used { opacity: 0.45; }
 
     .idea { padding: 1.3rem 1.4rem 0.4rem; background: #fff; border: 1px solid var(--border); border-radius: 14px; margin-bottom: 1.1rem; }
     .idea-head { display: flex; align-items: baseline; gap: 0.7rem; flex-wrap: wrap; margin-bottom: 0.5rem; }
@@ -116,6 +110,17 @@
     .idea-title { font-size: 1.14rem; font-weight: 600; color: var(--text-primary); line-height: 1.35; letter-spacing: -0.02em; }
     .idea-body { font-size: 0.88rem; color: var(--text-secondary); line-height: 1.72; margin-bottom: 0.7rem; }
     .idea-meta { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1rem; }
+
+    .how { margin-bottom: 0.9rem; }
+    .how > summary { list-style: none; cursor: pointer; display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.6rem 1.3rem; border-radius: 999px; background: #fff; border: 1px solid var(--accent-soft); color: var(--accent-deep); font-size: 0.85rem; font-weight: 600; transition: all 0.18s; }
+    .how > summary::-webkit-details-marker { display: none; }
+    .how > summary:hover { background: var(--accent); border-color: var(--accent); color: #fff; }
+    .how > summary:focus-visible { outline: 2px solid var(--accent-deep); outline-offset: 2px; }
+    .how > summary svg { width: 11px; height: 11px; transition: transform 0.25s; }
+    .how[open] > summary svg { transform: rotate(180deg); }
+    .how[open] > summary .lbl-closed, .how:not([open]) > summary .lbl-open { display: none; }
+    .how-body { padding-top: 1.1rem; }
+    .how-body > .plan-label { font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); font-weight: 600; margin-bottom: 0.9rem; }
     .tag { font-size: 0.74rem; padding: 0.25rem 0.75rem; border-radius: 999px; background: rgba(255,227,236,0.9); color: var(--accent-deep); border: 1px solid var(--border); }
 
     .actions { margin-top: 2.5rem; padding: 2.2rem; background: linear-gradient(165deg, #fff 0%, var(--bg-mid) 100%); border: 1px solid var(--border); border-radius: 16px; text-align: center; box-shadow: 0 3px 18px rgba(228,70,138,0.08); }
@@ -187,7 +192,8 @@
     .note-actions { display: flex; align-items: center; gap: 0.8rem; flex-wrap: wrap; margin-top: 0.8rem; }
     .note-tip { font-size: 0.75rem; color: var(--text-muted); }
 
-    footer { padding: 2rem; border-top: 1px solid var(--border); text-align: center; font-size: 0.72rem; color: var(--text-muted); }
+    footer { padding: 2rem; border-top: 1px solid var(--border); text-align: center; font-size: 0.72rem; color: var(--text-muted); line-height: 1.9; }
+    #pageVersion { color: var(--accent-deep); font-weight: 600; letter-spacing: 0.05em; }
 
     #printSheet { display: none; }
 
@@ -256,24 +262,20 @@
 <header class="topbar">
   <a href="#top" class="topbar-brand">
     <svg class="bow" viewBox="0 0 32 22" fill="currentColor" aria-hidden="true"><path d="M13.6 11 2.4 3.3C1 2.4.2 3.2.6 5.3l.7 3.5c.2.9.2 1.5 0 2.4l-.7 3.5c-.4 2.1.4 2.9 1.8 2L13.6 11Z"/><path d="M18.4 11l11.2 7.7c1.4.9 2.2.1 1.8-2l-.7-3.5a6 6 0 0 1 0-2.4l.7-3.5c.4-2.1-.4-2.9-1.8-2L18.4 11Z"/><circle cx="16" cy="11" r="3.4"/></svg>
-    Crystal <span>· Page Review</span></a>
+    Crystal <span>· Ideas and Plans</span></a>
   <div class="topbar-right">
     <span class="status" id="saveStatus" aria-live="polite">Loading…</span>
-    <div class="progress" aria-live="polite">
-      <div class="progress-track" aria-hidden="true"><div class="progress-fill" id="progressFill"></div></div>
-      <span id="progressText">0 / 0 answered</span>
-    </div>
     <button type="button" class="btn btn-primary btn-sm" id="exportTop">Export Markdown</button>
   </div>
 </header>
 
 <main id="top">
   <div class="intro">
-    <p class="eyebrow">Crystal M. Pratt · Landing page · 17 September 2026</p>
-    <h1>Your page is built.<br>Two answers <em>to go.</em></h1>
-    <p>Your page is finished and ready to go online. We just need two more answers from you, plus a few small choices we'd like you to make. None of it has to happen before the page goes up.</p>
-    <p><strong>Your answers save by themselves</strong>, right here in this browser and nowhere else. Close the tab and come back tomorrow, it will all still be here. When you're done, press <strong>Export Markdown</strong> and send us the file.</p>
-    <p>Stuck on a question? Click one of the little pink buttons underneath it. It drops some rough wording into the box, and then you change it until it sounds like you. There are no wrong answers anywhere on this page.</p>
+    <p class="eyebrow">Crystal M. Pratt · Ideas and plans · 17 September 2026</p>
+    <h1>Ten ways to use your hours.<br>Three ways to <em>work for yourself.</em></h1>
+    <p>Your page is live. This one is different. It is everything you could do next, with the actual steps for each one, and somewhere at the bottom to write down whatever you think.</p>
+    <p><strong>Everything saves by itself</strong>, right here in this browser and nowhere else. Close the tab and come back tomorrow, it will all still be here. Press <strong>Export Markdown</strong> any time to send it over.</p>
+    <p>Nothing here is a test and nothing needs finishing. Open whatever interests you, read the steps, ignore the rest.</p>
     <nav class="toc" id="toc" aria-label="Sections"></nav>
   </div>
 
@@ -287,7 +289,7 @@
     <svg class="bow bow-lg" viewBox="0 0 32 22" fill="currentColor" aria-hidden="true"><path d="M13.6 11 2.4 3.3C1 2.4.2 3.2.6 5.3l.7 3.5c.2.9.2 1.5 0 2.4l-.7 3.5c-.4 2.1.4 2.9 1.8 2L13.6 11Z"/><path d="M18.4 11l11.2 7.7c1.4.9 2.2.1 1.8-2l-.7-3.5a6 6 0 0 1 0-2.4l.7-3.5c.4-2.1-.4-2.9-1.8-2L18.4 11Z"/><circle cx="16" cy="11" r="3.4"/></svg>
     <p class="section-label">When you're done</p>
     <h2>Export your answers.</h2>
-    <p>This makes one file with every question and your answer underneath it. Anything you skipped is still in there and marked, so nothing goes missing.</p>
+    <p>This makes one file with the ideas, the plans and every note you have written, so you can send the whole lot over in one go.</p>
     <div class="actions-row">
       <button type="button" class="btn btn-primary" id="exportBtn">Export Markdown file</button>
       <button type="button" class="btn btn-ghost" id="printBtn">Print or save as PDF</button>
@@ -304,7 +306,7 @@
 
 <div id="printSheet" aria-hidden="true"></div>
 
-<footer>Private review page · Answers stay in this browser · Nothing is sent anywhere</footer>
+<footer>Private page · Everything stays in this browser · Nothing is sent anywhere<br><span id="pageVersion">Version 7 · 17 September 2026</span></footer>
 
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
@@ -317,241 +319,124 @@
 
   var SECTIONS = [
     {
-      id: 'missing',
-      title: 'The two we need',
-      heading: 'We need two things from you.',
-      why: 'These two are the only ones that really matter. Everything else on this page you can skip if you want to.',
-      priority: true,
-      blocks: [
-        { kind: 'note', title: 'Why we are asking', body: [
-          'You already told us a bit about the first one, watching the stock so you never ran out. We just need one real example of a time that happened.',
-          'The second is a sentence or two from your boss. You said you would rather not be named, so it would only say "Founder, Austin family business". Until it turns up, the whole "What people say" part of the page stays hidden. No quote at all is fine. An empty quote box is not.'
-        ] },
-        { kind: 'field', id: 'problemSpotted', type: 'textarea', tall: true,
-          label: 'A time you spotted a problem before your boss did.',
-          hint: 'Three or four sentences is plenty. Answer these four and you are done. What did you notice? How did you spot it when nobody else did? What did you do about it? What would have gone wrong if you hadn\'t?',
-          placeholder: 'Start anywhere. Messy is fine, we will tidy it up.',
-          starters: [
-            { label: 'Stock about to run out', text: 'I always keep an eye on what we are getting through each week. One week I noticed we were going through [item] much faster than usual, and we would have run out before the next delivery. I ordered early and got the supplier to move the date up, so nobody ever noticed.' },
-            { label: 'A supplier about to miss', text: 'A supplier had gone quiet about a delivery we needed for [day], and nobody had chased it. I called, found out it was not coming, so I [what you did] and we still got everything out on time.' },
-            { label: 'An order or billing error', text: 'I spotted [what was wrong] before it got to the customer. It would have meant [what would have happened]. I fixed it by [what you did].' },
-            { label: 'A vehicle about to fail', text: 'I noticed [what you saw or heard] on the truck before it turned into a breakdown. We got it looked at on a quiet day instead of halfway through a delivery run.' },
-            { label: 'A customer about to be let down', text: 'I could see an order was going to be late for [customer situation]. I flagged it and [what you did], so they got it when they expected it.' }
-          ] },
-        { kind: 'field', id: 'quoteStatus', type: 'radio',
-          label: 'A sentence or two from your boss.',
-          hint: 'Just so we know whether to keep that part of the page hidden for now.',
-          options: [
-            'I have it, I am pasting it below',
-            'I have asked, waiting to hear back',
-            'I will ask this week',
-            'I would rather not ask'
-          ] },
-        { kind: 'field', id: 'quoteText', type: 'textarea',
-          label: 'The quote, if you have it.',
-          hint: 'Not asked yet? The buttons below give you something you can copy and send. People say yes far more often when you write the sentence for them.',
-          placeholder: 'Paste what they wrote, or leave blank for now.',
-          starters: [
-            { label: 'Text to send your boss', text: 'SEND THEM THIS: "I am putting together a page to help me find part-time work. Would you mind giving me a sentence about working with me? No name needed, it would just say Founder, Austin family business. Something like: she ran the day to day and I stopped having to think about it."' },
-            { label: 'Reliability angle', text: 'THEY COULD SAY: "Crystal ran the day to day for us and I stopped having to check. Things were handled before I knew they needed handling."' },
-            { label: 'Ownership angle', text: 'THEY COULD SAY: "She took the whole operation off my desk. Suppliers, deliveries, customers. I could go and do the parts of the business only I could do."' },
-            { label: 'Problem-solving angle', text: 'THEY COULD SAY: "When something went wrong, she had already fixed it by the time I heard about it."' }
-          ] },
-        { kind: 'field', id: 'quoteAttribution', type: 'radio',
-          label: 'How we sign the quote.',
-          hint: 'You asked for no name. Just confirm it, or change it.',
-          options: [
-            'Founder, Austin family business (as agreed)',
-            'Owner of a family-owned grocery delivery business',
-            'Use their name after all, I will send it',
-            'Something else, see my note'
-          ] },
-        { kind: 'field', id: 'quoteNote', type: 'text', label: 'Anything to add about the quote.', placeholder: 'Optional.' }
-      ]
-    },
-
-    {
-      id: 'changes',
-      title: 'Seven changes',
-      heading: 'Seven things we changed.',
-      why: 'Nearly everything you sent went straight on the page. These seven we had to change a little. Have a quick look now, so nothing surprises you later. Ticking "Looks right" and moving on is a perfectly good answer.',
-      blocks: [
-        { kind: 'field', id: 'chgBusiness', type: 'radio',
-          label: 'The business: "a family-owned grocery delivery business, the kind that brings the farmers market to your door."',
-          hint: 'You told us it was grocery delivery, not dairy, so we fixed it. We still do not name your employer anywhere.',
-          options: ['Looks right', 'Close, but I want to change the wording', 'Not right, see my note'] },
-        { kind: 'field', id: 'chg300', type: 'radio',
-          label: 'The 300, labelled "active customers at our peak."',
-          hint: 'We asked what your website and Instagram brought in, and you gave us your highest ever customer count. Those are two different things, and we did not want to claim something for you that you had not said.',
-          options: ['Looks right', 'It was actually from the website and social, say so', 'The number is wrong, see my note'] },
-        { kind: 'field', id: 'chg25', type: 'radio',
-          label: 'The 25, labelled "deliveries in a typical week."',
-          hint: 'Worded this way so it does not look like it clashes with the 300 sitting next to it.',
-          options: ['Looks right', 'Needs a different label, see my note'] },
-        { kind: 'field', id: 'chgZip', type: 'radio',
-          label: 'Your location, shown as "about 15 minutes of northwest Austin."',
-          hint: 'You gave us 78759. A zip code tells people a bit more about where you live than a public page really needs to. Completely your call.',
-          options: ['Keep the neighbourhood wording', 'Put the exact zip back', 'Something else, see my note'] },
-        { kind: 'field', id: 'chgInstagram', type: 'radio',
-          label: 'Instagram, described as "the Instagram account" rather than a vague "social feed."',
-          hint: 'You listed it as one of your tools, so we named it.',
-          options: ['Looks right', 'I would rather it stayed vague', 'Take it off the page'] },
-        { kind: 'field', id: 'chgTasks', type: 'radio',
-          label: 'Your three tasks: "Most of all, hire me for running operations, plus the admin and people side."',
-          hint: 'We asked for three tasks and you gave us two areas, so the line reads like this.',
-          options: ['Looks right', 'I want to name three specific tasks, see my note', 'Different emphasis, see my note'] },
-        { kind: 'field', id: 'chgSpanish', type: 'radio',
-          label: 'Conversational Spanish: currently off the page.',
-          hint: 'We also asked if we could mention it, and you did not answer that bit, so it is off the page for now. This is the one we are still waiting on.',
-          options: ['Yes, mention conversational Spanish', 'Leave it off', 'Mention it, but word it as basic rather than conversational'] },
-        { kind: 'field', id: 'changesNote', type: 'textarea',
-          label: 'Notes on any of the seven.',
-          hint: 'Tell us which one you mean and what it should say instead.',
-          placeholder: 'Optional. One line each is plenty.' }
-      ]
-    },
-
-    {
-      id: 'suggestions',
-      title: 'Our suggestions',
-      heading: 'Four things we would do differently.',
-      why: 'None of this is wrong. It is just where we would make a different choice, and we would rather tell you than say nothing.',
-      blocks: [
-        { kind: 'note', title: 'The one we care most about', body: [
-          'The truck story is the best thing on the whole page. But $500 is the smallest number in it, so someone could read it and think it was no big deal. The real point is that you saved every single item and still got everything delivered on time.'
-        ] },
-        { kind: 'field', id: 'truck500', type: 'radio',
-          label: 'The $500 figure in the truck story.',
-          options: [
-            'Swap it for how many customers were waiting',
-            'Cut the figure, the story works without it',
-            'Keep the $500 as it is'
-          ] },
-        { kind: 'field', id: 'truckCustomers', type: 'text',
-          label: 'Roughly how many customers were waiting on that truck?',
-          hint: 'A rough number is fine. "About twenty households" tells people far more than a dollar amount does.',
-          placeholder: 'About …' },
-        { kind: 'field', id: 'suppliers3', type: 'radio',
-          label: 'The "3 suppliers" figure in the By the numbers row.',
-          hint: 'Three looks small sitting next to 25, 300 and 30. It is true, and keeping on top of every supplier is real work, but on the page it reads a bit thin. We would drop that one and keep the other three.',
-          options: ['Drop it, keep the other three', 'Keep it, it is part of the picture', 'Replace it with something else, see my note'] },
-        { kind: 'field', id: 'numbers30', type: 'text',
-          label: 'There is a 30 on the page. What is it counting?',
-          hint: 'We want the label to be spot on. A few words is all we need.',
-          placeholder: '30 …' },
-        { kind: 'field', id: 'hoursLine', type: 'radio',
-          label: 'Eight to ten hours a week.',
-          hint: 'It is on the page exactly how you asked, and that is fine. Just so you know, eight to ten hours is about two short days, and a boss looking for one person to cover a lot often has more in mind. Adding "to start" keeps the door open without promising anything.',
-          options: [
-            'Change it to "eight to ten hours a week to start"',
-            'Keep it exactly as it is',
-            'I would take more, use a different number (see my note)'
-          ] },
-        { kind: 'field', id: 'handsOn', type: 'checks', inline: true,
-          label: 'Which of these are you happy to be asked to do?',
-          hint: 'You said keep the lot, and we did, because it makes you stand out. Tick what stays. Anything you leave unticked comes off the page.',
-          options: ['Power washing', 'Vehicle repairs', 'Truck outfitting'] },
-        { kind: 'field', id: 'suggestionsNote', type: 'textarea',
-          label: 'Notes on any of the four.',
-          placeholder: 'Optional.' }
-      ]
-    },
-
-    {
-      id: 'omissions',
-      title: 'What we left off',
-      heading: 'What we left off on purpose.',
-      why: 'All of this is missing from the page on purpose. Tell us you are happy, or tell us to put something back.',
-      blocks: [
-        { kind: 'note', title: 'Currently not on the page', body: [
-          'Your full middle name, it just says Crystal M. Pratt. · Where you work, now or before. · Any pay rate or salary. · Your email and phone number written out, although both buttons still work in one tap. · Your photo.'
-        ] },
-        { kind: 'field', id: 'omissionsOk', type: 'checks', inline: true,
-          label: 'Tick anything you want put back on the page.',
-          hint: 'Leave them all unticked if you are happy as it is.',
-          options: [
-            'My full middle name',
-            'My employer',
-            'A rate or salary range',
-            'My phone number as readable text',
-            'A photo of me'
-          ] },
-        { kind: 'note', title: 'One thing worth knowing', body: [
-          'The "Text me" button opens the messaging app on a phone. On a laptop it often does nothing at all, so someone reading at their desk cannot write your number down.'
-        ] },
-        { kind: 'field', id: 'phoneTradeoff', type: 'radio',
-          label: 'The "Text me" button on desktop.',
-          options: [
-            'Show my number written out too, so people on a laptop can use it',
-            'Leave it as a button only, it keeps it away from spam bots',
-            'Take the phone option off entirely, email only'
-          ] },
-        { kind: 'field', id: 'photoLater', type: 'radio',
-          label: 'The photo.',
-          hint: 'You said no, so the page is built to look right without one. It takes a minute to add if you change your mind.',
-          options: ['Still no photo', 'I have changed my mind, I will send one', 'Maybe later, ask me again'] }
-      ]
-    },
-
-    {
       id: 'leverage',
       title: 'Using what you have',
       heading: 'Ten ways to make your hours count.',
-      why: 'You do not have many hours, but you can do a lot of different things. That means being picky really pays off. Tick the ones you like and ignore the rest. Two you actually do beats ten you just agree with.',
+      why: 'You do not have many hours, but you can do a lot of different things. That means being picky really pays off. Open the ones that interest you, read the steps, and ignore the rest. Two you actually do beats ten you just agree with.',
       blocks: [
         { kind: 'idea', id: 'fractionalOps', title: 'Run operations for another small food business',
           body: 'This is what you already do: suppliers, routes, stock, 25 deliveries a week. Coffee roasters, meal prep kitchens, market stalls and food trucks around Austin have the same headaches and nobody looking after them. Eight to ten hours is enough to cover one of them properly, and it is the closest thing to the job you already know.',
-          tags: ['Closest to what you do now', 'Fits 8 to 10 hrs', 'Highest rate of anything here'] },
+          tags: ['Closest to what you do now', 'Fits 8 to 10 hrs', 'Highest rate of anything here'],
+          steps: [
+            { t: "Make a list of ten small food businesses near you.", d: "Coffee roasters, meal prep kitchens, market stalls, food trucks. Open the map on your phone, search, and write the names down. Twenty minutes." },
+            { t: "Cross off the ones that do not deliver.", d: "You want the five with a delivery or a second location. They are the ones with an operations problem big enough to pay somebody for." },
+            { t: "Write one paragraph about what you do now.", d: "Suppliers, routes, stock, 25 deliveries a week. Facts and numbers only, no adjectives. You will reuse this paragraph forever." },
+            { t: "Send it to all five with your page link.", d: "One short message each, Tuesday or Wednesday morning. Not Monday, when they are digging out, and not Friday, when they have stopped reading." },
+            { t: "Offer ten hours a month, not a job.", d: "A small ask gets a fast yes. Say you will take their ordering and suppliers off their desk for a month and see how it goes." },
+            { t: "Write down everything you fix in the first week.", d: "That list is the reason they keep you, and it is the reason your rate goes up in month three. Nobody remembers it if you do not write it down." }
+          ] },
         { kind: 'idea', id: 'retainer', title: 'Sell a block of hours, not an hourly rate',
           body: 'When you charge by the hour, people try to trim the hours, and you end up looking like spare help. One set price a week or a month, for an agreed list of jobs, makes you sound like someone who runs a part of the business. It also protects your evenings, because the list is the limit, not the clock.',
-          tags: ['Costs nothing to try', 'Decide once'] },
+          tags: ['Costs nothing to try', 'Decide once'],
+          steps: [
+            { t: "Decide your block and stop arguing with yourself.", d: "Ten hours a week, or forty a month. Pick one, write it down, and treat it as settled." },
+            { t: "Work out the number.", d: "Take the hourly rate you had in your head, add twenty percent, then multiply by the block. The extra is for being reliable and it is completely normal to charge it." },
+            { t: "List what is included on one page.", d: "Six or seven things in plain words. If you cannot fit it on one page, the job is too vague to price." },
+            { t: "Add one line about what is not included.", d: "That single line is what stops the work quietly growing into twice the hours for the same money." },
+            { t: "Quote the month, never the hour.", d: "Say it as one number for the month. The moment you say an hourly rate, somebody starts counting your minutes." },
+            { t: "Put a review date ninety days out.", d: "It makes saying yes easy, because nothing is forever, and it hands you a natural moment to raise the price." }
+          ] },
         { kind: 'idea', id: 'remoteEA', title: 'Remote assistant work for a founder',
           body: 'Working from home means no drive, which matters a lot when the whole week is only eight hours. Diary, inbox, chasing suppliers, expenses. Austin is full of small business owners who need this and cannot afford anyone full time.',
-          tags: ['No commute', 'Austin has depth here'] },
+          tags: ['No commute', 'Austin has depth here'],
+          steps: [
+            { t: "Write down what you can take off a founder's desk.", d: "Calendar, inbox, travel, expenses, chasing people who have gone quiet. Everything you already do without thinking." },
+            { t: "Pick the two you are genuinely fastest at.", d: "Lead with those. Nobody hires a list of ten things, they hire somebody who is obviously good at two." },
+            { t: "Set your hours and say them out loud.", d: "Mornings, Monday to Thursday, or whatever is true. Founders need to know when you exist, and vagueness here loses you the job." },
+            { t: "Ask three people for an introduction to one founder each.", d: "Austin is full of small founders who need this and cannot justify somebody full time. You will not find them on a job board." },
+            { t: "Offer a two week paid trial.", d: "Low risk for them, and two weeks is long enough for you to become genuinely hard to replace." },
+            { t: "Learn their rules in week one and write them down.", d: "What they will never do before ten. Who gets straight through. What they hate. Follow it exactly and you will look like you have been there a year." }
+          ] },
         { kind: 'idea', id: 'instagram', title: 'Bundle Instagram, do not sell it alone',
           body: 'You run the account for a business that got to 300 customers. Plenty of small businesses will pay someone to post regularly and answer messages. One warning: selling social media on its own is crowded and the price gets pushed right down. Bolted onto operations work it is worth real money. On its own it is worth much less.',
-          tags: ['2 to 3 hrs a week', 'Worth more bundled'] },
+          tags: ['2 to 3 hrs a week', 'Worth more bundled'],
+          steps: [
+            { t: "Never put a price on social media by itself.", d: "The moment you do, you are competing with somebody charging two hundred dollars, and you will lose on price every time." },
+            { t: "Add it to the bottom of an operations offer instead.", d: "And I will keep the Instagram going. It costs you two hours a week and it adds a few hundred to the number." },
+            { t: "Batch a whole month in one sitting.", d: "Twelve photos, twelve captions, scheduled in one go. Two hours once a month beats ten minutes every single day." },
+            { t: "Use the actual work as the content.", d: "The loaded van, the farm at six in the morning, a full delivery round. Real beats polished for a small local business." },
+            { t: "Answer messages within a day, every day.", d: "This is the part they genuinely cannot keep up with, and it is the part they will keep paying for." },
+            { t: "Screenshot the numbers on day one and day thirty.", d: "Followers, messages, whatever moved. That screenshot is the entire argument for your next pay rise." }
+          ] },
         { kind: 'idea', id: 'vendorCoord', title: 'Supplier and vendor chasing as its own service',
           body: 'Boring, genuinely useful, and almost everyone who sells a physical product hates doing it. You can also do it in batches at whatever hour suits you, which fits a short week far better than anything where you have to be available live.',
-          tags: ['Asynchronous', 'Fits odd hours'] },
+          tags: ['Asynchronous', 'Fits odd hours'],
+          steps: [
+            { t: "Write down what you actually do when you chase somebody.", d: "Who you call first, what you say, how long you wait, what you do when they go quiet. You have a system already, you just have not written it down." },
+            { t: "Turn it into a one page offer.", d: "I will own your supplier relationships so you stop having to remember them. That is the whole pitch." },
+            { t: "Price it small and monthly.", d: "Two or three hundred a month is a number somebody can approve without calling a meeting about it." },
+            { t: "Ask for a forwarded email address, not their password.", d: "Cleaner for both of you, and it means you can hand it back in five minutes if it ever ends." },
+            { t: "Send a one line update every Friday.", d: "Everything on track except one thing, sorted by Tuesday. This single habit is the reason people keep you." },
+            { t: "Do it in two batched sessions a week.", d: "It does not need you at a desk all day, which is exactly why it fits a short week better than almost anything else." }
+          ] },
         { kind: 'idea', id: 'spanish', title: 'Charge for the Spanish, or leave it off',
           body: 'If your Spanish is good enough to handle a call with a supplier or a chat with a crew, say so, because it opens up a lot more Austin food and trade businesses. If it is not, leave it off completely. Being caught out on it in the first interview costs you more than it ever wins.',
-          tags: ['Only if you would use it live', 'Answer the question above first'] },
+          tags: ['Only if you would use it live', 'Answer the question above first'],
+          steps: [
+            { t: "Test yourself honestly for ten minutes.", d: "Could you handle a phone call in Spanish about a late delivery, with somebody who is annoyed? That is the real bar, not ordering food." },
+            { t: "If it is yes, say conversational and mean it.", d: "If it is no, say nothing at all. There is no useful middle ground, and the middle is where you get caught out." },
+            { t: "Name the situations you would actually use it in.", d: "Calls with suppliers, instructions to a crew, customers at the door. Specific beats a language listed on its own." },
+            { t: "Aim it at the businesses where it matters.", d: "Food, trades, cleaning, construction and landscaping around Austin. In those places it is worth real money, elsewhere it is decoration." },
+            { t: "Mention it once, late in the conversation.", d: "Brought up at the end it lands as a bonus. Led with, it sounds like the most interesting thing about you, which it is not." },
+            { t: "If it is a no, give it twenty minutes a week.", d: "Not urgent, and not this month's problem. Just worth having in six months when somebody asks again." }
+          ] },
         { kind: 'idea', id: 'introductions', title: 'Ask three people for an introduction this month',
           body: 'This is the best hour on the whole list, and the one nearly everybody skips. Your boss, a supplier and a long-standing customer all know other owners. One warm introduction with your page link beats fifty cold applications, and you could do all three in an afternoon.',
-          tags: ['Under an hour', 'Do this first'] },
+          tags: ['Under an hour', 'Do this first'],
+          steps: [
+            { t: "Write three names down right now.", d: "Your boss, one supplier, one long-standing customer. Not a long list. Three." },
+            { t: "Write one sentence about what you are after.", d: "Part-time operations work with a small food business beats any opportunities, every time. Vague requests get vague answers." },
+            { t: "Ask for a name, not a favour.", d: "Who do you know who needs this is easy to answer. Can you help me puts the work on them and usually gets a maybe." },
+            { t: "Send the page link so they have something to forward.", d: "Make it one click. If they have to write an explanation themselves, it will not happen." },
+            { t: "Give them a deadline that is not a deadline.", d: "No rush, whenever somebody comes to mind. It keeps the door open without making them feel chased." },
+            { t: "Thank them the day it lands, and tell them what happened after.", d: "That is the whole reason a second introduction ever arrives." }
+          ] },
         { kind: 'idea', id: 'onePlace', title: 'Be findable in one place, kept current',
           body: 'One profile that is up to date beats five that are half done, and on eight hours a week you cannot keep five going. Pick the page or LinkedIn, point everything at it, and let the rest go quiet without feeling bad about it.',
-          tags: ['Pick one', 'Stop maintaining the rest'] },
+          tags: ['Pick one', 'Stop maintaining the rest'],
+          steps: [
+            { t: "Pick one. Your page or LinkedIn.", d: "Not both. On eight hours a week you cannot keep two of anything current, and a stale profile is worse than none." },
+            { t: "Put the sentence you say out loud at the top of it.", d: "The same words you would use introducing yourself. Consistency reads as confidence, polish does not." },
+            { t: "Point everything else at it.", d: "Email signature, Instagram bio, the back of a card if you have one. One destination, every time." },
+            { t: "Set one reminder for the first of the month.", d: "Two minutes to check it is still true. That is the entire maintenance job." },
+            { t: "Let everything else go quiet on purpose.", d: "A half-finished profile somewhere you forgot about does more damage than having nothing there at all." },
+            { t: "Open it on your phone before you send it to anybody.", d: "That is where people will actually look at it, usually while doing something else." }
+          ] },
         { kind: 'idea', id: 'handsOnWedge', title: 'Treat the hands-on work as a wedge, not the job',
           body: 'Power washing, van repairs and kitting out a truck are unusual for someone selling operations, and unusual sticks in the mind. With a delivery or trades business, lead with it. With a tech startup, it muddies what you are. Decide each time rather than once for everyone.',
-          tags: ['Depends on who you are talking to'] },
+          tags: ['Depends on who you are talking to'],
+          steps: [
+            { t: "Decide before each conversation whether to lead with it.", d: "Delivery, trades and logistics: lead with it. An office or a tech company: keep it in your back pocket." },
+            { t: "When you do use it, tell it as a story.", d: "The truck, the power washer, what you saved and what it would have cost. A list of skills is forgettable, one story is not." },
+            { t: "Keep two photos on your phone.", d: "Ten seconds to show somebody, and it is the thing they will still remember a week later." },
+            { t: "Price it separately when somebody asks for it.", d: "It is a skill, not something bundled into your hours for free because you happened to mention it." },
+            { t: "Do not let it quietly become the whole job.", d: "I can do that too is a very different sentence from that is what I do. Keep the difference clear from day one." },
+            { t: "If you never want to be asked, say so now.", d: "It is far harder to take back after six months of saying yes." }
+          ] },
         { kind: 'idea', id: 'fiveMessages', title: 'Five targeted messages a week, not fifty',
           body: 'One hour a week. Eight to ten hours means you can look after one or two clients, so you do not need lots of replies, you need two good ones. Five businesses you have actually looked at, with a line about what you noticed, beats a hundred copy and paste messages.',
-          tags: ['1 hr a week', 'Quality over volume'] },
+          tags: ['1 hr a week', 'Quality over volume'],
+          steps: [
+            { t: "Put thirty minutes in your diary on the same day each week.", d: "Friday morning works well, because almost nobody else is getting in touch then." },
+            { t: "Find five businesses, not five job adverts.", d: "Places you could name an actual reason for wanting to work with. If you cannot name one, pick a different business." },
+            { t: "Spend two minutes on each before you write anything.", d: "Their site, their Instagram, what they deliver and where. Two minutes is enough to have something real to say." },
+            { t: "Open with the thing you noticed.", d: "One specific line. No flattery, no I hope this finds you well. The specific line is the only reason anybody replies." },
+            { t: "Ask for fifteen minutes, not a job.", d: "Much easier to say yes to, and fifteen minutes is genuinely all you need to find out if it is worth more." },
+            { t: "Keep a list of who you wrote to and when.", d: "Follow up once after ten days, then leave it. Chasing three times makes you memorable for the wrong reason." },
+            { t: "Remember the arithmetic.", d: "Five a week is two hundred and fifty a year, and you only need two of them to say yes." }
+          ] },
         { kind: 'field', id: 'leverageOwn', type: 'textarea',
           label: 'Anything here you are already doing, or an idea of your own?',
-          placeholder: 'Optional.' }
-      ]
-    },
-
-    {
-      id: 'final',
-      title: 'Last word',
-      heading: 'Anything else before we go live?',
-      why: 'The page is ready. Send us those two answers whenever you have them and they go straight in.',
-      blocks: [
-        { kind: 'field', id: 'goLive', type: 'radio',
-          label: 'Are you happy for the page to go online as it stands?',
-          hint: 'It can go up now and we can add the missing bits later. Nothing on this page has to be finished first.',
-          options: [
-            'Yes, put it up now and add the rest later',
-            'Put it up once the quote is in',
-            'Hold off, I want to go through it with you first'
-          ] },
-        { kind: 'field', id: 'anythingElse', type: 'textarea',
-          label: 'Anything else at all.',
-          hint: 'Something that reads wrong, something missing, something you have thought of since. Nothing is too small.',
           placeholder: 'Optional.' }
       ]
     }
@@ -818,7 +703,6 @@
     sec.blocks.forEach(function (b) {
       if (b.kind === 'field') FIELDS.push({ sec: sec, field: b });
       if (b.kind === 'idea') {
-        FIELDS.push({ sec: sec, field: { id: b.id + 'Interest', type: 'radio', label: b.title, options: ['Yes, I want to try this', 'Maybe, tell me more', 'Already doing it', 'Not for me'] } });
         FIELDS.push({ sec: sec, field: { id: b.id + 'Note', type: 'text', label: b.title + ' — my note' } });
       }
     });
@@ -917,25 +801,6 @@
     control.addEventListener('input', handler);
     control.addEventListener('change', handler);
 
-    if (f.starters && f.starters.length) {
-      var box = el('div', { class: 'starters' });
-      box.appendChild(el('p', { class: 'starters-label', text: 'Stuck? Click one to drop some wording in the box' }));
-      var row = el('div', { class: 'starter-row' });
-      f.starters.forEach(function (s) {
-        var chip = el('button', { type: 'button', class: 'starter', text: s.label });
-        chip.addEventListener('click', function () {
-          var cur = control.value.trim();
-          control.value = cur ? cur + '\n\n' + s.text : s.text;
-          chip.classList.add('used');
-          handler();
-          control.focus();
-          control.setSelectionRange(control.value.length, control.value.length);
-        });
-        row.appendChild(chip);
-      });
-      box.appendChild(row);
-      group.appendChild(box);
-    }
     group.appendChild(control);
   }
 
@@ -1010,8 +875,38 @@
       b.tags.forEach(function (t) { meta.appendChild(el('span', { class: 'tag', text: t })); });
       card.appendChild(meta);
     }
-    card.appendChild(renderField({ id: b.id + 'Interest', type: 'radio', inline: true, label: 'What do you think?', options: ['Yes, I want to try this', 'Maybe, tell me more', 'Already doing it', 'Not for me'] }));
-    card.appendChild(renderField({ id: b.id + 'Note', type: 'text', label: 'Your note', placeholder: 'Optional.' }));
+    if (b.steps && b.steps.length) {
+      var how = el('details', { class: 'how', id: 'how-' + b.id });
+      if (state.open[b.id]) how.open = true;
+
+      var sum = el('summary');
+      sum.innerHTML = '<span class="lbl-closed">Tell me more</span><span class="lbl-open">Close</span>' + CHEVRON;
+      how.appendChild(sum);
+
+      var hb = el('div', { class: 'how-body' });
+      hb.appendChild(el('p', { class: 'plan-label', text: 'How to do it, step by step' }));
+      var ol = el('ol', { class: 'steps' });
+      b.steps.forEach(function (st, n) {
+        var li = el('li');
+        li.appendChild(el('span', { class: 'step-n', text: String(n + 1) }));
+        var t = el('span', { class: 'step-t' });
+        t.appendChild(el('strong', { text: st.t + ' ' }));
+        t.appendChild(document.createTextNode(st.d));
+        li.appendChild(t);
+        ol.appendChild(li);
+      });
+      hb.appendChild(ol);
+      hb.appendChild(renderField({ id: b.id + 'Note', type: 'text', label: 'Your note on this one', placeholder: 'Optional.' }));
+      how.appendChild(hb);
+
+      how.addEventListener('toggle', function () {
+        state.open[b.id] = how.open;
+        scheduleSave();
+      });
+      card.appendChild(how);
+    } else {
+      card.appendChild(renderField({ id: b.id + 'Note', type: 'text', label: 'Your note', placeholder: 'Optional.' }));
+    }
     return card;
   }
 
@@ -1033,7 +928,10 @@
         ])
       ]));
       card.appendChild(el('p', { class: 'why', text: sec.why }));
-      if (i === SECTIONS.length - 1) toc.appendChild(el('a', { href: '#notes', text: (SECTIONS.length + 1) + '. Your notebook' }));
+      if (i === SECTIONS.length - 1) {
+        toc.appendChild(el('a', { href: '#spinoffs', text: (SECTIONS.length + 1) + '. Work for yourself' }));
+        toc.appendChild(el('a', { href: '#notes', text: (SECTIONS.length + 2) + '. Your notebook' }));
+      }
 
       var ideaCount = 0;
       sec.blocks.forEach(function (b) {
@@ -1137,10 +1035,16 @@
     var host = $('#spinoffs');
     host.innerHTML = '';
 
-    var herald = el('h2', { class: 'spin-herald', id: 'spin-herald' });
+    var herald = el('h2', { class: 'spin-herald sec-title', id: 'spin-herald' });
     herald.appendChild(document.createTextNode('Have you thought of '));
     herald.appendChild(el('em', { text: 'trying:' }));
-    host.appendChild(herald);
+    host.appendChild(el('div', { class: 'sec-head' }, [
+      el('span', { class: 'sec-num', 'aria-hidden': 'true', text: String(SECTIONS.length + 1) }),
+      el('div', {}, [
+        el('p', { class: 'sec-kicker', text: 'Work for yourself' }),
+        herald
+      ])
+    ]));
     host.appendChild(el('p', { class: 'spin-sub', text: 'Three ways to work for yourself instead of for somebody else. Each one is built on something you can already do, and each one can start small enough to fit your week. Tap any of them and you get the numbers, how to set it up, and two plans for your first month: one that gets you to $1,000 and one that goes for $4,000. The fourth card runs all three together. The numbers are only examples using round figures, not promises. They show you how the sums work, so you can put your own in.' }));
       var caution = el('p', { class: 'plan-real', style: 'max-width:640px;margin-bottom:2rem;' });
       caution.appendChild(el('strong', { text: 'One thing before you read any of them: ' }));
@@ -1229,7 +1133,7 @@
     host.innerHTML = '';
 
     host.appendChild(el('div', { class: 'sec-head' }, [
-      el('span', { class: 'sec-num', 'aria-hidden': 'true', text: '7' }),
+      el('span', { class: 'sec-num', 'aria-hidden': 'true', text: String(SECTIONS.length + 2) }),
       el('div', {}, [
         el('p', { class: 'sec-kicker', text: 'Your notebook' }),
         el('h2', { id: 'notes-h', class: 'sec-title', text: 'Anything you think of.' })
@@ -1302,12 +1206,20 @@
     saveFile(md.trim() + '\n', 'crystal-notes-' + isoDate(new Date()) + '.md', 'Exported your notes');
   }
 
-  function updateProgress() {
-    var total = FIELDS.length;
+  function countAnswered() {
     var answered = 0;
     FIELDS.forEach(function (f) { if (isAnswered(f.field.id)) answered++; });
-    $('#progressText').textContent = answered + ' / ' + total + ' answered';
-    $('#progressFill').style.width = (total ? Math.round(100 * answered / total) : 0) + '%';
+    return { total: FIELDS.length, answered: answered };
+  }
+
+  // The header no longer shows a score. This stays so callers keep working,
+  // and so the count is still available for the exported file.
+  function updateProgress() {
+    var fill = $('#progressFill'), text = $('#progressText');
+    if (!fill || !text) return;
+    var c = countAnswered();
+    text.textContent = c.answered + ' / ' + c.total + ' answered';
+    fill.style.width = (c.total ? Math.round(100 * c.answered / c.total) : 0) + '%';
   }
 
   // ---------- Export ----------
@@ -1329,12 +1241,11 @@
 
   function buildMarkdown() {
     var now = new Date();
-    var total = FIELDS.length, answered = 0;
-    FIELDS.forEach(function (f) { if (isAnswered(f.field.id)) answered++; });
+    var c = countAnswered();
 
-    var out = '# ' + PERSON + ' — landing page review\n\n';
+    var out = '# ' + PERSON + ' — ideas and plans\n\n';
     out += '_Exported ' + isoDate(now) + '_\n\n';
-    out += '_' + answered + ' of ' + total + ' answered_\n\n';
+    out += '_' + c.answered + ' of ' + c.total + ' answered_\n\n';
 
     SECTIONS.forEach(function (sec, i) {
       out += '## ' + (i + 1) + '. ' + sec.title + '\n\n';
@@ -1345,7 +1256,6 @@
         } else if (b.kind === 'idea') {
           n++;
           out += '### Idea ' + n + ': ' + b.title + '\n\n';
-          out += answerBlock('What do you think?', b.id + 'Interest');
           out += answerBlock('Note', b.id + 'Note');
         }
       });
@@ -1383,19 +1293,11 @@
 
   function downloadMarkdown() {
     flushSave();
-    var filename = 'crystal-page-review-' + isoDate(new Date()) + '.md';
+    var filename = 'crystal-ideas-' + isoDate(new Date()) + '.md';
     saveFile(buildMarkdown(), filename, 'Exported ' + filename);
   }
 
   // ---------- Printable sheet ----------
-  function psAnswer(label, id) {
-    var v = valueOf(id);
-    var wrap = el('p', { class: 'ps-answer' });
-    wrap.appendChild(el('b', { text: label }));
-    wrap.appendChild(el('span', { class: v ? '' : 'ps-empty', text: v || 'Not answered yet' }));
-    return wrap;
-  }
-
   function psPlan(pl) {
     var box = el('div', { class: 'ps-plan' });
     box.appendChild(el('h3', { text: pl.label }));
@@ -1431,11 +1333,27 @@
     head.appendChild(el('p', { text: 'Printed ' + isoDate(new Date()) + ' · tick the boxes as you go' }));
     sheet.appendChild(head);
 
-    var owed = el('section', { class: 'ps-block' });
-    owed.appendChild(el('h2', { text: 'Still to send back' }));
-    owed.appendChild(psAnswer('A time you spotted a problem before your boss did', 'problemSpotted'));
-    owed.appendChild(psAnswer('A sentence or two from your boss', 'quoteText'));
-    sheet.appendChild(owed);
+    var ways = el('section', { class: 'ps-block' });
+    ways.appendChild(el('h2', { text: 'Ten ways to make your hours count' }));
+    var wl = el('ol', { class: 'ps-steps' });
+    SECTIONS.forEach(function (sec) {
+      sec.blocks.forEach(function (bl) {
+        if (bl.kind !== 'idea') return;
+        var li = el('li');
+        li.appendChild(el('span', { class: 'ps-box' }));
+        var t = el('span', { class: 'ps-step-t' });
+        t.appendChild(el('b', { text: bl.title }));
+        var note = valueOf(bl.id + 'Note');
+        if (note) {
+          t.appendChild(document.createTextNode(' '));
+          t.appendChild(el('span', { class: 'ps-tag', text: '[' + note + ']' }));
+        }
+        li.appendChild(t);
+        wl.appendChild(li);
+      });
+    });
+    ways.appendChild(wl);
+    sheet.appendChild(ways);
 
     var n = 0;
     SPINOFFS.forEach(function (s) {

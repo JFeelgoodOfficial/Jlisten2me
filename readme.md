@@ -35,15 +35,16 @@ Single-page landing site for listen2me.com - offering confidential, non-judgment
 ```
 
 ## crystal.html
-Standalone, private review page at `/crystal.html` (marked `noindex`) for Crystal M. Pratt's landing page. It carries the review notes into a form she can answer: the two outstanding questions, the seven changes made to her answers, four judgement calls, what the page deliberately leaves out, and ten ways to get more out of eight to ten hours a week.
+Standalone, private page at `/crystal.html` (marked `noindex`) for Crystal M. Pratt. Three parts and nothing else:
 
-- Field types are `text`, `textarea`, `select`, `radio` (single choice) and `checks` (multi-select). Long-form questions carry **starter chips** that drop suggested wording into the box; clicking a second chip appends rather than replaces.
-- A **notebook** section holds free-form notes. Each entry is timestamped, deletable, added with the button or Ctrl/Cmd+Enter, and exports either on its own (`crystal-notes-YYYY-MM-DD.md`) or as the last section of the full export.
-- **Print or save as PDF** builds a separate `#printSheet` (also on the browser's own `beforeprint`, so Ctrl+P works) and `@media print` swaps the app for it. The sheet is black on white with tick boxes beside every step, and it prints only the plans she has not ruled out: choosing a month prints just that month, and "Not this one" drops the idea entirely.
-- Answers autosave to the browser's `localStorage` under the key `crystal-page-review-v1`. Nothing leaves the browser.
-- **Export Markdown** downloads `crystal-page-review-YYYY-MM-DD.md` with every question and answer; unanswered ones are marked `_No answer yet_`. A copy-to-clipboard button covers browsers that block downloads.
-- Under the export button, a **"Have you thought of trying:"** block holds four self-employment options from the `SPINOFFS` array: a delivery round, power washing, setup packages, and a hybrid that runs all three on three days a week. Each shows a one-sentence pitch and headline figure, and expands on click to stat tiles, a five step setup guide, a caveat, and **two tabbed month plans** (`plans`) taking her from $0 to $1,000 and from $0 to $4,000, each with 7 to 9 steps carrying cost and hour tags. Open/closed state and the selected tab persist alongside the answers.
-- Content lives in the `SECTIONS` array near the top of the script. Blocks are `note` (context callout), `field` (a question) or `idea` (a suggestion card, which generates its own interest radio and note field).
+1. **Ten ways to make your hours count** — positioning and work-finding tips. Each card expands on a **Tell me more** button to a 5 to 7 step how-to guide plus a note field.
+2. **Work for yourself** — four self-employment options (a delivery round, power washing, setup packages, and a hybrid running all three). Each expands to stat tiles, a setup guide, a caveat, and two tabbed month plans taking her from $0 to $1,000 and from $0 to $4,000.
+3. **Your notebook** — free-form timestamped notes, deletable, added by button or Ctrl/Cmd+Enter.
+
+- Everything autosaves to `localStorage` under `crystal-page-review-v1`. Nothing leaves the browser.
+- **Export Markdown** writes `crystal-ideas-YYYY-MM-DD.md` with all three sections; notes also export alone as `crystal-notes-YYYY-MM-DD.md`.
+- **Print or save as PDF** builds a separate `#printSheet` (also on `beforeprint`, so Ctrl+P works) that `@media print` swaps in: black on white, tick boxes beside every step, and only the plans she has not ruled out.
+- Content lives in the `SECTIONS` and `SPINOFFS` arrays near the top of the script. The footer carries a version stamp; bump it with each change.
 
 ## Meta Tags
 - OpenGraph/Twitter cards ready
