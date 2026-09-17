@@ -3,12 +3,12 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Wired Wright: Landing Page Content Builder</title>
-<meta name="description" content="Answer 28 questions and export a ready-to-build content brief for the Wired Wright electrical landing page, serving the greater Austin area." />
+<title>Wired Wright: Landing Page Questions</title>
+<meta name="description" content="Answer 28 questions and export a ready-to-build brief for the Wired Wright electrical landing page, serving the greater Austin area." />
 <meta name="robots" content="noindex, nofollow" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
   :root {
@@ -21,15 +21,15 @@
     --blue-100: #dbeafb;
     --blue-050: #f1f7fe;
     --white: #ffffff;
-    --ink: #0d2136;
-    --ink-soft: #4a6480;
+    --ink: #16293d;
+    --ink-soft: #4d6781;
     --ink-faint: #7e93a8;
     --line: #d9e6f5;
     --shadow: 0 1px 2px rgba(7,37,74,.06), 0 8px 24px rgba(7,37,74,.06);
-    --font: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
+    --font: 'Source Sans 3', system-ui, -apple-system, 'Segoe UI', sans-serif;
   }
   html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
-  body { font-family: var(--font); background: var(--white); color: var(--ink); line-height: 1.6; font-size: 16px; -webkit-font-smoothing: antialiased; }
+  body { font-family: var(--font); background: var(--white); color: var(--ink); line-height: 1.65; font-size: 17px; -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; }
   a { color: var(--blue-700); }
   .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
 
@@ -74,26 +74,26 @@
   .qrow { display: flex; gap: .7rem; align-items: flex-start; }
   .avatar { flex: 0 0 auto; width: 30px; height: 30px; border-radius: 9px; background: var(--blue-700); color: #fff; display: grid; place-items: center; font-size: .72rem; font-weight: 600; }
   .bubble { background: var(--blue-050); border: 1px solid var(--blue-100); border-radius: 4px 12px 12px 12px; padding: .7rem .9rem; max-width: 100%; }
-  .bubble h3 { font-size: 1rem; font-weight: 600; color: var(--blue-900); line-height: 1.4; }
-  .why { font-size: .84rem; color: var(--ink-soft); margin-top: .45rem; }
+  .bubble h3 { font-size: 1.06rem; font-weight: 600; color: var(--blue-900); line-height: 1.4; }
+  .why { font-size: .88rem; line-height: 1.6; color: var(--ink-soft); margin-top: .45rem; }
   .why b { color: var(--blue-800); font-weight: 600; }
   .why .src { color: var(--ink-faint); font-style: normal; }
 
   .chips { display: flex; flex-wrap: wrap; gap: .45rem; margin: .85rem 0 .1rem 2.3rem; }
   .chips .lbl { width: 100%; font-size: .72rem; letter-spacing: .1em; text-transform: uppercase; color: var(--ink-faint); font-weight: 600; margin-bottom: .1rem; }
-  .chip { font-family: var(--font); font-size: .82rem; line-height: 1.35; text-align: left; color: var(--blue-800); background: var(--white); border: 1px solid var(--blue-200); border-radius: 9px; padding: .42rem .7rem; cursor: pointer; transition: background .15s, border-color .15s, transform .1s; }
+  .chip { font-family: var(--font); font-size: .88rem; line-height: 1.35; text-align: left; color: var(--blue-800); background: var(--white); border: 1px solid var(--blue-200); border-radius: 9px; padding: .42rem .7rem; cursor: pointer; transition: background .15s, border-color .15s, transform .1s; }
   .chip:hover { background: var(--blue-050); border-color: var(--blue-500); }
   .chip:active { transform: translateY(1px); }
 
   .thread { margin: .9rem 0 0 2.3rem; display: flex; flex-direction: column; gap: .5rem; }
-  .msg { align-self: flex-end; max-width: 92%; background: var(--blue-700); color: #fff; border-radius: 12px 4px 12px 12px; padding: .6rem .8rem; font-size: .93rem; white-space: pre-wrap; word-break: break-word; }
+  .msg { align-self: flex-end; max-width: 92%; background: var(--blue-700); color: #fff; border-radius: 12px 4px 12px 12px; padding: .6rem .8rem; font-size: .98rem; white-space: pre-wrap; word-break: break-word; }
   .msg .tools { display: flex; gap: .7rem; justify-content: flex-end; margin-top: .4rem; }
   .msg button { background: none; border: none; color: rgba(255,255,255,.82); font-family: var(--font); font-size: .74rem; cursor: pointer; padding: 0; text-decoration: underline; }
   .msg button:hover { color: #fff; }
 
   .composer { margin: .8rem 0 0 2.3rem; border: 1px solid var(--line); border-radius: 12px; background: var(--white); padding: .55rem .6rem .5rem; transition: border-color .15s, box-shadow .15s; }
   .composer:focus-within { border-color: var(--blue-500); box-shadow: 0 0 0 3px rgba(47,140,224,.15); }
-  .composer textarea { width: 100%; border: none; outline: none; resize: vertical; min-height: 62px; font-family: var(--font); font-size: .95rem; color: var(--ink); line-height: 1.55; background: transparent; }
+  .composer textarea { width: 100%; border: none; outline: none; resize: vertical; min-height: 62px; font-family: var(--font); font-size: 1rem; color: var(--ink); line-height: 1.55; background: transparent; }
   .composer textarea::placeholder { color: var(--ink-faint); }
   .composer-row { display: flex; align-items: center; justify-content: space-between; gap: .6rem; padding-top: .35rem; }
   .hint { font-size: .74rem; color: var(--ink-faint); }
@@ -123,7 +123,7 @@
   .find { background: var(--white); border: 1px solid var(--line); border-radius: 12px; padding: .85rem .9rem; display: flex; flex-direction: column; }
   .find .stat { font-size: 1.5rem; font-weight: 700; letter-spacing: -.03em; color: var(--blue-700); line-height: 1.1; }
   .find .stat small { font-size: .95rem; font-weight: 600; color: var(--blue-600); letter-spacing: 0; }
-  .find p { font-size: .87rem; color: var(--ink); margin-top: .35rem; }
+  .find p { font-size: .92rem; color: var(--ink); margin-top: .35rem; }
   .find .cite { display: block; font-size: .73rem; color: var(--ink-faint); margin-top: auto; padding-top: .5rem; letter-spacing: .02em; }
   .findings .caveat { font-size: .82rem; color: var(--ink-soft); margin-top: 1rem; border-left: 3px solid var(--blue-200); padding-left: .8rem; max-width: 72ch; }
 
@@ -150,10 +150,10 @@
         <svg class="bolt" viewBox="0 0 24 24" aria-hidden="true"><path d="M13 2 4 14h6l-1 8 9-12h-6l1-8z" fill="#0b5cab"/></svg>
         Wired Wright
       </div>
-      <div class="meta">Greater Austin · Content Builder</div>
+      <div class="meta">Greater Austin · Licensed Electrical</div>
     </div>
 
-    <h1 class="sr-only">Wired Wright: landing page content builder for a greater-Austin electrical contractor</h1>
+    <h1 class="sr-only">Wired Wright: landing page questions for a greater-Austin electrical contractor</h1>
 
     <div id="plugStage">
       <canvas id="plugCanvas" aria-hidden="true"></canvas>
@@ -162,9 +162,9 @@
 
     <div class="hero-copy">
       <p class="kicker">Answer once, export the whole page</p>
-      <p>Twenty-eight questions, each one tied to something that measurably moves the needle on electrical-service landing pages. Pick a suggested answer, edit it in your own words, then export the brief as Markdown for whoever builds the site.</p>
+      <p>Twenty-eight questions, each one tied to something that measurably moves the needle on electrical-service landing pages. Pick a suggested answer, edit it in your own words, then export the brief as Markdown for Jonny to build your site.</p>
       <div class="hero-stats">
-        <span class="pill">Dedicated pages convert 5–15% vs 1–3% for a homepage</span>
+        <span class="pill">Dedicated pages convert 5–15%</span>
         <span class="pill">74% of electrical traffic is mobile</span>
         <span class="pill">License badge specificity: +14%</span>
       </div>
@@ -204,8 +204,8 @@
       <p>Eleven findings from the landing-page and local-search research behind these questions. They are the reason the questions are the questions.</p>
       <div class="find-grid">
         <div class="find">
-          <div class="stat">5–15% <small>vs 1–3%</small></div>
-          <p>A landing page built for one job converts several times better than pointing the same traffic at a homepage. This is the whole argument for building the page at all.</p>
+          <div class="stat">5–15% <small>conversion</small></div>
+          <p>A landing page built for one job, on traffic that came looking for that job. This is the whole argument for building the page at all.</p>
           <span class="cite">ResultCalls; ServiceTitan</span>
         </div>
         <div class="find">
@@ -270,7 +270,7 @@
       <li><a href="https://www.webtonic.io/blog/electrical-services-landing-page-statistics" target="_blank" rel="noopener">Web Tonic, electrical landing page statistics</a>: master-electrician badge +14%, 74% mobile, sticky click-to-call +15–25%, authentic hero photo +10–18%, form-field guidance.</li>
       <li><a href="https://builtrightdigital.com/electrician-web-design-guide/" target="_blank" rel="noopener">BuiltRight Digital, electrician web design guide</a>: TECL number in header, footer and every service page; 2024 audit of 1,200+ electrician sites found 56% hide license numbers.</li>
       <li><a href="https://pipelineon.com/blog/contractor-website-trust-signals/" target="_blank" rel="noopener">Pipeline On, contractor website trust signals</a>: trust strip inside the first 600 pixels.</li>
-      <li><a href="https://resultcalls.com/blog/electrician-landing-pages-complete-guide-to-converting-more-leads" target="_blank" rel="noopener">ResultCalls, electrician landing pages</a> and <a href="https://www.servicetitan.com/blog/electrician-landing-page-tips" target="_blank" rel="noopener">ServiceTitan, nine landing page tips</a>: dedicated page 5–15% vs homepage 1–3%; CTA wording.</li>
+      <li><a href="https://resultcalls.com/blog/electrician-landing-pages-complete-guide-to-converting-more-leads" target="_blank" rel="noopener">ResultCalls, electrician landing pages</a> and <a href="https://www.servicetitan.com/blog/electrician-landing-page-tips" target="_blank" rel="noopener">ServiceTitan, nine landing page tips</a>: dedicated pages convert 5–15% on targeted traffic; CTA wording.</li>
       <li><a href="https://www.scorpion.co/electrical/insights/blog/verticals/electrical/how-to-design-a-high-converting-electrician-webs/" target="_blank" rel="noopener">Scorpion, electrician website design</a>: 68% of home-service customers hire whoever responds first.</li>
       <li><a href="https://austinenergy.com/green-power/plug-in-austin/home-charging" target="_blank" rel="noopener">Austin Energy, home EV charger rebate</a>: 50% of charger plus labor, up to $1,200 (OCPP smart charger) or $900, licensed electrician and City of Austin permit and inspection required for hardwired units.</li>
       <li><a href="https://evchargeright.com/blog/texas-ev-charger-installation" target="_blank" rel="noopener">ChargeRight, citing J.D. Power</a>: 28% of EV owners actually needed panel work, while 65% were told they did.</li>
@@ -280,13 +280,13 @@
 </main>
 
 <footer class="foot">
-  Wired Wright content builder · v1.0 · Answers autosave to this browser only
+  Wired Wright · v1.1 · Answers autosave to this browser only
 </footer>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" onerror="window.__noThree=true"></script>
 <script>
 /* ============================================================
-   Wired Wright: landing page content builder
+   Wired Wright: landing page questions
    Sections mirror the order a visitor actually reads the page.
    ============================================================ */
 
@@ -912,7 +912,7 @@ function markdown() {
   out.push('- Web Tonic, electrical landing page statistics: licensed-master-electrician badge +14%, 74% mobile traffic, sticky tap-to-call +15–25%, authentic hero photo +10–18%, four-field form. <https://www.webtonic.io/blog/electrical-services-landing-page-statistics>');
   out.push('- BuiltRight Digital, electrician web design guide: TECL number in header, footer and every service page; 2024 audit of 1,200+ electrician sites found 56% hide license numbers. <https://builtrightdigital.com/electrician-web-design-guide/>');
   out.push('- Pipeline On, contractor website trust signals: trust strip within the first 600 pixels. <https://pipelineon.com/blog/contractor-website-trust-signals/>');
-  out.push('- ResultCalls and ServiceTitan: dedicated landing pages convert 5–15% against 1–3% for a homepage on the same traffic. <https://resultcalls.com/blog/electrician-landing-pages-complete-guide-to-converting-more-leads> · <https://www.servicetitan.com/blog/electrician-landing-page-tips>');
+  out.push('- ResultCalls and ServiceTitan: dedicated landing pages convert 5–15% on targeted traffic. <https://resultcalls.com/blog/electrician-landing-pages-complete-guide-to-converting-more-leads> · <https://www.servicetitan.com/blog/electrician-landing-page-tips>');
   out.push('- Scorpion: 68% of home-service customers hire whoever responds first. <https://www.scorpion.co/electrical/insights/blog/verticals/electrical/how-to-design-a-high-converting-electrician-webs/>');
   out.push('- Austin Energy home EV charger rebate: 50% of charger plus labor, up to $1,200 for OCPP smart chargers or $900 otherwise; licensed electrician plus City of Austin permit and inspection required for hardwired units. Re-verify caps and funding before publishing. <https://austinenergy.com/green-power/plug-in-austin/home-charging>');
   out.push('- ChargeRight, citing J.D. Power: 28% of EV owners needed panel work while 65% were told they did. <https://evchargeright.com/blog/texas-ev-charger-installation>');
@@ -1057,7 +1057,7 @@ build();
     g.fillStyle = '#000';
     g.textAlign = 'center';
     g.textBaseline = 'middle';
-    const fam = '700 150px Inter, system-ui, Arial, sans-serif';
+    const fam = '700 160px "Source Sans 3", system-ui, Arial, sans-serif';
     g.font = fam;
     g.fillText('WIRED', W / 2, 105);
     g.fillText('WRIGHT', W / 2, 258);
