@@ -46,6 +46,17 @@ Standalone, private page at `/crystal.html` (marked `noindex`) for Crystal M. Pr
 - **Print or save as PDF** builds a separate `#printSheet` (also on `beforeprint`, so Ctrl+P works) that `@media print` swaps in: black on white, tick boxes beside every step, and only the plans she has not ruled out.
 - Content lives in the `SECTIONS` and `SPINOFFS` arrays near the top of the script. The footer carries a version stamp; bump it with each change.
 
+## wiredwright.html
+Standalone, private page at `/wiredwright.html` (marked `noindex`) for Wired Wright, an electrical contractor covering greater Austin. It is a content-intake tool, not the public landing page: he answers it once, exports the brief, and whoever builds the site works from that.
+
+- **Hero**: a three.js particle plug (body, three prongs, curving cord) that morphs into the words WIRED WRIGHT on a loop. Falls back to plain styled type if WebGL or the CDN fails, and holds the text still under `prefers-reduced-motion`.
+- **28 questions** in seven parts, ordered the way a visitor reads a landing page: first screen, trust strip, services, proof, price and form, FAQ, footer and local search. Each question carries the research note behind it (license-badge lift, four-field forms, Austin Energy EV rebate rules, TECL placement).
+- Each question has **tap-to-load recommended answers** that drop into the composer for editing, a **chat box** that saves answers as a thread, and per-answer edit and delete.
+- Everything autosaves to `localStorage` under `wiredwright-content-v1`. Nothing leaves the browser.
+- **Download Markdown** writes `wiredwright-content-YYYY-MM-DD.md` with every answer, the research note per question, a build order for the page, the still-open questions, and the source list. Copy-to-clipboard and a live preview sit beside it.
+- Conversion figures come from marketing-agency and vendor blogs, not audited research, and the page says so. Austin Energy rebate caps and funding change, so re-verify before publishing them anywhere public.
+- Content lives in the `SECTIONS` and `BUILD_ORDER` arrays at the top of the second script block.
+
 ## Meta Tags
 - OpenGraph/Twitter cards ready
 - Keywords target Austin active listening search

@@ -1,0 +1,1173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Wired Wright: Landing Page Content Builder</title>
+<meta name="description" content="Answer 28 questions and export a ready-to-build content brief for the Wired Wright electrical landing page, serving the greater Austin area." />
+<meta name="robots" content="noindex, nofollow" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --blue-900: #07254a;
+    --blue-800: #0a3d7a;
+    --blue-700: #0b5cab;
+    --blue-600: #1471c9;
+    --blue-500: #2f8ce0;
+    --blue-200: #a8cdf0;
+    --blue-100: #dbeafb;
+    --blue-050: #f1f7fe;
+    --white: #ffffff;
+    --ink: #0d2136;
+    --ink-soft: #4a6480;
+    --ink-faint: #7e93a8;
+    --line: #d9e6f5;
+    --shadow: 0 1px 2px rgba(7,37,74,.06), 0 8px 24px rgba(7,37,74,.06);
+    --font: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  }
+  html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+  body { font-family: var(--font); background: var(--white); color: var(--ink); line-height: 1.6; font-size: 16px; -webkit-font-smoothing: antialiased; }
+  a { color: var(--blue-700); }
+  .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
+
+  /* ---------- hero ---------- */
+  header.hero { position: relative; background: linear-gradient(180deg, #f6fbff 0%, #ffffff 72%); border-bottom: 1px solid var(--line); overflow: hidden; }
+  .hero-inner { max-width: 1080px; margin: 0 auto; padding: 1.6rem 1.25rem 2.2rem; }
+  .brandbar { display: flex; align-items: center; justify-content: space-between; gap: 1rem; flex-wrap: wrap; }
+  .brandbar .mark { display: flex; align-items: center; gap: .55rem; font-weight: 600; letter-spacing: -.01em; color: var(--blue-800); }
+  .bolt { width: 22px; height: 22px; display: block; }
+  .brandbar .meta { font-size: .78rem; color: var(--ink-faint); letter-spacing: .04em; text-transform: uppercase; }
+  #plugStage { position: relative; height: clamp(230px, 34vw, 380px); margin-top: .4rem; }
+  #plugCanvas { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
+  #plugFallback { position: absolute; inset: 0; display: none; flex-direction: column; align-items: center; justify-content: center; text-align: center; }
+  #plugFallback.on { display: flex; }
+  #plugFallback span { display: block; font-size: clamp(2.4rem, 9vw, 5rem); font-weight: 700; letter-spacing: -.04em; line-height: .96; color: var(--blue-800); }
+  #plugFallback span.second { color: var(--blue-600); }
+  .hero-copy { text-align: center; max-width: 620px; margin: .4rem auto 0; }
+  .hero-copy p { color: var(--ink-soft); font-size: 1.02rem; }
+  .hero-copy .kicker { font-size: .74rem; letter-spacing: .16em; text-transform: uppercase; color: var(--blue-600); font-weight: 600; margin-bottom: .5rem; }
+  .hero-stats { display: flex; flex-wrap: wrap; justify-content: center; gap: .5rem; margin-top: 1.3rem; }
+  .pill { background: var(--blue-050); border: 1px solid var(--blue-100); color: var(--blue-800); border-radius: 999px; padding: .38rem .85rem; font-size: .8rem; font-weight: 500; }
+
+  /* ---------- layout ---------- */
+  main { max-width: 1080px; margin: 0 auto; padding: 0 1.25rem 5rem; }
+  .progress-wrap { position: sticky; top: 0; z-index: 30; background: rgba(255,255,255,.93); backdrop-filter: blur(10px); border-bottom: 1px solid var(--line); margin: 0 -1.25rem 2.2rem; padding: .7rem 1.25rem; }
+  .progress-row { max-width: 1080px; margin: 0 auto; display: flex; align-items: center; gap: .9rem; }
+  .bar { flex: 1; height: 6px; background: var(--blue-100); border-radius: 999px; overflow: hidden; }
+  .bar > i { display: block; height: 100%; width: 0%; background: linear-gradient(90deg, var(--blue-600), var(--blue-800)); transition: width .35s ease; }
+  .progress-row .count { font-size: .82rem; color: var(--ink-soft); font-variant-numeric: tabular-nums; white-space: nowrap; }
+  .progress-row .jump { font-size: .82rem; }
+  .progress-row select { font-family: var(--font); font-size: .82rem; color: var(--blue-800); background: var(--white); border: 1px solid var(--line); border-radius: 7px; padding: .3rem .5rem; max-width: 42vw; }
+
+  section.block { margin-bottom: 3.2rem; scroll-margin-top: 72px; }
+  .block-head { border-left: 3px solid var(--blue-600); padding-left: .9rem; margin-bottom: 1.4rem; }
+  .block-head h2 { font-size: 1.35rem; font-weight: 600; letter-spacing: -.02em; color: var(--blue-900); }
+  .block-head p { font-size: .92rem; color: var(--ink-soft); margin-top: .25rem; }
+  .block-head .idx { font-size: .72rem; letter-spacing: .14em; text-transform: uppercase; color: var(--blue-600); font-weight: 600; }
+
+  /* ---------- question card ---------- */
+  .card { scroll-margin-top: 78px; border: 1px solid var(--line); border-radius: 14px; background: var(--white); box-shadow: var(--shadow); padding: 1.15rem 1.15rem 1rem; margin-bottom: 1.1rem; }
+  .card.answered { border-color: var(--blue-200); background: linear-gradient(180deg, #fbfdff 0%, #ffffff 40%); }
+  .qrow { display: flex; gap: .7rem; align-items: flex-start; }
+  .avatar { flex: 0 0 auto; width: 30px; height: 30px; border-radius: 9px; background: var(--blue-700); color: #fff; display: grid; place-items: center; font-size: .72rem; font-weight: 600; }
+  .bubble { background: var(--blue-050); border: 1px solid var(--blue-100); border-radius: 4px 12px 12px 12px; padding: .7rem .9rem; max-width: 100%; }
+  .bubble h3 { font-size: 1rem; font-weight: 600; color: var(--blue-900); line-height: 1.4; }
+  .why { font-size: .84rem; color: var(--ink-soft); margin-top: .45rem; }
+  .why b { color: var(--blue-800); font-weight: 600; }
+  .why .src { color: var(--ink-faint); font-style: normal; }
+
+  .chips { display: flex; flex-wrap: wrap; gap: .45rem; margin: .85rem 0 .1rem 2.3rem; }
+  .chips .lbl { width: 100%; font-size: .72rem; letter-spacing: .1em; text-transform: uppercase; color: var(--ink-faint); font-weight: 600; margin-bottom: .1rem; }
+  .chip { font-family: var(--font); font-size: .82rem; line-height: 1.35; text-align: left; color: var(--blue-800); background: var(--white); border: 1px solid var(--blue-200); border-radius: 9px; padding: .42rem .7rem; cursor: pointer; transition: background .15s, border-color .15s, transform .1s; }
+  .chip:hover { background: var(--blue-050); border-color: var(--blue-500); }
+  .chip:active { transform: translateY(1px); }
+
+  .thread { margin: .9rem 0 0 2.3rem; display: flex; flex-direction: column; gap: .5rem; }
+  .msg { align-self: flex-end; max-width: 92%; background: var(--blue-700); color: #fff; border-radius: 12px 4px 12px 12px; padding: .6rem .8rem; font-size: .93rem; white-space: pre-wrap; word-break: break-word; }
+  .msg .tools { display: flex; gap: .7rem; justify-content: flex-end; margin-top: .4rem; }
+  .msg button { background: none; border: none; color: rgba(255,255,255,.82); font-family: var(--font); font-size: .74rem; cursor: pointer; padding: 0; text-decoration: underline; }
+  .msg button:hover { color: #fff; }
+
+  .composer { margin: .8rem 0 0 2.3rem; border: 1px solid var(--line); border-radius: 12px; background: var(--white); padding: .55rem .6rem .5rem; transition: border-color .15s, box-shadow .15s; }
+  .composer:focus-within { border-color: var(--blue-500); box-shadow: 0 0 0 3px rgba(47,140,224,.15); }
+  .composer textarea { width: 100%; border: none; outline: none; resize: vertical; min-height: 62px; font-family: var(--font); font-size: .95rem; color: var(--ink); line-height: 1.55; background: transparent; }
+  .composer textarea::placeholder { color: var(--ink-faint); }
+  .composer-row { display: flex; align-items: center; justify-content: space-between; gap: .6rem; padding-top: .35rem; }
+  .hint { font-size: .74rem; color: var(--ink-faint); }
+  .btn { font-family: var(--font); font-weight: 500; font-size: .87rem; border-radius: 8px; border: 1px solid transparent; cursor: pointer; padding: .48rem 1rem; transition: background .15s, color .15s, border-color .15s; }
+  .btn-primary { background: var(--blue-700); color: #fff; }
+  .btn-primary:hover { background: var(--blue-800); }
+  .btn-ghost { background: var(--white); color: var(--blue-800); border-color: var(--blue-200); }
+  .btn-ghost:hover { background: var(--blue-050); }
+  .btn-quiet { background: transparent; color: var(--ink-faint); border-color: var(--line); }
+  .btn-quiet:hover { color: var(--blue-800); border-color: var(--blue-200); }
+  .btn[disabled] { opacity: .45; cursor: not-allowed; }
+
+  /* ---------- export ---------- */
+  #export { border: 1px solid var(--blue-200); border-radius: 16px; background: linear-gradient(180deg, var(--blue-050) 0%, #ffffff 55%); padding: 1.5rem 1.25rem; }
+  #export h2 { font-size: 1.3rem; font-weight: 600; color: var(--blue-900); letter-spacing: -.02em; }
+  #export p.lede { color: var(--ink-soft); font-size: .93rem; margin-top: .35rem; max-width: 60ch; }
+  .export-actions { display: flex; flex-wrap: wrap; gap: .6rem; margin: 1.1rem 0 .2rem; align-items: center; }
+  #status { font-size: .82rem; color: var(--blue-700); min-height: 1.2em; }
+  details.preview { margin-top: 1rem; }
+  details.preview summary { cursor: pointer; font-size: .87rem; color: var(--blue-700); font-weight: 500; }
+  pre#previewBox { margin-top: .7rem; background: #082444; color: #dbeafb; border-radius: 10px; padding: 1rem; overflow: auto; max-height: 420px; font-size: .78rem; line-height: 1.55; white-space: pre-wrap; word-break: break-word; }
+
+  .sources { margin-top: 2.6rem; border-top: 1px solid var(--line); padding-top: 1.4rem; }
+  .sources h2 { font-size: 1.05rem; font-weight: 600; color: var(--blue-900); margin-bottom: .5rem; }
+  .sources p { font-size: .86rem; color: var(--ink-soft); max-width: 72ch; }
+  .sources ul { margin: .7rem 0 0 1.1rem; font-size: .85rem; color: var(--ink-soft); }
+  .sources li { margin-bottom: .3rem; }
+  footer.foot { text-align: center; font-size: .78rem; color: var(--ink-faint); padding: 2.4rem 1rem 3rem; }
+
+  @media (max-width: 620px) {
+    .chips, .thread, .composer { margin-left: 0; }
+    .card { padding: 1rem .85rem .9rem; }
+    .progress-row .jump { display: none; }
+  }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .bar > i { transition: none; } }
+</style>
+</head>
+<body>
+<header class="hero">
+  <div class="hero-inner">
+    <div class="brandbar">
+      <div class="mark">
+        <svg class="bolt" viewBox="0 0 24 24" aria-hidden="true"><path d="M13 2 4 14h6l-1 8 9-12h-6l1-8z" fill="#0b5cab"/></svg>
+        Wired Wright
+      </div>
+      <div class="meta">Greater Austin · Content Builder</div>
+    </div>
+
+    <h1 class="sr-only">Wired Wright: landing page content builder for a greater-Austin electrical contractor</h1>
+
+    <div id="plugStage">
+      <canvas id="plugCanvas" aria-hidden="true"></canvas>
+      <div id="plugFallback" aria-hidden="true"><span>WIRED</span><span class="second">WRIGHT</span></div>
+    </div>
+
+    <div class="hero-copy">
+      <p class="kicker">Answer once, export the whole page</p>
+      <p>Twenty-eight questions, each one tied to something that measurably moves the needle on electrical-service landing pages. Pick a suggested answer, edit it in your own words, then export the brief as Markdown for whoever builds the site.</p>
+      <div class="hero-stats">
+        <span class="pill">Dedicated pages convert 5–15% vs 1–3% for a homepage</span>
+        <span class="pill">74% of electrical traffic is mobile</span>
+        <span class="pill">License badge specificity: +14%</span>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main>
+  <div class="progress-wrap">
+    <div class="progress-row">
+      <div class="bar"><i id="barFill"></i></div>
+      <div class="count"><span id="countNow">0</span>/<span id="countAll">28</span> answered</div>
+      <div class="jump"><label class="sr-only" for="jumpTo">Jump to section</label>
+        <select id="jumpTo"><option value="">Jump to…</option></select>
+      </div>
+    </div>
+  </div>
+
+  <div id="blocks"></div>
+
+  <section id="export" class="block">
+    <h2>Export the brief</h2>
+    <p class="lede">Everything you typed stays in this browser. Nothing is uploaded. The Markdown file carries your answers, the research note behind each question, and a build order for the page.</p>
+    <div class="export-actions">
+      <button class="btn btn-primary" id="btnDownload" type="button">Download Markdown</button>
+      <button class="btn btn-ghost" id="btnCopy" type="button">Copy to clipboard</button>
+      <button class="btn btn-quiet" id="btnClear" type="button">Clear all answers</button>
+      <span id="status" role="status" aria-live="polite"></span>
+    </div>
+    <details class="preview">
+      <summary>Preview the Markdown</summary>
+      <pre id="previewBox"></pre>
+    </details>
+  </section>
+
+  <section class="sources">
+    <h2>Where the numbers come from</h2>
+    <p>Every conversion figure quoted on this page comes from marketing-agency or vendor blogs, not peer-reviewed research or independently audited data. Treat them as directional, not settled. The Austin Energy rebate and permit terms come from Austin Energy's own program pages and should be re-checked before you print them on a website, because program funding and caps change.</p>
+    <ul>
+      <li><a href="https://www.webtonic.io/blog/electrical-services-landing-page-statistics" target="_blank" rel="noopener">Web Tonic, electrical landing page statistics</a>: master-electrician badge +14%, 74% mobile, sticky click-to-call +15–25%, authentic hero photo +10–18%, form-field guidance.</li>
+      <li><a href="https://builtrightdigital.com/electrician-web-design-guide/" target="_blank" rel="noopener">BuiltRight Digital, electrician web design guide</a>: TECL number in header, footer and every service page; 2024 audit of 1,200+ electrician sites found 56% hide license numbers.</li>
+      <li><a href="https://pipelineon.com/blog/contractor-website-trust-signals/" target="_blank" rel="noopener">Pipeline On, contractor website trust signals</a>: trust strip inside the first 600 pixels.</li>
+      <li><a href="https://resultcalls.com/blog/electrician-landing-pages-complete-guide-to-converting-more-leads" target="_blank" rel="noopener">ResultCalls, electrician landing pages</a> and <a href="https://www.servicetitan.com/blog/electrician-landing-page-tips" target="_blank" rel="noopener">ServiceTitan, nine landing page tips</a>: dedicated page 5–15% vs homepage 1–3%; CTA wording.</li>
+      <li><a href="https://www.scorpion.co/electrical/insights/blog/verticals/electrical/how-to-design-a-high-converting-electrician-webs/" target="_blank" rel="noopener">Scorpion, electrician website design</a>: 68% of home-service customers hire whoever responds first.</li>
+      <li><a href="https://austinenergy.com/green-power/plug-in-austin/home-charging" target="_blank" rel="noopener">Austin Energy, home EV charger rebate</a>: 50% of charger plus labor, up to $1,200 (OCPP smart charger) or $900, licensed electrician and City of Austin permit and inspection required for hardwired units.</li>
+      <li><a href="https://evchargeright.com/blog/texas-ev-charger-installation" target="_blank" rel="noopener">ChargeRight, citing J.D. Power</a>: 28% of EV owners actually needed panel work, while 65% were told they did.</li>
+      <li><a href="https://www.rankplanners.com/blog/google-business-profile-guide-for-home-services" target="_blank" rel="noopener">Rank Planners, Google Business Profile guide</a>: top-ranking local businesses average roughly 47 reviews; review volume often beats a perfect rating.</li>
+    </ul>
+  </section>
+</main>
+
+<footer class="foot">
+  Wired Wright content builder · v1.0 · Answers autosave to this browser only
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" onerror="window.__noThree=true"></script>
+<script>
+/* ============================================================
+   Wired Wright: landing page content builder
+   Sections mirror the order a visitor actually reads the page.
+   ============================================================ */
+
+const SECTIONS = [
+  {
+    id: 'hero',
+    title: 'The first screen',
+    blurb: 'Most visitors decide here. On mobile, this is often the only screen they see before they call or leave.',
+    questions: [
+      {
+        id: 'h1',
+        q: 'What single sentence does a homeowner read first?',
+        why: 'The headline has to name the job and the place. Generic headlines ("Quality electrical service") give a visitor nothing to match against the search they just typed.',
+        ph: 'Example: Licensed Austin electricians, same-day panel repairs and EV charger installs.',
+        chips: [
+          'Licensed Austin electricians, same-day service from Round Rock to Buda.',
+          'Panel upgrades, EV chargers and rewires, done right the first time in greater Austin.',
+          'Your Austin master electrician for panels, EV charging and whole-home rewires.',
+          'Breaker tripping? Lights flickering? An Austin master electrician can be out today.'
+        ]
+      },
+      {
+        id: 'h2',
+        q: 'Which cities and suburbs do you actually drive to, and which do you not?',
+        why: 'A named service-area line beats "Austin and surrounding areas." It also stops you from paying for clicks in towns you will not drive to.',
+        ph: 'Example: Austin, Round Rock, Pflugerville, Cedar Park, Leander, Georgetown, Kyle, Buda, Lakeway, Dripping Springs. Not San Marcos or Bastrop.',
+        chips: [
+          'Austin, Round Rock, Pflugerville, Cedar Park, Leander, Georgetown, Hutto.',
+          'South: Kyle, Buda, Manchaca, Sunset Valley, Del Valle.',
+          'West: Lakeway, Bee Cave, West Lake Hills, Dripping Springs, Spicewood.',
+          'Anything inside a 35-minute drive of 78704; outside that, we quote a trip charge first.'
+        ]
+      },
+      {
+        id: 'h3',
+        q: 'What is the primary call-to-action, word for word, and which number does it ring?',
+        why: 'On mobile, a sticky tap-to-call header is the single highest-leverage layout change vendors report (Web Tonic puts it at a 15–25% lift). Pick one action and repeat it; two competing buttons split attention.',
+        ph: 'Example: Call (512) 555-0134, rings my cell directly, 7am to 7pm.',
+        chips: [
+          'Call (512) ___-____ . It rings my cell, seven days a week.',
+          'Text a photo of your panel to (512) ___-____ for a same-day ballpark.',
+          'Book an estimate online. I confirm by text within the hour.',
+          'Call now for same-day service; the form is the backup for after hours.'
+        ]
+      },
+      {
+        id: 'h4',
+        q: 'How fast do you really answer, and how fast can you be at the door?',
+        why: 'Scorpion reports 68% of home-service customers hire whoever responds first. Only publish a promise you will keep on a bad Friday.',
+        ph: 'Example: Calls answered live 7am–7pm; missed calls returned inside 15 minutes; most jobs scheduled same or next day.',
+        chips: [
+          'I answer the phone myself during business hours. No dispatch queue.',
+          'Missed calls returned within 15 minutes, every time.',
+          'Same-day appointments on most weekdays; next-morning otherwise.',
+          'Two-hour arrival windows, and I text when I am on the way.'
+        ]
+      },
+      {
+        id: 'h5',
+        q: 'Which real photo sits behind the headline?',
+        why: 'Vendors report a 10–18% lift from an authentic job photo over stock imagery. A clean panel install or a before/after shot outperforms a smiling model with a toolbelt.',
+        ph: 'Example: Before/after of the 1978 Zilker panel swap, plus me on the ladder at the Mueller job.',
+        chips: [
+          'Before/after of a rebuilt breaker panel, shot on the job.',
+          'Me in a branded shirt at a customer doorway, truck visible behind.',
+          'A finished Tesla Wall Connector install in a real Austin garage.',
+          'Wide shot of the truck with the Austin skyline or a recognizable local street.'
+        ]
+      }
+    ]
+  },
+  {
+    id: 'trust',
+    title: 'The trust strip',
+    blurb: 'A horizontal band of credentials directly under the headline, inside the first 600 pixels. This is where hesitant homeowners decide you are not a handyman with a van.',
+    questions: [
+      {
+        id: 't1',
+        q: 'What is your TECL number, and who holds the master license behind it?',
+        why: 'A 2024 audit of 1,200+ electrician sites found 56% hide their license number. Naming "Licensed Master Electrician" with the actual number reportedly outperforms a generic "licensed and insured" badge by 14%. It belongs in the header, the footer, and every service section.',
+        ph: 'Example: TECL #_____ , master electrician [name], license #_____ , held since 20__.',
+        chips: [
+          'TECL #_____ , master electrician on every job, not a helper with a phone.',
+          'Texas TDLR master license #_____ , verifiable at tdlr.texas.gov.',
+          'Licensed since 20__ , TECL #_____ , printed on every invoice and permit.'
+        ]
+      },
+      {
+        id: 't2',
+        q: 'What insurance and bonding do you carry, with real numbers?',
+        why: '"Insured" is a word; "$1M general liability, certificate on request" is a fact. Homeowners letting a stranger into the panel are buying down risk.',
+        ph: 'Example: $1M general liability, $500k workers comp, certificate emailed on request.',
+        chips: [
+          '$1M general liability, certificate emailed before we start.',
+          'Fully bonded and insured; workers comp covers everyone on site.',
+          'Named-insured certificates provided for HOA and property-manager jobs.'
+        ]
+      },
+      {
+        id: 't3',
+        q: 'How long have you been in the trade, and how long in Austin specifically?',
+        why: 'Local tenure answers the unspoken question: will you still be here when the warranty matters. Austin-specific years beat generic experience.',
+        ph: 'Example: 14 years in the trade, 9 of them in Austin; grew up in Del Valle.',
+        chips: [
+          '__ years in the trade, __ of them working Austin homes.',
+          'Austin resident since ____ . I live in the same neighborhoods I work in.',
+          'Trained on Central Texas housing stock: 1950s knob-and-tube through 2020s smart panels.'
+        ]
+      },
+      {
+        id: 't4',
+        q: 'What is your review count and rating, and on which platform?',
+        why: 'Volume usually beats a perfect score. Top-ranking local businesses average around 47 Google reviews; 200 reviews at 4.6 tends to outrank 30 at 5.0. Put the real count on the page and link it.',
+        ph: 'Example: 4.9 from 63 Google reviews; also on Nextdoor and Angi.',
+        chips: [
+          '__ Google reviews at _._ stars, linked straight to the profile.',
+          'Nextdoor neighborhood favorite in ____ and ____ .',
+          'Fewer than 20 reviews so far, so lead with named customer quotes instead of a count.'
+        ]
+      }
+    ]
+  },
+  {
+    id: 'services',
+    title: 'Services, priced by demand',
+    blurb: 'Three featured services, not twelve. Austin-specific work earns its own block.',
+    questions: [
+      {
+        id: 's1',
+        q: 'Which three services make you the most money per hour on site?',
+        why: 'The page should sell what you want more of, not list everything you can do. Everything else goes in a compact "also" line.',
+        ph: 'Example: Panel upgrades, EV charger installs, whole-home rewires. Also: fans, fixtures, surge protection.',
+        chips: [
+          'Panel and service upgrades (100A to 200A).',
+          'Level 2 EV charger and Tesla Wall Connector installs.',
+          'Whole-home rewires and aluminum-wiring remediation.',
+          'Generator and battery backup interlocks after the 2021 and 2023 outages.'
+        ]
+      },
+      {
+        id: 's2',
+        q: 'How do you handle the Austin Energy EV charger rebate for customers?',
+        why: 'Austin Energy pays 50% of charger plus labor, up to $1,200 for an OCPP smart charger and $900 otherwise, but only with a licensed electrician and, for hardwired units, a City of Austin permit and inspection. Saying you handle the paperwork is a real differentiator. Verify current caps and funding before publishing them.',
+        ph: 'Example: I pull the permit, schedule inspection, and hand you the completed rebate packet.',
+        chips: [
+          'I pull the City of Austin permit and schedule the inspection. The rebate depends on it.',
+          'I fill out the Austin Energy rebate application with you and send the required documents.',
+          'I only install OCPP-compatible chargers so you qualify for the higher rebate tier.',
+          'Rebate terms and funding change, so I confirm what is available the week of your install.'
+        ]
+      },
+      {
+        id: 's3',
+        q: 'When does a customer actually need a panel upgrade, and when do they not?',
+        why: 'J.D. Power found 28% of EV owners genuinely needed panel work while 65% were told they did. Saying plainly when an upgrade is unnecessary is a trust play that most competitors will not make.',
+        ph: 'Example: Most post-2000 Austin homes have 200A and need nothing. Pre-1990 100A panels with a 48A charger usually do.',
+        chips: [
+          'Most Austin homes built after 2000 already have 200A service and need no upgrade.',
+          'I run a load calculation before quoting an upgrade, and tell you when it comes back fine.',
+          'Load management devices can avoid a full upgrade on a 100A panel.',
+          'Federal Pacific, Zinsco and Challenger panels get replaced regardless. That is safety, not capacity.'
+        ]
+      },
+      {
+        id: 's4',
+        q: 'Do you take genuine after-hours emergencies, and what does that cost?',
+        why: 'Emergency traffic converts fast but punishes anyone who advertises 24/7 and does not pick up. If the answer is no, say "next morning" and keep the trust.',
+        ph: 'Example: Live calls until 9pm; true no-power emergencies 24/7 at a $__ after-hours rate.',
+        chips: [
+          '24/7 for no-power, burning smell, or sparking, at a flat $___ after-hours call fee.',
+          'Evenings and weekends by appointment; no midnight calls.',
+          'No after-hours work. First slot next morning, and I say so on the phone.'
+        ]
+      },
+      {
+        id: 's5',
+        q: 'What do you refuse to do?',
+        why: 'Naming the work you decline filters out bad leads before they cost you a drive across town.',
+        ph: 'Example: No new construction, no commercial tenant build-outs, no mobile homes.',
+        chips: [
+          'Residential only. No commercial build-outs.',
+          'No new construction; service, repair and upgrades only.',
+          'No solar arrays, but I do the panel work your solar installer needs.',
+          'No work on properties I cannot permit legally.'
+        ]
+      }
+    ]
+  },
+  {
+    id: 'proof',
+    title: 'Proof',
+    blurb: 'Specifics a competitor cannot copy: your jobs, your customers, your neighborhoods.',
+    questions: [
+      {
+        id: 'p1',
+        q: 'Tell the story of one recent job, start to finish.',
+        why: 'One concrete story with a neighborhood, a problem and a number does more than a page of adjectives. This becomes the case-study block.',
+        ph: 'Example: 1962 Travis Heights house, cloth wiring, half the kitchen dead. Rewired kitchen and dining circuits in two days for $____ , passed inspection first try.',
+        chips: [
+          'A panel replacement on a 1970s house where the old breakers had been double-tapped for years.',
+          'An EV charger install where the customer had been quoted a full panel upgrade they did not need.',
+          'A flickering-lights call that turned out to be a failing utility neutral, found in 20 minutes.',
+          'A post-storm repair after the ice storm knocked the weatherhead off the roof.'
+        ]
+      },
+      {
+        id: 'p2',
+        q: 'What is the best thing a customer has said about you, in their words?',
+        why: 'Verbatim quotes with a first name and a neighborhood read as real. Paraphrased praise reads as marketing.',
+        ph: 'Example: "He found in ten minutes what two other electricians missed." (Dana R., Crestview)',
+        chips: [
+          'Quote about showing up when he said he would.',
+          'Quote about explaining the problem without talking down.',
+          'Quote about the price matching the estimate exactly.',
+          'Quote about turning down unnecessary work.'
+        ]
+      },
+      {
+        id: 'p3',
+        q: 'Which photos can you actually shoot or pull this week?',
+        why: 'The page cannot launch on stock photography. List what exists today so the build is not blocked on a photoshoot.',
+        ph: 'Example: 4 panel before/afters on my phone, 2 EV installs, truck photo. Need: a headshot.',
+        chips: [
+          'Before/after panel photos already on my phone.',
+          'Finished EV charger installs in customer garages (with permission).',
+          'A headshot in a work shirt, shot outside on a clear day.',
+          'The truck and trailer with signage visible.'
+        ]
+      }
+    ]
+  },
+  {
+    id: 'offer',
+    title: 'Price, guarantee, and the form',
+    blurb: 'The questions people will not ask on the phone but will bounce over.',
+    questions: [
+      {
+        id: 'o1',
+        q: 'Flat-rate or hourly, and do you publish any numbers?',
+        why: 'Contractors who publish a starting range filter out the price-shocked before the drive. Texas electricians commonly run $100–$150/hr; a "from $___" line costs you nothing and buys credibility.',
+        ph: 'Example: Flat-rate by job; panel upgrades from $____ , EV charger installs from $____ .',
+        chips: [
+          'Flat-rate quotes. The price I give is the price you pay.',
+          'Hourly at $___ with a one-hour minimum, materials at cost plus __%.',
+          'Panel upgrades from $_____ ; EV charger installs from $_____ .',
+          'Free estimates for anything over $500 of work.'
+        ]
+      },
+      {
+        id: 'o2',
+        q: 'Do you charge a diagnostic or trip fee, and do you say so up front?',
+        why: 'A surprise trip fee at the door produces one-star reviews. Disclosing it on the page costs a few calls and saves the reviews.',
+        ph: 'Example: $__ diagnostic, waived if you hire me that day.',
+        chips: [
+          '$__ diagnostic fee, credited toward the repair if you move forward.',
+          'No trip fee inside the core service area.',
+          '$__ trip charge beyond ___ miles, quoted before I dispatch.'
+        ]
+      },
+      {
+        id: 'o3',
+        q: 'What payment and financing options do you take?',
+        why: 'Panel upgrades and rewires are four-figure jobs. Financing or card payment removes the stall that turns into "let me think about it."',
+        ph: 'Example: Card, ACH, Zelle. Financing through ____ for jobs over $2,500.',
+        chips: [
+          'All major cards, ACH and check.',
+          'Financing available on jobs over $____ through ____ .',
+          'Half down, balance on inspection sign-off.'
+        ]
+      },
+      {
+        id: 'o4',
+        q: 'What exactly does your warranty cover, and for how long?',
+        why: 'A specific warranty ("2 years on labor, manufacturer on parts") is a differentiator. "Satisfaction guaranteed" is noise.',
+        ph: 'Example: 2 years labor, manufacturer warranty on parts, free re-inspection if the city flags anything.',
+        chips: [
+          '__ years on labor; manufacturer warranty on all parts.',
+          'If the city fails the inspection, I fix it free and re-schedule.',
+          'Lifetime workmanship warranty on panel installs.'
+        ]
+      },
+      {
+        id: 'o5',
+        q: 'What does the contact form ask for?',
+        why: 'Vendors put the ideal contractor form at four fields: name, phone, service type, urgency. Address and job detail belong on the follow-up call. Multi-step forms reportedly abandon worst, and contractor form abandonment already runs 60–70%.',
+        ph: 'Example: Name, mobile, service type dropdown, urgency (today / this week / planning).',
+        chips: [
+          'Name, phone, service type, urgency. Four fields, nothing else.',
+          'Add one optional "anything else?" box, not required.',
+          'Photo upload for panel shots, optional.',
+          'No email field. I call or text back.'
+        ]
+      }
+    ]
+  },
+  {
+    id: 'faq',
+    title: 'Objections and FAQ',
+    blurb: 'Write down what you already say on the phone ten times a week. That is the FAQ.',
+    questions: [
+      {
+        id: 'f1',
+        q: 'What are the five questions you get asked before every job?',
+        why: 'These are the real objections. Answering them on the page shortens the call and gives search engines quotable passages.',
+        ph: 'Example: How much? How soon? Do I need a permit? Will my power be off? Do you do the rebate paperwork?',
+        chips: [
+          '"How much is a panel upgrade in Austin?"',
+          '"How long will my power be off?"',
+          '"Do I need a permit for this?"',
+          '"Can you do it this week?"'
+        ]
+      },
+      {
+        id: 'f2',
+        q: 'Who pulls permits and schedules inspections, you or the homeowner?',
+        why: 'Austin requires permits and inspections for panel work and hardwired EV chargers, and the Austin Energy rebate dies without them. Homeowners are afraid of the process; taking it off their plate sells.',
+        ph: 'Example: I pull every permit in my name and meet the inspector. You do nothing.',
+        chips: [
+          'I pull every permit in my name and meet the inspector on site.',
+          'Permit fees are itemized at cost on your invoice, not marked up.',
+          'I handle the Austin Energy coordination for any service change or disconnect.'
+        ]
+      },
+      {
+        id: 'f3',
+        q: 'Why do people pick a competitor over you, and what is your honest answer?',
+        why: 'The strongest objection block answers the real reason, not the flattering one. If you are more expensive, say why in one line.',
+        ph: 'Example: I am rarely the cheapest bid. I am the one who pulls the permit and passes inspection first try.',
+        chips: [
+          'Price. I am not the cheapest, and here is what the difference buys.',
+          'Availability. Bigger shops have more trucks; I have one and I show up myself.',
+          'They found a handyman. Unpermitted panel work can void a homeowner policy.'
+        ]
+      }
+    ]
+  },
+  {
+    id: 'local',
+    title: 'Footer and local search',
+    blurb: 'The details that make Google trust the page and match it to the Business Profile.',
+    questions: [
+      {
+        id: 'l1',
+        q: 'What is your business name, address and phone, character for character as it appears on Google?',
+        why: 'Google now requires each Business Profile location to link to a unique, working landing page, and it weighs that page when ranking. Any mismatch between the profile and the footer costs you.',
+        ph: 'Example: Wired Wright Electric LLC, 1234 S Congress Ave Ste B, Austin TX 78704, (512) 555-0134.',
+        chips: [
+          'Full legal business name including LLC.',
+          'Service-area business, no street address shown, city list instead.',
+          'Physical shop address that matches the Google profile exactly.'
+        ]
+      },
+      {
+        id: 'l2',
+        q: 'Which neighborhoods and landmarks should the page name?',
+        why: 'Named neighborhoods give local search something to match and give a reader the "he works on my street" signal. Ten real ones beat a keyword list of fifty.',
+        ph: 'Example: Zilker, Travis Heights, Crestview, Mueller, Circle C, Steiner Ranch, Hyde Park.',
+        chips: [
+          'Central: Hyde Park, Crestview, Zilker, Travis Heights, Mueller, Cherrywood.',
+          'North: Round Rock, Cedar Park, Wells Branch, Brushy Creek, Avery Ranch.',
+          'South/Southwest: Circle C, Shady Hollow, Oak Hill, Buda, Kyle.',
+          'West: Steiner Ranch, Lakeway, Bee Cave, West Lake Hills.'
+        ]
+      },
+      {
+        id: 'l3',
+        q: 'What are your published hours, and what goes on the footer license line?',
+        why: 'Hours that match the Business Profile, plus the license number repeated in the footer, close the loop on the trust strip at the top.',
+        ph: 'Example: Mon–Sat 7am–7pm; emergency line 24/7. Footer: Wired Wright Electric · TECL #_____ · Licensed & Insured · Austin, TX',
+        chips: [
+          'Mon–Fri 7am–6pm, Sat by appointment.',
+          'Seven days, 7am–9pm, emergencies anytime.',
+          'Footer line: TECL #_____ · Licensed & Insured · Serving greater Austin since 20__ .'
+        ]
+      }
+    ]
+  }
+];
+
+const BUILD_ORDER = [
+  'Sticky header: logo, TECL number, tap-to-call button (mobile-first).',
+  'Hero: headline, service-area line, one primary CTA, real job photo.',
+  'Trust strip inside the first 600px: license number, insurance, review count, response promise, local badge.',
+  'Three featured services with an Austin-specific block for EV charging and panel work.',
+  'Proof: one case study, two verbatim reviews with names and neighborhoods, real photos.',
+  'Offer: pricing posture, diagnostic fee, financing, warranty.',
+  'Four-field form: name, phone, service type, urgency.',
+  'FAQ answering the five phone questions, permits included.',
+  'Footer: NAP matching Google exactly, neighborhoods, hours, license line repeated.'
+];
+</script>
+
+<script>
+/* ---------- state ---------- */
+const STORE_KEY = 'wiredwright-content-v1';
+const ALL_Q = SECTIONS.flatMap(s => s.questions.map(q => ({ ...q, section: s.title, sectionId: s.id })));
+let state = load();
+
+function load() {
+  try {
+    const raw = localStorage.getItem(STORE_KEY);
+    if (!raw) return { answers: {}, drafts: {} };
+    const parsed = JSON.parse(raw);
+    return { answers: parsed.answers || {}, drafts: parsed.drafts || {} };
+  } catch (e) { return { answers: {}, drafts: {} }; }
+}
+function save() {
+  try { localStorage.setItem(STORE_KEY, JSON.stringify(state)); } catch (e) { /* private mode */ }
+}
+function answersFor(id) { return state.answers[id] || []; }
+
+/* ---------- render ---------- */
+const blocksEl = document.getElementById('blocks');
+const jumpEl = document.getElementById('jumpTo');
+
+function esc(s) {
+  return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+}
+
+function build() {
+  SECTIONS.forEach((sec, si) => {
+    const section = document.createElement('section');
+    section.className = 'block';
+    section.id = 'sec-' + sec.id;
+    section.innerHTML =
+      '<div class="block-head">' +
+        '<div class="idx">Part ' + (si + 1) + '</div>' +
+        '<h2>' + esc(sec.title) + '</h2>' +
+        '<p>' + esc(sec.blurb) + '</p>' +
+      '</div>';
+
+    sec.questions.forEach(q => {
+      const card = document.createElement('article');
+      card.className = 'card';
+      card.id = 'q-' + q.id;
+      card.innerHTML =
+        '<div class="qrow">' +
+          '<div class="avatar" aria-hidden="true">WW</div>' +
+          '<div class="bubble">' +
+            '<h3>' + esc(q.q) + '</h3>' +
+            '<p class="why">' + esc(q.why) + '</p>' +
+          '</div>' +
+        '</div>' +
+        '<div class="chips"><span class="lbl">Recommended answers: tap to load, then edit</span></div>' +
+        '<div class="thread" id="thread-' + q.id + '"></div>' +
+        '<div class="composer">' +
+          '<label class="sr-only" for="ta-' + q.id + '">Your answer</label>' +
+          '<textarea id="ta-' + q.id + '" placeholder="' + esc(q.ph) + '"></textarea>' +
+          '<div class="composer-row">' +
+            '<span class="hint">Ctrl/Cmd + Enter to save</span>' +
+            '<button class="btn btn-primary" type="button" data-send="' + q.id + '">Save answer</button>' +
+          '</div>' +
+        '</div>';
+
+      const chipWrap = card.querySelector('.chips');
+      q.chips.forEach(text => {
+        const b = document.createElement('button');
+        b.type = 'button';
+        b.className = 'chip';
+        b.textContent = text;
+        b.addEventListener('click', () => loadChip(q.id, text));
+        chipWrap.appendChild(b);
+      });
+
+      const ta = card.querySelector('textarea');
+      ta.value = state.drafts[q.id] || '';
+      ta.addEventListener('input', () => { state.drafts[q.id] = ta.value; save(); });
+      ta.addEventListener('keydown', e => {
+        if ((e.metaKey || e.ctrlKey) && e.key === 'Enter') { e.preventDefault(); send(q.id); }
+      });
+      card.querySelector('[data-send]').addEventListener('click', () => send(q.id));
+
+      section.appendChild(card);
+    });
+
+    blocksEl.appendChild(section);
+
+    const opt = document.createElement('option');
+    opt.value = 'sec-' + sec.id;
+    opt.textContent = (si + 1) + '. ' + sec.title;
+    jumpEl.appendChild(opt);
+  });
+
+  ALL_Q.forEach(q => renderThread(q.id));
+  refresh();
+}
+
+function loadChip(qid, text) {
+  const ta = document.getElementById('ta-' + qid);
+  ta.value = ta.value.trim() ? ta.value.trim() + '\n' + text : text;
+  state.drafts[qid] = ta.value;
+  save();
+  ta.focus();
+  ta.setSelectionRange(ta.value.length, ta.value.length);
+}
+
+function send(qid) {
+  const ta = document.getElementById('ta-' + qid);
+  const text = ta.value.trim();
+  if (!text) { ta.focus(); return; }
+  if (!state.answers[qid]) state.answers[qid] = [];
+  state.answers[qid].push({ text: text, ts: Date.now() });
+  ta.value = '';
+  delete state.drafts[qid];
+  save();
+  renderThread(qid);
+  refresh();
+}
+
+function renderThread(qid) {
+  const wrap = document.getElementById('thread-' + qid);
+  if (!wrap) return;
+  wrap.innerHTML = '';
+  answersFor(qid).forEach((msg, i) => {
+    const el = document.createElement('div');
+    el.className = 'msg';
+    el.innerHTML = '<div class="txt"></div>' +
+      '<div class="tools"><button type="button" data-act="edit">Edit</button>' +
+      '<button type="button" data-act="del">Delete</button></div>';
+    el.querySelector('.txt').textContent = msg.text;
+    el.querySelector('[data-act="edit"]').addEventListener('click', () => {
+      const ta = document.getElementById('ta-' + qid);
+      ta.value = ta.value.trim() ? ta.value.trim() + '\n' + msg.text : msg.text;
+      state.drafts[qid] = ta.value;
+      state.answers[qid].splice(i, 1);
+      if (!state.answers[qid].length) delete state.answers[qid];
+      save();
+      renderThread(qid);
+      refresh();
+      ta.focus();
+    });
+    el.querySelector('[data-act="del"]').addEventListener('click', () => {
+      state.answers[qid].splice(i, 1);
+      if (!state.answers[qid].length) delete state.answers[qid];
+      save();
+      renderThread(qid);
+      refresh();
+    });
+    wrap.appendChild(el);
+  });
+  const card = document.getElementById('q-' + qid);
+  if (card) card.classList.toggle('answered', answersFor(qid).length > 0);
+}
+
+function refresh() {
+  const done = ALL_Q.filter(q => answersFor(q.id).length > 0).length;
+  document.getElementById('countNow').textContent = done;
+  document.getElementById('countAll').textContent = ALL_Q.length;
+  document.getElementById('barFill').style.width = Math.round((done / ALL_Q.length) * 100) + '%';
+  const box = document.getElementById('previewBox');
+  if (box) box.textContent = markdown();
+}
+
+jumpEl.addEventListener('change', () => {
+  const id = jumpEl.value;
+  if (id) document.getElementById(id).scrollIntoView({ behavior: 'smooth', block: 'start' });
+  jumpEl.value = '';
+});
+
+/* ---------- markdown export ---------- */
+function stamp() {
+  const d = new Date();
+  const p = n => String(n).padStart(2, '0');
+  return d.getFullYear() + '-' + p(d.getMonth() + 1) + '-' + p(d.getDate());
+}
+
+function markdown() {
+  const done = ALL_Q.filter(q => answersFor(q.id).length > 0);
+  const open = ALL_Q.filter(q => answersFor(q.id).length === 0);
+  const out = [];
+
+  out.push('# Wired Wright: Landing Page Content Brief');
+  out.push('');
+  out.push('Greater Austin electrical services · exported ' + stamp());
+  out.push('');
+  out.push('**Answered ' + done.length + ' of ' + ALL_Q.length + ' questions.**');
+  out.push('');
+  out.push('---');
+  out.push('');
+
+  SECTIONS.forEach((sec, si) => {
+    out.push('## ' + (si + 1) + '. ' + sec.title);
+    out.push('');
+    out.push('_' + sec.blurb + '_');
+    out.push('');
+    sec.questions.forEach(q => {
+      out.push('### ' + q.q);
+      out.push('');
+      out.push('> Why it matters: ' + q.why);
+      out.push('');
+      const msgs = answersFor(q.id);
+      if (msgs.length) {
+        msgs.forEach(m => {
+          m.text.split('\n').forEach((line, i) => {
+            out.push(i === 0 ? '- ' + line : '  ' + line);
+          });
+        });
+      } else {
+        out.push('- _(not answered yet)_');
+      }
+      out.push('');
+    });
+  });
+
+  out.push('---');
+  out.push('');
+  out.push('## Build order for the page');
+  out.push('');
+  BUILD_ORDER.forEach((line, i) => out.push((i + 1) + '. ' + line));
+  out.push('');
+
+  if (open.length) {
+    out.push('## Still open');
+    out.push('');
+    open.forEach(q => out.push('- [' + q.section + '] ' + q.q));
+    out.push('');
+  }
+
+  out.push('## Sources behind the guidance');
+  out.push('');
+  out.push('These conversion figures come from marketing-agency and vendor blogs, not peer-reviewed or independently audited research. Treat them as directional.');
+  out.push('');
+  out.push('- Web Tonic, electrical landing page statistics: licensed-master-electrician badge +14%, 74% mobile traffic, sticky tap-to-call +15–25%, authentic hero photo +10–18%, four-field form. <https://www.webtonic.io/blog/electrical-services-landing-page-statistics>');
+  out.push('- BuiltRight Digital, electrician web design guide: TECL number in header, footer and every service page; 2024 audit of 1,200+ electrician sites found 56% hide license numbers. <https://builtrightdigital.com/electrician-web-design-guide/>');
+  out.push('- Pipeline On, contractor website trust signals: trust strip within the first 600 pixels. <https://pipelineon.com/blog/contractor-website-trust-signals/>');
+  out.push('- ResultCalls and ServiceTitan: dedicated landing pages convert 5–15% against 1–3% for a homepage on the same traffic. <https://resultcalls.com/blog/electrician-landing-pages-complete-guide-to-converting-more-leads> · <https://www.servicetitan.com/blog/electrician-landing-page-tips>');
+  out.push('- Scorpion: 68% of home-service customers hire whoever responds first. <https://www.scorpion.co/electrical/insights/blog/verticals/electrical/how-to-design-a-high-converting-electrician-webs/>');
+  out.push('- Austin Energy home EV charger rebate: 50% of charger plus labor, up to $1,200 for OCPP smart chargers or $900 otherwise; licensed electrician plus City of Austin permit and inspection required for hardwired units. Re-verify caps and funding before publishing. <https://austinenergy.com/green-power/plug-in-austin/home-charging>');
+  out.push('- ChargeRight, citing J.D. Power: 28% of EV owners needed panel work while 65% were told they did. <https://evchargeright.com/blog/texas-ev-charger-installation>');
+  out.push('- Rank Planners, Google Business Profile guide for home services: top-ranking businesses average around 47 reviews; each profile location must link to a unique working landing page. <https://www.rankplanners.com/blog/google-business-profile-guide-for-home-services>');
+  out.push('');
+
+  return out.join('\n');
+}
+
+function flash(msg) {
+  const el = document.getElementById('status');
+  el.textContent = msg;
+  clearTimeout(flash._t);
+  flash._t = setTimeout(() => { el.textContent = ''; }, 3200);
+}
+
+document.getElementById('btnDownload').addEventListener('click', () => {
+  const blob = new Blob([markdown()], { type: 'text/markdown;charset=utf-8' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = 'wiredwright-content-' + stamp() + '.md';
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  setTimeout(() => URL.revokeObjectURL(url), 1000);
+  flash('Downloaded.');
+});
+
+document.getElementById('btnCopy').addEventListener('click', async () => {
+  const text = markdown();
+  try {
+    await navigator.clipboard.writeText(text);
+    flash('Copied to clipboard.');
+  } catch (e) {
+    const ta = document.createElement('textarea');
+    ta.value = text;
+    document.body.appendChild(ta);
+    ta.select();
+    try { document.execCommand('copy'); flash('Copied to clipboard.'); }
+    catch (e2) { flash('Copy blocked. Open the preview and copy manually.'); }
+    document.body.removeChild(ta);
+  }
+});
+
+document.getElementById('btnClear').addEventListener('click', () => {
+  if (!confirm('Delete every answer and draft on this page? This cannot be undone.')) return;
+  state = { answers: {}, drafts: {} };
+  save();
+  ALL_Q.forEach(q => {
+    renderThread(q.id);
+    const ta = document.getElementById('ta-' + q.id);
+    if (ta) ta.value = '';
+  });
+  refresh();
+  flash('Cleared.');
+});
+
+build();
+</script>
+
+<script>
+/* ============================================================
+   Hero: a particle plug that morphs into the words WIRED WRIGHT
+   ============================================================ */
+(function () {
+  const stage = document.getElementById('plugStage');
+  const canvas = document.getElementById('plugCanvas');
+  const fallback = document.getElementById('plugFallback');
+  const reduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  function giveUp() {
+    canvas.style.display = 'none';
+    fallback.classList.add('on');
+  }
+  if (window.__noThree || !window.THREE) { giveUp(); return; }
+
+  const COUNT = 14000;
+
+  /* ---- plug point cloud ---------------------------------- */
+  function boxPoint(w, h, d, cx, cy, cz, out) {
+    const faces = [w * h, w * h, w * d, w * d, h * d, h * d];
+    let total = 0; for (let i = 0; i < 6; i++) total += faces[i];
+    let r = Math.random() * total, f = 0;
+    while (r > faces[f] && f < 5) { r -= faces[f]; f++; }
+    const u = Math.random() - 0.5, v = Math.random() - 0.5;
+    let x, y, z;
+    if (f < 2) { x = u * w; y = v * h; z = (f === 0 ? 0.5 : -0.5) * d; }
+    else if (f < 4) { x = u * w; z = v * d; y = (f === 2 ? 0.5 : -0.5) * h; }
+    else { y = u * h; z = v * d; x = (f === 4 ? 0.5 : -0.5) * w; }
+    out[0] = x + cx; out[1] = y + cy; out[2] = z + cz;
+  }
+
+  function plugPoints(n) {
+    const pts = new Float32Array(n * 3);
+    const tmp = [0, 0, 0];
+    const S = 1.25;                         // overall plug scale
+    for (let i = 0; i < n; i++) {
+      const r = Math.random();
+      if (r < 0.36) {                       // body
+        boxPoint(2.5, 2.1, 1.25, 0, 0, 0, tmp);
+      } else if (r < 0.45) {                // upper blade
+        boxPoint(1.25, 0.42, 0.14, 1.85, 0.58, 0, tmp);
+      } else if (r < 0.54) {                // lower blade
+        boxPoint(1.25, 0.42, 0.14, 1.85, -0.58, 0, tmp);
+      } else if (r < 0.62) {                // round ground pin
+        const a = Math.random() * Math.PI * 2;
+        const rad = 0.2 * (0.75 + Math.random() * 0.25);
+        tmp[0] = 1.25 + Math.random() * 0.95;
+        tmp[1] = Math.cos(a) * rad;
+        tmp[2] = Math.sin(a) * rad;
+      } else if (r < 0.70) {                // collar where the cord meets the body
+        const a = Math.random() * Math.PI * 2;
+        const rad = 0.42 + Math.random() * 0.06;
+        tmp[0] = -1.25 - Math.random() * 0.6;
+        tmp[1] = Math.cos(a) * rad;
+        tmp[2] = Math.sin(a) * rad;
+      } else {                              // cord, curving away to the left
+        const t = Math.random();
+        const cx = -1.85 - t * 5.4;
+        const cy = Math.sin(t * 3.4) * 0.9 - t * 0.55;
+        const cz = Math.sin(t * 2.1) * 0.55;
+        const a = Math.random() * Math.PI * 2;
+        const rad = 0.22;
+        tmp[0] = cx;
+        tmp[1] = cy + Math.cos(a) * rad;
+        tmp[2] = cz + Math.sin(a) * rad;
+      }
+      pts[i * 3] = tmp[0] * S + 2.4;        // shift so the whole plug reads centred
+      pts[i * 3 + 1] = tmp[1] * S;
+      pts[i * 3 + 2] = tmp[2] * S;
+    }
+    return pts;
+  }
+
+  /* ---- text point cloud ---------------------------------- */
+  function textPoints(n, worldWidth) {
+    const W = 900, H = 360;
+    const c = document.createElement('canvas');
+    c.width = W; c.height = H;
+    const g = c.getContext('2d');
+    g.fillStyle = '#000';
+    g.textAlign = 'center';
+    g.textBaseline = 'middle';
+    const fam = '700 150px Inter, system-ui, Arial, sans-serif';
+    g.font = fam;
+    g.fillText('WIRED', W / 2, 105);
+    g.fillText('WRIGHT', W / 2, 258);
+
+    const data = g.getImageData(0, 0, W, H).data;
+    const hits = [];
+    for (let y = 0; y < H; y++) {
+      for (let x = 0; x < W; x++) {
+        if (data[(y * W + x) * 4 + 3] > 128) hits.push(x, y);
+      }
+    }
+    const count = hits.length / 2;
+    if (!count) return null;
+
+    // shuffle the pixel order so every particle lands on a different pixel
+    const order = new Int32Array(count);
+    for (let i = 0; i < count; i++) order[i] = i;
+    for (let i = count - 1; i > 0; i--) {
+      const j = (Math.random() * (i + 1)) | 0;
+      const t = order[i]; order[i] = order[j]; order[j] = t;
+    }
+
+    const pts = new Float32Array(n * 3);
+    const scale = worldWidth / W;
+    for (let i = 0; i < n; i++) {
+      const k = order[i % count] * 2;
+      pts[i * 3] = (hits[k] - W / 2) * scale + (Math.random() - 0.5) * 0.05;
+      pts[i * 3 + 1] = -(hits[k + 1] - H / 2) * scale + (Math.random() - 0.5) * 0.05;
+      pts[i * 3 + 2] = (Math.random() - 0.5) * 0.22;
+    }
+    return pts;
+  }
+
+  /* ---- scene --------------------------------------------- */
+  let renderer;
+  try {
+    renderer = new THREE.WebGLRenderer({ canvas: canvas, antialias: true, alpha: true });
+  } catch (e) { giveUp(); return; }
+  if (!renderer.context && !renderer.getContext()) { giveUp(); return; }
+
+  renderer.setClearColor(0x000000, 0);
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
+
+  const scene = new THREE.Scene();
+  const camera = new THREE.PerspectiveCamera(45, 2, 0.1, 100);
+  const group = new THREE.Group();
+  scene.add(group);
+
+  const TEXT_WIDTH = 14;
+  const plug = plugPoints(COUNT);
+  const text = textPoints(COUNT, TEXT_WIDTH);
+  if (!text) { giveUp(); return; }
+
+  const positions = new Float32Array(plug);
+  const colors = new Float32Array(COUNT * 3);
+  const deep = new THREE.Color(0x07254a);
+  const mid = new THREE.Color(0x0b5cab);
+  const bright = new THREE.Color(0x2f8ce0);
+  const tmpC = new THREE.Color();
+  for (let i = 0; i < COUNT; i++) {
+    const t = Math.random();
+    // weighted dark so the dots hold contrast against a white page
+    if (t < 0.75) tmpC.copy(deep).lerp(mid, t / 0.75);
+    else tmpC.copy(mid).lerp(bright, (t - 0.75) / 0.25);
+    colors[i * 3] = tmpC.r; colors[i * 3 + 1] = tmpC.g; colors[i * 3 + 2] = tmpC.b;
+  }
+
+  const geo = new THREE.BufferGeometry();
+  geo.setAttribute('position', new THREE.BufferAttribute(positions, 3));
+  geo.setAttribute('color', new THREE.BufferAttribute(colors, 3));
+
+  // round sprite so the dots are not squares
+  const sprite = (function () {
+    const s = document.createElement('canvas');
+    s.width = s.height = 64;
+    const sg = s.getContext('2d');
+    const grd = sg.createRadialGradient(32, 32, 0, 32, 32, 32);
+    grd.addColorStop(0, 'rgba(255,255,255,1)');
+    grd.addColorStop(0.62, 'rgba(255,255,255,1)');
+    grd.addColorStop(0.86, 'rgba(255,255,255,0.55)');
+    grd.addColorStop(1, 'rgba(255,255,255,0)');
+    sg.fillStyle = grd;
+    sg.beginPath(); sg.arc(32, 32, 32, 0, Math.PI * 2); sg.fill();
+    const tex = new THREE.CanvasTexture(s);
+    return tex;
+  })();
+
+  const material = new THREE.PointsMaterial({
+    size: 0.07,
+    map: sprite,
+    vertexColors: true,
+    transparent: true,
+    opacity: 1,
+    depthWrite: false,
+    sizeAttenuation: true
+  });
+  const cloud = new THREE.Points(geo, material);
+  group.add(cloud);
+
+  /* ---- fit ------------------------------------------------ */
+  function resize() {
+    const w = stage.clientWidth || 1;
+    const h = stage.clientHeight || 1;
+    renderer.setSize(w, h, false);
+    camera.aspect = w / h;
+    // frame whichever form is wider, with a little air around it
+    const need = (TEXT_WIDTH + 2.4) / 2;
+    const fovRad = camera.fov * Math.PI / 180;
+    const byWidth = need / (Math.tan(fovRad / 2) * camera.aspect);
+    const byHeight = 3.2 / Math.tan(fovRad / 2);
+    camera.position.set(0, 0, Math.max(byWidth, byHeight));
+    camera.updateProjectionMatrix();
+    material.size = w < 620 ? 0.058 : 0.07;
+  }
+  window.addEventListener('resize', resize);
+  resize();
+
+  /* ---- morph loop ----------------------------------------- */
+  // phases: hold plug -> morph to text -> hold text -> morph back
+  const PHASES = [1.8, 2.0, 4.2, 1.6];
+  const CYCLE = PHASES.reduce((a, b) => a + b, 0);
+  const smooth = t => t * t * (3 - 2 * t);
+  const clamp01 = t => t < 0 ? 0 : t > 1 ? 1 : t;
+
+  let mx = 0, my = 0, tx = 0, ty = 0;
+  stage.addEventListener('pointermove', e => {
+    const r = stage.getBoundingClientRect();
+    tx = ((e.clientX - r.left) / r.width - 0.5) * 2;
+    ty = ((e.clientY - r.top) / r.height - 0.5) * 2;
+  });
+  stage.addEventListener('pointerleave', () => { tx = 0; ty = 0; });
+
+  const clock = new THREE.Clock();
+  let blend = 0;
+
+  function phaseBlend(time) {
+    if (reduced) return 1;                     // no morphing: just show the words
+    let t = time % CYCLE;
+    if (t < PHASES[0]) return 0;
+    t -= PHASES[0];
+    if (t < PHASES[1]) return t / PHASES[1];
+    t -= PHASES[1];
+    if (t < PHASES[2]) return 1;
+    t -= PHASES[2];
+    return 1 - t / PHASES[3];
+  }
+
+  function frame() {
+    const time = clock.getElapsedTime();
+    blend = phaseBlend(time);
+
+    const pos = geo.attributes.position.array;
+    for (let i = 0; i < COUNT; i++) {
+      const i3 = i * 3;
+      // stagger so the shape peels into the letters instead of snapping
+      const delay = ((i % 240) / 240) * 0.4;
+      const b = smooth(clamp01((blend - delay) / 0.6));
+      const wob = reduced ? 0 : Math.sin(time * 1.4 + i * 0.37) * 0.035 * (1 - b * 0.7);
+      pos[i3] = plug[i3] + (text[i3] - plug[i3]) * b;
+      pos[i3 + 1] = plug[i3 + 1] + (text[i3 + 1] - plug[i3 + 1]) * b + wob;
+      pos[i3 + 2] = plug[i3 + 2] + (text[i3 + 2] - plug[i3 + 2]) * b;
+    }
+    geo.attributes.position.needsUpdate = true;
+
+    mx += (tx - mx) * 0.05;
+    my += (ty - my) * 0.05;
+    const calm = 1 - blend * 0.8;             // hold the words still enough to read
+    group.rotation.y = (Math.sin(time * 0.28) * 0.22 + mx * 0.3) * calm;
+    group.rotation.x = (my * 0.14) * calm;
+
+    renderer.render(scene, camera);
+    requestAnimationFrame(frame);
+  }
+
+  // the web font changes the letterforms; resample once it has loaded
+  if (document.fonts && document.fonts.ready) {
+    document.fonts.ready.then(() => {
+      const refreshed = textPoints(COUNT, TEXT_WIDTH);
+      if (refreshed) text.set(refreshed);
+    });
+  }
+
+  frame();
+})();
+</script>
+</body>
+</html>
