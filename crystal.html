@@ -133,6 +133,14 @@
     .spin-head { flex: 1; min-width: 0; }
     .spin-title { display: block; font-size: 1.05rem; font-weight: 500; color: var(--text-primary); line-height: 1.4; margin-bottom: 0.3rem; }
     .spin-pitch { display: block; font-size: 0.89rem; color: var(--text-secondary); line-height: 1.65; }
+    .spin-headline { display: inline-block; margin-top: 0.7rem; font-size: 0.83rem; font-weight: 500; color: var(--accent-deep); background: rgba(255,227,236,0.9); border: 1px solid var(--border); border-radius: 999px; padding: 0.3rem 0.85rem; }
+    .figs { display: flex; flex-wrap: wrap; gap: 0.7rem; margin-bottom: 1.1rem; }
+    .fig { flex: 1 1 150px; padding: 0.9rem 1.1rem; background: rgba(255,241,245,0.8); border: 1px solid var(--border); border-radius: 12px; }
+    .fig-v { display: block; font-size: 1.6rem; font-weight: 600; letter-spacing: -0.03em; line-height: 1.15; color: var(--accent-deep); margin-bottom: 0.2rem; }
+    .fig-l { display: block; font-size: 0.78rem; color: var(--text-muted); line-height: 1.5; }
+    .math-sum { font-size: 0.89rem; color: var(--text-secondary); line-height: 1.7; margin-bottom: 0.7rem; }
+    .math-test { font-size: 0.83rem; color: var(--text-secondary); line-height: 1.65; padding-left: 0.9rem; border-left: 2px solid var(--accent-soft); margin-bottom: 1.6rem; }
+    .math-test strong { color: var(--accent-deep); font-weight: 600; }
     .spin-more { flex-shrink: 0; font-size: 0.74rem; color: var(--accent-deep); letter-spacing: 0.04em; white-space: nowrap; display: inline-flex; align-items: center; gap: 0.35rem; margin-top: 0.3rem; }
     .spin-more svg { width: 11px; height: 11px; transition: transform 0.25s; }
     .spin[open] .spin-more svg { transform: rotate(180deg); }
@@ -478,6 +486,14 @@
       id: 'ownRoute',
       title: 'A tiny delivery route that belongs to you',
       pitch: 'You have already run a grocery delivery operation at 300 customers, so run a deliberately small one that is yours: twenty households, one narrow product, one morning a week.',
+      headline: 'About $240 a week for one morning',
+      figures: [
+        { v: '$800', l: 'A week in orders, if 20 households spend $40' },
+        { v: '$240', l: 'Your share at a 30% margin' },
+        { v: '1 morning', l: 'One route, one day a week' }
+      ],
+      sum: 'Twenty households at forty dollars each is eight hundred a week moving through the business. Keep thirty percent of that and you have two hundred and forty for one morning\'s work, which lands somewhere around sixty dollars an hour.',
+      test: 'The margin is the whole game, and it is the one number you do not have yet. Get a real wholesale price out of one vendor before you believe any of the rest of this.',
       steps: [
         { t: 'Pick one narrow thing, not groceries.', d: 'Eggs and produce from two farms. Bread from one bakery. One category means one supplier conversation, one price list, and a vehicle you can load in twenty minutes.' },
         { t: 'Talk to two farmers market vendors before you spend a dollar.', d: 'Ask what they would charge you for a standing weekly wholesale order. If neither will do it, the idea stops there and you have lost one Saturday morning instead of a season.' },
@@ -491,6 +507,14 @@
       id: 'washing',
       title: 'Power washing, sold to businesses',
       pitch: 'Of everything on your list, power washing is the one people pay for the same week they call you, and a restaurant patio needs doing again every single month.',
+      headline: 'About $1,000 a month for eight hours of work',
+      figures: [
+        { v: '$1,000', l: 'A month from four customers at $250 each' },
+        { v: '8 hrs', l: 'Roughly two hours a patio, once a month' },
+        { v: 'Week one', l: 'How soon the first job can be paid' }
+      ],
+      sum: 'Four businesses on a monthly patio wash at two hundred and fifty dollars is a thousand dollars a month for about eight hours of work. Four customers is a small enough number that you could have them all by the end of one determined week.',
+      test: 'Two hundred and fifty is a placeholder, not a market rate. Call two washing companies as though you were the restaurant, ask what they would charge for a patio that size, and put their number in place of mine.',
       steps: [
         { t: 'Sell to businesses, not driveways.', d: 'A restaurant patio, a dumpster pad, a fleet of three vans. Businesses book on a schedule, pay against an invoice, and do not haggle the way homeowners do on a one-off job.' },
         { t: 'Quote a monthly rate, never a one-off.', d: 'Four patios on a monthly rate is predictable money for one morning of work each. One-off jobs mean starting the search again every week, which is exactly what a short week cannot absorb.' },
@@ -504,6 +528,14 @@
       id: 'setupPackage',
       title: 'Set up someone else\'s delivery, for a fixed fee',
       pitch: 'Sell what took you years to work out as a two-week package: you set up a small food business\'s ordering, suppliers and route, then hand them the keys and leave.',
+      headline: '$1,500 a project, about fifteen hours each',
+      figures: [
+        { v: '$1,500', l: 'A fixed fee for one setup' },
+        { v: '15 hrs', l: 'Spread across two weeks' },
+        { v: '8 a year', l: 'Two a quarter, about six hours a week' }
+      ],
+      sum: 'Fifteen hundred dollars for roughly fifteen hours is about a hundred an hour, and it goes up every time you reuse the templates instead of rebuilding them. Eight of those across a year is twelve thousand dollars from six hours a week.',
+      test: 'All of that depends on finding eight. Do the first one cheap to get the testimonial, then find out how hard the second one is to sell before you count on the other six.',
       steps: [
         { t: 'Write down what you actually do in a week.', d: 'Suppliers, ordering, stock, routes, customer messages. That list is the product. You have never written it down because you just do it, and that is precisely why it is worth money to someone who cannot.' },
         { t: 'Price it as one fixed fee, not by the hour.', d: 'Two weeks, one number, they keep the spreadsheets and the supplier list. A fixed fee hides how fast you are, and being fast is the entire advantage of knowing this cold.' },
@@ -773,7 +805,7 @@
     herald.appendChild(document.createTextNode('Have you thought of '));
     herald.appendChild(el('em', { text: 'trying:' }));
     host.appendChild(herald);
-    host.appendChild(el('p', { class: 'spin-sub', text: 'Three ways to work for yourself rather than for somebody else. Each one is built out of something you can already do, and each one can start at a size that fits a short week. Tap any of them for a five step plan to get going.' }));
+    host.appendChild(el('p', { class: 'spin-sub', text: 'Three ways to work for yourself rather than for somebody else. Each one is built out of something you can already do, and each one can start at a size that fits a short week. Tap any of them for the arithmetic and a five step plan. The numbers are worked examples with round figures, not promises. They show how the sums go, so you can put your own in.' }));
 
     SPINOFFS.forEach(function (s, i) {
       var card = el('details', { class: 'spin', id: 'spin-' + s.id });
@@ -781,16 +813,36 @@
 
       var summary = el('summary');
       summary.appendChild(el('span', { class: 'spin-badge', text: String(i + 1) }));
-      summary.appendChild(el('span', { class: 'spin-head' }, [
+      var head = el('span', { class: 'spin-head' }, [
         el('span', { class: 'spin-title', text: s.title }),
         el('span', { class: 'spin-pitch', text: s.pitch })
-      ]));
+      ]);
+      if (s.headline) head.appendChild(el('span', { class: 'spin-headline', text: s.headline }));
+      summary.appendChild(head);
       var more = el('span', { class: 'spin-more' });
       more.innerHTML = '<span class="label-closed">How to start</span><span class="label-open">Close</span>' + CHEVRON;
       summary.appendChild(more);
       card.appendChild(summary);
 
       var body = el('div', { class: 'spin-body' });
+
+      if (s.figures) {
+        body.appendChild(el('p', { class: 'plan-label', text: 'What it could add up to' }));
+        var figs = el('div', { class: 'figs' });
+        s.figures.forEach(function (f) {
+          figs.appendChild(el('div', { class: 'fig' }, [
+            el('span', { class: 'fig-v', text: f.v }),
+            el('span', { class: 'fig-l', text: f.l })
+          ]));
+        });
+        body.appendChild(figs);
+        body.appendChild(el('p', { class: 'math-sum', text: s.sum }));
+        var test = el('p', { class: 'math-test' });
+        test.appendChild(el('strong', { text: 'What has to be true: ' }));
+        test.appendChild(document.createTextNode(s.test));
+        body.appendChild(test);
+      }
+
       body.appendChild(el('p', { class: 'plan-label', text: 'Five steps to get started' }));
       var ol = el('ol', { class: 'steps' });
       s.steps.forEach(function (st, n) {
@@ -874,6 +926,7 @@
     SPINOFFS.forEach(function (s, i) {
       out += '### Option ' + (i + 1) + ': ' + s.title + '\n\n';
       out += s.pitch + '\n\n';
+      if (s.headline) out += '_' + s.headline + '_\n\n';
       out += answerBlock('What do you think of this one?', s.id + 'Note');
     });
     return out.replace(/\n{3,}/g, '\n\n').trim() + '\n';
