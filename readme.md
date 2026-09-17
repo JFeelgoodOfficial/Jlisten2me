@@ -40,7 +40,7 @@ Standalone, private review page at `/crystal.html` (marked `noindex`) for Crysta
 - Field types are `text`, `textarea`, `select`, `radio` (single choice) and `checks` (multi-select). Long-form questions carry **starter chips** that drop suggested wording into the box; clicking a second chip appends rather than replaces.
 - Answers autosave to the browser's `localStorage` under the key `crystal-page-review-v1`. Nothing leaves the browser.
 - **Export Markdown** downloads `crystal-page-review-YYYY-MM-DD.md` with every question and answer; unanswered ones are marked `_No answer yet_`. A copy-to-clipboard button covers browsers that block downloads.
-- Under the export button, a **"Have you thought of trying:"** block holds three self-employment spin-offs from the `SPINOFFS` array. Each shows a one-sentence pitch and expands on click to a five step plan plus a "before you start" caveat and a note field. Open/closed state persists alongside the answers.
+- Under the export button, a **"Have you thought of trying:"** block holds four self-employment options from the `SPINOFFS` array: a delivery round, power washing, setup packages, and a hybrid that runs all three on three days a week. Each shows a one-sentence pitch and headline figure, and expands on click to stat tiles, a five step setup guide, a caveat, and **two tabbed month plans** (`plans`) taking her from $0 to $1,000 and from $0 to $4,000, each with 7 to 9 steps carrying cost and hour tags. Open/closed state and the selected tab persist alongside the answers.
 - Content lives in the `SECTIONS` array near the top of the script. Blocks are `note` (context callout), `field` (a question) or `idea` (a suggestion card, which generates its own interest radio and note field).
 
 ## Meta Tags
