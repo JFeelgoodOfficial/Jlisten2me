@@ -158,6 +158,19 @@
     .step-n { flex-shrink: 0; width: 22px; height: 22px; border-radius: 50%; border: 1px solid var(--accent-soft); color: var(--accent-deep); font-size: 0.72rem; font-weight: 600; display: inline-flex; align-items: center; justify-content: center; margin-top: 0.2rem; }
     .step-t { font-size: 0.89rem; color: var(--text-secondary); line-height: 1.72; }
     .step-t strong { color: var(--text-primary); font-weight: 500; }
+    .tablist { display: flex; gap: 0.35rem; background: rgba(255,227,236,0.75); border: 1px solid var(--border); padding: 0.3rem; border-radius: 999px; margin-bottom: 1.2rem; }
+    .tab { flex: 1 1 0; padding: 0.6rem 0.9rem; border: none; border-radius: 999px; background: transparent; font-family: var(--font); font-size: 0.86rem; font-weight: 600; color: var(--text-secondary); cursor: pointer; transition: all 0.18s; line-height: 1.3; }
+    .tab:hover { color: var(--accent-deep); }
+    .tab[aria-selected="true"] { background: #fff; color: var(--accent-deep); box-shadow: 0 2px 9px rgba(228,70,138,0.2); }
+    .plan-panel:focus { outline: none; }
+    .plan-meta { display: flex; flex-wrap: wrap; gap: 0.45rem; margin-bottom: 1rem; }
+    .plan-meta .tag.strong { background: var(--accent); color: #fff; border-color: var(--accent); font-weight: 600; }
+    .plan-real { font-size: 0.87rem; color: var(--text-secondary); line-height: 1.7; padding: 0.9rem 1.1rem; background: rgba(255,241,245,0.9); border: 1px dashed var(--accent-soft); border-radius: 12px; margin-bottom: 1.3rem; }
+    .plan-real strong { color: var(--accent-deep); font-weight: 600; }
+    .step-tag { display: inline-block; margin-top: 0.35rem; font-size: 0.71rem; letter-spacing: 0.03em; padding: 0.18rem 0.6rem; border-radius: 999px; background: rgba(255,227,236,0.95); color: var(--accent-deep); border: 1px solid var(--border); }
+    .spin.is-hybrid { border-color: var(--accent); border-width: 2px; background: linear-gradient(170deg, #fff 0%, rgba(255,241,245,0.75) 100%); }
+    .spin.is-hybrid .spin-headline { background: var(--accent); color: #fff; border-color: var(--accent); }
+
     .watch { font-size: 0.83rem; color: var(--text-secondary); line-height: 1.65; padding: 0.85rem 1.1rem; background: rgba(255,227,236,0.6); border-left: 3px solid var(--accent-soft); border-radius: 0 10px 10px 0; margin-bottom: 1.4rem; }
     .watch strong { color: var(--accent-deep); font-weight: 600; }
 
@@ -511,7 +524,45 @@
         { t: 'Take the money before you buy the stock.', d: 'Paid up front, weekly or monthly. That is the whole difference between a business and an expensive hobby, and you already know how it feels when somebody pays late.' },
         { t: 'Change nothing for six weeks.', d: 'Same day, same round, same time. No new products, no second day, no redesign. If it still works at week six and you still enjoy it, then grow it.' }
       ],
-      watch: 'What you carry decides which rules you have to follow. In Texas, eggs, dairy and anything cooked are treated differently from plain fruit and veg. One call to the county health department before you start beats any amount of reading afterwards.'
+      watch: 'What you carry decides which rules you have to follow. In Texas, eggs, dairy and anything cooked are treated differently from plain fruit and veg. One call to the county health department before you start beats any amount of reading afterwards.',
+      plans: [
+        {
+          id: 'k1',
+          label: '$1,000 month',
+          target: "About $1,000 in your pocket",
+          hours: "Roughly 32 hours in month one",
+          odds: "Realistic",
+          reality: "Every dollar of this needs twenty households signed up in the first fortnight. That is the whole job. The delivering is the easy part, and it is the part you already know how to do.",
+          steps: [
+            { t: "Get one wholesale price in writing.", d: "Call two farms or two bakeries. You need one yes and one number. Until you have that price you cannot work out a single other thing on this list.", tag: "Week 1 · 2 hrs" },
+            { t: "Set the box at $40 and check your margin.", d: "If a $40 box costs you more than $28 to fill, either the box changes or the idea does. Do this sum before you tell one single customer.", tag: "30 min" },
+            { t: "Write one message and send it to your own street.", d: "Nextdoor, the neighbourhood group, the school pickup line. Say what it is, where it comes from, what day, and the price. Ask people to reply to you, not to fill in a form.", tag: "Week 1 · 2 hrs" },
+            { t: "Sign up ten households before you order anything.", d: "Ten is the number that proves people actually want it. If ten yeses take you more than two weeks, stop and move those hours to the washing idea. That is information, not failure.", tag: "Week 1-2 · 4 hrs" },
+            { t: "Take the first month up front.", d: "Ten households times $40 times four weeks is $1,600 in your hand on day one. That money buys the stock. Never buy stock with your own money.", tag: "$1,600 in" },
+            { t: "Run the first round and photograph everything.", d: "Boxes on doorsteps, the farm, your car loaded at six in the morning. Those photos are how you get households eleven to twenty, and they cost you nothing.", tag: "Week 2 · 4 hrs" },
+            { t: "Ask every customer for one neighbour.", d: "A round only works if the houses are close together, so one referral from an existing customer is worth more here than any advert you could buy.", tag: "1 hr" },
+            { t: "Get to twenty households by week three, then stop.", d: "Twenty is one morning of work and about $1,000 a month once you take out the wholesale cost. Do not chase forty this month. Prove you can do twenty perfectly first.", tag: "$3,200 in · $1,000 yours" }
+          ]
+        },
+        {
+          id: 'k4',
+          label: '$4,000 month',
+          target: "About $4,000 in your pocket",
+          hours: "50+ hours in month one",
+          odds: "Hardest of the three",
+          reality: "Be warned. To take home $4,000 at a 30% margin you have to move about $13,000 of product in a month, which is roughly eighty households a week. That is not a one-morning business any more, and month one has you finding eighty customers while already delivering to them. Of the three ideas on this page, this is the one least likely to reach $4,000 in thirty days. Here is the closest honest version.",
+          steps: [
+            { t: "Change the size of the basket before the number of customers.", d: "A $75 box at a 40% margin earns you $30. A $40 box at 30% earns you $12. The bigger box needs half as many customers for the same money, and half as many doorsteps.", tag: "$75 box" },
+            { t: "Ask for a real wholesale price, not a small discount.", d: "At volume, ask for 40% off retail instead of 25%. That one conversation is worth more to you than twenty new customers, and it takes an afternoon.", tag: "40% off" },
+            { t: "Go after offices, not only houses.", d: "One office ordering fifteen boxes is fifteen customers at one address, one stop and one invoice. Three offices can be half your month and a fraction of the driving.", tag: "3 offices" },
+            { t: "Add a delivery fee or set a minimum order.", d: "Five dollars on thirty five deliveries a week is $700 a month of almost pure margin, and it quietly stops the tiny orders that eat your morning.", tag: "+$700" },
+            { t: "Block two mornings, not one.", d: "Thirty five households does not fit in one morning. Accept that this version is a two morning job before you promise it to anybody.", tag: "8 hrs a week" },
+            { t: "Sell the month, never the week.", d: "Ask for a month up front every time. It halves your admin and it gives you the cash to buy at the volume that makes the margin work.", tag: "Cash up front" },
+            { t: "Line up thirty five households and two offices.", d: "This is over twenty hours of selling in month one, on top of the delivering. Nobody tells you that part. Now you know it going in.", tag: "20+ hrs selling" },
+            { t: "Do the sum at week two and be willing to stop.", d: "Thirty five boxes at $75 across four weeks is $10,500, and 40% of that is $4,200. If you are not at twenty households by week two you will not get there. Move the rest of your hours to washing, which pays far faster.", tag: "Checkpoint" }
+          ]
+        }
+      ]
     },
     {
       id: 'washing',
@@ -532,7 +583,45 @@
         { t: 'Photograph every job, before and after.', d: 'It is the only advertising this business needs, and it is where running an Instagram account stops being a line on your resume and starts putting money in your pocket.' },
         { t: 'Ask every happy customer one question.', d: '"Which place near here has the worst looking patio?" That one question is how this kind of business grows, one street at a time, with no advertising at all.' }
       ],
-      watch: 'Washing a business down sends water, and whatever was on the ground, into a storm drain, and cities have rules about that. Find out what Austin asks for before your first paid job, not after somebody complains.'
+      watch: 'Washing a business down sends water, and whatever was on the ground, into a storm drain, and cities have rules about that. Find out what Austin asks for before your first paid job, not after somebody complains.',
+      plans: [
+        {
+          id: 'k1',
+          label: '$1,000 month',
+          target: "$1,000 invoiced and paid",
+          hours: "About 20 hours",
+          odds: "Best odds on this page",
+          reality: "This is the fastest of the three to reach first money, because a business can say yes on Tuesday and have you working on Thursday. The cash arrives before the month is out, which none of the others can promise.",
+          steps: [
+            { t: "Rent a machine for one day.", d: "Do not buy anything yet. One day of rental proves you can do the work and gets you the photos that everything else depends on.", tag: "$90 out" },
+            { t: "Wash one place for free, on purpose.", d: "The café you already go to. Ask for nothing except before and after photos and one sentence you can quote. That is the only thing standing between you and paid work.", tag: "3 hrs" },
+            { t: "Walk one street on a Tuesday morning.", d: "Before the lunch rush. Twelve businesses, one street, in person, photos on your phone. Not email, not Instagram. In person, holding pictures of what you did for the café.", tag: "Week 2 · 3 hrs" },
+            { t: "Quote a monthly price and practise saying it out loud.", d: "Two hundred and fifty dollars a month, first Tuesday of every month. Say it in the car before you walk in. Your first instinct will be to charge too little.", tag: "$250 a month" },
+            { t: "Land four monthly accounts.", d: "Four yeses out of twelve in person conversations is a normal result when you are carrying photos. If you only get one, walk another street. The street is the variable, not you.", tag: "$1,000 a month" },
+            { t: "Do the jobs and invoice the same day.", d: "Small businesses pay small invoices quickly, and they pay the person who invoiced on the day far quicker than the one who waited for month end.", tag: "12 hrs" },
+            { t: "Buy your own machine out of job two.", d: "Not out of your savings. If the work will not pay for the machine, then the work is not really there yet, and you have learned that for the price of a rental.", tag: "About $400" }
+          ]
+        },
+        {
+          id: 'k4',
+          label: '$4,000 month',
+          target: "$4,000 invoiced",
+          hours: "About 40 hours, most of it selling",
+          odds: "Hard but genuinely possible",
+          reality: "Sixteen patios at $250 each is forty eight hours of washing, which does not fit in your month. So a $4,000 month is not sixteen small jobs. It is a handful of big ones sitting on top of a base of small ones, and the big ones need a better machine than you would buy for a patio.",
+          steps: [
+            { t: "Work out the mix before you sell anything.", d: "Six monthly accounts at $250 is $1,500. Two large one-off jobs at $800 is $1,600. Three middle sized jobs at $300 is $900. That is $4,000 in about forty hours. Sixteen small patios is not.", tag: "The maths" },
+            { t: "Find out what the big jobs really pay near you.", d: "Call two companies and ask what they charge for a fleet of vans, a shopping strip sidewalk, a parking garage stairwell. Every number I have given you is a guess until you make that one call.", tag: "1 hr · do this first" },
+            { t: "Hire the bigger machine for the big days.", d: "A surface cleaner and hot water turn a twelve hour job into a four hour job. Rent it for the day and build the rental straight into the quote.", tag: "$150-250 a day" },
+            { t: "Go where one address holds several jobs.", d: "A strip mall, a business park, a storage facility, a church, an apartment block. One person decides, several jobs happen, one invoice goes out.", tag: "1 decision maker" },
+            { t: "Spend weeks one and two selling, not washing.", d: "This is the step that fails. Thirty in person conversations inside two weeks is the level of effort a $4,000 month actually needs, and no amount of good washing later makes up for skipping it.", tag: "16 hrs" },
+            { t: "Quote on the spot, in writing, the same day.", d: "A price that turns up three days later loses to the person who wrote a number down while standing on the patio.", tag: "Same day" },
+            { t: "Ask for half up front on anything over $500.", d: "Completely normal in this trade, nobody will blink, and it funds the machine hire so the job never comes out of your own pocket.", tag: "50% deposit" },
+            { t: "Batch the washing into three long days.", d: "Three eight hour days beat twelve scattered two hour trips. Driving between jobs is what quietly eats this business alive.", tag: "24 hrs" },
+            { t: "Turn every one-off into a monthly, on the day.", d: "Ask while it still looks clean and they are still pleased. That one question is how month two starts at $2,000 instead of starting again at zero.", tag: "Month 2" }
+          ]
+        }
+      ]
     },
     {
       id: 'setupPackage',
@@ -553,11 +642,108 @@
         { t: 'Go for businesses that only just started delivering.', d: 'A market stall that began taking online orders six months ago is drowning and knows it. A business that has been at it for years already has its own way of doing things and will not pay you to change it.' },
         { t: 'Build the templates once, then reuse them.', d: 'The order form, the supplier tracker, the route sheet. Drop the same set in for every client instead of building from scratch. That is the only reason this fits inside eight hours a week.' }
       ],
-      watch: 'Check what you signed with your current employer before you sell this to anybody in the same line of work. Five minutes now saves an awkward conversation later.'
+      watch: 'Check what you signed with your current employer before you sell this to anybody in the same line of work. Five minutes now saves an awkward conversation later.',
+      plans: [
+        {
+          id: 'k1',
+          label: '$1,000 month',
+          target: "One client, $1,000 to $1,200",
+          hours: "About 22 hours",
+          odds: "Good if you know one business, poor if you know none",
+          reality: "The work itself is easy for you. Finding the first person willing to pay for it is the hard part, and the good news is that you only have to find one.",
+          steps: [
+            { t: "Write down what you actually do in a week.", d: "Suppliers, ordering, stock, routes, customer messages. That list is the product. Do it first, because you cannot sell a thing you have never put a name to.", tag: "2 hrs" },
+            { t: "Turn the list into one page with a price on it.", d: "Two weeks. You set up their ordering, suppliers and delivery. They keep everything afterwards. One page, one number, no options to choose between.", tag: "1 hr" },
+            { t: "Build the three templates before you sell anything.", d: "Order form, supplier tracker, route sheet. Build them once. They are the whole reason the second client takes ten hours instead of fifteen.", tag: "4 hrs" },
+            { t: "List ten businesses that started delivering this year.", d: "A market stall that added online orders, a bakery doing home drops, a small caterer. Recently started and struggling is your customer. Established and organised is somebody else's.", tag: "2 hrs" },
+            { t: "Ask your boss and two suppliers for one introduction each.", d: "The best hour of your whole month. They know owners you do not, and a warm introduction closes at a rate no cold message will ever touch.", tag: "1 hr · do this first" },
+            { t: "Decide which you need more, the money or the reference.", d: "If somebody will pay $1,200 without a reference, take it. If nobody will, do the first at $600 for a testimonial and accept that the full price lives in month two. Both are correct answers, but only one of them reaches a thousand dollars this month.", tag: "$600 or $1,200" },
+            { t: "Do the work in two weeks and hand it over properly.", d: "A short handover note, one call, and a month of questions by text thrown in. That is what turns one client into three referrals, and referrals are the entire business.", tag: "14 hrs" }
+          ]
+        },
+        {
+          id: 'k4',
+          label: '$4,000 month',
+          target: "Three setups, or two plus a retainer",
+          hours: "About 40 hours",
+          odds: "Only with warm contacts",
+          reality: "Three paying clients inside thirty days, starting with no testimonial on day one, is the hardest selling job on this page. It is possible if two of the three come from people who already know you. If you are starting completely cold, take the $1,000 plan this month and put $4,000 in month three, where it belongs.",
+          steps: [
+            { t: "Be honest about your contact list on day one.", d: "Write down every business owner you could actually call. If that list is shorter than ten names, take the $1,000 plan instead. This is arithmetic, not a lack of discipline.", tag: "Checkpoint" },
+            { t: "Price at $1,500, not $1,200.", d: "Three at $1,500 is $4,500. Three at $1,200 is $3,600 for exactly the same work. Raising a price you have never charged anybody is far easier than finding a fourth client.", tag: "$1,500 each" },
+            { t: "Do client one in week one, cheap or free.", d: "You need the testimonial before you can sell two and three. Treat that first one as the cost of the other two, not as a discount you regret.", tag: "Week 1" },
+            { t: "Sell clients two and three off client one's result.", d: "Here is what I did for them, here is what changed, here is the price. Specific beats persuasive every single time, and you will have something specific by day ten.", tag: "Week 2" },
+            { t: "Use the templates. Do not rebuild anything.", d: "Fifteen hours becomes ten by the third client. That reuse is the only reason three of these fit inside one month at all.", tag: "10 hrs each" },
+            { t: "Take half up front on every one.", d: "Half on signing, half on handover. It protects you and it quietly filters out the people who were never going to pay you anyway.", tag: "50% deposit" },
+            { t: "Offer a $300 a month check-in after handover.", d: "Small, easy to say yes to on the day while they are still grateful, and it is how this stops being a business that starts from zero every month.", tag: "+$300 a month" },
+            { t: "Put one day a week in the diary for selling and keep it.", d: "When you are busy delivering for client one it is very easy to stop looking for client two. That is exactly how month two arrives at nothing.", tag: "8 hrs" },
+            { t: "Count at day fifteen.", d: "Two signed by the midpoint or you will not reach four thousand. If you are at one, move the rest of the month to washing and take the thousand here instead. That is a good month, not a failed one.", tag: "Checkpoint" }
+          ]
+        }
+      ]
+    },
+    {
+      id: 'hybrid',
+      hybrid: true,
+      title: 'All three at once, on three days a week',
+      pitch: "Washing brings money in fast, setups bring it in big, and the delivery round is the one you build last. Here is how all three fit into one week without any of them falling over.",
+      headline: 'The one we would actually do',
+      figures: [
+        { v: '$1,000', l: 'The steady version, about 25 hours' },
+        { v: '$4,200', l: 'The busy version, about 48 hours' },
+        { v: '3 days', l: 'Tuesday, Thursday, Saturday' }
+      ],
+      sum: "The three ideas fight over your hours far less than they look like they will, because each one wants a different kind of time. Washing needs a morning and a vehicle. Setup work needs quiet desk hours and no travel. The delivery round needs one early start. You can run all three on three days a week, as long as you never let two of them share a day.",
+      test: "Only if you leave the delivery round out of month one. It is the slowest of the three to pay you and the hungriest for hours. Sign its customers up now, start delivering in month two, once the washing is already covering your bills.",
+      steps: [
+        { t: "Tuesday morning is washing, always.", d: "Businesses are open, it is quiet before lunch, and it is the only day you need a machine. Every wash job in your month gets batched into this one morning." },
+        { t: "Thursday evening is desk work.", d: "Setup client work, invoices, ordering. No travel, no daylight needed, nobody waiting on you. This is the two hours most people waste." },
+        { t: "Saturday early is the delivery round.", d: "Once it exists. Until then Saturday is for signing households up for month two, which costs you nothing and builds the only one of the three you will own outright." },
+        { t: "One hour a week is selling, and it never moves.", d: "Five doors or five messages. Every week you skip it, the month after arrives at nothing. This is the hour everybody drops first and regrets second." },
+        { t: "Never run two of the three on the same day.", d: "The whole thing works because each one has a day of its own. The moment washing bleeds into Thursday, all three of them get worse at once." }
+      ],
+      watch: "Doing all three does not mean starting all three. Month one is washing plus one setup client. The delivery round joins in month two. Starting three businesses in thirty days is how people end up with none.",
+      plans: [
+        {
+          id: 'k1',
+          label: '$1,000 month',
+          target: "$1,000, and a testimonial",
+          hours: "About 25 hours",
+          odds: "The one we would pick",
+          reality: "This month is not really about the thousand dollars. It is about ending it with two recurring customers, one written testimonial and a delivery round ready to switch on. That is what makes month two easy instead of another standing start.",
+          steps: [
+            { t: "Rent a machine and wash one café for free.", d: "You are buying photographs and a sentence you can quote, not doing a favour. Everything in weeks two and three leans on this.", tag: "Week 1 · 3 hrs" },
+            { t: "Write the setup one-pager and build the three templates.", d: "Order form, supplier tracker, route sheet. Thursday evening work. It never needs doing again.", tag: "Week 1 · 4 hrs" },
+            { t: "Walk one street and land two monthly wash accounts.", d: "Two, not four. You are running three things this month, so take the two easiest yeses on the street and leave the rest for next month.", tag: "$500 · 3 hrs" },
+            { t: "Ask three people for one introduction each.", d: "Your boss, a supplier, a long-standing customer. One hour, and it is where your setup client comes from.", tag: "Week 2 · 1 hr" },
+            { t: "Take one setup client at half price for the testimonial.", d: "Six hundred dollars and a case study. Say out loud that it is half price and say why, so the full price is not a shock in month two.", tag: "$500 · 8 hrs" },
+            { t: "Do the two wash jobs on your Tuesdays.", d: "Both in the same morning if the street is the same. Invoice on the day, both times.", tag: "4 hrs" },
+            { t: "Sign up ten households for a month-two round.", d: "No money from this in month one, and that is on purpose. You are lining up the third leg while the other two are paying.", tag: "Week 4 · 2 hrs" }
+          ]
+        },
+        {
+          id: 'k4',
+          label: '$4,000 month',
+          target: "About $4,200 after costs",
+          hours: "About 48 hours, which is 12 a week",
+          odds: "Possible, but not at eight hours a week",
+          reality: "Read this part first. Every version of a $4,000 month I can build costs more than eight to ten hours a week. This one needs about twelve, for one month, with weeks one and two heavily front-loaded with selling. It is one month and not forever, but you should know that on day one rather than find it out in week three.",
+          steps: [
+            { t: "Accept the hours before you start.", d: "Forty eight hours across four weeks. If that is not available this month, take the $1,000 plan and run this one in a month when it is. Choosing that is not backing down, it is arithmetic.", tag: "12 hrs a week" },
+            { t: "Weeks one and two are for selling, not working.", d: "Thirty in-person conversations and ten warm introductions. Everything below depends entirely on this, and nothing below can rescue it if you skip it.", tag: "10 hrs" },
+            { t: "Land six monthly wash accounts.", d: "Six at $250, batched into two Tuesday mornings once they are signed. This is the base the whole month sits on because it is the money that repeats.", tag: "$1,500 · 15 hrs" },
+            { t: "Win one big wash job and hire the better machine for it.", d: "A van fleet, a strip sidewalk, a stairwell. Build the machine hire into the quote so it never comes out of your pocket.", tag: "$800 in · $200 out · 6 hrs" },
+            { t: "Deliver one setup client at $1,500.", d: "Full price, templates already built, twelve hours across two Thursdays and one weekend. Half up front on signing.", tag: "$1,500 · 12 hrs" },
+            { t: "Add two middle sized one-off washes to close the gap.", d: "Three hundred each, fitted into the Tuesdays you have already blocked. This is the step that turns three and a half thousand into four.", tag: "$600 · 5 hrs" },
+            { t: "Take half up front on everything over $500.", d: "The setup client and the big wash job both qualify. It funds the machine hire and it keeps your own money out of the business entirely.", tag: "Cash flow" },
+            { t: "Do not start the delivery round this month.", d: "This is the step that makes the other seven possible. Sign households up, promise them a start date in month two, and let the round be the thing you own once the services are paying.", tag: "Month 2" }
+          ]
+        }
+      ]
     }
   ];
 
-  var state = { version: 1, updatedAt: null, answers: {}, open: {} };
+  var state = { version: 1, updatedAt: null, answers: {}, open: {}, tabs: {} };
   var storageOk = true;
   var saveTimer = null;
 
@@ -584,7 +770,9 @@
       }
     });
   });
+  var AIM_OPTIONS = ['The $1,000 month', 'The $4,000 month', 'Interested, but not yet', 'Not this one'];
   SPINOFFS.forEach(function (s) {
+    FIELDS.push({ field: { id: s.id + 'Aim', type: 'radio', label: s.title + ' — which month?', options: AIM_OPTIONS } });
     FIELDS.push({ field: { id: s.id + 'Note', type: 'text', label: s.title + ' — my note' } });
   });
 
@@ -603,6 +791,7 @@
       if (parsed && typeof parsed === 'object' && parsed.answers && typeof parsed.answers === 'object') {
         state.answers = parsed.answers;
         state.open = parsed.open && typeof parsed.open === 'object' ? parsed.open : {};
+        state.tabs = parsed.tabs && typeof parsed.tabs === 'object' ? parsed.tabs : {};
         state.updatedAt = parsed.updatedAt || null;
       }
     } catch (e) { storageOk = false; }
@@ -812,6 +1001,83 @@
 
   var CHEVRON = '<svg viewBox="0 0 12 8" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M1 1.5 6 6.5 11 1.5"/></svg>';
 
+  function renderPlans(s) {
+    var box = el('div', { class: 'plans' });
+    box.appendChild(el('p', { class: 'plan-label', text: 'Pick your first month' }));
+
+    var tablist = el('div', { class: 'tablist', role: 'tablist', 'aria-label': 'First month plans for ' + s.title });
+    var entries = [];
+
+    s.plans.forEach(function (pl) {
+      var tabId = 'tab-' + s.id + '-' + pl.id;
+      var panelId = 'panel-' + s.id + '-' + pl.id;
+
+      var btn = el('button', { type: 'button', class: 'tab', id: tabId, role: 'tab', 'aria-controls': panelId, text: pl.label });
+      var panel = el('div', { class: 'plan-panel', id: panelId, role: 'tabpanel', 'aria-labelledby': tabId, tabindex: '0' });
+
+      var meta = el('div', { class: 'plan-meta' }, [
+        el('span', { class: 'tag strong', text: pl.target }),
+        el('span', { class: 'tag', text: pl.hours }),
+        el('span', { class: 'tag', text: pl.odds })
+      ]);
+      panel.appendChild(meta);
+
+      var real = el('p', { class: 'plan-real' });
+      real.appendChild(el('strong', { text: 'Before you start: ' }));
+      real.appendChild(document.createTextNode(pl.reality));
+      panel.appendChild(real);
+
+      var ol = el('ol', { class: 'steps' });
+      pl.steps.forEach(function (st, n) {
+        var li = el('li');
+        li.appendChild(el('span', { class: 'step-n', text: String(n + 1) }));
+        var t = el('span', { class: 'step-t' });
+        t.appendChild(el('strong', { text: st.t + ' ' }));
+        t.appendChild(document.createTextNode(st.d));
+        if (st.tag) {
+          t.appendChild(document.createElement('br'));
+          t.appendChild(el('span', { class: 'step-tag', text: st.tag }));
+        }
+        li.appendChild(t);
+        ol.appendChild(li);
+      });
+      panel.appendChild(ol);
+
+      tablist.appendChild(btn);
+      entries.push({ id: pl.id, btn: btn, panel: panel });
+    });
+
+    function select(id, focus) {
+      state.tabs[s.id] = id;
+      entries.forEach(function (e) {
+        var on = e.id === id;
+        e.btn.setAttribute('aria-selected', on ? 'true' : 'false');
+        e.btn.setAttribute('tabindex', on ? '0' : '-1');
+        e.panel.hidden = !on;
+        if (on && focus) e.btn.focus();
+      });
+      scheduleSave();
+    }
+
+    entries.forEach(function (e, i) {
+      e.btn.addEventListener('click', function () { select(e.id); });
+      e.btn.addEventListener('keydown', function (ev) {
+        var d = ev.key === 'ArrowRight' ? 1 : ev.key === 'ArrowLeft' ? -1 : 0;
+        if (!d) return;
+        ev.preventDefault();
+        select(entries[(i + d + entries.length) % entries.length].id, true);
+      });
+    });
+
+    box.appendChild(tablist);
+    entries.forEach(function (e) { box.appendChild(e.panel); });
+
+    var start = state.tabs[s.id];
+    var known = entries.some(function (e) { return e.id === start; });
+    select(known ? start : entries[0].id);
+    return box;
+  }
+
   function renderSpinoffs() {
     var host = $('#spinoffs');
     host.innerHTML = '';
@@ -820,10 +1086,14 @@
     herald.appendChild(document.createTextNode('Have you thought of '));
     herald.appendChild(el('em', { text: 'trying:' }));
     host.appendChild(herald);
-    host.appendChild(el('p', { class: 'spin-sub', text: 'Three ways to work for yourself instead of for somebody else. Each one is built on something you can already do, and each one can start small enough to fit your week. Tap any of them for the numbers and a five step plan. The numbers are only examples using round figures, not promises. They show you how the sums work, so you can put your own in.' }));
+    host.appendChild(el('p', { class: 'spin-sub', text: 'Three ways to work for yourself instead of for somebody else. Each one is built on something you can already do, and each one can start small enough to fit your week. Tap any of them and you get the numbers, how to set it up, and two plans for your first month: one that gets you to $1,000 and one that goes for $4,000. The fourth card runs all three together. The numbers are only examples using round figures, not promises. They show you how the sums work, so you can put your own in.' }));
+      var caution = el('p', { class: 'plan-real', style: 'max-width:640px;margin-bottom:2rem;' });
+      caution.appendChild(el('strong', { text: 'One thing before you read any of them: ' }));
+      caution.appendChild(document.createTextNode('none of these plans fail because the work is hard. They fail because finding customers in thirty days is hard, and every plan below front-loads exactly that. If you take one thing from this page, take this. The selling happens in weeks one and two, or the month does not happen at all.'));
+      host.appendChild(caution);
 
     SPINOFFS.forEach(function (s, i) {
-      var card = el('details', { class: 'spin', id: 'spin-' + s.id });
+      var card = el('details', { class: 'spin' + (s.hybrid ? ' is-hybrid' : ''), id: 'spin-' + s.id });
       if (state.open[s.id]) card.open = true;
 
       var summary = el('summary');
@@ -876,6 +1146,9 @@
       watch.appendChild(document.createTextNode(s.watch));
       body.appendChild(watch);
 
+      if (s.plans) body.appendChild(renderPlans(s));
+
+      body.appendChild(renderField({ id: s.id + 'Aim', type: 'radio', inline: true, label: 'Which month are you aiming at?', options: AIM_OPTIONS }));
       body.appendChild(renderField({ id: s.id + 'Note', type: 'text', label: 'What do you think of this one?', placeholder: 'Optional. Anything from "yes" to "absolutely not".' }));
       card.appendChild(body);
 
@@ -942,6 +1215,7 @@
       out += '### Option ' + (i + 1) + ': ' + s.title + '\n\n';
       out += s.pitch + '\n\n';
       if (s.headline) out += '_' + s.headline + '_\n\n';
+      out += answerBlock('Which month are you aiming at?', s.id + 'Aim');
       out += answerBlock('What do you think of this one?', s.id + 'Note');
     });
     return out.replace(/\n{3,}/g, '\n\n').trim() + '\n';
@@ -990,6 +1264,7 @@
     clearTimeout(saveTimer); saveTimer = null;
     state.answers = {};
     state.open = {};
+    state.tabs = {};
     try { window.localStorage.removeItem(STORAGE_KEY); } catch (e) {}
     renderSections();
     renderSpinoffs();
