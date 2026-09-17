@@ -119,6 +119,34 @@
     .actions-row { display: flex; gap: 0.8rem; justify-content: center; flex-wrap: wrap; }
     .actions-note { font-size: 0.74rem; color: var(--text-muted); margin-top: 1.2rem; margin-bottom: 0; }
 
+    .spinoffs { margin-top: 3.8rem; }
+    .spin-herald { font-size: clamp(1.9rem, 5vw, 2.9rem); font-weight: 300; letter-spacing: -0.04em; line-height: 1.12; margin-bottom: 0.7rem; color: var(--text-primary); }
+    .spin-herald em { font-style: normal; color: var(--accent); }
+    .spin-sub { font-size: 0.95rem; color: var(--text-secondary); line-height: 1.75; max-width: 640px; margin-bottom: 2rem; }
+    .spin { background: #fff; border: 1px solid var(--border); border-radius: 16px; margin-bottom: 1.1rem; box-shadow: 0 3px 18px rgba(228,70,138,0.06); overflow: hidden; }
+    .spin[open] { border-color: var(--accent-soft); }
+    .spin > summary { list-style: none; cursor: pointer; padding: 1.4rem 1.6rem; display: flex; align-items: flex-start; gap: 1rem; }
+    .spin > summary::-webkit-details-marker { display: none; }
+    .spin > summary:hover { background: #fffafc; }
+    .spin > summary:focus-visible { outline: 2px solid var(--accent-deep); outline-offset: -3px; }
+    .spin-badge { flex-shrink: 0; width: 30px; height: 30px; border-radius: 50%; background: var(--accent); color: #fff; font-size: 0.82rem; font-weight: 600; display: inline-flex; align-items: center; justify-content: center; margin-top: 0.15rem; }
+    .spin-head { flex: 1; min-width: 0; }
+    .spin-title { display: block; font-size: 1.05rem; font-weight: 500; color: var(--text-primary); line-height: 1.4; margin-bottom: 0.3rem; }
+    .spin-pitch { display: block; font-size: 0.89rem; color: var(--text-secondary); line-height: 1.65; }
+    .spin-more { flex-shrink: 0; font-size: 0.74rem; color: var(--accent-deep); letter-spacing: 0.04em; white-space: nowrap; display: inline-flex; align-items: center; gap: 0.35rem; margin-top: 0.3rem; }
+    .spin-more svg { width: 11px; height: 11px; transition: transform 0.25s; }
+    .spin[open] .spin-more svg { transform: rotate(180deg); }
+    .spin[open] .spin-more .label-closed, .spin:not([open]) .spin-more .label-open { display: none; }
+    .spin-body { padding: 0.2rem 1.6rem 1.4rem; }
+    .spin-body > .plan-label { font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); font-weight: 600; padding-top: 1.2rem; border-top: 1px dashed var(--border); margin-bottom: 1rem; }
+    .steps { list-style: none; margin-bottom: 1.3rem; }
+    .steps li { display: flex; gap: 0.85rem; margin-bottom: 1rem; }
+    .step-n { flex-shrink: 0; width: 22px; height: 22px; border-radius: 50%; border: 1px solid var(--accent-soft); color: var(--accent-deep); font-size: 0.72rem; font-weight: 600; display: inline-flex; align-items: center; justify-content: center; margin-top: 0.2rem; }
+    .step-t { font-size: 0.89rem; color: var(--text-secondary); line-height: 1.72; }
+    .step-t strong { color: var(--text-primary); font-weight: 500; }
+    .watch { font-size: 0.83rem; color: var(--text-secondary); line-height: 1.65; padding: 0.85rem 1.1rem; background: rgba(255,227,236,0.6); border-left: 3px solid var(--accent-soft); border-radius: 0 10px 10px 0; margin-bottom: 1.4rem; }
+    .watch strong { color: var(--accent-deep); font-weight: 600; }
+
     footer { padding: 2rem; border-top: 1px solid var(--border); text-align: center; font-size: 0.72rem; color: var(--text-muted); }
 
     .toast { position: fixed; left: 50%; bottom: 1.5rem; transform: translateX(-50%) translateY(20px); background: var(--accent); color: #fff; border: 1px solid var(--accent-deep); padding: 0.7rem 1.3rem; border-radius: 999px; font-size: 0.84rem; box-shadow: 0 6px 20px rgba(228,70,138,0.3); opacity: 0; pointer-events: none; transition: opacity 0.25s, transform 0.25s; z-index: 200; max-width: calc(100% - 2rem); }
@@ -188,6 +216,8 @@
     </div>
     <p class="actions-note">If your browser blocks the download, use the copy button and paste into any text file.</p>
   </div>
+
+  <section class="spinoffs" id="spinoffs" aria-labelledby="spin-herald"></section>
 </main>
 
 <footer>Private review page · Answers stay in this browser · Nothing is sent anywhere</footer>
@@ -443,7 +473,49 @@
     }
   ];
 
-  var state = { version: 1, updatedAt: null, answers: {} };
+  var SPINOFFS = [
+    {
+      id: 'ownRoute',
+      title: 'A tiny delivery route that belongs to you',
+      pitch: 'You have already run a grocery delivery operation at 300 customers, so run a deliberately small one that is yours: twenty households, one narrow product, one morning a week.',
+      steps: [
+        { t: 'Pick one narrow thing, not groceries.', d: 'Eggs and produce from two farms. Bread from one bakery. One category means one supplier conversation, one price list, and a vehicle you can load in twenty minutes.' },
+        { t: 'Talk to two farmers market vendors before you spend a dollar.', d: 'Ask what they would charge you for a standing weekly wholesale order. If neither will do it, the idea stops there and you have lost one Saturday morning instead of a season.' },
+        { t: 'Find twenty households inside a fifteen minute radius.', d: 'Nextdoor, one neighbourhood group, and the school pickup line. Twenty households is small enough to serve in a morning and big enough to be worth the morning.' },
+        { t: 'Take the money before you buy the stock.', d: 'Weekly or monthly, paid up front. This is the whole difference between a business and an expensive hobby, and you already know exactly what it feels like when someone pays late.' },
+        { t: 'Run it unchanged for six weeks.', d: 'Same day, same route, same time. Do not add products, do not add a second day, do not redesign anything. If week six still works and you still enjoy it, then grow it.' }
+      ],
+      watch: 'What you carry decides which rules apply to you. Eggs, dairy and anything prepared are treated differently from whole produce in Texas. One call to the county health department before you start is worth more than any amount of reading afterwards.'
+    },
+    {
+      id: 'washing',
+      title: 'Power washing, sold to businesses',
+      pitch: 'Of everything on your list, power washing is the one people pay for the same week they call you, and a restaurant patio needs doing again every single month.',
+      steps: [
+        { t: 'Sell to businesses, not driveways.', d: 'A restaurant patio, a dumpster pad, a fleet of three vans. Businesses book on a schedule, pay against an invoice, and do not haggle the way homeowners do on a one-off job.' },
+        { t: 'Quote a monthly rate, never a one-off.', d: 'Four patios on a monthly rate is predictable money for one morning of work each. One-off jobs mean starting the search again every week, which is exactly what a short week cannot absorb.' },
+        { t: 'Get the first customer before buying a machine.', d: 'Walk into five places on the same street on a Tuesday morning, before the lunch rush starts. Rent a machine for that first job and buy one out of the second job\'s money.' },
+        { t: 'Photograph every job, before and after.', d: 'It is the only marketing this business needs, and it is where running an Instagram account stops being a line on a resume and starts being worth money to you directly.' },
+        { t: 'Ask each happy customer one question.', d: '"Which place near you has the worst-looking patio?" That single question is how this kind of business grows, one street at a time, without any advertising at all.' }
+      ],
+      watch: 'Commercial washing sends water and whatever was on the ground into a storm drain, and cities have rules about that. Find out what Austin requires before your first paid commercial job, not after someone complains.'
+    },
+    {
+      id: 'setupPackage',
+      title: 'Set up someone else\'s delivery, for a fixed fee',
+      pitch: 'Sell what took you years to work out as a two-week package: you set up a small food business\'s ordering, suppliers and route, then hand them the keys and leave.',
+      steps: [
+        { t: 'Write down what you actually do in a week.', d: 'Suppliers, ordering, stock, routes, customer messages. That list is the product. You have never written it down because you just do it, and that is precisely why it is worth money to someone who cannot.' },
+        { t: 'Price it as one fixed fee, not by the hour.', d: 'Two weeks, one number, they keep the spreadsheets and the supplier list. A fixed fee hides how fast you are, and being fast is the entire advantage of knowing this cold.' },
+        { t: 'Do the first one cheap, for someone you like.', d: 'In exchange for a written testimonial and permission to name them. One real example you can point at beats any amount of describing what you would do.' },
+        { t: 'Go after businesses that started delivering recently.', d: 'A market vendor who began taking online orders six months ago is drowning and knows it. An established operation already has its systems and will not pay you to replace them.' },
+        { t: 'Build the templates once and reuse them.', d: 'The order form, the supplier tracker, the route sheet. Drop the same set in for each client instead of rebuilding. That reuse is the only reason this fits inside eight hours a week.' }
+      ],
+      watch: 'Check what you signed with your current employer before you sell this to anyone in the same line of work. Worth five minutes now rather than an awkward conversation later.'
+    }
+  ];
+
+  var state = { version: 1, updatedAt: null, answers: {}, open: {} };
   var storageOk = true;
   var saveTimer = null;
 
@@ -470,6 +542,9 @@
       }
     });
   });
+  SPINOFFS.forEach(function (s) {
+    FIELDS.push({ field: { id: s.id + 'Note', type: 'text', label: s.title + ' — my note' } });
+  });
 
   function isAnswered(id) {
     var v = state.answers[id];
@@ -485,6 +560,7 @@
       var parsed = JSON.parse(raw);
       if (parsed && typeof parsed === 'object' && parsed.answers && typeof parsed.answers === 'object') {
         state.answers = parsed.answers;
+        state.open = parsed.open && typeof parsed.open === 'object' ? parsed.open : {};
         state.updatedAt = parsed.updatedAt || null;
       }
     } catch (e) { storageOk = false; }
@@ -687,6 +763,64 @@
     });
   }
 
+  var CHEVRON = '<svg viewBox="0 0 12 8" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M1 1.5 6 6.5 11 1.5"/></svg>';
+
+  function renderSpinoffs() {
+    var host = $('#spinoffs');
+    host.innerHTML = '';
+
+    var herald = el('h2', { class: 'spin-herald', id: 'spin-herald' });
+    herald.appendChild(document.createTextNode('Have you thought of '));
+    herald.appendChild(el('em', { text: 'trying:' }));
+    host.appendChild(herald);
+    host.appendChild(el('p', { class: 'spin-sub', text: 'Three ways to work for yourself rather than for somebody else. Each one is built out of something you can already do, and each one can start at a size that fits a short week. Tap any of them for a five step plan to get going.' }));
+
+    SPINOFFS.forEach(function (s, i) {
+      var card = el('details', { class: 'spin', id: 'spin-' + s.id });
+      if (state.open[s.id]) card.open = true;
+
+      var summary = el('summary');
+      summary.appendChild(el('span', { class: 'spin-badge', text: String(i + 1) }));
+      summary.appendChild(el('span', { class: 'spin-head' }, [
+        el('span', { class: 'spin-title', text: s.title }),
+        el('span', { class: 'spin-pitch', text: s.pitch })
+      ]));
+      var more = el('span', { class: 'spin-more' });
+      more.innerHTML = '<span class="label-closed">How to start</span><span class="label-open">Close</span>' + CHEVRON;
+      summary.appendChild(more);
+      card.appendChild(summary);
+
+      var body = el('div', { class: 'spin-body' });
+      body.appendChild(el('p', { class: 'plan-label', text: 'Five steps to get started' }));
+      var ol = el('ol', { class: 'steps' });
+      s.steps.forEach(function (st, n) {
+        var li = el('li');
+        li.appendChild(el('span', { class: 'step-n', text: String(n + 1) }));
+        var t = el('span', { class: 'step-t' });
+        t.appendChild(el('strong', { text: st.t + ' ' }));
+        t.appendChild(document.createTextNode(st.d));
+        li.appendChild(t);
+        ol.appendChild(li);
+      });
+      body.appendChild(ol);
+
+      var watch = el('p', { class: 'watch' });
+      watch.appendChild(el('strong', { text: 'Before you start: ' }));
+      watch.appendChild(document.createTextNode(s.watch));
+      body.appendChild(watch);
+
+      body.appendChild(renderField({ id: s.id + 'Note', type: 'text', label: 'What do you think of this one?', placeholder: 'Optional. Anything from "yes" to "absolutely not".' }));
+      card.appendChild(body);
+
+      card.addEventListener('toggle', function () {
+        state.open[s.id] = card.open;
+        scheduleSave();
+      });
+
+      host.appendChild(card);
+    });
+  }
+
   function updateProgress() {
     var total = FIELDS.length;
     var answered = 0;
@@ -735,6 +869,13 @@
         }
       });
     });
+
+    out += '## ' + (SECTIONS.length + 1) + '. Working for yourself\n\n';
+    SPINOFFS.forEach(function (s, i) {
+      out += '### Option ' + (i + 1) + ': ' + s.title + '\n\n';
+      out += s.pitch + '\n\n';
+      out += answerBlock('What do you think of this one?', s.id + 'Note');
+    });
     return out.replace(/\n{3,}/g, '\n\n').trim() + '\n';
   }
 
@@ -780,8 +921,10 @@
     if (!window.confirm('Clear every answer on this page? This cannot be undone.')) return;
     clearTimeout(saveTimer); saveTimer = null;
     state.answers = {};
+    state.open = {};
     try { window.localStorage.removeItem(STORAGE_KEY); } catch (e) {}
     renderSections();
+    renderSpinoffs();
     updateProgress();
     setStatus('Cleared');
     toast('All answers cleared');
@@ -800,6 +943,7 @@
   // ---------- Boot ----------
   loadState();
   renderSections();
+  renderSpinoffs();
   updateProgress();
   if (!storageOk) setStatus('Autosave unavailable in this browser', true);
   else if (state.updatedAt) {
