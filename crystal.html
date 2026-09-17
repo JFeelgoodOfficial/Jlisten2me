@@ -4,8 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="robots" content="noindex, nofollow" />
-  <title>Crystal · EA Profile</title>
-  <meta name="description" content="Private intake questionnaire for Crystal's executive assistant profile. Answers save in this browser and export to markdown." />
+  <title>Crystal · Page Review</title>
+  <meta name="description" content="Review notes and open questions for Crystal M. Pratt's landing page. Answers save in this browser and export to markdown." />
   <meta name="theme-color" content="#ffe3ec" />
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 22'%3E%3Cg fill='%23e8112d'%3E%3Cpath d='M13.6 11 2.4 3.3C1 2.4.2 3.2.6 5.3l.7 3.5c.2.9.2 1.5 0 2.4l-.7 3.5c-.4 2.1.4 2.9 1.8 2L13.6 11Z'/%3E%3Cpath d='M18.4 11l11.2 7.7c1.4.9 2.2.1 1.8-2l-.7-3.5a6 6 0 0 1 0-2.4l.7-3.5c.4-2.1-.4-2.9-1.8-2L18.4 11Z'/%3E%3Ccircle cx='16' cy='11' r='3.4'/%3E%3C/g%3E%3C/svg%3E" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -51,15 +51,15 @@
     .btn-danger { color: var(--danger); border-color: rgba(214,69,95,0.3); }
     .btn-danger:hover { color: #b62a44; border-color: rgba(214,69,95,0.6); background: #fff; }
     .btn-sm { padding: 0.45rem 0.9rem; font-size: 0.78rem; }
-    .btn:focus-visible, input:focus-visible, textarea:focus-visible, select:focus-visible { outline: 2px solid var(--accent-soft); outline-offset: 2px; }
+    .btn:focus-visible, input:focus-visible, textarea:focus-visible, select:focus-visible { outline: 2px solid var(--accent-deep); outline-offset: 2px; }
 
-    main { max-width: 760px; margin: 0 auto; padding: 3.5rem 2rem 5rem; }
+    main { max-width: 780px; margin: 0 auto; padding: 3.5rem 2rem 5rem; }
 
     .intro { margin-bottom: 3rem; }
     .eyebrow { font-size: 0.72rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--accent); font-weight: 500; margin-bottom: 0.9rem; }
-    h1 { font-size: clamp(2.2rem, 6vw, 3.4rem); font-weight: 300; letter-spacing: -0.04em; line-height: 1.08; margin-bottom: 1.2rem; }
+    h1 { font-size: clamp(2.1rem, 5.5vw, 3.2rem); font-weight: 300; letter-spacing: -0.04em; line-height: 1.1; margin-bottom: 1.2rem; }
     h1 em { font-style: normal; color: var(--accent); }
-    .intro p { color: var(--text-secondary); font-size: 0.98rem; line-height: 1.75; margin-bottom: 0.9rem; max-width: 620px; }
+    .intro p { color: var(--text-secondary); font-size: 0.98rem; line-height: 1.75; margin-bottom: 0.9rem; max-width: 640px; }
     .intro p strong { color: var(--accent-deep); font-weight: 500; }
 
     .toc { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1.6rem; }
@@ -67,34 +67,93 @@
     .toc a:hover { color: #fff; background: var(--accent); border-color: var(--accent); }
 
     .section { padding: 2.2rem 2.2rem 1.4rem; background: var(--card-bg); border: 1px solid var(--border); border-radius: 16px; margin-bottom: 1.6rem; scroll-margin-top: 5.5rem; box-shadow: 0 3px 18px rgba(228,70,138,0.06); }
+    .section.priority { border-color: var(--accent-soft); border-width: 2px; background: #fff; }
     .section-label { font-size: 0.72rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--accent); font-weight: 500; margin-bottom: 0.5rem; }
-    h2 { font-size: clamp(1.4rem, 3vw, 1.8rem); font-weight: 300; letter-spacing: -0.03em; line-height: 1.25; margin-bottom: 0.5rem; }
-    .why { font-size: 0.85rem; color: var(--text-muted); line-height: 1.6; margin-bottom: 1.8rem; padding-bottom: 1.4rem; border-bottom: 1px solid var(--border); }
+    h2 { font-size: clamp(1.35rem, 3vw, 1.75rem); font-weight: 300; letter-spacing: -0.03em; line-height: 1.25; margin-bottom: 0.5rem; }
+    .why { font-size: 0.87rem; color: var(--text-muted); line-height: 1.65; margin-bottom: 1.8rem; padding-bottom: 1.4rem; border-bottom: 1px solid var(--border); }
 
-    .form-group { margin-bottom: 1.5rem; }
-    .form-group label { display: block; font-size: 0.92rem; color: var(--text-primary); font-weight: 400; line-height: 1.5; margin-bottom: 0.35rem; }
-    .hint { display: block; font-size: 0.78rem; color: var(--text-muted); line-height: 1.55; margin-bottom: 0.6rem; }
-    .form-group input, .form-group select, .form-group textarea { width: 100%; padding: 0.75rem 1rem; background: #fff; border: 1px solid var(--border); border-radius: 10px; color: var(--text-primary); font-family: var(--font); font-size: 0.9rem; line-height: 1.55; transition: border-color 0.2s, box-shadow 0.2s; outline: none; }
-    .form-group input:focus, .form-group select:focus, .form-group textarea:focus { border-color: var(--accent); box-shadow: 0 0 0 3px rgba(228,70,138,0.13); }
+    .note { padding: 1rem 1.2rem; background: rgba(255,227,236,0.6); border-left: 3px solid var(--accent-soft); border-radius: 0 10px 10px 0; margin-bottom: 1.5rem; }
+    .note-title { font-size: 0.74rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent-deep); font-weight: 600; margin-bottom: 0.3rem; }
+    .note p { font-size: 0.87rem; color: var(--text-secondary); line-height: 1.7; }
+    .note p + p { margin-top: 0.6rem; }
+
+    .form-group { margin-bottom: 1.7rem; }
+    .form-group > label, .group-label { display: block; font-size: 0.95rem; color: var(--text-primary); font-weight: 500; line-height: 1.5; margin-bottom: 0.35rem; }
+    .hint { display: block; font-size: 0.8rem; color: var(--text-muted); line-height: 1.6; margin-bottom: 0.7rem; }
+    .form-group input[type=text], .form-group select, .form-group textarea { width: 100%; padding: 0.75rem 1rem; background: #fff; border: 1px solid var(--border); border-radius: 10px; color: var(--text-primary); font-family: var(--font); font-size: 0.9rem; line-height: 1.55; transition: border-color 0.2s, box-shadow 0.2s; outline: none; }
+    .form-group input[type=text]:focus, .form-group select:focus, .form-group textarea:focus { border-color: var(--accent); box-shadow: 0 0 0 3px rgba(228,70,138,0.13); }
     .form-group select option { background: #fff; color: var(--text-primary); }
     .form-group textarea { resize: vertical; min-height: 110px; }
-    .form-group textarea.tall { min-height: 150px; }
+    .form-group textarea.tall { min-height: 165px; }
     .form-group input::placeholder, .form-group textarea::placeholder { color: var(--text-muted); opacity: 0.9; }
-    .form-group.answered label::after { content: ""; display: inline-block; width: 7px; height: 7px; border-radius: 50%; background: var(--accent); margin-left: 0.55rem; vertical-align: middle; }
+    .form-group.answered > label::after, .form-group.answered .group-label::after { content: ""; display: inline-block; width: 7px; height: 7px; border-radius: 50%; background: var(--accent); margin-left: 0.55rem; vertical-align: middle; }
 
-    .role { padding: 1.4rem 1.4rem 0.2rem; background: rgba(255,241,245,0.75); border: 1px dashed rgba(228,70,138,0.35); border-radius: 14px; margin-bottom: 1.2rem; position: relative; }
-    .role-head { display: flex; justify-content: space-between; align-items: center; gap: 1rem; margin-bottom: 1.1rem; }
-    .role-title { font-size: 0.74rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-muted); font-weight: 500; }
-    .role-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0 1.2rem; }
-    .role-grid .span2 { grid-column: 1 / -1; }
-    .add-role { margin: 0.2rem 0 1.6rem; }
+    .choices { display: flex; flex-direction: column; gap: 0.5rem; }
+    .choices.inline { flex-direction: row; flex-wrap: wrap; }
+    .choice { display: flex; align-items: flex-start; gap: 0.65rem; padding: 0.6rem 1rem; background: #fff; border: 1px solid var(--border); border-radius: 12px; cursor: pointer; font-size: 0.87rem; color: var(--text-secondary); line-height: 1.55; transition: all 0.15s; }
+    .choices.inline .choice { flex: 0 1 auto; align-items: center; }
+    .choices.inline .choice input { margin-top: 0; }
+    .choice:hover { border-color: var(--accent-soft); background: #fffafc; }
+    .choice input { accent-color: var(--accent); margin-top: 0.28rem; flex-shrink: 0; }
+    .choice.checked { border-color: var(--accent); background: rgba(255,227,236,0.8); color: var(--text-primary); }
+
+    .starters { margin-bottom: 0.85rem; }
+    .starters-label { font-size: 0.74rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent-deep); font-weight: 600; margin-bottom: 0.5rem; }
+    .starter-row { display: flex; flex-wrap: wrap; gap: 0.45rem; }
+    .starter { padding: 0.45rem 0.95rem; background: #fff; border: 1px dashed var(--accent-soft); border-radius: 999px; font-size: 0.79rem; color: var(--accent-deep); font-family: var(--font); cursor: pointer; transition: all 0.15s; line-height: 1.3; }
+    .starter:hover { background: var(--accent); border-style: solid; border-color: var(--accent); color: #fff; }
+    .starter.used { opacity: 0.45; }
+
+    .idea { padding: 1.3rem 1.4rem 0.4rem; background: #fff; border: 1px solid var(--border); border-radius: 14px; margin-bottom: 1.1rem; }
+    .idea-head { display: flex; align-items: baseline; gap: 0.7rem; flex-wrap: wrap; margin-bottom: 0.5rem; }
+    .idea-num { font-size: 0.72rem; font-weight: 600; color: #fff; background: var(--accent); width: 22px; height: 22px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .idea-title { font-size: 1rem; font-weight: 500; color: var(--text-primary); line-height: 1.4; }
+    .idea-body { font-size: 0.88rem; color: var(--text-secondary); line-height: 1.72; margin-bottom: 0.7rem; }
+    .idea-meta { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1rem; }
+    .tag { font-size: 0.74rem; padding: 0.25rem 0.75rem; border-radius: 999px; background: rgba(255,227,236,0.9); color: var(--accent-deep); border: 1px solid var(--border); }
 
     .actions { margin-top: 2.5rem; padding: 2.2rem; background: linear-gradient(165deg, #fff 0%, var(--bg-mid) 100%); border: 1px solid var(--border); border-radius: 16px; text-align: center; box-shadow: 0 3px 18px rgba(228,70,138,0.08); }
     .actions .bow { margin-bottom: 0.6rem; }
     .actions h2 { margin-bottom: 0.6rem; }
-    .actions p { font-size: 0.88rem; color: var(--text-secondary); margin-bottom: 1.6rem; max-width: 520px; margin-left: auto; margin-right: auto; }
+    .actions p { font-size: 0.88rem; color: var(--text-secondary); margin-bottom: 1.6rem; max-width: 540px; margin-left: auto; margin-right: auto; }
     .actions-row { display: flex; gap: 0.8rem; justify-content: center; flex-wrap: wrap; }
     .actions-note { font-size: 0.74rem; color: var(--text-muted); margin-top: 1.2rem; margin-bottom: 0; }
+
+    .spinoffs { margin-top: 3.8rem; }
+    .spin-herald { font-size: clamp(1.9rem, 5vw, 2.9rem); font-weight: 300; letter-spacing: -0.04em; line-height: 1.12; margin-bottom: 0.7rem; color: var(--text-primary); }
+    .spin-herald em { font-style: normal; color: var(--accent); }
+    .spin-sub { font-size: 0.95rem; color: var(--text-secondary); line-height: 1.75; max-width: 640px; margin-bottom: 2rem; }
+    .spin { background: #fff; border: 1px solid var(--border); border-radius: 16px; margin-bottom: 1.1rem; box-shadow: 0 3px 18px rgba(228,70,138,0.06); overflow: hidden; }
+    .spin[open] { border-color: var(--accent-soft); }
+    .spin > summary { list-style: none; cursor: pointer; padding: 1.4rem 1.6rem; display: flex; align-items: flex-start; gap: 1rem; }
+    .spin > summary::-webkit-details-marker { display: none; }
+    .spin > summary:hover { background: #fffafc; }
+    .spin > summary:focus-visible { outline: 2px solid var(--accent-deep); outline-offset: -3px; }
+    .spin-badge { flex-shrink: 0; width: 30px; height: 30px; border-radius: 50%; background: var(--accent); color: #fff; font-size: 0.82rem; font-weight: 600; display: inline-flex; align-items: center; justify-content: center; margin-top: 0.15rem; }
+    .spin-head { flex: 1; min-width: 0; }
+    .spin-title { display: block; font-size: 1.05rem; font-weight: 500; color: var(--text-primary); line-height: 1.4; margin-bottom: 0.3rem; }
+    .spin-pitch { display: block; font-size: 0.89rem; color: var(--text-secondary); line-height: 1.65; }
+    .spin-headline { display: inline-block; margin-top: 0.7rem; font-size: 0.83rem; font-weight: 500; color: var(--accent-deep); background: rgba(255,227,236,0.9); border: 1px solid var(--border); border-radius: 999px; padding: 0.3rem 0.85rem; }
+    .figs { display: flex; flex-wrap: wrap; gap: 0.7rem; margin-bottom: 1.1rem; }
+    .fig { flex: 1 1 150px; padding: 0.9rem 1.1rem; background: rgba(255,241,245,0.8); border: 1px solid var(--border); border-radius: 12px; }
+    .fig-v { display: block; font-size: 1.6rem; font-weight: 600; letter-spacing: -0.03em; line-height: 1.15; color: var(--accent-deep); margin-bottom: 0.2rem; }
+    .fig-l { display: block; font-size: 0.78rem; color: var(--text-muted); line-height: 1.5; }
+    .math-sum { font-size: 0.89rem; color: var(--text-secondary); line-height: 1.7; margin-bottom: 0.7rem; }
+    .math-test { font-size: 0.83rem; color: var(--text-secondary); line-height: 1.65; padding-left: 0.9rem; border-left: 2px solid var(--accent-soft); margin-bottom: 1.6rem; }
+    .math-test strong { color: var(--accent-deep); font-weight: 600; }
+    .spin-more { flex-shrink: 0; font-size: 0.74rem; color: var(--accent-deep); letter-spacing: 0.04em; white-space: nowrap; display: inline-flex; align-items: center; gap: 0.35rem; margin-top: 0.3rem; }
+    .spin-more svg { width: 11px; height: 11px; transition: transform 0.25s; }
+    .spin[open] .spin-more svg { transform: rotate(180deg); }
+    .spin[open] .spin-more .label-closed, .spin:not([open]) .spin-more .label-open { display: none; }
+    .spin-body { padding: 0.2rem 1.6rem 1.4rem; }
+    .spin-body > .plan-label { font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); font-weight: 600; padding-top: 1.2rem; border-top: 1px dashed var(--border); margin-bottom: 1rem; }
+    .steps { list-style: none; margin-bottom: 1.3rem; }
+    .steps li { display: flex; gap: 0.85rem; margin-bottom: 1rem; }
+    .step-n { flex-shrink: 0; width: 22px; height: 22px; border-radius: 50%; border: 1px solid var(--accent-soft); color: var(--accent-deep); font-size: 0.72rem; font-weight: 600; display: inline-flex; align-items: center; justify-content: center; margin-top: 0.2rem; }
+    .step-t { font-size: 0.89rem; color: var(--text-secondary); line-height: 1.72; }
+    .step-t strong { color: var(--text-primary); font-weight: 500; }
+    .watch { font-size: 0.83rem; color: var(--text-secondary); line-height: 1.65; padding: 0.85rem 1.1rem; background: rgba(255,227,236,0.6); border-left: 3px solid var(--accent-soft); border-radius: 0 10px 10px 0; margin-bottom: 1.4rem; }
+    .watch strong { color: var(--accent-deep); font-weight: 600; }
 
     footer { padding: 2rem; border-top: 1px solid var(--border); text-align: center; font-size: 0.72rem; color: var(--text-muted); }
 
@@ -115,7 +174,7 @@
       .status { min-width: 0; }
       main { padding: 2.5rem 1.5rem 4rem; }
       .section { padding: 1.6rem 1.3rem 1rem; }
-      .role-grid { grid-template-columns: 1fr; }
+      .idea { padding: 1.1rem 1.1rem 0.3rem; }
       .actions { padding: 1.8rem 1.3rem; }
       .actions-row .btn { width: 100%; justify-content: center; }
     }
@@ -126,7 +185,7 @@
 <header class="topbar">
   <a href="#top" class="topbar-brand">
     <svg class="bow" viewBox="0 0 32 22" fill="currentColor" aria-hidden="true"><path d="M13.6 11 2.4 3.3C1 2.4.2 3.2.6 5.3l.7 3.5c.2.9.2 1.5 0 2.4l-.7 3.5c-.4 2.1.4 2.9 1.8 2L13.6 11Z"/><path d="M18.4 11l11.2 7.7c1.4.9 2.2.1 1.8-2l-.7-3.5a6 6 0 0 1 0-2.4l.7-3.5c.4-2.1-.4-2.9-1.8-2L18.4 11Z"/><circle cx="16" cy="11" r="3.4"/></svg>
-    Crystal <span>· EA Profile</span></a>
+    Crystal <span>· Page Review</span></a>
   <div class="topbar-right">
     <span class="status" id="saveStatus" aria-live="polite">Loading…</span>
     <div class="progress" aria-live="polite">
@@ -139,16 +198,16 @@
 
 <main id="top">
   <div class="intro">
-    <p class="eyebrow">Executive Assistant · Profile Questionnaire</p>
-    <h1>Crystal, tell us<br>what you <em>actually</em> do.</h1>
-    <p>These answers become the raw material for a landing page built to put you in front of executives and recruiters who need someone like you. Resumes flatten people. This is the chance to say what a resume can't.</p>
-    <p><strong>Everything you type saves automatically in this browser</strong> and nowhere else. Close the tab, come back next week, and your answers will still be here. Skip anything you want. When you're done, hit <strong>Export Markdown</strong> and send the file over.</p>
-    <p>Write the way you talk. Specifics beat polish. A real story about one bad Tuesday is worth more than three adjectives.</p>
+    <p class="eyebrow">Crystal M. Pratt · Landing page · 17 September 2026</p>
+    <h1>Your page is built.<br>Two answers <em>to go.</em></h1>
+    <p>Everything below comes from the review notes. Two answers are still missing, seven changes were made to what you sent, and a handful of calls are yours to make. Nothing here blocks putting the page online.</p>
+    <p><strong>Everything you type saves automatically in this browser</strong> and nowhere else. Close the tab, come back tomorrow, your answers stay. When you're done, hit <strong>Export Markdown</strong> and send the file back.</p>
+    <p>Where a question is hard to start, there are suggested openings you can click. They drop rough wording into the box for you to fix up. They're scaffolding, not scripts, so change every word if you like.</p>
     <nav class="toc" id="toc" aria-label="Sections"></nav>
   </div>
 
   <noscript>
-    <div class="section">This questionnaire needs JavaScript turned on to show the questions, save your answers, and export the file.</div>
+    <div class="section">This page needs JavaScript turned on to show the questions, save your answers, and export the file.</div>
   </noscript>
 
   <div id="sections"></div>
@@ -157,7 +216,7 @@
     <svg class="bow bow-lg" viewBox="0 0 32 22" fill="currentColor" aria-hidden="true"><path d="M13.6 11 2.4 3.3C1 2.4.2 3.2.6 5.3l.7 3.5c.2.9.2 1.5 0 2.4l-.7 3.5c-.4 2.1.4 2.9 1.8 2L13.6 11Z"/><path d="M18.4 11l11.2 7.7c1.4.9 2.2.1 1.8-2l-.7-3.5a6 6 0 0 1 0-2.4l.7-3.5c.4-2.1-.4-2.9-1.8-2L18.4 11Z"/><circle cx="16" cy="11" r="3.4"/></svg>
     <p class="section-label">When you're done</p>
     <h2>Export your answers.</h2>
-    <p>This builds a single markdown file with every question and your answer underneath it. Unanswered questions are included and marked, so you can see what's left.</p>
+    <p>This builds one markdown file with every question and your answer underneath. Anything you skipped is included and marked, so nothing gets lost quietly.</p>
     <div class="actions-row">
       <button type="button" class="btn btn-primary" id="exportBtn">Export Markdown file</button>
       <button type="button" class="btn btn-ghost" id="copyBtn">Copy markdown to clipboard</button>
@@ -165,9 +224,11 @@
     </div>
     <p class="actions-note">If your browser blocks the download, use the copy button and paste into any text file.</p>
   </div>
+
+  <section class="spinoffs" id="spinoffs" aria-labelledby="spin-herald"></section>
 </main>
 
-<footer>Private intake page · Answers stay in this browser · Nothing is sent anywhere</footer>
+<footer>Private review page · Answers stay in this browser · Nothing is sent anywhere</footer>
 
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
@@ -175,121 +236,318 @@
 (function () {
   'use strict';
 
-  var STORAGE_KEY = 'crystal-ea-profile-v1';
-  var PERSON = 'Crystal';
-
-  var ROLE_FIELDS = [
-    { id: 'title', label: 'Job title', type: 'text', placeholder: 'Executive Assistant to the CEO' },
-    { id: 'company', label: 'Company', type: 'text', placeholder: 'Company name and city' },
-    { id: 'dates', label: 'Dates', type: 'text', placeholder: 'Mar 2021 – present' },
-    { id: 'supported', label: 'Who you supported', type: 'text', placeholder: 'CEO and CFO; occasionally the board chair' },
-    { id: 'owned', label: 'What you owned day to day', type: 'textarea', span2: true, placeholder: 'Calendar, travel, board meeting prep, expense reconciliation, inbox triage, team offsites…' },
-    { id: 'win', label: 'One concrete win from this role', type: 'textarea', span2: true, placeholder: 'Something that happened because you were there. Numbers help if you have them.' }
-  ];
+  var STORAGE_KEY = 'crystal-page-review-v1';
+  var PERSON = 'Crystal M. Pratt';
 
   var SECTIONS = [
     {
-      id: 'basics',
-      title: 'Basics',
-      heading: 'The facts a recruiter checks first.',
-      why: 'This is the resume layer. It tells a hiring exec whether the logistics even work before they read anything else.',
-      questions: [
-        { id: 'fullName', label: 'Full name', type: 'text', placeholder: 'As you want it to appear professionally' },
-        { id: 'email', label: 'Email', type: 'text', placeholder: 'The one you check' },
-        { id: 'phone', label: 'Phone', type: 'text' },
-        { id: 'location', label: 'City / metro area', type: 'text', placeholder: 'Austin, TX' },
-        { id: 'linkedin', label: 'LinkedIn URL', type: 'text', placeholder: 'https://linkedin.com/in/…' },
-        { id: 'arrangement', label: 'Work arrangement you\'ll consider', type: 'select', options: ['In-office only', 'Hybrid', 'Remote only', 'Open to any of these'] },
-        { id: 'relocate', label: 'Would you relocate? If so, where?', type: 'text', placeholder: 'No / Yes, anywhere / Yes, but only to…' },
-        { id: 'startDate', label: 'Earliest start date and notice period', type: 'text', placeholder: 'Two weeks from offer / immediately / after a date' },
-        { id: 'compensation', label: 'Target compensation range', hint: 'Base salary range you\'d accept, and whether you\'re open to contract, part-time, or fractional work.', type: 'text' }
+      id: 'missing',
+      title: 'The two we need',
+      heading: 'Two answers still to come.',
+      why: 'These are the only things holding anything back. Everything else on this page is a choice you can leave as it stands.',
+      priority: true,
+      blocks: [
+        { kind: 'note', title: 'Where this came from', body: [
+          'You already told a version of the first one, about watching stock so supplies never ran out. One specific time that happened is all we need.',
+          'The second is a sentence or two from your current boss. You asked to be credited anonymously, so it would show as "Founder, Austin family business" with no name. Until it arrives the whole "What people say" section stays hidden. A page with no quote is fine. One with an empty quote box is not.'
+        ] },
+        { kind: 'field', id: 'problemSpotted', type: 'textarea', tall: true,
+          label: 'A time you spotted a problem before your boss did.',
+          hint: 'Three or four sentences. Answer these in order and you are done: What did you notice? How did you notice it when nobody else had? What did you do about it? What would have gone wrong if you had not?',
+          placeholder: 'Start anywhere. Rough is fine, we will tidy the wording.',
+          starters: [
+            { label: 'Stock about to run out', text: 'I keep an eye on what we are going through week to week. One week I noticed we were burning through [item] faster than usual and we would have been out before the next delivery. I reordered early and moved the order up with the supplier, so nobody noticed anything.' },
+            { label: 'A supplier about to miss', text: 'A supplier had gone quiet on a delivery that we needed for [day]. Nobody had chased it yet. I called and found out it was not coming, so I [what you did] and we got everything out on time.' },
+            { label: 'An order or billing error', text: 'I caught [what was wrong] before it reached the customer. It would have meant [consequence]. I fixed it by [what you did].' },
+            { label: 'A vehicle about to fail', text: 'I noticed [what you saw or heard] on the truck before it turned into a breakdown. We got it seen to on a quiet day instead of in the middle of a delivery run.' },
+            { label: 'A customer about to be let down', text: 'I could see an order was going to be late for [customer situation]. I flagged it and [what you did] so they got it when they expected it.' }
+          ] },
+        { kind: 'field', id: 'quoteStatus', type: 'radio',
+          label: 'The sentence or two from your current boss.',
+          hint: 'Tell us where this stands so we know whether to keep the section hidden.',
+          options: [
+            'I have it, I am pasting it below',
+            'I have asked, waiting to hear back',
+            'I will ask this week',
+            'I would rather not ask'
+          ] },
+        { kind: 'field', id: 'quoteText', type: 'textarea',
+          label: 'The quote itself, if you have it.',
+          hint: 'If you have not asked yet, the buttons below give you wording you can send them. People say yes far more often when you hand them the sentence instead of asking them to write one.',
+          placeholder: 'Paste what they wrote, or leave blank for now.',
+          starters: [
+            { label: 'Text to send your boss', text: 'ASK TO SEND: "I am putting together a page for finding part-time work. Would you be up for a sentence about working with me? No name needed, it would just say Founder, Austin family business. Something like: she ran the day to day and I stopped having to think about it."' },
+            { label: 'Reliability angle', text: 'THEY COULD SAY: "Crystal ran the day to day for us and I stopped having to check. Things were handled before I knew they needed handling."' },
+            { label: 'Ownership angle', text: 'THEY COULD SAY: "She took the whole operation off my desk. Suppliers, deliveries, customers. I could go and do the parts of the business only I could do."' },
+            { label: 'Problem-solving angle', text: 'THEY COULD SAY: "When something went wrong, she had already fixed it by the time I heard about it."' }
+          ] },
+        { kind: 'field', id: 'quoteAttribution', type: 'radio',
+          label: 'How the quote is credited.',
+          hint: 'The notes say you asked for anonymous. Confirm or change it.',
+          options: [
+            'Founder, Austin family business (as agreed)',
+            'Owner of a family-owned grocery delivery business',
+            'Use their name after all, I will send it',
+            'Something else, see my note'
+          ] },
+        { kind: 'field', id: 'quoteNote', type: 'text', label: 'Anything to add about the quote.', placeholder: 'Optional.' }
       ]
     },
+
     {
-      id: 'experience',
-      title: 'Experience',
-      heading: 'Where you\'ve done this before.',
-      why: 'One block per role. Add as many as you need. The "one concrete win" line is the most important field here: it\'s what separates a list of duties from proof you were effective.',
-      roles: true,
-      questions: [
-        { id: 'totalYears', label: 'Total years as an EA or in senior administrative roles', type: 'text', placeholder: '8 years, 5 of them supporting C-level' }
+      id: 'changes',
+      title: 'Seven changes',
+      heading: 'Changes made to your answers.',
+      why: 'Most of what you sent went straight on the page. These seven needed a decision. Check each one now rather than finding it later. "Looks right" and move on is a perfectly good answer.',
+      blocks: [
+        { kind: 'field', id: 'chgBusiness', type: 'radio',
+          label: 'The business: "a family-owned grocery delivery business, the kind that brings the farmers market to your door."',
+          hint: 'You corrected us, it was grocery delivery, not dairy. Your employer is still not named anywhere on the page.',
+          options: ['Looks right', 'Close, but I want to change the wording', 'Not right, see my note'] },
+        { kind: 'field', id: 'chg300', type: 'radio',
+          label: 'The 300, labelled "active customers at our peak."',
+          hint: 'The question asked what your website and social brought in. You gave your peak customer count, which is a different thing, so we did not credit you with a marketing result you had not claimed.',
+          options: ['Looks right', 'It was actually from the website and social, say so', 'The number is wrong, see my note'] },
+        { kind: 'field', id: 'chg25', type: 'radio',
+          label: 'The 25, labelled "deliveries in a typical week."',
+          hint: 'Labelled this way so it does not look like it contradicts the 300 sitting beside it.',
+          options: ['Looks right', 'Needs a different label, see my note'] },
+        { kind: 'field', id: 'chgZip', type: 'radio',
+          label: 'Your location, shown as "about 15 minutes of northwest Austin."',
+          hint: 'You gave 78759. A zip code points at where you live more precisely than a public page needs to. Your call.',
+          options: ['Keep the neighbourhood wording', 'Put the exact zip back', 'Something else, see my note'] },
+        { kind: 'field', id: 'chgInstagram', type: 'radio',
+          label: 'Instagram, described as "the Instagram account" rather than a vague "social feed."',
+          hint: 'You listed it as a tool you use, so we named it.',
+          options: ['Looks right', 'I would rather it stayed vague', 'Take it off the page'] },
+        { kind: 'field', id: 'chgTasks', type: 'radio',
+          label: 'Your three tasks: "Most of all, hire me for running operations, plus the admin and people side."',
+          hint: 'You named two areas rather than three tasks, so the line reads this way.',
+          options: ['Looks right', 'I want to name three specific tasks, see my note', 'Different emphasis, see my note'] },
+        { kind: 'field', id: 'chgSpanish', type: 'radio',
+          label: 'Conversational Spanish: currently off the page.',
+          hint: 'The tools question also asked whether we could mention it. You did not answer that half, so it is off. This is the one change that is still genuinely open.',
+          options: ['Yes, mention conversational Spanish', 'Leave it off', 'Mention it, but word it as basic rather than conversational'] },
+        { kind: 'field', id: 'changesNote', type: 'textarea',
+          label: 'Notes on any of the seven.',
+          hint: 'Say which one you mean and what it should say instead.',
+          placeholder: 'Optional. One line each is plenty.' }
       ]
     },
+
     {
-      id: 'skills',
-      title: 'Skills and tools',
-      heading: 'What you can sit down and use on day one.',
-      why: 'Execs and recruiters filter on tools. Name the ones you know well and be honest about depth. "Used it daily for three years" and "set it up for the whole company" are different claims.',
-      questions: [
-        { id: 'calendarTools', label: 'Calendar and scheduling tools', hint: 'Google Calendar, Outlook, Calendly, scheduling across time zones, managing multiple exec calendars at once.', type: 'textarea' },
-        { id: 'travelTools', label: 'Travel booking and expense tools', hint: 'Concur, Navan (TripActions), Expensify, Egencia, AmEx GBT, booking directly with airlines and hotels, loyalty programs.', type: 'textarea' },
-        { id: 'officeTools', label: 'Office suites and collaboration tools', hint: 'Google Workspace, Microsoft 365, Slack, Teams, Zoom, Notion, DocuSign. Anything where you\'re the person others ask for help.', type: 'textarea' },
-        { id: 'projectTools', label: 'Project, task, or CRM tools', hint: 'Asana, Trello, Monday, Jira, Airtable, Salesforce, HubSpot.', type: 'textarea' },
-        { id: 'automation', label: 'Anything you\'ve built, automated, or systematized', hint: 'Templates, Zapier flows, spreadsheets with real logic, a filing system that stuck, an onboarding checklist everyone still uses.', type: 'textarea' },
-        { id: 'languages', label: 'Languages you speak and how well', type: 'text', placeholder: 'English (native), Spanish (conversational)' },
-        { id: 'otherSkills', label: 'Other hard skills or credentials', hint: 'Notary, bookkeeping, event planning, HR coordination, light design work, minute-taking, anything that widens what you can take off an exec\'s plate.', type: 'textarea' }
+      id: 'suggestions',
+      title: 'Our suggestions',
+      heading: 'Four judgement calls, all yours.',
+      why: 'Nothing here is wrong. These are places where we would do something different, and we would rather say so than quietly leave it.',
+      blocks: [
+        { kind: 'note', title: 'The one we care most about', body: [
+          'The truck story is the strongest thing on the page, and "$500 worth of product" is the smallest number in it. A reader may finish it thinking the problem was minor, when the point is that you saved every item and still delivered on time.'
+        ] },
+        { kind: 'field', id: 'truck500', type: 'radio',
+          label: 'The $500 figure in the truck story.',
+          options: [
+            'Swap it for how many customers were waiting (number below)',
+            'Cut the figure, the story works without it',
+            'Keep the $500 as it is'
+          ] },
+        { kind: 'field', id: 'truckCustomers', type: 'text',
+          label: 'Roughly how many customers were waiting on that truck?',
+          hint: 'A rough number is fine. "About twenty households" does more work than a dollar figure.',
+          placeholder: 'About …' },
+        { kind: 'field', id: 'suppliers3', type: 'radio',
+          label: 'The "3 suppliers" figure in the By the numbers row.',
+          hint: 'Three is thin sitting beside 25, 300 and 30. It is true, and staying on top of every supplier is real work, but on a page it reads small. We would drop that one figure and keep the other three.',
+          options: ['Drop it, keep the other three', 'Keep it, it is part of the picture', 'Replace it with something else, see my note'] },
+        { kind: 'field', id: 'numbers30', type: 'text',
+          label: 'The fourth figure on the page is 30. Confirm what it stands for.',
+          hint: 'We want the label exactly right. Write what the 30 refers to in a few words.',
+          placeholder: '30 …' },
+        { kind: 'field', id: 'hoursLine', type: 'radio',
+          label: 'Eight to ten hours a week.',
+          hint: 'On the page exactly as you asked, and it should be. Just know it is narrow, roughly two short days, and founders wanting one person to cover a lot of ground often have more in mind. "Eight to ten hours a week to start" leaves the door open without committing you to anything.',
+          options: [
+            'Change it to "eight to ten hours a week to start"',
+            'Keep it exactly as it is',
+            'I would take more, use a different number (see my note)'
+          ] },
+        { kind: 'field', id: 'handsOn', type: 'checks', inline: true,
+          label: 'The hands-on work. Which of these are you happy to be asked about?',
+          hint: 'You said keep the whole list, and we left it in, because that range is genuinely part of the pitch. Check what stays. Anything unchecked comes off the page. If you would rather not be asked for any of it, now is the moment.',
+          options: ['Power washing', 'Vehicle repairs', 'Truck outfitting'] },
+        { kind: 'field', id: 'suggestionsNote', type: 'textarea',
+          label: 'Notes on any of the four.',
+          placeholder: 'Optional.' }
       ]
     },
+
     {
-      id: 'education',
-      title: 'Education and credentials',
-      heading: 'Training and paper.',
-      why: 'Short section. Some hiring managers care a lot, most care a little. Include it so nobody has to ask.',
-      questions: [
-        { id: 'degrees', label: 'Degrees, schools, years', type: 'textarea' },
-        { id: 'certifications', label: 'Certifications or relevant training', hint: 'CAP, PACE, project management, executive assistant programs, anything ongoing.', type: 'textarea' }
+      id: 'omissions',
+      title: 'What is left out',
+      heading: 'What the page deliberately does not say.',
+      why: 'All of this is off the page on purpose. Confirm you are happy, or tell us to put something back.',
+      blocks: [
+        { kind: 'note', title: 'Currently not on the page', body: [
+          'Your full middle name. It shows Crystal M. Pratt. · Your employer, past or present. · Any pay rate, hourly figure or salary. · Your email address and phone number as text, though both buttons still work in one tap. · Your photo.'
+        ] },
+        { kind: 'field', id: 'omissionsOk', type: 'checks', inline: true,
+          label: 'Check anything you want put back on the page.',
+          hint: 'Leave them all unchecked if you are happy as things are.',
+          options: [
+            'My full middle name',
+            'My employer',
+            'A rate or salary range',
+            'My phone number as readable text',
+            'A photo of me'
+          ] },
+        { kind: 'note', title: 'One trade-off worth knowing', body: [
+          '"Text me" opens the messaging app on a phone, but on a laptop that button often does nothing, so someone reading at their desk cannot write your number down.'
+        ] },
+        { kind: 'field', id: 'phoneTradeoff', type: 'radio',
+          label: 'The "Text me" button on desktop.',
+          options: [
+            'Show my number as text as well, so desktop readers can use it',
+            'Leave it as a button only, I would rather not have it scraped',
+            'Take the phone option off entirely, email only'
+          ] },
+        { kind: 'field', id: 'photoLater', type: 'radio',
+          label: 'The photo.',
+          hint: 'You would rather not, so the page is designed to look right without one. It takes a minute to add if you change your mind.',
+          options: ['Still no photo', 'I have changed my mind, I will send one', 'Maybe later, ask me again'] }
       ]
     },
+
     {
-      id: 'apart',
-      title: 'What sets you apart',
-      heading: 'The part the landing page is actually built from.',
-      why: 'Every EA says "organized" and "detail-oriented." These questions are designed to pull out stories only you can tell. Take your time here. Long answers welcome.',
-      questions: [
-        { id: 'hardestLogistics', label: 'The hardest scheduling or logistics problem you\'ve untangled', hint: 'What made it hard, what you did, how it landed.', type: 'textarea', tall: true },
-        { id: 'anticipated', label: 'A time you anticipated something your executive needed before they asked', type: 'textarea', tall: true },
-        { id: 'confidential', label: 'How you handle confidential or sensitive information', hint: 'Board matters, personnel issues, personal family logistics. An example if you can share one safely, or describe your rules.', type: 'textarea', tall: true },
-        { id: 'conflicts', label: 'How you handle two people wanting conflicting things at the same time', hint: 'Two execs, or an exec and their board, their spouse, their investors. How do you decide, and how do you communicate it?', type: 'textarea', tall: true },
-        { id: 'mistake', label: 'A mistake you made and what changed in how you work afterward', type: 'textarea', tall: true },
-        { id: 'execsWouldSay', label: 'What your last two or three executives would say about you if asked unprompted', type: 'textarea' },
-        { id: 'industries', label: 'Industries or environments you know well', hint: 'Startups, finance, legal, medical, nonprofit, family office, real estate, entertainment. What\'s second nature to you?', type: 'textarea' },
-        { id: 'outsideWork', label: 'Something outside of work that makes you better at this job', type: 'textarea' },
-        { id: 'oneSentence', label: 'Introduce yourself in one sentence to a new executive', hint: 'Say it out loud first. Then write what you said.', type: 'textarea' }
+      id: 'leverage',
+      title: 'Using what you have',
+      heading: 'Ten ways to get more out of eight to ten hours.',
+      why: 'You have narrow hours and an unusually broad skill set. That combination rewards being deliberate. Mark each one, ignore the rest. Two or three you actually do beats ten you agree with.',
+      blocks: [
+        { kind: 'idea', id: 'fractionalOps', title: 'Run operations for another small food business',
+          body: 'You already do this: suppliers, routes, stock, 25 deliveries a week. Coffee roasters, meal-prep kitchens, farmers market vendors and food trucks around Austin have exactly the same problems and nobody who owns them. Eight to ten hours is a realistic retainer for one of them, and it is the closest match to what you already know.',
+          tags: ['Closest to what you do now', 'Fits 8 to 10 hrs', 'Highest rate of anything here'] },
+        { kind: 'idea', id: 'retainer', title: 'Sell a block of hours, not an hourly rate',
+          body: 'At eight to ten hours a week, billing by the hour invites people to shave it and makes you look like overflow help. A fixed weekly or monthly amount for a defined scope reads as someone who owns a piece of the business. It also protects your evenings, because the scope is the limit, not the clock.',
+          tags: ['Costs nothing to try', 'Decide once'] },
+        { kind: 'idea', id: 'remoteEA', title: 'Remote assistant work for a founder',
+          body: 'Remote removes the commute, which matters more than usual when the whole week is eight hours. Calendar, inbox, chasing vendors, expenses. Austin has plenty of small founders who need this and cannot justify someone full time.',
+          tags: ['No commute', 'Austin has depth here'] },
+        { kind: 'idea', id: 'instagram', title: 'Bundle Instagram, do not sell it alone',
+          body: 'You run the account for a business that hit 300 customers. Plenty of small businesses will pay for someone who posts consistently and answers DMs. Be warned that selling social media on its own is crowded and gets bid down. Attached to ops work it is worth real money, on its own it is worth much less.',
+          tags: ['2 to 3 hrs a week', 'Worth more bundled'] },
+        { kind: 'idea', id: 'vendorCoord', title: 'Supplier and vendor chasing as its own service',
+          body: 'Unglamorous, genuinely valuable, and almost everyone running a physical product hates doing it. It also batches well and does not need you at a desk at a set hour, which suits a short week better than anything that requires live availability.',
+          tags: ['Asynchronous', 'Fits odd hours'] },
+        { kind: 'idea', id: 'spanish', title: 'Charge for the Spanish, or leave it off',
+          body: 'If your Spanish is genuinely good enough to handle a supplier call or a crew conversation, it widens the pool considerably in Austin food and trades businesses, and it is worth naming. If it is not, leave it off entirely. A half-claim you get tested on in the first interview costs more than it wins.',
+          tags: ['Only if you would use it live', 'Answer the question above first'] },
+        { kind: 'idea', id: 'introductions', title: 'Ask three people for an introduction this month',
+          body: 'This is the highest-return hour on the whole list, and the one most people skip. Your boss, a supplier, and a long-standing customer each know other owners. A warm introduction with your page link attached will beat fifty cold applications, and you can do all three in an afternoon.',
+          tags: ['Under an hour', 'Do this first'] },
+        { kind: 'idea', id: 'onePlace', title: 'Be findable in one place, kept current',
+          body: 'One profile that is current beats five that are half-filled, and at eight hours a week you cannot maintain five. Pick the page or LinkedIn, point everything at it, and let the rest go stale without guilt.',
+          tags: ['Pick one', 'Stop maintaining the rest'] },
+        { kind: 'idea', id: 'handsOnWedge', title: 'Treat the hands-on work as a wedge, not the job',
+          body: 'Power washing, vehicle repairs and truck outfitting are unusual for someone selling operations, and unusual is memorable. In a logistics or trades business it is worth leading with. In a software startup it muddies what you are. Decide per conversation instead of once for everyone.',
+          tags: ['Depends on who you are talking to'] },
+        { kind: 'idea', id: 'fiveMessages', title: 'Five targeted messages a week, not fifty',
+          body: 'One hour. Eight to ten hours a week means you can serve one or two clients, so volume is not the goal and mass applying is wasted effort. Five businesses you have actually looked at, with a line about what you noticed, will do more than a hundred generic sends.',
+          tags: ['1 hr a week', 'Quality over volume'] },
+        { kind: 'field', id: 'leverageOwn', type: 'textarea',
+          label: 'Anything on this list you are already doing, or an idea of your own?',
+          placeholder: 'Optional.' }
       ]
     },
+
     {
-      id: 'looking',
-      title: 'What you\'re looking for',
-      heading: 'So we point you at the right people.',
-      why: 'A landing page that attracts the wrong opportunities wastes everyone\'s time. Be specific about fit.',
-      questions: [
-        { id: 'execType', label: 'The kind of executive you work best with', hint: 'Founder vs. operator, hands-on vs. delegator, high-travel, public-facing, technical, and so on.', type: 'textarea' },
-        { id: 'companySize', label: 'Company size and stage that suits you', type: 'text', placeholder: 'Series B startup, 50–200 people / established mid-size / enterprise / family office' },
-        { id: 'targetIndustries', label: 'Industries you want to be in, and any you\'d rather avoid', type: 'textarea' },
-        { id: 'travel', label: 'Travel willingness', type: 'select', options: ['None', 'Occasional (a few trips a year)', 'Regular (monthly)', 'Frequent (traveling with the exec)'] },
-        { id: 'dealBreakers', label: 'Deal-breakers', type: 'textarea' },
-        { id: 'fiveYears', label: 'Where you want to be in three to five years', hint: 'Chief of staff? Running an office? Still an EA, but for someone specific?', type: 'textarea' }
-      ]
-    },
-    {
-      id: 'landing',
-      title: 'For the landing page',
-      heading: 'What goes public, and how people reach you.',
-      why: 'The finished page will be public. This section makes sure nothing ends up online that you didn\'t sign off on, and that the right contact path is set up.',
-      questions: [
-        { id: 'bio', label: 'Short bio in your own words', hint: 'Three to five sentences, first person. It will be edited, so don\'t agonize.', type: 'textarea', tall: true },
-        { id: 'keywords', label: 'Three to five words you want a recruiter to associate with you', type: 'text' },
-        { id: 'publicInfo', label: 'What are you comfortable having on a public page?', hint: 'Go down the list and say yes or no: full name, city, photo, past employer names, email address, phone number, LinkedIn link.', type: 'textarea' },
-        { id: 'headshot', label: 'Do you have a professional headshot?', type: 'select', options: ['Yes, recent', 'Yes, but it\'s old', 'No, need to arrange one', 'Prefer no photo'] },
-        { id: 'references', label: 'References willing to be quoted', hint: 'Names and relationship, or "will provide on request."', type: 'textarea' },
-        { id: 'contactMethod', label: 'Preferred way for a recruiter or exec to first reach you', type: 'text', placeholder: 'Email / LinkedIn message / a contact form on the page / phone' },
-        { id: 'workAuth', label: 'Authorized to work in the US without sponsorship?', type: 'select', options: ['Yes', 'No', 'Prefer to discuss directly'] },
-        { id: 'anythingElse', label: 'Anything else the person writing your page should know', type: 'textarea' }
+      id: 'final',
+      title: 'Last word',
+      heading: 'Anything else before this goes live.',
+      why: 'The page is ready. Send the two missing answers and they drop straight in.',
+      blocks: [
+        { kind: 'field', id: 'goLive', type: 'radio',
+          label: 'Are you happy for the page to go online as it stands?',
+          hint: 'It can go up now and the missing pieces can be added afterwards. Nothing on this page has to be finished first.',
+          options: [
+            'Yes, put it up now and add the rest later',
+            'Put it up once the quote is in',
+            'Hold off, I want to go through it with you first'
+          ] },
+        { kind: 'field', id: 'anythingElse', type: 'textarea',
+          label: 'Anything else at all.',
+          hint: 'Something that reads wrong, something missing, something you have thought of since. No wrong answers here.',
+          placeholder: 'Optional.' }
       ]
     }
   ];
 
-  var state = { version: 1, updatedAt: null, answers: {}, roles: [{}] };
+  var SPINOFFS = [
+    {
+      id: 'ownRoute',
+      title: 'A tiny delivery route that belongs to you',
+      pitch: 'You have already run a grocery delivery operation at 300 customers, so run a deliberately small one that is yours: twenty households, one narrow product, one morning a week.',
+      headline: 'About $240 a week for one morning',
+      figures: [
+        { v: '$800', l: 'A week in orders, if 20 households spend $40' },
+        { v: '$240', l: 'Your share at a 30% margin' },
+        { v: '1 morning', l: 'One route, one day a week' }
+      ],
+      sum: 'Twenty households at forty dollars each is eight hundred a week moving through the business. Keep thirty percent of that and you have two hundred and forty for one morning\'s work, which lands somewhere around sixty dollars an hour.',
+      test: 'The margin is the whole game, and it is the one number you do not have yet. Get a real wholesale price out of one vendor before you believe any of the rest of this.',
+      steps: [
+        { t: 'Pick one narrow thing, not groceries.', d: 'Eggs and produce from two farms. Bread from one bakery. One category means one supplier conversation, one price list, and a vehicle you can load in twenty minutes.' },
+        { t: 'Talk to two farmers market vendors before you spend a dollar.', d: 'Ask what they would charge you for a standing weekly wholesale order. If neither will do it, the idea stops there and you have lost one Saturday morning instead of a season.' },
+        { t: 'Find twenty households inside a fifteen minute radius.', d: 'Nextdoor, one neighbourhood group, and the school pickup line. Twenty households is small enough to serve in a morning and big enough to be worth the morning.' },
+        { t: 'Take the money before you buy the stock.', d: 'Weekly or monthly, paid up front. This is the whole difference between a business and an expensive hobby, and you already know exactly what it feels like when someone pays late.' },
+        { t: 'Run it unchanged for six weeks.', d: 'Same day, same route, same time. Do not add products, do not add a second day, do not redesign anything. If week six still works and you still enjoy it, then grow it.' }
+      ],
+      watch: 'What you carry decides which rules apply to you. Eggs, dairy and anything prepared are treated differently from whole produce in Texas. One call to the county health department before you start is worth more than any amount of reading afterwards.'
+    },
+    {
+      id: 'washing',
+      title: 'Power washing, sold to businesses',
+      pitch: 'Of everything on your list, power washing is the one people pay for the same week they call you, and a restaurant patio needs doing again every single month.',
+      headline: 'About $1,000 a month for eight hours of work',
+      figures: [
+        { v: '$1,000', l: 'A month from four customers at $250 each' },
+        { v: '8 hrs', l: 'Roughly two hours a patio, once a month' },
+        { v: 'Week one', l: 'How soon the first job can be paid' }
+      ],
+      sum: 'Four businesses on a monthly patio wash at two hundred and fifty dollars is a thousand dollars a month for about eight hours of work. Four customers is a small enough number that you could have them all by the end of one determined week.',
+      test: 'Two hundred and fifty is a placeholder, not a market rate. Call two washing companies as though you were the restaurant, ask what they would charge for a patio that size, and put their number in place of mine.',
+      steps: [
+        { t: 'Sell to businesses, not driveways.', d: 'A restaurant patio, a dumpster pad, a fleet of three vans. Businesses book on a schedule, pay against an invoice, and do not haggle the way homeowners do on a one-off job.' },
+        { t: 'Quote a monthly rate, never a one-off.', d: 'Four patios on a monthly rate is predictable money for one morning of work each. One-off jobs mean starting the search again every week, which is exactly what a short week cannot absorb.' },
+        { t: 'Get the first customer before buying a machine.', d: 'Walk into five places on the same street on a Tuesday morning, before the lunch rush starts. Rent a machine for that first job and buy one out of the second job\'s money.' },
+        { t: 'Photograph every job, before and after.', d: 'It is the only marketing this business needs, and it is where running an Instagram account stops being a line on a resume and starts being worth money to you directly.' },
+        { t: 'Ask each happy customer one question.', d: '"Which place near you has the worst-looking patio?" That single question is how this kind of business grows, one street at a time, without any advertising at all.' }
+      ],
+      watch: 'Commercial washing sends water and whatever was on the ground into a storm drain, and cities have rules about that. Find out what Austin requires before your first paid commercial job, not after someone complains.'
+    },
+    {
+      id: 'setupPackage',
+      title: 'Set up someone else\'s delivery, for a fixed fee',
+      pitch: 'Sell what took you years to work out as a two-week package: you set up a small food business\'s ordering, suppliers and route, then hand them the keys and leave.',
+      headline: '$1,500 a project, about fifteen hours each',
+      figures: [
+        { v: '$1,500', l: 'A fixed fee for one setup' },
+        { v: '15 hrs', l: 'Spread across two weeks' },
+        { v: '8 a year', l: 'Two a quarter, about six hours a week' }
+      ],
+      sum: 'Fifteen hundred dollars for roughly fifteen hours is about a hundred an hour, and it goes up every time you reuse the templates instead of rebuilding them. Eight of those across a year is twelve thousand dollars from six hours a week.',
+      test: 'All of that depends on finding eight. Do the first one cheap to get the testimonial, then find out how hard the second one is to sell before you count on the other six.',
+      steps: [
+        { t: 'Write down what you actually do in a week.', d: 'Suppliers, ordering, stock, routes, customer messages. That list is the product. You have never written it down because you just do it, and that is precisely why it is worth money to someone who cannot.' },
+        { t: 'Price it as one fixed fee, not by the hour.', d: 'Two weeks, one number, they keep the spreadsheets and the supplier list. A fixed fee hides how fast you are, and being fast is the entire advantage of knowing this cold.' },
+        { t: 'Do the first one cheap, for someone you like.', d: 'In exchange for a written testimonial and permission to name them. One real example you can point at beats any amount of describing what you would do.' },
+        { t: 'Go after businesses that started delivering recently.', d: 'A market vendor who began taking online orders six months ago is drowning and knows it. An established operation already has its systems and will not pay you to replace them.' },
+        { t: 'Build the templates once and reuse them.', d: 'The order form, the supplier tracker, the route sheet. Drop the same set in for each client instead of rebuilding. That reuse is the only reason this fits inside eight hours a week.' }
+      ],
+      watch: 'Check what you signed with your current employer before you sell this to anyone in the same line of work. Worth five minutes now rather than an awkward conversation later.'
+    }
+  ];
+
+  var state = { version: 1, updatedAt: null, answers: {}, open: {} };
   var storageOk = true;
   var saveTimer = null;
 
@@ -305,20 +563,39 @@
     return node;
   };
 
+  // ---------- Field list, flattened ----------
+  var FIELDS = [];
+  SECTIONS.forEach(function (sec) {
+    sec.blocks.forEach(function (b) {
+      if (b.kind === 'field') FIELDS.push({ sec: sec, field: b });
+      if (b.kind === 'idea') {
+        FIELDS.push({ sec: sec, field: { id: b.id + 'Interest', type: 'radio', label: b.title, options: ['Yes, I want to try this', 'Maybe, tell me more', 'Already doing it', 'Not for me'] } });
+        FIELDS.push({ sec: sec, field: { id: b.id + 'Note', type: 'text', label: b.title + ' — my note' } });
+      }
+    });
+  });
+  SPINOFFS.forEach(function (s) {
+    FIELDS.push({ field: { id: s.id + 'Note', type: 'text', label: s.title + ' — my note' } });
+  });
+
+  function isAnswered(id) {
+    var v = state.answers[id];
+    if (Array.isArray(v)) return v.length > 0;
+    return typeof v === 'string' && v.trim() !== '';
+  }
+
   // ---------- Storage ----------
   function loadState() {
     try {
       var raw = window.localStorage.getItem(STORAGE_KEY);
       if (!raw) return;
       var parsed = JSON.parse(raw);
-      if (parsed && typeof parsed === 'object') {
-        state.answers = parsed.answers && typeof parsed.answers === 'object' ? parsed.answers : {};
-        state.roles = Array.isArray(parsed.roles) && parsed.roles.length ? parsed.roles : [{}];
+      if (parsed && typeof parsed === 'object' && parsed.answers && typeof parsed.answers === 'object') {
+        state.answers = parsed.answers;
+        state.open = parsed.open && typeof parsed.open === 'object' ? parsed.open : {};
         state.updatedAt = parsed.updatedAt || null;
       }
-    } catch (e) {
-      storageOk = false;
-    }
+    } catch (e) { storageOk = false; }
   }
 
   function saveStateNow() {
@@ -340,9 +617,7 @@
     saveTimer = setTimeout(saveStateNow, 400);
   }
 
-  function flushSave() {
-    if (saveTimer) { clearTimeout(saveTimer); saveTimer = null; saveStateNow(); }
-  }
+  function flushSave() { if (saveTimer) { clearTimeout(saveTimer); saveTimer = null; saveStateNow(); } }
 
   function setStatus(text, warn) {
     var s = $('#saveStatus');
@@ -358,86 +633,133 @@
   }
 
   // ---------- Rendering ----------
-  function fieldControl(q, value, inputId) {
+  function markAnswered(group, id) { group.classList.toggle('answered', isAnswered(id)); }
+
+  function renderTextish(f, group, inputId) {
     var control;
-    if (q.type === 'textarea') {
-      control = el('textarea', { id: inputId, rows: q.tall ? 6 : 4 });
-      if (q.tall) control.classList.add('tall');
-      control.value = value || '';
-    } else if (q.type === 'select') {
+    if (f.type === 'textarea') {
+      control = el('textarea', { id: inputId, rows: f.tall ? 7 : 4 });
+      if (f.tall) control.classList.add('tall');
+    } else if (f.type === 'select') {
       control = el('select', { id: inputId });
       control.appendChild(el('option', { value: '', text: 'Select one' }));
-      q.options.forEach(function (o) {
+      f.options.forEach(function (o) {
         var opt = el('option', { value: o, text: o });
-        if (value === o) opt.selected = true;
+        if (state.answers[f.id] === o) opt.selected = true;
         control.appendChild(opt);
       });
     } else {
       control = el('input', { id: inputId, type: 'text', autocomplete: 'off' });
-      control.value = value || '';
     }
-    if (q.placeholder) control.setAttribute('placeholder', q.placeholder);
-    return control;
-  }
+    if (f.type !== 'select') control.value = state.answers[f.id] || '';
+    if (f.placeholder) control.setAttribute('placeholder', f.placeholder);
+    if (f.hint) control.setAttribute('aria-describedby', inputId + '-hint');
 
-  function renderQuestion(q, value, inputId, onChange) {
-    var group = el('div', { class: 'form-group' + (value ? ' answered' : '') });
-    group.appendChild(el('label', { for: inputId, text: q.label }));
-    if (q.hint) {
-      var hintId = inputId + '-hint';
-      group.appendChild(el('span', { class: 'hint', id: hintId, text: q.hint }));
-    }
-    var control = fieldControl(q, value, inputId);
-    if (q.hint) control.setAttribute('aria-describedby', inputId + '-hint');
-    control.dataset.questionId = q.id;
     var handler = function () {
-      onChange(control.value);
-      group.classList.toggle('answered', control.value.trim() !== '');
+      state.answers[f.id] = control.value;
+      markAnswered(group, f.id);
       updateProgress();
       scheduleSave();
     };
     control.addEventListener('input', handler);
     control.addEventListener('change', handler);
+
+    if (f.starters && f.starters.length) {
+      var box = el('div', { class: 'starters' });
+      box.appendChild(el('p', { class: 'starters-label', text: 'Stuck? Click one to drop wording in the box' }));
+      var row = el('div', { class: 'starter-row' });
+      f.starters.forEach(function (s) {
+        var chip = el('button', { type: 'button', class: 'starter', text: s.label });
+        chip.addEventListener('click', function () {
+          var cur = control.value.trim();
+          control.value = cur ? cur + '\n\n' + s.text : s.text;
+          chip.classList.add('used');
+          handler();
+          control.focus();
+          control.setSelectionRange(control.value.length, control.value.length);
+        });
+        row.appendChild(chip);
+      });
+      box.appendChild(row);
+      group.appendChild(box);
+    }
     group.appendChild(control);
+  }
+
+  function renderChoices(f, group, inputId) {
+    var multi = f.type === 'checks';
+    var wrap = el('div', { class: 'choices' + (f.inline ? ' inline' : ''), role: multi ? 'group' : 'radiogroup', 'aria-labelledby': inputId + '-label' });
+    if (multi && !Array.isArray(state.answers[f.id])) state.answers[f.id] = state.answers[f.id] ? [state.answers[f.id]] : [];
+
+    f.options.forEach(function (o, i) {
+      var optId = inputId + '-' + i;
+      var label = el('label', { class: 'choice', for: optId });
+      var input = el('input', { type: multi ? 'checkbox' : 'radio', id: optId, name: inputId, value: o });
+      if (multi) input.checked = state.answers[f.id].indexOf(o) !== -1;
+      else input.checked = state.answers[f.id] === o;
+      if (input.checked) label.classList.add('checked');
+
+      input.addEventListener('change', function () {
+        if (multi) {
+          var list = state.answers[f.id].slice();
+          var at = list.indexOf(o);
+          if (input.checked && at === -1) list.push(o);
+          if (!input.checked && at !== -1) list.splice(at, 1);
+          state.answers[f.id] = list;
+        } else {
+          state.answers[f.id] = o;
+        }
+        Array.prototype.forEach.call(wrap.querySelectorAll('.choice'), function (c) {
+          var box = c.querySelector('input');
+          c.classList.toggle('checked', box.checked);
+        });
+        markAnswered(group, f.id);
+        updateProgress();
+        scheduleSave();
+      });
+
+      label.appendChild(input);
+      label.appendChild(el('span', { text: o }));
+      wrap.appendChild(label);
+    });
+    group.appendChild(wrap);
+  }
+
+  function renderField(f) {
+    var inputId = 'f-' + f.id;
+    var group = el('div', { class: 'form-group' });
+    var choiceType = f.type === 'radio' || f.type === 'checks';
+
+    if (choiceType) {
+      group.appendChild(el('p', { class: 'group-label', id: inputId + '-label', text: f.label }));
+    } else {
+      group.appendChild(el('label', { for: inputId, text: f.label }));
+    }
+    if (f.hint) group.appendChild(el('span', { class: 'hint', id: inputId + '-hint', text: f.hint }));
+
+    if (choiceType) renderChoices(f, group, inputId);
+    else renderTextish(f, group, inputId);
+
+    markAnswered(group, f.id);
     return group;
   }
 
-  function renderRole(roleData, index) {
-    var wrap = el('div', { class: 'role', 'data-role-index': index });
-    var head = el('div', { class: 'role-head' }, [
-      el('span', { class: 'role-title', text: 'Role ' + (index + 1) })
+  function renderIdea(b, n) {
+    var card = el('div', { class: 'idea' });
+    var head = el('div', { class: 'idea-head' }, [
+      el('span', { class: 'idea-num', text: String(n) }),
+      el('span', { class: 'idea-title', text: b.title })
     ]);
-    var remove = el('button', { type: 'button', class: 'btn btn-ghost btn-sm', text: 'Remove', 'aria-label': 'Remove role ' + (index + 1) });
-    remove.addEventListener('click', function () {
-      if (state.roles.length === 1) {
-        state.roles[0] = {};
-      } else {
-        state.roles.splice(index, 1);
-      }
-      renderRoles();
-      updateProgress();
-      scheduleSave();
-    });
-    head.appendChild(remove);
-    wrap.appendChild(head);
-
-    var grid = el('div', { class: 'role-grid' });
-    ROLE_FIELDS.forEach(function (f) {
-      var inputId = 'role-' + index + '-' + f.id;
-      var group = renderQuestion(f, roleData[f.id] || '', inputId, function (val) {
-        state.roles[index][f.id] = val;
-      });
-      if (f.span2) group.classList.add('span2');
-      grid.appendChild(group);
-    });
-    wrap.appendChild(grid);
-    return wrap;
-  }
-
-  function renderRoles() {
-    var host = $('#rolesHost');
-    host.innerHTML = '';
-    state.roles.forEach(function (r, i) { host.appendChild(renderRole(r, i)); });
+    card.appendChild(head);
+    card.appendChild(el('p', { class: 'idea-body', text: b.body }));
+    if (b.tags) {
+      var meta = el('div', { class: 'idea-meta' });
+      b.tags.forEach(function (t) { meta.appendChild(el('span', { class: 'tag', text: t })); });
+      card.appendChild(meta);
+    }
+    card.appendChild(renderField({ id: b.id + 'Interest', type: 'radio', inline: true, label: 'What do you think?', options: ['Yes, I want to try this', 'Maybe, tell me more', 'Already doing it', 'Not for me'] }));
+    card.appendChild(renderField({ id: b.id + 'Note', type: 'text', label: 'Your note', placeholder: 'Optional.' }));
+    return card;
   }
 
   function renderSections() {
@@ -449,58 +771,114 @@
     SECTIONS.forEach(function (sec, i) {
       toc.appendChild(el('a', { href: '#sec-' + sec.id, text: (i + 1) + '. ' + sec.title }));
 
-      var card = el('section', { class: 'section', id: 'sec-' + sec.id, 'aria-labelledby': 'h-' + sec.id });
+      var card = el('section', { class: 'section' + (sec.priority ? ' priority' : ''), id: 'sec-' + sec.id, 'aria-labelledby': 'h-' + sec.id });
       card.appendChild(el('p', { class: 'section-label', text: (i + 1) + ' · ' + sec.title }));
       card.appendChild(el('h2', { id: 'h-' + sec.id, text: sec.heading }));
       card.appendChild(el('p', { class: 'why', text: sec.why }));
 
-      if (sec.roles) {
-        card.appendChild(el('div', { id: 'rolesHost' }));
-        var add = el('button', { type: 'button', class: 'btn btn-ghost add-role', text: '+ Add another role' });
-        add.addEventListener('click', function () {
-          state.roles.push({});
-          renderRoles();
-          updateProgress();
-          scheduleSave();
-          var last = $('#rolesHost .role:last-child input');
-          if (last) last.focus();
-        });
-        card.appendChild(add);
-      }
-
-      sec.questions.forEach(function (q) {
-        card.appendChild(renderQuestion(q, state.answers[q.id] || '', 'q-' + q.id, function (val) {
-          state.answers[q.id] = val;
-        }));
+      var ideaCount = 0;
+      sec.blocks.forEach(function (b) {
+        if (b.kind === 'note') {
+          var note = el('div', { class: 'note' });
+          if (b.title) note.appendChild(el('p', { class: 'note-title', text: b.title }));
+          b.body.forEach(function (p) { note.appendChild(el('p', { text: p })); });
+          card.appendChild(note);
+        } else if (b.kind === 'idea') {
+          ideaCount++;
+          card.appendChild(renderIdea(b, ideaCount));
+        } else {
+          card.appendChild(renderField(b));
+        }
       });
 
       host.appendChild(card);
     });
-
-    renderRoles();
   }
 
-  function countFields() {
-    var total = 0, answered = 0;
-    SECTIONS.forEach(function (sec) {
-      sec.questions.forEach(function (q) {
-        total++;
-        if ((state.answers[q.id] || '').trim()) answered++;
+  var CHEVRON = '<svg viewBox="0 0 12 8" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M1 1.5 6 6.5 11 1.5"/></svg>';
+
+  function renderSpinoffs() {
+    var host = $('#spinoffs');
+    host.innerHTML = '';
+
+    var herald = el('h2', { class: 'spin-herald', id: 'spin-herald' });
+    herald.appendChild(document.createTextNode('Have you thought of '));
+    herald.appendChild(el('em', { text: 'trying:' }));
+    host.appendChild(herald);
+    host.appendChild(el('p', { class: 'spin-sub', text: 'Three ways to work for yourself rather than for somebody else. Each one is built out of something you can already do, and each one can start at a size that fits a short week. Tap any of them for the arithmetic and a five step plan. The numbers are worked examples with round figures, not promises. They show how the sums go, so you can put your own in.' }));
+
+    SPINOFFS.forEach(function (s, i) {
+      var card = el('details', { class: 'spin', id: 'spin-' + s.id });
+      if (state.open[s.id]) card.open = true;
+
+      var summary = el('summary');
+      summary.appendChild(el('span', { class: 'spin-badge', text: String(i + 1) }));
+      var head = el('span', { class: 'spin-head' }, [
+        el('span', { class: 'spin-title', text: s.title }),
+        el('span', { class: 'spin-pitch', text: s.pitch })
+      ]);
+      if (s.headline) head.appendChild(el('span', { class: 'spin-headline', text: s.headline }));
+      summary.appendChild(head);
+      var more = el('span', { class: 'spin-more' });
+      more.innerHTML = '<span class="label-closed">How to start</span><span class="label-open">Close</span>' + CHEVRON;
+      summary.appendChild(more);
+      card.appendChild(summary);
+
+      var body = el('div', { class: 'spin-body' });
+
+      if (s.figures) {
+        body.appendChild(el('p', { class: 'plan-label', text: 'What it could add up to' }));
+        var figs = el('div', { class: 'figs' });
+        s.figures.forEach(function (f) {
+          figs.appendChild(el('div', { class: 'fig' }, [
+            el('span', { class: 'fig-v', text: f.v }),
+            el('span', { class: 'fig-l', text: f.l })
+          ]));
+        });
+        body.appendChild(figs);
+        body.appendChild(el('p', { class: 'math-sum', text: s.sum }));
+        var test = el('p', { class: 'math-test' });
+        test.appendChild(el('strong', { text: 'What has to be true: ' }));
+        test.appendChild(document.createTextNode(s.test));
+        body.appendChild(test);
+      }
+
+      body.appendChild(el('p', { class: 'plan-label', text: 'Five steps to get started' }));
+      var ol = el('ol', { class: 'steps' });
+      s.steps.forEach(function (st, n) {
+        var li = el('li');
+        li.appendChild(el('span', { class: 'step-n', text: String(n + 1) }));
+        var t = el('span', { class: 'step-t' });
+        t.appendChild(el('strong', { text: st.t + ' ' }));
+        t.appendChild(document.createTextNode(st.d));
+        li.appendChild(t);
+        ol.appendChild(li);
       });
-    });
-    state.roles.forEach(function (r) {
-      ROLE_FIELDS.forEach(function (f) {
-        total++;
-        if ((r[f.id] || '').trim()) answered++;
+      body.appendChild(ol);
+
+      var watch = el('p', { class: 'watch' });
+      watch.appendChild(el('strong', { text: 'Before you start: ' }));
+      watch.appendChild(document.createTextNode(s.watch));
+      body.appendChild(watch);
+
+      body.appendChild(renderField({ id: s.id + 'Note', type: 'text', label: 'What do you think of this one?', placeholder: 'Optional. Anything from "yes" to "absolutely not".' }));
+      card.appendChild(body);
+
+      card.addEventListener('toggle', function () {
+        state.open[s.id] = card.open;
+        scheduleSave();
       });
+
+      host.appendChild(card);
     });
-    return { total: total, answered: answered };
   }
 
   function updateProgress() {
-    var c = countFields();
-    $('#progressText').textContent = c.answered + ' / ' + c.total + ' answered';
-    $('#progressFill').style.width = (c.total ? Math.round(100 * c.answered / c.total) : 0) + '%';
+    var total = FIELDS.length;
+    var answered = 0;
+    FIELDS.forEach(function (f) { if (isAnswered(f.field.id)) answered++; });
+    $('#progressText').textContent = answered + ' / ' + total + ' answered';
+    $('#progressFill').style.width = (total ? Math.round(100 * answered / total) : 0) + '%';
   }
 
   // ---------- Export ----------
@@ -509,30 +887,47 @@
     return y + '-' + (m < 10 ? '0' : '') + m + '-' + (day < 10 ? '0' : '') + day;
   }
 
-  function answerBlock(label, value) {
-    var v = (value || '').trim();
+  function valueOf(id) {
+    var v = state.answers[id];
+    if (Array.isArray(v)) return v.length ? v.join(', ') : '';
+    return (v || '').trim();
+  }
+
+  function answerBlock(label, id) {
+    var v = valueOf(id);
     return '**' + label + '**\n' + (v ? v : '_No answer yet_') + '\n\n';
   }
 
   function buildMarkdown() {
     var now = new Date();
-    var out = '# ' + PERSON + ' — Executive Assistant Profile\n\n';
+    var total = FIELDS.length, answered = 0;
+    FIELDS.forEach(function (f) { if (isAnswered(f.field.id)) answered++; });
+
+    var out = '# ' + PERSON + ' — landing page review\n\n';
     out += '_Exported ' + isoDate(now) + '_\n\n';
-    var c = countFields();
-    out += '_' + c.answered + ' of ' + c.total + ' questions answered_\n\n';
+    out += '_' + answered + ' of ' + total + ' answered_\n\n';
 
     SECTIONS.forEach(function (sec, i) {
       out += '## ' + (i + 1) + '. ' + sec.title + '\n\n';
-      if (sec.roles) {
-        state.roles.forEach(function (r, ri) {
-          var title = (r.title || '').trim();
-          var company = (r.company || '').trim();
-          var head = title && company ? title + ' — ' + company : (title || company || 'Untitled role');
-          out += '### Role ' + (ri + 1) + ': ' + head + '\n\n';
-          ROLE_FIELDS.forEach(function (f) { out += answerBlock(f.label, r[f.id]); });
-        });
-      }
-      sec.questions.forEach(function (q) { out += answerBlock(q.label, state.answers[q.id]); });
+      var n = 0;
+      sec.blocks.forEach(function (b) {
+        if (b.kind === 'field') {
+          out += answerBlock(b.label, b.id);
+        } else if (b.kind === 'idea') {
+          n++;
+          out += '### Idea ' + n + ': ' + b.title + '\n\n';
+          out += answerBlock('What do you think?', b.id + 'Interest');
+          out += answerBlock('Note', b.id + 'Note');
+        }
+      });
+    });
+
+    out += '## ' + (SECTIONS.length + 1) + '. Working for yourself\n\n';
+    SPINOFFS.forEach(function (s, i) {
+      out += '### Option ' + (i + 1) + ': ' + s.title + '\n\n';
+      out += s.pitch + '\n\n';
+      if (s.headline) out += '_' + s.headline + '_\n\n';
+      out += answerBlock('What do you think of this one?', s.id + 'Note');
     });
     return out.replace(/\n{3,}/g, '\n\n').trim() + '\n';
   }
@@ -540,7 +935,7 @@
   function downloadMarkdown() {
     flushSave();
     var md = buildMarkdown();
-    var filename = PERSON.toLowerCase() + '-ea-profile-' + isoDate(new Date()) + '.md';
+    var filename = 'crystal-page-review-' + isoDate(new Date()) + '.md';
     try {
       var blob = new Blob([md], { type: 'text/markdown;charset=utf-8' });
       var url = URL.createObjectURL(blob);
@@ -571,21 +966,18 @@
       document.body.removeChild(ta);
       toast(ok ? 'Markdown copied to clipboard' : 'Copy failed in this browser');
     };
-    if (navigator.clipboard && navigator.clipboard.writeText) {
-      navigator.clipboard.writeText(md).then(done, fail);
-    } else {
-      fail();
-    }
+    if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(md).then(done, fail);
+    else fail();
   }
 
   function clearAll() {
-    var ok = window.confirm('Clear every answer on this page? This cannot be undone.');
-    if (!ok) return;
+    if (!window.confirm('Clear every answer on this page? This cannot be undone.')) return;
     clearTimeout(saveTimer); saveTimer = null;
     state.answers = {};
-    state.roles = [{}];
+    state.open = {};
     try { window.localStorage.removeItem(STORAGE_KEY); } catch (e) {}
     renderSections();
+    renderSpinoffs();
     updateProgress();
     setStatus('Cleared');
     toast('All answers cleared');
@@ -604,15 +996,13 @@
   // ---------- Boot ----------
   loadState();
   renderSections();
+  renderSpinoffs();
   updateProgress();
-  if (!storageOk) {
-    setStatus('Autosave unavailable in this browser', true);
-  } else if (state.updatedAt) {
+  if (!storageOk) setStatus('Autosave unavailable in this browser', true);
+  else if (state.updatedAt) {
     var d = new Date(state.updatedAt);
     setStatus(isNaN(d.getTime()) ? 'Saved' : 'Saved ' + isoDate(d) + ' ' + timeLabel(d));
-  } else {
-    setStatus('Not saved yet');
-  }
+  } else setStatus('Not saved yet');
 
   $('#exportBtn').addEventListener('click', downloadMarkdown);
   $('#exportTop').addEventListener('click', downloadMarkdown);
