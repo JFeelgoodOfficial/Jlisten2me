@@ -174,7 +174,55 @@
     .watch { font-size: 0.83rem; color: var(--text-secondary); line-height: 1.65; padding: 0.85rem 1.1rem; background: rgba(255,227,236,0.6); border-left: 3px solid var(--accent-soft); border-radius: 0 10px 10px 0; margin-bottom: 1.4rem; }
     .watch strong { color: var(--accent-deep); font-weight: 600; }
 
+    .notes { margin-top: 3.5rem; }
+    .note-list { list-style: none; margin-bottom: 1.4rem; }
+    .note-item { position: relative; padding: 0.95rem 2.6rem 0.95rem 1.2rem; background: #fff; border: 1px solid var(--border); border-radius: 16px 16px 16px 5px; margin-bottom: 0.8rem; }
+    .note-text { font-size: 0.91rem; color: var(--text-primary); line-height: 1.7; white-space: pre-wrap; word-wrap: break-word; }
+    .note-meta { display: block; margin-top: 0.45rem; font-size: 0.72rem; letter-spacing: 0.04em; color: var(--text-muted); }
+    .note-del { position: absolute; top: 0.6rem; right: 0.6rem; width: 26px; height: 26px; border-radius: 50%; border: 1px solid var(--border); background: #fff; color: var(--text-muted); font-size: 0.9rem; line-height: 1; cursor: pointer; transition: all 0.15s; }
+    .note-del:hover { color: var(--danger); border-color: rgba(214,69,95,0.5); }
+    .note-empty { padding: 1.4rem 1.2rem; font-size: 0.89rem; color: var(--text-muted); line-height: 1.7; background: rgba(255,241,245,0.8); border: 1px dashed var(--accent-soft); border-radius: 14px; margin-bottom: 1.4rem; }
+    .note-form textarea { width: 100%; padding: 0.85rem 1rem; background: #fff; border: 1px solid var(--border); border-radius: 14px; color: var(--text-primary); font-family: var(--font); font-size: 0.91rem; line-height: 1.6; min-height: 92px; resize: vertical; outline: none; transition: border-color 0.2s, box-shadow 0.2s; }
+    .note-form textarea:focus { border-color: var(--accent); box-shadow: 0 0 0 3px rgba(228,70,138,0.13); }
+    .note-actions { display: flex; align-items: center; gap: 0.8rem; flex-wrap: wrap; margin-top: 0.8rem; }
+    .note-tip { font-size: 0.75rem; color: var(--text-muted); }
+
     footer { padding: 2rem; border-top: 1px solid var(--border); text-align: center; font-size: 0.72rem; color: var(--text-muted); }
+
+    #printSheet { display: none; }
+
+    @page { margin: 16mm; }
+    @media print {
+      html { scroll-behavior: auto; }
+      body { background: #fff !important; background-image: none !important; color: #000; font-size: 10.5pt; line-height: 1.5; }
+      .topbar, main, footer, .toast { display: none !important; }
+      #printSheet { display: block !important; }
+      .ps-head { border-bottom: 2px solid #000; padding-bottom: 0.4rem; margin-bottom: 1.2rem; }
+      .ps-head h1 { font-size: 19pt; font-weight: 700; letter-spacing: -0.02em; margin-bottom: 0.15rem; color: #000; }
+      .ps-head p { font-size: 9pt; color: #444; }
+      .ps-block { margin-bottom: 1.5rem; page-break-inside: auto; }
+      .ps-block > h2 { font-size: 14pt; font-weight: 700; color: #000; margin-bottom: 0.2rem; page-break-after: avoid; }
+      .ps-pitch { font-size: 10pt; color: #333; margin-bottom: 0.5rem; }
+      .ps-aim { font-size: 9.5pt; font-weight: 700; color: #000; border: 1px solid #000; display: inline-block; padding: 0.1rem 0.5rem; margin-bottom: 0.7rem; }
+      .ps-plan { margin-bottom: 1rem; page-break-inside: auto; }
+      .ps-plan h3 { font-size: 11.5pt; font-weight: 700; color: #000; margin-bottom: 0.15rem; page-break-after: avoid; }
+      .ps-plan .ps-sub { font-size: 9pt; color: #444; margin-bottom: 0.45rem; }
+      .ps-real { font-size: 9pt; color: #222; border-left: 2.5pt solid #000; padding: 0.15rem 0 0.15rem 0.5rem; margin-bottom: 0.6rem; }
+      .ps-steps { list-style: none; }
+      .ps-steps li { display: flex; gap: 0.45rem; margin-bottom: 0.4rem; page-break-inside: avoid; }
+      .ps-box { flex-shrink: 0; width: 11pt; height: 11pt; border: 1pt solid #000; margin-top: 1.5pt; }
+      .ps-step-t { font-size: 9.5pt; color: #111; }
+      .ps-step-t b { font-weight: 700; }
+      .ps-tag { font-size: 8pt; color: #444; white-space: nowrap; }
+      .ps-watch { font-size: 8.5pt; color: #222; border: 1pt solid #000; padding: 0.3rem 0.5rem; margin-top: 0.4rem; }
+      .ps-note { font-size: 9.5pt; color: #111; border-bottom: 0.5pt solid #bbb; padding-bottom: 0.35rem; margin-bottom: 0.45rem; white-space: pre-wrap; }
+      .ps-note .ps-when { display: block; font-size: 8pt; color: #555; }
+      .ps-answer { font-size: 9.5pt; margin-bottom: 0.55rem; }
+      .ps-answer b { display: block; font-weight: 700; }
+      .ps-answer span { color: #222; white-space: pre-wrap; }
+      .ps-empty { color: #666; font-style: italic; }
+      .ps-foot { margin-top: 1.5rem; border-top: 1pt solid #999; padding-top: 0.4rem; font-size: 8pt; color: #555; }
+    }
 
     .toast { position: fixed; left: 50%; bottom: 1.5rem; transform: translateX(-50%) translateY(20px); background: var(--accent); color: #fff; border: 1px solid var(--accent-deep); padding: 0.7rem 1.3rem; border-radius: 999px; font-size: 0.84rem; box-shadow: 0 6px 20px rgba(228,70,138,0.3); opacity: 0; pointer-events: none; transition: opacity 0.25s, transform 0.25s; z-index: 200; max-width: calc(100% - 2rem); }
     .toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
@@ -242,14 +290,19 @@
     <p>This makes one file with every question and your answer underneath it. Anything you skipped is still in there and marked, so nothing goes missing.</p>
     <div class="actions-row">
       <button type="button" class="btn btn-primary" id="exportBtn">Export Markdown file</button>
+      <button type="button" class="btn btn-ghost" id="printBtn">Print or save as PDF</button>
       <button type="button" class="btn btn-ghost" id="copyBtn">Copy markdown to clipboard</button>
-      <button type="button" class="btn btn-ghost btn-danger" id="clearBtn">Clear all answers</button>
+      <button type="button" class="btn btn-ghost btn-danger" id="clearBtn">Clear everything</button>
     </div>
     <p class="actions-note">If your browser blocks the download, use the copy button and paste into any text file.</p>
   </div>
 
   <section class="spinoffs" id="spinoffs" aria-labelledby="spin-herald"></section>
+
+  <section class="section notes" id="notes" aria-labelledby="notes-h"></section>
 </main>
+
+<div id="printSheet" aria-hidden="true"></div>
 
 <footer>Private review page · Answers stay in this browser · Nothing is sent anywhere</footer>
 
@@ -743,7 +796,7 @@
     }
   ];
 
-  var state = { version: 1, updatedAt: null, answers: {}, open: {}, tabs: {} };
+  var state = { version: 1, updatedAt: null, answers: {}, open: {}, tabs: {}, notes: [] };
   var storageOk = true;
   var saveTimer = null;
 
@@ -792,6 +845,7 @@
         state.answers = parsed.answers;
         state.open = parsed.open && typeof parsed.open === 'object' ? parsed.open : {};
         state.tabs = parsed.tabs && typeof parsed.tabs === 'object' ? parsed.tabs : {};
+        state.notes = Array.isArray(parsed.notes) ? parsed.notes : [];
         state.updatedAt = parsed.updatedAt || null;
       }
     } catch (e) { storageOk = false; }
@@ -979,6 +1033,7 @@
         ])
       ]));
       card.appendChild(el('p', { class: 'why', text: sec.why }));
+      if (i === SECTIONS.length - 1) toc.appendChild(el('a', { href: '#notes', text: (SECTIONS.length + 1) + '. Your notebook' }));
 
       var ideaCount = 0;
       sec.blocks.forEach(function (b) {
@@ -1161,6 +1216,92 @@
     });
   }
 
+  // ---------- Notes ----------
+  function stamp(iso) {
+    var d = new Date(iso);
+    if (isNaN(d.getTime())) return '';
+    var months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+    return d.getDate() + ' ' + months[d.getMonth()] + ' ' + d.getFullYear() + ', ' + timeLabel(d);
+  }
+
+  function renderNotes() {
+    var host = $('#notes');
+    host.innerHTML = '';
+
+    host.appendChild(el('div', { class: 'sec-head' }, [
+      el('span', { class: 'sec-num', 'aria-hidden': 'true', text: '7' }),
+      el('div', {}, [
+        el('p', { class: 'sec-kicker', text: 'Your notebook' }),
+        el('h2', { id: 'notes-h', class: 'sec-title', text: 'Anything you think of.' })
+      ])
+    ]));
+    host.appendChild(el('p', { class: 'why', text: 'Ideas, questions, things you remembered in the car. Write them down here as they come and they all go into the file you send back. Nothing here has to be tidy or finished.' }));
+
+    if (!state.notes.length) {
+      host.appendChild(el('p', { class: 'note-empty', text: 'Nothing written down yet. The first one is usually the hardest, so start with whatever is annoying you about the page.' }));
+    } else {
+      var list = el('ul', { class: 'note-list' });
+      state.notes.forEach(function (n) {
+        var item = el('li', { class: 'note-item' });
+        item.appendChild(el('p', { class: 'note-text', text: n.text }));
+        item.appendChild(el('span', { class: 'note-meta', text: stamp(n.at) }));
+        var del = el('button', { type: 'button', class: 'note-del', text: '×', 'aria-label': 'Delete this note' });
+        del.addEventListener('click', function () {
+          state.notes = state.notes.filter(function (x) { return x.id !== n.id; });
+          renderNotes();
+          saveStateNow();
+          toast('Note deleted');
+        });
+        item.appendChild(del);
+        list.appendChild(item);
+      });
+      host.appendChild(list);
+    }
+
+    var form = el('div', { class: 'note-form' });
+    var label = el('label', { class: 'group-label', for: 'noteInput', text: 'Write something' });
+    form.appendChild(label);
+    var ta = el('textarea', { id: 'noteInput', rows: 3, placeholder: 'Type it here, however it comes out.' });
+    form.appendChild(ta);
+
+    var add = el('button', { type: 'button', class: 'btn btn-primary', text: 'Add to my notes' });
+    var exportNotes = el('button', { type: 'button', class: 'btn btn-ghost', text: 'Export just these notes' });
+
+    function submit() {
+      var text = ta.value.trim();
+      if (!text) { ta.focus(); return; }
+      state.notes.push({ id: 'n' + Date.now() + Math.floor(Math.random() * 1000), at: new Date().toISOString(), text: text });
+      renderNotes();
+      saveStateNow();
+      toast('Added to your notes');
+      var next = $('#noteInput');
+      if (next) next.focus();
+    }
+
+    add.addEventListener('click', submit);
+    ta.addEventListener('keydown', function (e) {
+      if (e.key === 'Enter' && (e.metaKey || e.ctrlKey)) { e.preventDefault(); submit(); }
+    });
+    exportNotes.addEventListener('click', downloadNotes);
+
+    var row = el('div', { class: 'note-actions' }, [add, exportNotes]);
+    row.appendChild(el('span', { class: 'note-tip', text: state.notes.length ? state.notes.length + ' saved so far' : 'Ctrl or Cmd plus Enter also adds it' }));
+    form.appendChild(row);
+    host.appendChild(form);
+  }
+
+  function notesMarkdown() {
+    if (!state.notes.length) return '_Nothing written down yet_\n\n';
+    return state.notes.map(function (n) {
+      return '**' + (stamp(n.at) || 'Undated') + '**\n' + n.text + '\n\n';
+    }).join('');
+  }
+
+  function downloadNotes() {
+    var md = '# ' + PERSON + ' — notes and ideas\n\n_Exported ' + isoDate(new Date()) + '_\n\n' + notesMarkdown();
+    saveFile(md.trim() + '\n', 'crystal-notes-' + isoDate(new Date()) + '.md', 'Exported your notes');
+  }
+
   function updateProgress() {
     var total = FIELDS.length;
     var answered = 0;
@@ -1218,25 +1359,137 @@
       out += answerBlock('Which month are you aiming at?', s.id + 'Aim');
       out += answerBlock('What do you think of this one?', s.id + 'Note');
     });
+
+    out += '## ' + (SECTIONS.length + 2) + '. Notes and ideas\n\n';
+    out += notesMarkdown();
+
     return out.replace(/\n{3,}/g, '\n\n').trim() + '\n';
   }
 
-  function downloadMarkdown() {
-    flushSave();
-    var md = buildMarkdown();
-    var filename = 'crystal-page-review-' + isoDate(new Date()) + '.md';
+  function saveFile(text, filename, okMessage) {
     try {
-      var blob = new Blob([md], { type: 'text/markdown;charset=utf-8' });
+      var blob = new Blob([text], { type: 'text/markdown;charset=utf-8' });
       var url = URL.createObjectURL(blob);
       var a = el('a', { href: url, download: filename });
       a.style.display = 'none';
       document.body.appendChild(a);
       a.click();
       setTimeout(function () { document.body.removeChild(a); URL.revokeObjectURL(url); }, 1000);
-      toast('Exported ' + filename);
+      toast(okMessage || ('Exported ' + filename));
     } catch (e) {
       toast('Download blocked. Use "Copy markdown" instead.');
     }
+  }
+
+  function downloadMarkdown() {
+    flushSave();
+    var filename = 'crystal-page-review-' + isoDate(new Date()) + '.md';
+    saveFile(buildMarkdown(), filename, 'Exported ' + filename);
+  }
+
+  // ---------- Printable sheet ----------
+  function psAnswer(label, id) {
+    var v = valueOf(id);
+    var wrap = el('p', { class: 'ps-answer' });
+    wrap.appendChild(el('b', { text: label }));
+    wrap.appendChild(el('span', { class: v ? '' : 'ps-empty', text: v || 'Not answered yet' }));
+    return wrap;
+  }
+
+  function psPlan(pl) {
+    var box = el('div', { class: 'ps-plan' });
+    box.appendChild(el('h3', { text: pl.label }));
+    box.appendChild(el('p', { class: 'ps-sub', text: pl.target + ' · ' + pl.hours + ' · ' + pl.odds }));
+    var real = el('p', { class: 'ps-real' });
+    real.appendChild(el('b', { text: 'Before you start: ' }));
+    real.appendChild(document.createTextNode(pl.reality));
+    box.appendChild(real);
+    var ol = el('ol', { class: 'ps-steps' });
+    pl.steps.forEach(function (st) {
+      var li = el('li');
+      li.appendChild(el('span', { class: 'ps-box' }));
+      var t = el('span', { class: 'ps-step-t' });
+      t.appendChild(el('b', { text: st.t + ' ' }));
+      t.appendChild(document.createTextNode(st.d));
+      if (st.tag) {
+        t.appendChild(document.createTextNode(' '));
+        t.appendChild(el('span', { class: 'ps-tag', text: '[' + st.tag + ']' }));
+      }
+      li.appendChild(t);
+      ol.appendChild(li);
+    });
+    box.appendChild(ol);
+    return box;
+  }
+
+  function buildPrintSheet() {
+    var sheet = $('#printSheet');
+    sheet.innerHTML = '';
+
+    var head = el('div', { class: 'ps-head' });
+    head.appendChild(el('h1', { text: PERSON + ' — my plan' }));
+    head.appendChild(el('p', { text: 'Printed ' + isoDate(new Date()) + ' · tick the boxes as you go' }));
+    sheet.appendChild(head);
+
+    var owed = el('section', { class: 'ps-block' });
+    owed.appendChild(el('h2', { text: 'Still to send back' }));
+    owed.appendChild(psAnswer('A time you spotted a problem before your boss did', 'problemSpotted'));
+    owed.appendChild(psAnswer('A sentence or two from your boss', 'quoteText'));
+    sheet.appendChild(owed);
+
+    var n = 0;
+    SPINOFFS.forEach(function (s) {
+      var aim = valueOf(s.id + 'Aim');
+      if (aim === 'Not this one') return;
+      n++;
+      var block = el('section', { class: 'ps-block' });
+      block.appendChild(el('h2', { text: n + '. ' + s.title }));
+      block.appendChild(el('p', { class: 'ps-pitch', text: s.pitch }));
+      if (aim) block.appendChild(el('p', { class: 'ps-aim', text: 'Aiming at: ' + aim }));
+
+      (s.plans || []).forEach(function (pl) {
+        if (aim === 'The $1,000 month' && pl.id !== 'k1') return;
+        if (aim === 'The $4,000 month' && pl.id !== 'k4') return;
+        block.appendChild(psPlan(pl));
+      });
+
+      var watch = el('p', { class: 'ps-watch' });
+      watch.appendChild(el('b', { text: 'Before you start: ' }));
+      watch.appendChild(document.createTextNode(s.watch));
+      block.appendChild(watch);
+
+      var note = valueOf(s.id + 'Note');
+      if (note) block.appendChild(el('p', { class: 'ps-answer' }, [el('b', { text: 'My note' }), el('span', { text: note })]));
+      sheet.appendChild(block);
+    });
+
+    if (!n) {
+      var none = el('section', { class: 'ps-block' });
+      none.appendChild(el('p', { class: 'ps-empty', text: 'You marked every idea as not for you, so there are no plans to print.' }));
+      sheet.appendChild(none);
+    }
+
+    var notes = el('section', { class: 'ps-block' });
+    notes.appendChild(el('h2', { text: 'My notes and ideas' }));
+    if (!state.notes.length) {
+      notes.appendChild(el('p', { class: 'ps-empty', text: 'Nothing written down yet.' }));
+    } else {
+      state.notes.forEach(function (x) {
+        var item = el('p', { class: 'ps-note' });
+        item.appendChild(el('span', { class: 'ps-when', text: stamp(x.at) }));
+        item.appendChild(document.createTextNode(x.text));
+        notes.appendChild(item);
+      });
+    }
+    sheet.appendChild(notes);
+
+    sheet.appendChild(el('p', { class: 'ps-foot', text: 'The dollar figures are worked examples using round numbers, not promises. Check the real prices before you rely on any of them.' }));
+  }
+
+  function printSheet() {
+    flushSave();
+    buildPrintSheet();
+    window.print();
   }
 
   function copyMarkdown() {
@@ -1260,14 +1513,16 @@
   }
 
   function clearAll() {
-    if (!window.confirm('Clear every answer on this page? This cannot be undone.')) return;
+    if (!window.confirm('Clear every answer and every note on this page? This cannot be undone.')) return;
     clearTimeout(saveTimer); saveTimer = null;
     state.answers = {};
     state.open = {};
     state.tabs = {};
+    state.notes = [];
     try { window.localStorage.removeItem(STORAGE_KEY); } catch (e) {}
     renderSections();
     renderSpinoffs();
+    renderNotes();
     updateProgress();
     setStatus('Cleared');
     toast('All answers cleared');
@@ -1287,6 +1542,7 @@
   loadState();
   renderSections();
   renderSpinoffs();
+  renderNotes();
   updateProgress();
   if (!storageOk) setStatus('Autosave unavailable in this browser', true);
   else if (state.updatedAt) {
@@ -1297,7 +1553,9 @@
   $('#exportBtn').addEventListener('click', downloadMarkdown);
   $('#exportTop').addEventListener('click', downloadMarkdown);
   $('#copyBtn').addEventListener('click', copyMarkdown);
+  $('#printBtn').addEventListener('click', printSheet);
   $('#clearBtn').addEventListener('click', clearAll);
+  window.addEventListener('beforeprint', buildPrintSheet);
   window.addEventListener('beforeunload', flushSave);
   document.addEventListener('visibilitychange', function () { if (document.visibilityState === 'hidden') flushSave(); });
 })();
