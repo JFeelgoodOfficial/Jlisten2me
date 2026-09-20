@@ -1,38 +1,70 @@
-# Jlisten2me - Active Listening Service
+# Jlisten2me - Confidential Listening Sessions
 
-Single-page landing site for listen2me.com - offering confidential, non-judgmental 1-hour listening sessions.
+Single-page landing site for listen2me.com. A private hour with someone who has no stake in the
+outcome: for leaders carrying a decision alone, people mid-divorce or mid-upheaval, anyone
+prepping for the moment that matters, and anyone who just needs to vent or be hyped up.
+Confidential, mutual NDA available at no charge.
 
 ## Pricing
-- **Phone**: $20/hr (voice only)
-- **Video**: $25/hr (Zoom/Google Meet) 
-- **Coffee Shop**: $60/hr (Austin public location)
-- **Priority Daytime**: +$100 add-on (same-day response)
-- **Priority Day + Night**: +$300 add-on (24/7 window)
+- **By phone**: $60/hr
+- **In person**: $100/hr (Austin, public location)
+- **Five-hour bundle**: $45/hr, $225 prepaid (phone hours; swap one for in person by paying the difference)
 
 ## Features
-- Pure HTML/CSS/JS - 25KB gzipped, no frameworks
-- Mobile-responsive, SEO-optimized for "active listening service Austin"
-- Inter font via Google Fonts CDN
-- Smooth scroll, fade-up animations, backdrop-blur nav
-- Client-side contact form (Formspree-ready)
-- GitHub Pages/Vercel deploy-ready
+- Pure HTML/CSS/JS in one file, no frameworks, no build step
+- **Palette picker** in the header ("What color are you feeling today?") with six palettes
+  (Tide, Moss, Ember, Plum, Clay, Ink) plus a **light/dark toggle**. Both persist in
+  `localStorage` (`j2m-palette`, `j2m-theme`) and dark/light defaults to the OS preference
+  on a first visit. `<meta name="theme-color">` follows the selection.
+- **Cal.com** inline embed for scheduling, themed to match the current light/dark mode,
+  with a fallback panel if the embed is blocked
+- **Stripe Payment Links** on each pricing card
+- Mobile-responsive, `prefers-reduced-motion` respected, SEO/OG meta updated
+- GitHub Pages / Vercel deploy-ready
 
 ## Deploy
 1. Drop `index.html` in repo root
 2. GitHub Pages: Settings → Pages → Source: Deploy from branch `main`
 3. Vercel: Connect GitHub repo, deploy instantly
 
-## Customization
-```
-<!-- Form backend - swap to Formspree -->
-<form action="https://formspree.io/f/YOUR_ID" method="POST">
+## Going live: the CONFIG block
+
+Everything you need to edit sits in one object near the top of the `<script>` in `index.html`:
+
+```js
+const CONFIG = {
+  calOrigin: "https://app.cal.com",
+  calLink: "jfeelgood/listening-hour",   // your cal.com event path
+  checkout: {
+    phone:    null,   // "https://buy.stripe.com/..."
+    inperson: null,
+    bundle:   null
+  }
+};
 ```
 
-```
-<!-- Calendly embed - replace form -->
-<div class="calendly-inline-widget" data-url="https://calendly.com/your-link" style="min-width:320px;height:700px;"></div>
-<script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
-```
+**Cal.com** — create an event type (60 min) at cal.com, then set `calLink` to the
+`username/event-slug` from its public URL. Add a required booking question for
+"Phone or in person?" and another for "Do you want the NDA signed first?" so the
+answers arrive with the booking. If you self-host Cal, change `calOrigin` too.
+
+**Stripe** — in the Stripe Dashboard go to Payment Links → Create, one link per offer
+($60 phone hour, $100 in-person hour, $225 five-hour bundle), then paste each URL into
+`checkout`. Any link left as `null` makes that button scroll to the calendar instead, so
+the page stays usable before the links exist. Payment Links are hosted by Stripe, so no
+server and no keys live in this repo. If you later want the charge and the booking joined
+in one step, Cal.com's own Stripe app collects payment at booking time and replaces the
+separate links.
+
+**Palettes** — each palette is two CSS blocks, `[data-palette="name"][data-theme="dark"]`
+and `[...][data-theme="light"]`, defining the same eleven custom properties. To add one,
+copy a pair, add the name to the `PALETTES` array and `THEME_COLORS` map in the script,
+and add a `.swatch` button plus a `.sw-name` gradient rule.
+
+## Copy notes
+The confidentiality section states the one limit on confidentiality (credible threat of
+serious harm) and points to 988. Keep it. An unqualified "100% confidential, no exceptions"
+claim next to an NDA offer is the kind of promise that reads well and defends badly.
 
 ## crystal.html
 Standalone, private page at `/crystal.html` (marked `noindex`) for Crystal M. Pratt. Three parts and nothing else:
