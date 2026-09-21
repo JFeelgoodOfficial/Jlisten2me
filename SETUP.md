@@ -4,9 +4,8 @@ Everything needed to take the landing page from a static file to taking real boo
 real money. Budget about two hours for the first pass, most of it waiting on Stripe's
 identity verification.
 
-Work through it in order. Steps 1 through 4 can't be skipped; step 7 (the NDA) can wait
-until after launch if you want to be live sooner, as long as you stop advertising the NDA
-until it exists.
+Work through it in order. Steps 1 through 4 can't be skipped. Step 7 (deploy) is the point
+at which it's public, so do 1 through 6 first and don't rush past step 8.
 
 A note on accuracy: the Stripe and Cal.com flows below were checked against their current
 docs, but both companies move buttons around. If a label doesn't match, the concept still
@@ -114,12 +113,10 @@ every booking so you walk in knowing what the hour is for.
 
 1. "Phone or in person?" — only needed if you'd rather run one event type instead of two.
    With separate event types, skip it.
-2. "Do you want the NDA signed before we talk?" — yes/no radio, required. This is what
-   triggers step 7.
-3. "Do you want to be hyped up, or do you want to vent?" — radio with a third option like
+2. "Do you want to be hyped up, or do you want to vent?" — radio with a third option like
    "not sure yet", not required. The site makes a promise about this; the question is how
    you keep it.
-4. "Anything you want me to know first?" — long text, optional.
+3. "Anything you want me to know first?" — long text, optional.
 
 Keep the required list short. Every required field costs you bookings, and someone in a bad
 week has a low tolerance for forms.
@@ -184,38 +181,7 @@ that's a small change to the page and worth asking for.
 A `null` checkout entry makes that button scroll to the calendar instead of dead-ending, so
 the page works at every stage of this setup.
 
----
-
-## 7. The NDA
-
-The site promises a mutual NDA, signed before the session, free, as a PDF. That promise has
-to be real before you advertise it. Either finish this step or pull the NDA language off
-the page until you have.
-
-1. Get a mutual NDA template. Don't write one from scratch and don't use the first free
-   template you find. An hour of a Texas attorney's time to review a one-page mutual NDA
-   for a listening service is cheap next to the alternative, and they'll flag things a
-   template won't: what happens to your obligation if a client discloses something you're
-   required to report, and how the "credible threat of serious harm" carve-out on the site
-   should be worded to actually hold.
-2. Load it into an e-signature tool. **Documenso** is open source and has a free tier;
-   **Dropbox Sign** and **DocuSign** both have cheap personal plans. You want something that
-   emails a signable link and returns a countersigned PDF.
-3. Make it a template so sending takes thirty seconds, because you'll be doing it between a
-   booking and a session.
-4. Your trigger is the booking question from step 4. When someone answers yes, send the NDA
-   as soon as the booking lands and before the hour starts.
-5. Keep signed copies somewhere encrypted and separate from everything else. The irony of
-   leaking the confidentiality paperwork is not one you want to live.
-
-While you're at it, the carve-out on the site names 988 and describes one limit. Have the
-same attorney confirm that matches what Texas actually requires of a non-licensed person,
-and fix the page if it doesn't. It's currently written to be honest rather than to be
-legally precise.
-
----
-
-## 8. Deploy
+## 7. Deploy
 
 The site is one HTML file, so this is the easy part. Pick one.
 
@@ -238,7 +204,7 @@ the wrong address.
 
 ---
 
-## 9. Test it end to end before telling anyone
+## 8. Test it end to end before telling anyone
 
 With Stripe still in **test mode**:
 
@@ -252,18 +218,16 @@ With Stripe still in **test mode**:
 5. Click the bundle button. Confirm it opens the Stripe Payment Link and that the
    confirmation message contains the working `bundle-hour` link.
 6. Book a bundle hour with that link and confirm it takes no payment.
-7. Answer "yes" to the NDA question and confirm you can send and countersign the document
-   in under five minutes.
-8. Switch Stripe to **live mode**, recreate the Payment Link there (test-mode links do not
+7. Switch Stripe to **live mode**, recreate the Payment Link there (test-mode links do not
    work in live mode — this catches people out), paste the new URL into `CONFIG`, and run
    one real booking with your own card. Refund yourself afterward.
 
-Step 8 is not optional. A test-mode Payment Link left in production is the single most
+Step 7 is not optional. A test-mode Payment Link left in production is the single most
 common way this goes wrong.
 
 ---
 
-## 10. Still open
+## 9. Still open
 
 Things the site currently asserts that only you can make true:
 
@@ -275,3 +239,6 @@ Things the site currently asserts that only you can make true:
   most to say no, and treat that as normal rather than a problem.
 - The page claims Austin and surrounding area for in-person. Decide how far that goes and
   whether travel time is billed.
+- The site no longer offers an NDA. If a corporate client asks for one anyway, you can
+  still sign theirs case by case — just don't advertise it until signing one is a routine
+  you actually have.

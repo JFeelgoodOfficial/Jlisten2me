@@ -3,7 +3,7 @@
 Single-page landing site for listen2me.com. A private hour with someone who has no stake in the
 outcome: for leaders carrying a decision alone, people mid-divorce or mid-upheaval, anyone
 prepping for the moment that matters, and anyone who just needs to vent or be hyped up.
-Confidential, mutual NDA available at no charge.
+Confidential: nothing recorded, no notes kept, nothing repeated.
 
 ## Pricing
 - **By phone**: $60/hr
@@ -29,7 +29,7 @@ Confidential, mutual NDA available at no charge.
 
 ## Going live
 
-Full step-by-step setup (Stripe, Cal.com, the NDA, domain, and an end-to-end test
+Full step-by-step setup (Stripe, Cal.com, domain, and an end-to-end test
 checklist) lives in [SETUP.md](SETUP.md). The short version of the code side:
 
 ### The CONFIG block
@@ -50,8 +50,8 @@ const CONFIG = {
 
 **Cal.com** — create an event type (60 min) at cal.com, then set `calLink` to the
 `username/event-slug` from its public URL. Add a required booking question for
-"Phone or in person?" and another for "Do you want the NDA signed first?" so the
-answers arrive with the booking. If you self-host Cal, change `calOrigin` too.
+"Phone or in person?" and another for "Hyped up or venting?" so the answers arrive
+with the booking. If you self-host Cal, change `calOrigin` too.
 
 **Stripe** — the recommended setup is Cal.com's Stripe app, which takes payment at the
 moment of booking, so `phone` and `inperson` stay `null` and those buttons route to the
@@ -67,9 +67,14 @@ copy a pair, add the name to the `PALETTES` array and `THEME_COLORS` map in the 
 and add a `.swatch` button plus a `.sw-name` gradient rule.
 
 ## Copy notes
-The confidentiality section states the one limit on confidentiality (credible threat of
-serious harm) and points to 988. Keep it. An unqualified "100% confidential, no exceptions"
-claim next to an NDA offer is the kind of promise that reads well and defends badly.
+The confidentiality section states the one limit (credible threat of serious harm) and
+points to 988. Keep it. An unqualified "100% confidential, no exceptions" claim is the
+kind of promise that reads well and defends badly.
+
+The site does not offer an NDA. It was on the page and came off: promising a signed mutual
+PDF means building and running a signing workflow before launch, and the confidentiality
+policy carries the same weight to a reader without that overhead. Signing a corporate
+client's own NDA case by case is still fine. Advertising one is what requires the process.
 
 ## crystal.html
 Standalone, private page at `/crystal.html` (marked `noindex`) for Crystal M. Pratt. Three parts and nothing else:
