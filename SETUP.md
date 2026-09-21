@@ -5,7 +5,7 @@ real money. Budget about two hours for the first pass, most of it waiting on Str
 identity verification.
 
 Work through it in order. Steps 1 through 4 can't be skipped. Step 7 (deploy) is the point
-at which it's public, so do 1 through 6 first and don't rush past step 8.
+at which it's public, so do 1 through 6 first and don't rush past step 9.
 
 A note on accuracy: the Stripe and Cal.com flows below were checked against their current
 docs, but both companies move buttons around. If a label doesn't match, the concept still
@@ -193,18 +193,44 @@ beyond GitHub.
 and it gives you preview URLs on every branch, which is genuinely useful when you want to
 see a change before it's public.
 
-For the custom domain `listen2me.com`: add it in whichever host you picked, then create the
-DNS records that host tells you to at your registrar. Propagation is usually minutes,
-occasionally hours. Both hosts issue an HTTPS certificate automatically once DNS resolves;
-don't buy one.
+**The domain.** Buy `jlisten2me.com`. At the time of writing it has no DNS records, which
+almost always means unregistered, and it's the name already on the page. `listen2me.com` is
+taken and resolves to what look like aftermarket parking addresses; don't chase it.
+Register at Cloudflare or Porkbun (at-cost renewals, no upsells), not GoDaddy. Skip `.co`
+and `.net` for now.
 
-The page's `<link rel="canonical">` and `og:url` both point at `https://listen2me.com`.
-If you end up on a different domain, update those two lines or search engines will index
-the wrong address.
+Then add the domain in whichever host you picked and create the DNS records it tells you
+to at the registrar. Propagation is usually minutes, occasionally hours. Both hosts issue
+an HTTPS certificate automatically once DNS resolves; don't buy one.
+
+While you're in the registrar, set up email on the domain. Cloudflare Email Routing
+forwards `jonny@jlisten2me.com` to Gmail for free, and Cal.com and Stripe can both send
+from it, so a booking confirmation arrives from the same name as the site.
+
+The page's `<link rel="canonical">`, `og:url`, `og:image`, `robots.txt` and `sitemap.xml`
+all assume `https://jlisten2me.com/`. If you end up on a different domain, change every
+one of them or search engines will index the wrong address.
 
 ---
 
-## 8. Test it end to end before telling anyone
+## 8. Google Business Profile
+
+For an in-person service in a named city this is the single most effective thing on the
+list for being found, it's free, and it isn't a code change.
+
+1. Go to **business.google.com** and create a profile for `Jlisten2me`.
+2. Choose a category. There is no "listening service"; **Consultant** or **Life coach** is
+   the nearest fit that won't mislead. Don't pick a therapy or counselling category.
+3. Mark it a **service-area business** covering Austin and hide the address. You meet in
+   public, and you don't want a home address on a map.
+4. Add the website, the hours you actually keep, and the three prices as services.
+5. Google will verify by postcard, phone, or video. Do it; unverified profiles don't show.
+6. Once verified, ask the first few clients who are willing to leave a review. Given what
+   this is, most won't, and that's fine. Two honest ones beat none.
+
+---
+
+## 9. Test it end to end before telling anyone
 
 With Stripe still in **test mode**:
 
@@ -227,10 +253,13 @@ common way this goes wrong.
 
 ---
 
-## 9. Still open
+## 10. Still open
 
 Things the site currently asserts that only you can make true:
 
+- The "Who's listening" bio is the line from the original page. Rewrite it in your own
+  words; it's the one part of the site nobody else can write. The HTML comment above it
+  marks the spot.
 - Evenings and weekends really being on the calendar.
 - The bundle's "swap an hour for in person by paying the difference" — decide how you
   collect that $55. Simplest is a one-off Stripe invoice.

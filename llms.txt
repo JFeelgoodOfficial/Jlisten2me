@@ -1,0 +1,25 @@
+# Jlisten2me
+
+> A confidential one-hour listening service in Austin, Texas, by phone or in person. Not therapy. Nothing recorded, no notes kept, no names repeated.
+
+Jlisten2me is run by one person, JFeelgood, an indie developer and artist based in Austin. A session is sixty minutes of undivided attention with someone who has no stake in the outcome: no advice unless asked for, no agenda, no follow-up. It is for people who have nobody they can hand a worry to without it landing somewhere — leaders carrying a decision alone, people going through divorce or a big life change, anyone preparing for a high-stakes moment, and anyone who needs to vent or be talked up.
+
+## Pricing (USD)
+
+- By phone: $60 per hour. Available anywhere.
+- In person: $100 per hour. Austin, Texas and surrounding area, at a public location.
+- Five-hour bundle: $225 prepaid, which is $45 per hour. Phone hours; one can be swapped for in person by paying the difference. No expiry.
+
+Payment is taken through Stripe at the time of booking. Free rescheduling up to 12 hours before the session.
+
+## Confidentiality
+
+Nothing from a session is recorded, written down, posted, or used as an example, even anonymised. No notes are kept afterward. Clients may book under a first name only. The one stated limit: the listener is not a licensed therapist and this is not legal privilege, so a credible threat of serious harm to the client or someone else is not covered. In a crisis in the US, call or text 988.
+
+## What it is not
+
+Not therapy, not counselling, not legal or financial advice, not a crisis line.
+
+## Pages
+
+- [Home](https://jlisten2me.com/): the only public page. Sections: who it's for, how it works, confidentiality, FAQ, pricing, booking calendar.

@@ -4,23 +4,35 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Jlisten2me - Confidential Listening Sessions, Phone or In Person</title>
-  <meta name="description" content="A private hour with someone who has no stake in your outcome. For leaders carrying decisions alone, people going through divorce or big change, and anyone prepping for the moment that matters. Nothing recorded, nothing kept, nothing repeated. Phone $60/hr, in person $100/hr, 5-hour bundle at $45/hr." />
-  <meta name="keywords" content="confidential listening service, sounding board for executives, someone to talk to Austin, private listening session, divorce support listener, vent session, hype session" />
+  <meta name="description" content="Confidential one-hour listening sessions by phone or in person in Austin, TX. Nothing recorded, nothing kept. Phone $60/hr, in person $100/hr, five hours for $225." />
   <meta name="author" content="JFeelgoodOfficial" />
   <meta name="theme-color" content="#0f1923" id="themeColorMeta" />
   <meta property="og:title" content="Jlisten2me - Confidential Listening Sessions" />
   <meta property="og:description" content="An hour that belongs to you. No advice unless you ask, no stake in the outcome, nothing repeated to anyone." />
-  <meta property="og:url" content="https://listen2me.com" />
+  <meta property="og:url" content="https://jlisten2me.com/" />
   <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://jlisten2me.com/og.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Jlisten2me. Say it out loud. Confidential listening by phone or in person in Austin." />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Jlisten2me - Confidential Listening" />
   <meta name="twitter:description" content="Phone $60/hr - In person $100/hr - Five hours at $45/hr. Confidential. Not therapy." />
-  <link rel="canonical" href="https://listen2me.com" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <meta name="twitter:image" content="https://jlisten2me.com/og.png" />
+  <link rel="canonical" href="https://jlisten2me.com/" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%235b8db8'/%3E%3Cpath d='M8 13v6M12 10v12M16 12.5v7M20 9v14M24 13v6' stroke='%23fff' stroke-width='2.4' stroke-linecap='round'/%3E%3C/svg%3E" />
+  <!-- Inter is served from this repo (fonts/, SIL OFL). Preloading it removes the last render-blocking request. -->
+  <link rel="preload" href="fonts/inter-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    @font-face {
+      font-family: 'Inter';
+      font-style: normal;
+      font-weight: 100 900;
+      font-display: swap;
+      src: url('fonts/inter-latin-wght-normal.woff2') format('woff2');
+    }
 
     /* ---- Palettes. Each one carries a dark and a light set. ---- */
     :root {
@@ -32,67 +44,67 @@
     [data-palette="tide"][data-theme="dark"] {
       --bg:#0f1923; --bg-2:#14202f; --surface:rgba(255,255,255,0.03);
       --accent:#5b8db8; --accent-soft:#85b4d6; --on-accent:#06121c;
-      --text:#e4ecf5; --text-2:#8fa3bc; --text-3:#5b7391; --border:rgba(133,180,214,0.16);
+      --text:#e4ecf5; --text-2:#8fa3bc; --text-3:#6e84a0; --border:rgba(133,180,214,0.16);
     }
     [data-palette="tide"][data-theme="light"] {
       --bg:#f6f9fc; --bg-2:#e9f1f8; --surface:#ffffff;
       --accent:#2f6da1; --accent-soft:#24567f; --on-accent:#ffffff;
-      --text:#13202b; --text-2:#4a6076; --text-3:#7b8ea1; --border:rgba(35,80,120,0.16);
+      --text:#13202b; --text-2:#4a6076; --text-3:#5f7388; --border:rgba(35,80,120,0.16);
     }
 
     [data-palette="moss"][data-theme="dark"] {
       --bg:#0f1a16; --bg-2:#142320; --surface:rgba(255,255,255,0.03);
       --accent:#5aa17f; --accent-soft:#86c7a5; --on-accent:#05140d;
-      --text:#e3f0e9; --text-2:#93ab9f; --text-3:#5d7a6d; --border:rgba(134,199,165,0.16);
+      --text:#e3f0e9; --text-2:#93ab9f; --text-3:#6c887b; --border:rgba(134,199,165,0.16);
     }
     [data-palette="moss"][data-theme="light"] {
       --bg:#f5faf7; --bg-2:#e8f3ed; --surface:#ffffff;
       --accent:#2f7d57; --accent-soft:#24623f; --on-accent:#ffffff;
-      --text:#11201a; --text-2:#476156; --text-3:#7a9186; --border:rgba(30,90,60,0.16);
+      --text:#11201a; --text-2:#476156; --text-3:#5d766b; --border:rgba(30,90,60,0.16);
     }
 
     [data-palette="ember"][data-theme="dark"] {
       --bg:#1a1310; --bg-2:#241a15; --surface:rgba(255,255,255,0.035);
       --accent:#c9773f; --accent-soft:#e8a877; --on-accent:#1a0c04;
-      --text:#f4e9e1; --text-2:#b49c8c; --text-3:#806a5c; --border:rgba(232,168,119,0.17);
+      --text:#f4e9e1; --text-2:#b49c8c; --text-3:#927b6c; --border:rgba(232,168,119,0.17);
     }
     [data-palette="ember"][data-theme="light"] {
       --bg:#fdf8f4; --bg-2:#f6ece2; --surface:#ffffff;
       --accent:#a85a26; --accent-soft:#8a4718; --on-accent:#ffffff;
-      --text:#241610; --text-2:#6b5245; --text-3:#97806f; --border:rgba(150,90,45,0.18);
+      --text:#241610; --text-2:#6b5245; --text-3:#856d5d; --border:rgba(150,90,45,0.18);
     }
 
     [data-palette="plum"][data-theme="dark"] {
       --bg:#16121f; --bg-2:#1e1a2b; --surface:rgba(255,255,255,0.035);
       --accent:#8a72c4; --accent-soft:#b3a1e0; --on-accent:#0d0716;
-      --text:#ece7f6; --text-2:#a79cbd; --text-3:#746a8c; --border:rgba(179,161,224,0.17);
+      --text:#ece7f6; --text-2:#a79cbd; --text-3:#847a9c; --border:rgba(179,161,224,0.17);
     }
     [data-palette="plum"][data-theme="light"] {
       --bg:#faf8fd; --bg-2:#efebf8; --surface:#ffffff;
       --accent:#6547a8; --accent-soft:#513690; --on-accent:#ffffff;
-      --text:#1c1528; --text-2:#574c6b; --text-3:#857a99; --border:rgba(100,70,170,0.16);
+      --text:#1c1528; --text-2:#574c6b; --text-3:#776c8b; --border:rgba(100,70,170,0.16);
     }
 
     [data-palette="clay"][data-theme="dark"] {
       --bg:#1c1315; --bg-2:#261a1d; --surface:rgba(255,255,255,0.035);
       --accent:#c06b74; --accent-soft:#e3a0a6; --on-accent:#1a0709;
-      --text:#f6e8ea; --text-2:#b7969a; --text-3:#856669; --border:rgba(227,160,166,0.17);
+      --text:#f6e8ea; --text-2:#b7969a; --text-3:#98787c; --border:rgba(227,160,166,0.17);
     }
     [data-palette="clay"][data-theme="light"] {
       --bg:#fdf7f8; --bg-2:#f7eaec; --surface:#ffffff;
       --accent:#a84b57; --accent-soft:#8c3742; --on-accent:#ffffff;
-      --text:#271619; --text-2:#6d5054; --text-3:#9a7b80; --border:rgba(160,70,85,0.16);
+      --text:#271619; --text-2:#6d5054; --text-3:#87696e; --border:rgba(160,70,85,0.16);
     }
 
     [data-palette="ink"][data-theme="dark"] {
       --bg:#121416; --bg-2:#191c1f; --surface:rgba(255,255,255,0.035);
       --accent:#8d9aa6; --accent-soft:#b9c5d0; --on-accent:#0d1013;
-      --text:#e9edf1; --text-2:#a0a9b2; --text-3:#6e7780; --border:rgba(185,197,208,0.16);
+      --text:#e9edf1; --text-2:#a0a9b2; --text-3:#778089; --border:rgba(185,197,208,0.16);
     }
     [data-palette="ink"][data-theme="light"] {
       --bg:#f7f8f9; --bg-2:#eceff1; --surface:#ffffff;
       --accent:#4a5560; --accent-soft:#333c45; --on-accent:#ffffff;
-      --text:#14181c; --text-2:#515b65; --text-3:#808a94; --border:rgba(40,50,60,0.16);
+      --text:#14181c; --text-2:#515b65; --text-3:#68727c; --border:rgba(40,50,60,0.16);
     }
 
     html { scroll-behavior: smooth; }
@@ -107,7 +119,7 @@
     header.site {
       position: fixed; top: 0; left: 0; right: 0; z-index: 100;
       background: color-mix(in srgb, var(--bg) 88%, transparent);
-      backdrop-filter: blur(14px); border-bottom: 1px solid var(--border);
+      backdrop-filter: blur(8px); border-bottom: 1px solid var(--border);
     }
     @supports not (background: color-mix(in srgb, red 50%, blue)) {
       header.site { background: var(--bg); }
@@ -181,6 +193,12 @@
     .hero-ctas { display: flex; gap: 0.9rem; justify-content: center; flex-wrap: wrap; }
     .hero-meta { margin-top: 2.8rem; font-size: 0.77rem; color: var(--text-3); letter-spacing: 0.05em; }
 
+    /* ---- About ---- */
+    #about { background: var(--bg-2); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); padding-top: 4.5rem; padding-bottom: 4.5rem; }
+    .about-grid { display: grid; grid-template-columns: 1fr 1.6fr; gap: 3rem; align-items: start; }
+    .about-text p { color: var(--text-2); line-height: 1.8; margin-bottom: 1rem; }
+    .about-text .about-def { color: var(--text); font-size: 1.08rem; font-weight: 300; }
+
     /* ---- Who it's for ---- */
     #who { background: var(--bg); }
     .who-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.3rem; }
@@ -211,6 +229,13 @@
     .policy-card li::before { content: ""; width: 5px; height: 5px; border-radius: 50%; background: var(--accent); flex-shrink: 0; margin-top: 0.62rem; }
     .limits { margin-top: 1.6rem; padding: 1.1rem 1.3rem; border: 1px dashed var(--border); border-radius: 8px; font-size: 0.82rem; color: var(--text-2); line-height: 1.65; }
 
+    /* ---- FAQ ---- */
+    #faq { background: var(--bg); border-top: 1px solid var(--border); }
+    .faq-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0 3rem; }
+    .faq-item { padding: 1.5rem 0; border-top: 1px solid var(--border); }
+    .faq-item h3 { font-size: 1rem; font-weight: 500; margin-bottom: 0.5rem; letter-spacing: -0.01em; }
+    .faq-item p { font-size: 0.9rem; color: var(--text-2); line-height: 1.7; }
+
     /* ---- Pricing ---- */
     #pricing { background: var(--bg-2); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
     .pricing-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.4rem; align-items: stretch; }
@@ -232,6 +257,8 @@
     #book { background: var(--bg); }
     .cal-shell { border: 1px solid var(--border); border-radius: 12px; background: var(--surface); overflow: hidden; min-height: 620px; }
     #cal-inline { width: 100%; min-height: 620px; }
+    .cal-shell.is-loading #cal-inline:empty { display: flex; align-items: center; justify-content: center; }
+    .cal-shell.is-loading #cal-inline:empty::before { content: "Loading the calendar"; font-size: 0.88rem; color: var(--text-3); }
     .cal-fallback { display: none; padding: 3rem 2rem; text-align: center; }
     .cal-fallback h3 { font-weight: 400; font-size: 1.1rem; margin-bottom: 0.6rem; }
     .cal-fallback p { color: var(--text-2); font-size: 0.9rem; max-width: 420px; margin: 0 auto 1.4rem; }
@@ -267,6 +294,8 @@
 
     @media (max-width: 960px) {
       .who-grid { grid-template-columns: repeat(2, 1fr); }
+      .about-grid { grid-template-columns: 1fr; gap: 1.2rem; }
+      .faq-grid { grid-template-columns: 1fr; }
       .pricing-grid { grid-template-columns: 1fr; max-width: 420px; margin: 0 auto; }
       .trust-grid { grid-template-columns: 1fr; gap: 2.5rem; }
     }
@@ -295,6 +324,7 @@
       <li><a href="#who">Who it's for</a></li>
       <li><a href="#how">How it works</a></li>
       <li><a href="#trust">Confidentiality</a></li>
+      <li><a href="#faq">FAQ</a></li>
       <li><a href="#pricing">Pricing</a></li>
       <li><a href="#book">Book</a></li>
     </ul>
@@ -333,6 +363,22 @@
       <a href="#pricing" class="btn btn-ghost">See rates</a>
     </div>
     <p class="hero-meta">Phone $60/hr &nbsp;·&nbsp; In person $100/hr &nbsp;·&nbsp; Five hours at $45/hr &nbsp;·&nbsp; Nothing recorded, nothing kept</p>
+  </div>
+</section>
+
+<section id="about">
+  <div class="container">
+    <div class="about-grid fade-up">
+      <div>
+        <p class="section-label">Who's listening</p>
+        <h2>One person.<br>No agenda.</h2>
+      </div>
+      <div class="about-text">
+        <p class="about-def">Jlisten2me is a confidential one-hour listening service in Austin, Texas, by phone or in person, from $45 to $100 an hour. Not therapy, not coaching. An hour where someone hears the whole thing and keeps none of it.</p>
+        <!-- Bio: this is the line from the original page. Rewrite it in your own words whenever you like. -->
+        <p>I'm JFeelgood, an indie developer and artist based in Austin. I built this because I've been on both sides of conversations where nobody was really listening, and I know what it feels like when someone is.</p>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -438,6 +484,49 @@
   </div>
 </section>
 
+<section id="faq">
+  <div class="container">
+    <div class="section-header fade-up">
+      <p class="section-label">Questions</p>
+      <h2>The things people ask<br>before they book.</h2>
+    </div>
+    <div class="faq-grid">
+      <div class="faq-item fade-up">
+        <h3>Is this therapy?</h3>
+        <p>No. I'm not a licensed therapist, counselor, or coach, and I don't diagnose or treat anything. A session is an hour of being listened to by someone with no stake in the outcome. If what you're carrying needs clinical help, I'll say so plainly, and 988 is there for a crisis.</p>
+      </div>
+      <div class="faq-item fade-up">
+        <h3>What does a session cost?</h3>
+        <p>A phone hour is $60. An hour in person, at a public spot in Austin, is $100. A prepaid block of five phone hours is $225, which works out to $45 an hour. Payment goes through Stripe at the time of booking, and you can reschedule free up to 12 hours out.</p>
+      </div>
+      <div class="faq-item fade-up">
+        <h3>Is it really confidential?</h3>
+        <p>Yes. Nothing is recorded, I keep no notes once the hour ends, and nothing you say gets repeated, written down, or used as an example, even without your name. The one limit: I'm not a therapist and this isn't legal privilege, so a credible threat of serious harm to you or someone else isn't covered.</p>
+      </div>
+      <div class="faq-item fade-up">
+        <h3>Phone or in person: which should I pick?</h3>
+        <p>Most people start by phone. It's cheaper, it's private, and you can take it from wherever you already are. In person is for people who think better across a table or on a walk. Both are the same sixty minutes; the only difference is the room.</p>
+      </div>
+      <div class="faq-item fade-up">
+        <h3>What if I just need to vent?</h3>
+        <p>Then vent. Say at the start whether you want to be talked up or want to let it out, and that's the hour you get. There's no format, no worksheet, and no advice unless you ask for it out loud. Silence is fine too.</p>
+      </div>
+      <div class="faq-item fade-up">
+        <h3>Can I book without giving my full name?</h3>
+        <p>Yes. Book under a first name and pay through Stripe, which handles your card details so I never see them. I don't need to know who you are to listen to you. If you want to say more later, that's your call, not a requirement.</p>
+      </div>
+      <div class="faq-item fade-up">
+        <h3>How does the five-hour bundle work?</h3>
+        <p>You pay $225 once and get a private booking link for five phone hours. Use them whenever you want; they don't expire. If you'd like one of them in person, you pay the difference. It's meant for a stretch that's going to take more than one conversation.</p>
+      </div>
+      <div class="faq-item fade-up">
+        <h3>Where in Austin do in-person sessions happen?</h3>
+        <p>Somewhere public that we agree on after you book: a quiet coffee shop, a park bench, or a walk if you'd rather move while you talk. I cover Austin and the surrounding area. If you have a spot in mind, say so; if not, I'll suggest one.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section id="pricing">
   <div class="container">
     <div class="section-header fade-up">
@@ -531,6 +620,7 @@
       <li><a href="#who">Who it's for</a></li>
       <li><a href="#how">How it works</a></li>
       <li><a href="#trust">Confidentiality</a></li>
+      <li><a href="#faq">FAQ</a></li>
       <li><a href="#pricing">Pricing</a></li>
       <li><a href="#book">Book</a></li>
       <li><a href="https://instagram.com/JFeelgoodOfficial" target="_blank" rel="noopener">Instagram</a></li>
@@ -538,6 +628,55 @@
     <p class="footer-copy">2026 Jlisten2me · JFeelgood · Austin, TX · Not therapy, not legal or financial advice. In a crisis, call or text 988.</p>
   </div>
 </footer>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "ProfessionalService",
+      "@id": "https://jlisten2me.com/#service",
+      "name": "Jlisten2me",
+      "url": "https://jlisten2me.com/",
+      "image": "https://jlisten2me.com/og.png",
+      "description": "A confidential one-hour listening service by phone or in person in Austin, Texas. Not therapy. Nothing recorded, no notes kept, nothing repeated.",
+      "priceRange": "$45 - $100 per hour",
+      "areaServed": [
+        { "@type": "City", "name": "Austin", "containedInPlace": { "@type": "State", "name": "Texas" } },
+        "Worldwide by phone"
+      ],
+      "founder": { "@id": "https://jlisten2me.com/#person" },
+      "sameAs": ["https://instagram.com/JFeelgoodOfficial"],
+      "makesOffer": [
+        { "@type": "Offer", "name": "Listening hour by phone", "price": "60", "priceCurrency": "USD", "url": "https://jlisten2me.com/#pricing", "availability": "https://schema.org/InStock" },
+        { "@type": "Offer", "name": "Listening hour in person, Austin", "price": "100", "priceCurrency": "USD", "url": "https://jlisten2me.com/#pricing", "availability": "https://schema.org/InStock" },
+        { "@type": "Offer", "name": "Five-hour bundle, prepaid", "price": "225", "priceCurrency": "USD", "url": "https://jlisten2me.com/#pricing", "availability": "https://schema.org/InStock" }
+      ]
+    },
+    {
+      "@type": "Person",
+      "@id": "https://jlisten2me.com/#person",
+      "name": "JFeelgood",
+      "url": "https://jlisten2me.com/#about",
+      "sameAs": ["https://instagram.com/JFeelgoodOfficial"]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://jlisten2me.com/#faq",
+      "mainEntity": [
+        { "@type": "Question", "name": "Is this therapy?", "acceptedAnswer": { "@type": "Answer", "text": "No. I'm not a licensed therapist, counselor, or coach, and I don't diagnose or treat anything. A session is an hour of being listened to by someone with no stake in the outcome. If what you're carrying needs clinical help, I'll say so plainly, and 988 is there for a crisis." } },
+        { "@type": "Question", "name": "What does a session cost?", "acceptedAnswer": { "@type": "Answer", "text": "A phone hour is $60. An hour in person, at a public spot in Austin, is $100. A prepaid block of five phone hours is $225, which works out to $45 an hour. Payment goes through Stripe at the time of booking, and you can reschedule free up to 12 hours out." } },
+        { "@type": "Question", "name": "Is it really confidential?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Nothing is recorded, I keep no notes once the hour ends, and nothing you say gets repeated, written down, or used as an example, even without your name. The one limit: I'm not a therapist and this isn't legal privilege, so a credible threat of serious harm to you or someone else isn't covered." } },
+        { "@type": "Question", "name": "Phone or in person: which should I pick?", "acceptedAnswer": { "@type": "Answer", "text": "Most people start by phone. It's cheaper, it's private, and you can take it from wherever you already are. In person is for people who think better across a table or on a walk. Both are the same sixty minutes; the only difference is the room." } },
+        { "@type": "Question", "name": "What if I just need to vent?", "acceptedAnswer": { "@type": "Answer", "text": "Then vent. Say at the start whether you want to be talked up or want to let it out, and that's the hour you get. There's no format, no worksheet, and no advice unless you ask for it out loud. Silence is fine too." } },
+        { "@type": "Question", "name": "Can I book without giving my full name?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Book under a first name and pay through Stripe, which handles your card details so I never see them. I don't need to know who you are to listen to you. If you want to say more later, that's your call, not a requirement." } },
+        { "@type": "Question", "name": "How does the five-hour bundle work?", "acceptedAnswer": { "@type": "Answer", "text": "You pay $225 once and get a private booking link for five phone hours. Use them whenever you want; they don't expire. If you'd like one of them in person, you pay the difference. It's meant for a stretch that's going to take more than one conversation." } },
+        { "@type": "Question", "name": "Where in Austin do in-person sessions happen?", "acceptedAnswer": { "@type": "Answer", "text": "Somewhere public that we agree on after you book: a quiet coffee shop, a park bench, or a walk if you'd rather move while you talk. I cover Austin and the surrounding area. If you have a spot in mind, say so; if not, I'll suggest one." } }
+      ]
+    }
+  ]
+}
+</script>
 
 <script>
   /* ------------------------------------------------------------------
@@ -560,6 +699,7 @@
 
   /* ---- Palette + light/dark ---- */
   const root = document.documentElement;
+  let calStarted = false; // set once the Cal.com embed has been asked to load
   const PALETTES = ["tide","moss","ember","plum","clay","ink"];
   const THEME_COLORS = {
     tide:  { dark:"#0f1923", light:"#f6f9fc" },
@@ -595,7 +735,8 @@
     document.getElementById("modeLabel").textContent = mode === "dark" ? "Dark" : "Light";
     syncThemeColor();
     store("j2m-theme", mode);
-    if (window.Cal) { try { window.Cal("ui", { theme: mode }); } catch (e) {} }
+    // Any Cal() call kicks off the embed download, so only re-theme once it's already loading.
+    if (calStarted) { try { window.Cal("ui", { theme: mode }); } catch (e) {} }
   }
 
   function syncThemeColor() {
@@ -646,23 +787,36 @@
     };
   })(window, "https://app.cal.com/embed/embed.js", "init");
 
-  Cal("init", { origin: CONFIG.calOrigin });
-  Cal("inline", {
-    elementOrSelector: "#cal-inline",
-    calLink: CONFIG.calLink,
-    config: { layout: "month_view" }
-  });
-  Cal("ui", { hideEventTypeDetails: false, layout: "month_view", theme: root.dataset.theme });
+  /* Nothing from Cal downloads until the booking section is near the viewport or
+     someone clicks a link to it. Most visits never scroll that far, and the embed
+     is the heaviest thing on the page by a wide margin. */
+  function initCal() {
+    if (calStarted) return;
+    calStarted = true;
+    document.querySelector(".cal-shell").classList.add("is-loading");
+    Cal("init", { origin: CONFIG.calOrigin });
+    Cal("inline", {
+      elementOrSelector: "#cal-inline",
+      calLink: CONFIG.calLink,
+      config: { layout: "month_view" }
+    });
+    Cal("ui", { hideEventTypeDetails: false, layout: "month_view", theme: root.dataset.theme });
+    setTimeout(function () {
+      const slot = document.getElementById("cal-inline");
+      if (!slot.querySelector("iframe")) {
+        slot.style.display = "none";
+        document.getElementById("calFallback").style.display = "block";
+      }
+    }, 5000);
+  }
 
   document.getElementById("calDirect").href = CONFIG.calOrigin.replace("app.", "") + "/" + CONFIG.calLink;
 
-  setTimeout(function () {
-    const slot = document.getElementById("cal-inline");
-    if (!slot.querySelector("iframe")) {
-      slot.style.display = "none";
-      document.getElementById("calFallback").style.display = "block";
-    }
-  }, 7000);
+  const calIo = new IntersectionObserver(function (entries) {
+    if (entries.some(function (e) { return e.isIntersecting; })) { initCal(); calIo.disconnect(); }
+  }, { rootMargin: "600px 0px" });
+  calIo.observe(document.getElementById("book"));
+  document.querySelectorAll('a[href="#book"]').forEach(function (a) { a.addEventListener("click", initCal); });
 
   /* ---- Scroll behaviour ---- */
   const io = new IntersectionObserver(function (entries) {
