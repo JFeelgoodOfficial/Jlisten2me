@@ -27,7 +27,12 @@ Confidential, mutual NDA available at no charge.
 2. GitHub Pages: Settings → Pages → Source: Deploy from branch `main`
 3. Vercel: Connect GitHub repo, deploy instantly
 
-## Going live: the CONFIG block
+## Going live
+
+Full step-by-step setup (Stripe, Cal.com, the NDA, domain, and an end-to-end test
+checklist) lives in [SETUP.md](SETUP.md). The short version of the code side:
+
+### The CONFIG block
 
 Everything you need to edit sits in one object near the top of the `<script>` in `index.html`:
 
@@ -48,13 +53,13 @@ const CONFIG = {
 "Phone or in person?" and another for "Do you want the NDA signed first?" so the
 answers arrive with the booking. If you self-host Cal, change `calOrigin` too.
 
-**Stripe** — in the Stripe Dashboard go to Payment Links → Create, one link per offer
-($60 phone hour, $100 in-person hour, $225 five-hour bundle), then paste each URL into
-`checkout`. Any link left as `null` makes that button scroll to the calendar instead, so
-the page stays usable before the links exist. Payment Links are hosted by Stripe, so no
-server and no keys live in this repo. If you later want the charge and the booking joined
-in one step, Cal.com's own Stripe app collects payment at booking time and replaces the
-separate links.
+**Stripe** — the recommended setup is Cal.com's Stripe app, which takes payment at the
+moment of booking, so `phone` and `inperson` stay `null` and those buttons route to the
+calendar. The five-hour bundle has no booking to attach to, so it needs its own Stripe
+Payment Link (Dashboard → Payment Links → Create) pasted into `bundle`. Any entry left as
+`null` makes that button scroll to the calendar instead of dead-ending, so the page stays
+usable at every stage of setup. Payment Links are hosted by Stripe, so no server and no
+keys live in this repo. SETUP.md walks through both paths and why.
 
 **Palettes** — each palette is two CSS blocks, `[data-palette="name"][data-theme="dark"]`
 and `[...][data-theme="light"]`, defining the same eleven custom properties. To add one,
