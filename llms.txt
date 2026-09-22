@@ -10,7 +10,7 @@ Jlisten2me is run by one person, JFeelgood, an indie developer and artist based 
 - In person: $100 per hour. Austin, Texas and surrounding area, at a public location.
 - Five-hour bundle: $225 prepaid, which is $45 per hour. Phone hours; one can be swapped for in person by paying the difference. No expiry.
 
-Payment is taken through Stripe at the time of booking. Free rescheduling up to 12 hours before the session.
+Payment is taken through Stripe at the time of booking. Rescheduling is free up to 24 hours before the session. Cancellations inside 24 hours are not refunded.
 
 ## Confidentiality
 
