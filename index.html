@@ -271,7 +271,8 @@
     .footer-links { display: flex; gap: 1.4rem; list-style: none; flex-wrap: wrap; justify-content: center; }
     .footer-links a { font-size: 0.78rem; color: var(--text-3); text-decoration: none; transition: color 0.2s; }
     .footer-links a:hover { color: var(--text); }
-    .footer-copy { width: 100%; text-align: center; font-size: 0.72rem; color: var(--text-3); margin-top: 0.6rem; }
+    .footer-policy { width: 100%; text-align: center; font-size: 0.76rem; color: var(--text-2); margin-top: 1.1rem; }
+    .footer-copy { width: 100%; text-align: center; font-size: 0.72rem; color: var(--text-3); margin-top: 0.5rem; }
 
     /* Light mode needs a lift: white cards on a near-white page read flat otherwise. */
     [data-theme="light"] .card,
@@ -497,7 +498,7 @@
       </div>
       <div class="faq-item fade-up">
         <h3>What does a session cost?</h3>
-        <p>A phone hour is $60. An hour in person, at a public spot in Austin, is $100. A prepaid block of five phone hours is $225, which works out to $45 an hour. Payment goes through Stripe at the time of booking, and you can reschedule free up to 12 hours out.</p>
+        <p>A phone hour is $60. An hour in person, at a public spot in Austin, is $100. A prepaid block of five phone hours is $225, which works out to $45 an hour. Payment goes through Stripe at the time of booking, and you can reschedule free up to 24 hours out.</p>
       </div>
       <div class="faq-item fade-up">
         <h3>Is it really confidential?</h3>
@@ -532,7 +533,7 @@
     <div class="section-header fade-up">
       <p class="section-label">Pricing</p>
       <h2>Straightforward rates.<br>No hidden anything.</h2>
-      <p class="lede">Paid up front through Stripe. Reschedule free up to 12 hours out.</p>
+      <p class="lede">Paid up front through Stripe. Reschedule free up to 24 hours out.</p>
     </div>
 
     <div class="pricing-grid fade-up">
@@ -608,7 +609,7 @@
       <span>Phone $60/hr</span>
       <span>In person $100/hr</span>
       <span>Five hours $225</span>
-      <span>Reschedule free to 12 hrs out</span>
+      <span>Reschedule free to 24 hrs out</span>
     </div>
   </div>
 </section>
@@ -625,6 +626,7 @@
       <li><a href="#book">Book</a></li>
       <li><a href="https://instagram.com/JFeelgoodOfficial" target="_blank" rel="noopener">Instagram</a></li>
     </ul>
+    <p class="footer-policy">Reschedule free up to 24 hours before your session. Cancellations inside 24 hours aren't refunded.</p>
     <p class="footer-copy">2026 Jlisten2me · JFeelgood · Austin, TX · Not therapy, not legal or financial advice. In a crisis, call or text 988.</p>
   </div>
 </footer>
@@ -665,7 +667,7 @@
       "@id": "https://jlisten2me.com/#faq",
       "mainEntity": [
         { "@type": "Question", "name": "Is this therapy?", "acceptedAnswer": { "@type": "Answer", "text": "No. I'm not a licensed therapist, counselor, or coach, and I don't diagnose or treat anything. A session is an hour of being listened to by someone with no stake in the outcome. If what you're carrying needs clinical help, I'll say so plainly, and 988 is there for a crisis." } },
-        { "@type": "Question", "name": "What does a session cost?", "acceptedAnswer": { "@type": "Answer", "text": "A phone hour is $60. An hour in person, at a public spot in Austin, is $100. A prepaid block of five phone hours is $225, which works out to $45 an hour. Payment goes through Stripe at the time of booking, and you can reschedule free up to 12 hours out." } },
+        { "@type": "Question", "name": "What does a session cost?", "acceptedAnswer": { "@type": "Answer", "text": "A phone hour is $60. An hour in person, at a public spot in Austin, is $100. A prepaid block of five phone hours is $225, which works out to $45 an hour. Payment goes through Stripe at the time of booking, and you can reschedule free up to 24 hours out." } },
         { "@type": "Question", "name": "Is it really confidential?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Nothing is recorded, I keep no notes once the hour ends, and nothing you say gets repeated, written down, or used as an example, even without your name. The one limit: I'm not a therapist and this isn't legal privilege, so a credible threat of serious harm to you or someone else isn't covered." } },
         { "@type": "Question", "name": "Phone or in person: which should I pick?", "acceptedAnswer": { "@type": "Answer", "text": "Most people start by phone. It's cheaper, it's private, and you can take it from wherever you already are. In person is for people who think better across a table or on a walk. Both are the same sixty minutes; the only difference is the room." } },
         { "@type": "Question", "name": "What if I just need to vent?", "acceptedAnswer": { "@type": "Answer", "text": "Then vent. Say at the start whether you want to be talked up or want to let it out, and that's the hour you get. There's no format, no worksheet, and no advice unless you ask for it out loud. Silence is fine too." } },

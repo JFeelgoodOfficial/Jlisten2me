@@ -98,11 +98,14 @@ Verified against Cal.com's current help docs:
 Payment is taken at the moment of booking. An unpaid booking never lands on your calendar,
 which is the whole point.
 
-Two things to settle now rather than during your first awkward cancellation. Decide your
-refund rule and write it into each event type's description — the site currently promises
-free rescheduling up to 12 hours out, so at minimum honor that. And decide what happens on
-a no-show. Cal.com supports charging a cancellation or no-show fee via Stripe if you want
-it; it's optional and adds friction, so only turn it on if no-shows actually become a problem.
+Put the cancellation policy in each event type's **description** as well as on the site:
+free rescheduling up to 24 hours out, no refund on a cancellation inside 24 hours. The
+footer states it, but the description is what the booker sees and agrees to at the moment
+they book, and that's what makes it stick when someone disputes a charge.
+
+Also decide what happens on a no-show. Cal.com supports charging a cancellation or no-show
+fee via Stripe if you want it; it's optional and adds friction, so only turn it on if
+no-shows actually become a problem.
 
 ---
 

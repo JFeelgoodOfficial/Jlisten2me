@@ -1,28 +1,6 @@
 # Jlisten2me
-# The two private pages are noindex in their own <head>; this keeps them out of link crawls too.
 
 User-agent: *
-Allow: /
-Disallow: /crystal.html
-Disallow: /wiredwright.html
-
-# AI crawlers are welcome on the public page. Same rules as everyone else.
-User-agent: GPTBot
-Allow: /
-Disallow: /crystal.html
-Disallow: /wiredwright.html
-
-User-agent: ClaudeBot
-Allow: /
-Disallow: /crystal.html
-Disallow: /wiredwright.html
-
-User-agent: PerplexityBot
-Allow: /
-Disallow: /crystal.html
-Disallow: /wiredwright.html
-
-User-agent: Google-Extended
 Allow: /
 
 Sitemap: https://jlisten2me.com/sitemap.xml

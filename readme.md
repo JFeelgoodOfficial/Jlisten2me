@@ -99,31 +99,6 @@ PDF means building and running a signing workflow before launch, and the confide
 policy carries the same weight to a reader without that overhead. Signing a corporate
 client's own NDA case by case is still fine. Advertising one is what requires the process.
 
-## crystal.html
-Standalone, private page at `/crystal.html` (marked `noindex`) for Crystal M. Pratt. Three parts and nothing else:
-
-1. **Ten ways to make your hours count** — positioning and work-finding tips. Each card expands on a **Tell me more** button to a 5 to 7 step how-to guide plus a note field.
-2. **Work for yourself** — four self-employment options (a delivery round, power washing, setup packages, and a hybrid running all three). Each expands to stat tiles, a setup guide, a caveat, and two tabbed month plans taking her from $0 to $1,000 and from $0 to $4,000.
-3. **Your notebook** — free-form timestamped notes, deletable, added by button or Ctrl/Cmd+Enter.
-
-- Everything autosaves to `localStorage` under `crystal-page-review-v1`. Nothing leaves the browser.
-- **Export Markdown** writes `crystal-ideas-YYYY-MM-DD.md` with all three sections; notes also export alone as `crystal-notes-YYYY-MM-DD.md`.
-- **Print or save as PDF** builds a separate `#printSheet` (also on `beforeprint`, so Ctrl+P works) that `@media print` swaps in: black on white, tick boxes beside every step, and only the plans she has not ruled out.
-- Content lives in the `SECTIONS` and `SPINOFFS` arrays near the top of the script. The footer carries a version stamp; bump it with each change.
-
-## wiredwright.html
-Standalone, private page at `/wiredwright.html` (marked `noindex`) for Wired Wright, an electrical contractor covering greater Austin. It is a content-intake tool, not the public landing page: he answers it once, exports the brief, and Jonny builds the site from that.
-
-- Typeface is Source Sans 3 at 17px, chosen for reading comfort over Inter's tighter grotesque.
-- **Hero**: a three.js particle plug (body, three prongs, curving cord) that morphs into the words WIRED WRIGHT on a loop. Falls back to plain styled type if WebGL or the CDN fails, and holds the text still under `prefers-reduced-motion`.
-- **28 questions** in seven parts, ordered the way a visitor reads a landing page: first screen, trust strip, services, proof, price and form, FAQ, footer and local search. Each question carries the research note behind it (license-badge lift, four-field forms, Austin Energy EV rebate rules, TECL placement).
-- Each question has **tap-to-load recommended answers** that drop into the composer for editing, a **chat box** that saves answers as a thread, and per-answer edit and delete.
-- Everything autosaves to `localStorage` under `wiredwright-content-v1`. Nothing leaves the browser.
-- **Download Markdown** writes `wiredwright-content-YYYY-MM-DD.md` with every answer, the research note per question, a build order for the page, the still-open questions, and the source list. Copy-to-clipboard and a live preview sit beside it.
-- Beneath the export buttons sits a **research panel**: eleven findings as stat cards (conversion lift, license-badge specificity, mobile share, form abandonment, the Austin Energy rebate, review volume) with the source named on each.
-- Conversion figures come from marketing-agency and vendor blogs, not audited research, and the page says so. Austin Energy rebate caps and funding change, so re-verify before publishing them anywhere public.
-- Content lives in the `SECTIONS` and `BUILD_ORDER` arrays at the top of the second script block.
-
 ## Meta Tags
 - OpenGraph/Twitter cards with a real `og:image`
 - No `meta keywords`; search engines have ignored it since 2009
