@@ -11,6 +11,9 @@
   <meta property="og:description" content="An hour that belongs to you. No advice unless you ask, no stake in the outcome, nothing repeated to anyone." />
   <meta property="og:url" content="https://jlisten2me.com/" />
   <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Jlisten2me" />
+  <meta property="og:locale" content="en_US" />
+  <link rel="alternate" type="application/rss+xml" title="Jlisten2me Journal" href="https://jlisten2me.com/journal/feed.xml" />
   <meta property="og:image" content="https://jlisten2me.com/og.png" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
@@ -34,6 +37,7 @@
       src: url('fonts/inter-latin-wght-normal.woff2') format('woff2');
     }
 
+    /* @shared-css-start: _tools/build_journal.py copies everything between these markers into journal/journal.css */
     /* ---- Palettes. Each one carries a dark and a light set. ---- */
     :root {
       --font: 'Inter', system-ui, -apple-system, sans-serif;
@@ -176,6 +180,7 @@
     .btn-primary:hover { background: var(--accent-soft); transform: translateY(-1px); }
     .btn-ghost { padding: 0.9rem 1.7rem; background: transparent; color: var(--text-2); border-color: var(--border); }
     .btn-ghost:hover { color: var(--text); border-color: var(--accent); }
+    /* @shared-css-end */
 
     /* ---- Hero ---- */
     #hero {
@@ -189,6 +194,8 @@
     .eyebrow { font-size: 0.74rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent); font-weight: 500; margin-bottom: 1.5rem; }
     h1 { font-size: clamp(2.9rem, 8.4vw, 5.4rem); font-weight: 300; letter-spacing: -0.045em; line-height: 1.04; margin-bottom: 1.4rem; }
     h1 em { font-style: normal; color: var(--accent-soft); }
+    .line { display: block; }
+    .line + .line { margin-top: 0.35em; }
     .hero-sub { font-size: clamp(1rem, 2.6vw, 1.16rem); color: var(--text-2); max-width: 560px; margin: 0 auto 2.6rem; font-weight: 300; line-height: 1.7; }
     .hero-ctas { display: flex; gap: 0.9rem; justify-content: center; flex-wrap: wrap; }
     .hero-meta { margin-top: 2.8rem; font-size: 0.77rem; color: var(--text-3); letter-spacing: 0.05em; }
@@ -264,6 +271,18 @@
     .cal-fallback p { color: var(--text-2); font-size: 0.9rem; max-width: 420px; margin: 0 auto 1.4rem; }
     .book-meta { display: flex; justify-content: center; gap: 1.6rem; flex-wrap: wrap; margin-top: 1.6rem; font-size: 0.8rem; color: var(--text-3); }
 
+    /* ---- Journal teaser (filled in by _tools/build_journal.py) ---- */
+    #journal { background: var(--bg-2); border-top: 1px solid var(--border); }
+    .j-list { list-style: none; display: grid; gap: 1rem; }
+    .home-j { grid-template-columns: repeat(3, 1fr); }
+    .j-item a { display: block; height: 100%; padding: 1.5rem; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); text-decoration: none; transition: border-color 0.25s, transform 0.2s; }
+    .j-item a:hover { border-color: var(--accent); transform: translateY(-2px); }
+    .j-item h3 { font-size: 0.99rem; font-weight: 500; letter-spacing: -0.01em; margin-bottom: 0.4rem; line-height: 1.4; }
+    .j-item p { font-size: 0.86rem; color: var(--text-2); line-height: 1.6; }
+    .j-item time { display: block; font-size: 0.74rem; color: var(--text-3); margin-top: 0.6rem; }
+    .how-note a { color: var(--accent-soft); }
+
+    /* @shared-css-start */
     /* ---- Footer ---- */
     footer { padding: 2.6rem 2rem; background: var(--bg-2); border-top: 1px solid var(--border); }
     .footer-inner { max-width: 1000px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
@@ -273,6 +292,7 @@
     .footer-links a:hover { color: var(--text); }
     .footer-policy { width: 100%; text-align: center; font-size: 0.76rem; color: var(--text-2); margin-top: 1.1rem; }
     .footer-copy { width: 100%; text-align: center; font-size: 0.72rem; color: var(--text-3); margin-top: 0.5rem; }
+    /* @shared-css-end */
 
     /* Light mode needs a lift: white cards on a near-white page read flat otherwise. */
     [data-theme="light"] .card,
@@ -288,13 +308,16 @@
       .fade-up { opacity: 1; transform: none; transition: none; }
       * { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
     }
+    /* @shared-css-start */
     .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
     ::-webkit-scrollbar { width: 6px; }
     ::-webkit-scrollbar-track { background: var(--bg); }
     ::-webkit-scrollbar-thumb { background: var(--text-3); border-radius: 3px; }
+    /* @shared-css-end */
 
     @media (max-width: 960px) {
       .who-grid { grid-template-columns: repeat(2, 1fr); }
+      .home-j { grid-template-columns: 1fr; }
       .about-grid { grid-template-columns: 1fr; gap: 1.2rem; }
       .faq-grid { grid-template-columns: 1fr; }
       .pricing-grid { grid-template-columns: 1fr; max-width: 420px; margin: 0 auto; }
@@ -327,6 +350,7 @@
       <li><a href="#trust">Confidentiality</a></li>
       <li><a href="#faq">FAQ</a></li>
       <li><a href="#pricing">Pricing</a></li>
+      <li><a href="/journal/">Journal</a></li>
       <li><a href="#book">Book</a></li>
     </ul>
   </div>
@@ -358,7 +382,7 @@
   <div class="hero-content">
     <p class="eyebrow">Confidential listening &nbsp;·&nbsp; Phone &amp; in person &nbsp;·&nbsp; Austin and worldwide</p>
     <h1>Say it <em>out loud.</em></h1>
-    <p class="hero-sub">An hour with someone who has no stake in how it turns out. I'm not your board, your staff, your spouse, or your lawyer. I'm the person you can finally say the whole thing to.</p>
+    <p class="hero-sub"><span class="line">An hour with someone who has no stake in how it turns out.</span><span class="line">I'm not your board, your staff, your spouse, or your lawyer.</span><span class="line">I'm the person you can finally say the whole thing to.</span></p>
     <div class="hero-ctas">
       <a href="#book" class="btn btn-primary">Book an hour</a>
       <a href="#pricing" class="btn btn-ghost">See rates</a>
@@ -375,9 +399,10 @@
         <h2>One person.<br>No agenda.</h2>
       </div>
       <div class="about-text">
-        <p class="about-def">Jlisten2me is a confidential one-hour listening service in Austin, Texas, by phone or in person, from $45 to $100 an hour. Not therapy, not coaching. An hour where someone hears the whole thing and keeps none of it.</p>
+        <p class="about-def"><span class="line">Jlisten2me is a confidential one-hour listening service in Austin, Texas, by phone or in person, from $45 to $100 an hour.</span><span class="line">Not therapy, not coaching.</span><span class="line">An hour where someone hears the whole thing and keeps none of it.</span></p>
         <!-- Bio: this is the line from the original page. Rewrite it in your own words whenever you like. -->
-        <p>I'm JFeelgood, an indie developer and artist based in Austin. I built this because I've been on both sides of conversations where nobody was really listening, and I know what it feels like when someone is.</p>
+        <p><span class="line">I'm JFeelgood, an indie developer and artist based in Austin.</span><span class="line">I built this because I've been on both sides of conversations where nobody was really listening, and I know what it feels like when someone is.</span></p>
+        <p><span class="line">Before this I worked in finance, payroll, CAD, manufacturing, retail, design, and marketing.</span><span class="line">I've produced music, painted, and written, directed, and produced film.</span><span class="line">I've written books and published them.</span><span class="line">So whatever world you're talking from, you probably won't have to translate it for me.</span></p>
       </div>
     </div>
   </div>
@@ -388,7 +413,7 @@
     <div class="section-header fade-up">
       <p class="section-label">Who this is for</p>
       <h2>When there's nobody left<br>to hand it to.</h2>
-      <p class="lede">Some weight can't go to the people around you. Not because they don't care. Because what you say to them lands somewhere, and you know it.</p>
+      <p class="lede"><span class="line">Some weight can't go to the people around you.</span><span class="line">Not because they don't care.</span><span class="line">Because what you say to them lands somewhere, and you know it.</span></p>
     </div>
     <div class="who-grid">
       <div class="card fade-up">
@@ -435,7 +460,7 @@
       <div class="step fade-up">
         <p class="step-n">Step one</p>
         <h3>Pick a time</h3>
-        <p>Grab an open slot on the calendar below. Evenings and weekends are on there. Pick phone or in person when you book.</p>
+        <p>Grab an open slot on the calendar below. Phone hours include evenings and weekends. In person is a few Wednesdays a month at noon.</p>
       </div>
       <div class="step fade-up">
         <p class="step-n">Step two</p>
@@ -521,8 +546,8 @@
         <p>You pay $225 once and get a private booking link for five phone hours. Use them whenever you want; they don't expire. If you'd like one of them in person, you pay the difference. It's meant for a stretch that's going to take more than one conversation.</p>
       </div>
       <div class="faq-item fade-up">
-        <h3>Where in Austin do in-person sessions happen?</h3>
-        <p>Somewhere public that we agree on after you book: a quiet coffee shop, a park bench, or a walk if you'd rather move while you talk. I cover Austin and the surrounding area. If you have a spot in mind, say so; if not, I'll suggest one.</p>
+        <h3>Where and when do in-person sessions happen?</h3>
+        <p>In-person hours are at noon on a few Wednesdays each month, somewhere public in Austin we agree on after you book: a quiet coffee shop, a park bench, or a walk if you'd rather move while you talk. The open Wednesdays are the ones on the calendar. If none of them work, phone hours run evenings and weekends too.</p>
       </div>
     </div>
   </div>
@@ -533,7 +558,7 @@
     <div class="section-header fade-up">
       <p class="section-label">Pricing</p>
       <h2>Straightforward rates.<br>No hidden anything.</h2>
-      <p class="lede">Paid up front through Stripe. Reschedule free up to 24 hours out.</p>
+      <p class="lede"><span class="line">Paid up front through Stripe.</span><span class="line">Reschedule free up to 24 hours out.</span></p>
     </div>
 
     <div class="pricing-grid fade-up">
@@ -569,13 +594,13 @@
 
       <div class="pricing-card">
         <p class="plan-name">In person</p>
-        <p class="plan-sub">Austin, public location</p>
+        <p class="plan-sub">Austin · select Wednesdays at noon</p>
         <p class="price">$100</p>
         <p class="price-unit">per hour</p>
         <p class="plan-desc">Same hour, across a table. A quiet coffee shop, a park bench, a walk if you'd rather move while you talk.</p>
         <ul>
           <li>Full 60 minutes</li>
-          <li>Austin and surrounding area</li>
+          <li>A few Wednesdays a month, 12 to 1</li>
           <li>Public spot, your pick or mine</li>
           <li>Nothing recorded, nothing kept</li>
         </ul>
@@ -595,7 +620,7 @@
     <div class="section-header fade-up">
       <p class="section-label">Book</p>
       <h2>Pick your hour.</h2>
-      <p class="lede">Choose a slot and tell me phone or in person. You'll get a confirmation, and nothing more than that lands in your inbox.</p>
+      <p class="lede"><span class="line">Choose a slot and tell me phone or in person.</span><span class="line">In person is a few Wednesdays a month at noon.</span><span class="line">You'll get a confirmation, and nothing more than that lands in your inbox.</span></p>
     </div>
     <div class="cal-shell fade-up">
       <div id="cal-inline"></div>
@@ -614,6 +639,22 @@
   </div>
 </section>
 
+<!-- journal-latest:start -->
+<section id="journal" aria-labelledby="journal-h">
+  <div class="container">
+    <div class="section-header fade-up">
+      <p class="section-label">Journal</p>
+      <h2 id="journal-h">Things people carry alone.</h2>
+      <p class="lede"><span class="line">A new article every Tuesday.</span><span class="line">None of them is drawn from a session.</span></p>
+    </div>
+    <ul class="j-list home-j fade-up">
+      <li class="j-item"><a href="/journal/decision-you-cant-share/"><h3>When you have to decide and can&#x27;t tell anyone yet</h3><p>A decision about layoffs, runway, or selling, and everyone you&#x27;d normally tell has a stake in it. Somewhere to say it first.</p><time datetime="2026-10-13">October 13, 2026</time></a></li>
+    </ul>
+    <p class="how-note fade-up"><a href="/journal/">Read the journal</a></p>
+  </div>
+</section>
+<!-- journal-latest:end -->
+
 <footer>
   <div class="footer-inner">
     <span class="footer-brand">Jlisten2me</span>
@@ -623,6 +664,7 @@
       <li><a href="#trust">Confidentiality</a></li>
       <li><a href="#faq">FAQ</a></li>
       <li><a href="#pricing">Pricing</a></li>
+      <li><a href="/journal/">Journal</a></li>
       <li><a href="#book">Book</a></li>
       <li><a href="https://instagram.com/JFeelgoodOfficial" target="_blank" rel="noopener">Instagram</a></li>
     </ul>
@@ -635,6 +677,14 @@
 {
   "@context": "https://schema.org",
   "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://jlisten2me.com/#website",
+      "name": "Jlisten2me",
+      "url": "https://jlisten2me.com/",
+      "inLanguage": "en-US",
+      "publisher": { "@id": "https://jlisten2me.com/#service" }
+    },
     {
       "@type": "ProfessionalService",
       "@id": "https://jlisten2me.com/#service",
@@ -673,7 +723,7 @@
         { "@type": "Question", "name": "What if I just need to vent?", "acceptedAnswer": { "@type": "Answer", "text": "Then vent. Say at the start whether you want to be talked up or want to let it out, and that's the hour you get. There's no format, no worksheet, and no advice unless you ask for it out loud. Silence is fine too." } },
         { "@type": "Question", "name": "Can I book without giving my full name?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Book under a first name and pay through Stripe, which handles your card details so I never see them. I don't need to know who you are to listen to you. If you want to say more later, that's your call, not a requirement." } },
         { "@type": "Question", "name": "How does the five-hour bundle work?", "acceptedAnswer": { "@type": "Answer", "text": "You pay $225 once and get a private booking link for five phone hours. Use them whenever you want; they don't expire. If you'd like one of them in person, you pay the difference. It's meant for a stretch that's going to take more than one conversation." } },
-        { "@type": "Question", "name": "Where in Austin do in-person sessions happen?", "acceptedAnswer": { "@type": "Answer", "text": "Somewhere public that we agree on after you book: a quiet coffee shop, a park bench, or a walk if you'd rather move while you talk. I cover Austin and the surrounding area. If you have a spot in mind, say so; if not, I'll suggest one." } }
+        { "@type": "Question", "name": "Where and when do in-person sessions happen?", "acceptedAnswer": { "@type": "Answer", "text": "In-person hours are at noon on a few Wednesdays each month, somewhere public in Austin we agree on after you book: a quiet coffee shop, a park bench, or a walk if you'd rather move while you talk. The open Wednesdays are the ones on the calendar. If none of them work, phone hours run evenings and weekends too." } }
       ]
     }
   ]

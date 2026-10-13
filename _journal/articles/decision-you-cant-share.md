@@ -1,0 +1,56 @@
+---
+title: When you have to decide and can't tell anyone yet
+slug: decision-you-cant-share
+description: A decision about layoffs, runway, or selling, and everyone you'd normally tell has a stake in it. Somewhere to say it first.
+date: 2026-10-13
+---
+
+# When you have to decide and can't tell anyone yet
+
+You know the number before anyone else does.
+Maybe it's runway: eleven months on the spreadsheet, closer to seven once you stop being generous with the forecast.
+Maybe it's a list of names.
+Maybe it's an offer for the company, sitting in your inbox while you decide whether to answer it.
+Whatever it is, you're holding it alone, and you'll keep holding it until you know what you're going to do.
+
+That stretch between knowing and deciding wears you down in a particular way. You walk into Monday's meeting with a level face. You answer "how's it going" with "busy." You get home, someone asks how your day was, and you pick the version that won't keep them up.
+
+## Why the usual people can't take it
+
+Every person you'd normally talk to has a reason they can't hear this one yet.
+
+Your team would hear it as a forecast. Mention to your head of engineering that you're worried about spring payroll, and by Thursday two good people have quietly updated their résumés. That's a sensible reaction to what you told them, and it's exactly why you can't tell them until you've decided.
+
+Your cofounder or partners have money and years in this too. Bring them a doubt and they'll bring their own position to it. You wanted to think out loud, and twenty minutes later you're negotiating.
+
+Your board and investors are the people you'll eventually owe a plan. Show up with an open question and they'll hear a leader who's wobbling. Some of them will start making their own calls before you've made yours.
+
+Your spouse or partner will listen. They always do. Then they'll carry it with you, at two in the morning, on top of everything they already carry. Most people in your seat stop bringing it home after the first few times they see that happen.
+
+Friends in your industry know people who know your people. Austin is a small town once you're a few years into any field.
+
+Advisors, coaches, and lawyers are useful, and you'll need some of them. They're also paid to move you toward an answer. Some days what you need is to hear what you think before anyone moves you anywhere.
+
+## What saying it out loud does
+
+Inside your head, a decision like this loops. The same three options come around, the same worst case, the same line you'd use in the all-hands. Looping feels like thinking, and it can go on for weeks.
+
+Saying it to another person forces it into order. You have to start somewhere, and where you start tells you something. You hear which part you rushed past. You hear yourself argue for the option you thought you'd already ruled out. Sometimes you hear that you made the call a while ago and have been waiting for someone to let you say it.
+
+The other person barely has to do anything. They have to stay quiet, keep up, and have no reaction that matters to you. That combination is hard to find in your own life, because everyone in your life is connected to the outcome.
+
+## What the hour looks like
+
+You book a time, by phone from anywhere or in person in Austin on a Wednesday at noon. You can book under a first name. Stripe handles the payment, so I never see your card.
+
+When the call starts, you say whether you want to be talked up or want to let it out. If you'd like a question or two back, ask, and you'll get them. Then you talk. You can start in the middle. You can spend twenty minutes on the spreadsheet and ten on how you feel about the people on the list. Silence is fine.
+
+I don't take notes and nothing is recorded. I'm not on your cap table, I don't work in your industry, and I don't know your investors. When the hour ends, the only person who leaves with any of it is you.
+
+## What it won't do
+
+An hour of being listened to won't make the decision for you, and it won't make it right. If you're working out severance, notice periods, or what you're allowed to tell employees, you need an employment lawyer. If it's the numbers themselves, you need your accountant or CFO. If the weight has turned into weeks of bad sleep, or into something you can't shake when the work is done, a licensed therapist is the right person, and I'll say so plainly if it comes up.
+
+If you're in crisis, call or text 988 in the US.
+
+If you're carrying one of these right now, a phone hour is $60 and you can book it under a first name. [Pick a time](/#book).

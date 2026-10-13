@@ -60,8 +60,12 @@ Step 5 covers how to handle it.
 3. Connect your calendar (Google, Apple, or Outlook) so Cal blocks out times you're busy.
    Skip this and you will get double-booked.
 4. Set your **availability**: Availability → set real hours, including the evenings and
-   weekends the site promises. The site says evenings and weekends are available, so either
-   make that true or change the copy.
+   weekends the site promises for phone. The site says evenings and weekends are available
+   by phone, so either make that true or change the copy. In person needs its own schedule:
+   create a second availability schedule with only Wednesday 12:00 to 1:00, assign it to the
+   in-person event type, and use date overrides to block the Wednesdays you won't be in
+   Austin. The site says "a few Wednesdays a month at noon", so only the real ones should
+   show as open.
 5. Create three event types, all 60 minutes:
 
    | Event type | Slug | Location | Price |
@@ -263,14 +267,14 @@ Things the site currently asserts that only you can make true:
 - The "Who's listening" bio is the line from the original page. Rewrite it in your own
   words; it's the one part of the site nobody else can write. The HTML comment above it
   marks the spot.
-- Evenings and weekends really being on the calendar.
+- Evenings and weekends really being on the calendar for phone hours.
 - The bundle's "swap an hour for in person by paying the difference" — decide how you
   collect that $55. Simplest is a one-off Stripe invoice.
 - The testimonials section is gone. Ask your first few clients, in writing, whether you may
   quote them anonymously, and only use what you're given. Given what the service is, expect
   most to say no, and treat that as normal rather than a problem.
-- The page claims Austin and surrounding area for in-person. Decide how far that goes and
-  whether travel time is billed.
+- The page says in-person is noon on a few Wednesdays a month in Austin. Keep the
+  in-person schedule in Cal.com matching that, Wednesday by Wednesday.
 - The site no longer offers an NDA. If a corporate client asks for one anyway, you can
   still sign theirs case by case — just don't advertise it until signing one is a routine
   you actually have.
