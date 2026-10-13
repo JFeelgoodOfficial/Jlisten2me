@@ -22,4 +22,13 @@ Not therapy, not counselling, not legal or financial advice, not a crisis line.
 
 ## Pages
 
-- [Home](https://jlisten2me.com/): the only public page. Sections: who it's for, how it works, confidentiality, FAQ, pricing, booking calendar.
+- [Home](https://jlisten2me.com/): sections for who it's for, how it works, confidentiality, FAQ, pricing, and the booking calendar.
+- [Journal](https://jlisten2me.com/journal/): articles, one new each Tuesday.
+
+<!-- journal:start -->
+## Journal
+
+Articles by JFeelgood describing hard situations in general. None is drawn from a session. Index: https://jlisten2me.com/journal/ . Full text of every published article: https://jlisten2me.com/llms-full.txt
+
+- [When you have to decide and can't tell anyone yet](https://jlisten2me.com/journal/decision-you-cant-share/): A decision about layoffs, runway, or selling, and everyone you'd normally tell has a stake in it. Somewhere to say it first.
+<!-- journal:end -->

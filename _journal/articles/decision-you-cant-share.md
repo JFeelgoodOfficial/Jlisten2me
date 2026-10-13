@@ -2,7 +2,7 @@
 title: When you have to decide and can't tell anyone yet
 slug: decision-you-cant-share
 description: A decision about layoffs, runway, or selling, and everyone you'd normally tell has a stake in it. Somewhere to say it first.
-status: draft
+date: 2026-10-13
 ---
 
 # When you have to decide and can't tell anyone yet
@@ -55,4 +55,4 @@ If you're in crisis, call or text 988 in the US.
 
 ## Before you tell anyone else
 
-If you're carrying one of these right now, a phone hour is $60 and you can book it under a first name. [Pick a time](https://jlisten2me.com/#book).
+If you're carrying one of these right now, a phone hour is $60 and you can book it under a first name. [Pick a time](/#book).

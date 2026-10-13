@@ -11,6 +11,9 @@
   <meta property="og:description" content="An hour that belongs to you. No advice unless you ask, no stake in the outcome, nothing repeated to anyone." />
   <meta property="og:url" content="https://jlisten2me.com/" />
   <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Jlisten2me" />
+  <meta property="og:locale" content="en_US" />
+  <link rel="alternate" type="application/rss+xml" title="Jlisten2me Journal" href="https://jlisten2me.com/journal/feed.xml" />
   <meta property="og:image" content="https://jlisten2me.com/og.png" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
@@ -34,6 +37,7 @@
       src: url('fonts/inter-latin-wght-normal.woff2') format('woff2');
     }
 
+    /* @shared-css-start: _tools/build_journal.py copies everything between these markers into journal/journal.css */
     /* ---- Palettes. Each one carries a dark and a light set. ---- */
     :root {
       --font: 'Inter', system-ui, -apple-system, sans-serif;
@@ -176,6 +180,7 @@
     .btn-primary:hover { background: var(--accent-soft); transform: translateY(-1px); }
     .btn-ghost { padding: 0.9rem 1.7rem; background: transparent; color: var(--text-2); border-color: var(--border); }
     .btn-ghost:hover { color: var(--text); border-color: var(--accent); }
+    /* @shared-css-end */
 
     /* ---- Hero ---- */
     #hero {
@@ -266,6 +271,18 @@
     .cal-fallback p { color: var(--text-2); font-size: 0.9rem; max-width: 420px; margin: 0 auto 1.4rem; }
     .book-meta { display: flex; justify-content: center; gap: 1.6rem; flex-wrap: wrap; margin-top: 1.6rem; font-size: 0.8rem; color: var(--text-3); }
 
+    /* ---- Journal teaser (filled in by _tools/build_journal.py) ---- */
+    #journal { background: var(--bg-2); border-top: 1px solid var(--border); }
+    .j-list { list-style: none; display: grid; gap: 1rem; }
+    .home-j { grid-template-columns: repeat(3, 1fr); }
+    .j-item a { display: block; height: 100%; padding: 1.5rem; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); text-decoration: none; transition: border-color 0.25s, transform 0.2s; }
+    .j-item a:hover { border-color: var(--accent); transform: translateY(-2px); }
+    .j-item h3 { font-size: 0.99rem; font-weight: 500; letter-spacing: -0.01em; margin-bottom: 0.4rem; line-height: 1.4; }
+    .j-item p { font-size: 0.86rem; color: var(--text-2); line-height: 1.6; }
+    .j-item time { display: block; font-size: 0.74rem; color: var(--text-3); margin-top: 0.6rem; }
+    .how-note a { color: var(--accent-soft); }
+
+    /* @shared-css-start */
     /* ---- Footer ---- */
     footer { padding: 2.6rem 2rem; background: var(--bg-2); border-top: 1px solid var(--border); }
     .footer-inner { max-width: 1000px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
@@ -275,6 +292,7 @@
     .footer-links a:hover { color: var(--text); }
     .footer-policy { width: 100%; text-align: center; font-size: 0.76rem; color: var(--text-2); margin-top: 1.1rem; }
     .footer-copy { width: 100%; text-align: center; font-size: 0.72rem; color: var(--text-3); margin-top: 0.5rem; }
+    /* @shared-css-end */
 
     /* Light mode needs a lift: white cards on a near-white page read flat otherwise. */
     [data-theme="light"] .card,
@@ -290,13 +308,16 @@
       .fade-up { opacity: 1; transform: none; transition: none; }
       * { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
     }
+    /* @shared-css-start */
     .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
     ::-webkit-scrollbar { width: 6px; }
     ::-webkit-scrollbar-track { background: var(--bg); }
     ::-webkit-scrollbar-thumb { background: var(--text-3); border-radius: 3px; }
+    /* @shared-css-end */
 
     @media (max-width: 960px) {
       .who-grid { grid-template-columns: repeat(2, 1fr); }
+      .home-j { grid-template-columns: 1fr; }
       .about-grid { grid-template-columns: 1fr; gap: 1.2rem; }
       .faq-grid { grid-template-columns: 1fr; }
       .pricing-grid { grid-template-columns: 1fr; max-width: 420px; margin: 0 auto; }
@@ -329,6 +350,7 @@
       <li><a href="#trust">Confidentiality</a></li>
       <li><a href="#faq">FAQ</a></li>
       <li><a href="#pricing">Pricing</a></li>
+      <li><a href="/journal/">Journal</a></li>
       <li><a href="#book">Book</a></li>
     </ul>
   </div>
@@ -617,6 +639,22 @@
   </div>
 </section>
 
+<!-- journal-latest:start -->
+<section id="journal" aria-labelledby="journal-h">
+  <div class="container">
+    <div class="section-header fade-up">
+      <p class="section-label">Journal</p>
+      <h2 id="journal-h">Things people carry alone.</h2>
+      <p class="lede"><span class="line">A new article every Tuesday.</span><span class="line">None of them is drawn from a session.</span></p>
+    </div>
+    <ul class="j-list home-j fade-up">
+      <li class="j-item"><a href="/journal/decision-you-cant-share/"><h3>When you have to decide and can&#x27;t tell anyone yet</h3><p>A decision about layoffs, runway, or selling, and everyone you&#x27;d normally tell has a stake in it. Somewhere to say it first.</p><time datetime="2026-10-13">October 13, 2026</time></a></li>
+    </ul>
+    <p class="how-note fade-up"><a href="/journal/">Read the journal</a></p>
+  </div>
+</section>
+<!-- journal-latest:end -->
+
 <footer>
   <div class="footer-inner">
     <span class="footer-brand">Jlisten2me</span>
@@ -626,6 +664,7 @@
       <li><a href="#trust">Confidentiality</a></li>
       <li><a href="#faq">FAQ</a></li>
       <li><a href="#pricing">Pricing</a></li>
+      <li><a href="/journal/">Journal</a></li>
       <li><a href="#book">Book</a></li>
       <li><a href="https://instagram.com/JFeelgoodOfficial" target="_blank" rel="noopener">Instagram</a></li>
     </ul>
@@ -638,6 +677,14 @@
 {
   "@context": "https://schema.org",
   "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://jlisten2me.com/#website",
+      "name": "Jlisten2me",
+      "url": "https://jlisten2me.com/",
+      "inLanguage": "en-US",
+      "publisher": { "@id": "https://jlisten2me.com/#service" }
+    },
     {
       "@type": "ProfessionalService",
       "@id": "https://jlisten2me.com/#service",

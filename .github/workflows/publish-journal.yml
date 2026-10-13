@@ -1,0 +1,61 @@
+name: Publish journal
+
+# Every Tuesday morning (US Central) this publishes any article in _journal/articles
+# whose date has arrived, then commits the generated pages. It also runs whenever
+# articles or the build script change on main, and can be run by hand from the
+# Actions tab.
+on:
+  schedule:
+    - cron: "7 11 * * 2"   # 11:07 UTC Tuesday: 6:07 a.m. CDT, 5:07 a.m. CST
+  push:
+    branches: [main]
+    paths:
+      - "_journal/**"
+      - "_tools/**"
+      - "index.html"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: write
+
+concurrency:
+  group: publish-journal
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Build the journal
+        run: python3 _tools/build_journal.py
+
+      - name: Commit generated pages
+        id: commit
+        run: |
+          git add -A journal sitemap.xml llms.txt llms-full.txt index.html
+          if git diff --cached --quiet; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+            echo "Nothing new to publish."
+          else
+            git config user.name "jlisten2me-bot"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git commit -m "Publish journal for $(TZ=America/Chicago date +%F)"
+            git push
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      # Vercel redeploys on any push. GitHub Pages does not rebuild for pushes made
+      # with the workflow token, so ask it to. Harmless if the site isn't on Pages.
+      - name: Rebuild GitHub Pages
+        if: steps.commit.outputs.changed == 'true'
+        continue-on-error: true
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh api -X POST "repos/${{ github.repository }}/pages/builds"

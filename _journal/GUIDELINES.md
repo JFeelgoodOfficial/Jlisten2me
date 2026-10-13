@@ -110,14 +110,40 @@ up a contrast.
    include: "If you're in crisis, call or text 988 in the US."
 7. **Booking line.** One or two sentences with the price and a link to the booking section.
 
-## Metadata for each article
+## Files, metadata, and the release schedule
 
-- Slug: lowercase words joined by hyphens, no dates. `decision-you-cant-share.html`.
-- `<title>`: the article title, then " | Jlisten2me". Under 60 characters if possible.
-- Meta description: one sentence under 155 characters, in the reader's words.
-- One `Article` JSON-LD block with headline, author (JFeelgood), and datePublished.
-- Add the page to `sitemap.xml` and to the Pages list in `llms.txt`.
-- Link from the journal index. Link back to the home page's `#book` section.
+Each article is one Markdown file in `_journal/articles/`, named after its slug:
+`_journal/articles/decision-you-cant-share.md`. The file starts with front matter:
+
+```
+---
+title: When you have to decide and can't tell anyone yet
+slug: decision-you-cant-share
+description: One sentence under 155 characters, in the reader's words.
+date: 2026-10-13
+---
+```
+
+- `slug`: lowercase words joined by hyphens, no dates. Must match the file name.
+- `date`: the Tuesday the article goes live. Give each new article the Tuesday after the
+  last one scheduled. Nothing appears on the site before its date.
+- `updated`: optional. Add it with the date of any real revision after publishing.
+- Body: `## ` for subheadings, a blank line between paragraphs. Lines in the same paragraph
+  without a blank line between them show one sentence per line, which is how the opening is
+  written. Links are `[text](/#book)`.
+
+`python3 _tools/build_journal.py --check` checks every article against the hard rules in
+this document and lists anything to fix. The build refuses to
+publish an article that fails.
+
+A GitHub Action runs the build every Tuesday at about 6 a.m. Central. It publishes
+whatever is due and regenerates the journal index, the article pages, the RSS feed,
+`sitemap.xml`, `llms.txt`, `llms-full.txt`, and the "From the journal" block on the home
+page. The page title, canonical URL, Open Graph tags, and the `BlogPosting` and breadcrumb
+structured data all come from the front matter, so there's nothing to add by hand.
+
+To preview a future week locally: `python3 _tools/build_journal.py --today 2026-12-01`,
+then put things back with a plain `python3 _tools/build_journal.py`.
 
 ## Topics
 
@@ -136,6 +162,7 @@ New topics beyond these are fine if they pass the "what it is not" section above
 
 ## Before publishing
 
+- [ ] `python3 _tools/build_journal.py --check` reports the article clean.
 - [ ] Search the file for `—`, ` – `, and `--`. Zero results.
 - [ ] Search for `not `, `isn't`, `n't just`, `but rather`. Read each hit and confirm none
       sets up a contrast.

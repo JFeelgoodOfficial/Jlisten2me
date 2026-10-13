@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Jlisten2me Journal</title>
+    <link>https://jlisten2me.com/journal/</link>
+    <atom:link href="https://jlisten2me.com/journal/feed.xml" rel="self" type="application/rss+xml" />
+    <description>Articles on carrying things you can't hand to the people around you.</description>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 13 Oct 2026 06:00:00 -0500</lastBuildDate>
+    <item>
+      <title>When you have to decide and can&#x27;t tell anyone yet</title>
+      <link>https://jlisten2me.com/journal/decision-you-cant-share/</link>
+      <guid isPermaLink="true">https://jlisten2me.com/journal/decision-you-cant-share/</guid>
+      <pubDate>Tue, 13 Oct 2026 06:00:00 -0500</pubDate>
+      <description>A decision about layoffs, runway, or selling, and everyone you&#x27;d normally tell has a stake in it. Somewhere to say it first.</description>
+    </item>
+  </channel>
+</rss>
