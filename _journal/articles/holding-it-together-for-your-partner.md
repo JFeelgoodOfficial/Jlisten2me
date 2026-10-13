@@ -40,7 +40,7 @@ You don't have to be fair in that hour, or generous, or calm. You've been all th
 
 You can talk by phone from anywhere, which may be easier if leaving the house is hard right now. In Austin, you can also meet in person on a Wednesday at noon, at a public spot we agree on after you book. A first name is enough, and Stripe handles the payment, so I never see your card.
 
-At the start you tell me whether you want to be talked up or want to let it out. After that, you talk. I don't give advice unless you ask for it out loud, and silence is fine.
+At the start you tell me whether you want to be talked up or want to let it out. After that, you talk. I don't give advice unless you ask for it out loud, and silence is fine. You can spend the first ten minutes on logistics and the rest on how lonely the house has felt. You can swear, or cry, or say nothing for a while.
 
 I don't take notes and nothing is recorded. I don't know your partner, your family, or your friends, and nothing you say is repeated or ever used as an example. Their privacy stays intact, and so does yours.
 

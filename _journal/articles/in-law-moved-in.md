@@ -36,7 +36,7 @@ Once you start, more than complaint tends to come out. There's the strangeness o
 
 You can talk by phone from anywhere, which might mean the car in a parking lot if the house has no private corner left. In Austin, you can meet in person on a Wednesday at noon, at a public spot we agree on after booking. A first name is enough. Stripe takes the payment, so I never see your card.
 
-You start by telling me whether you want to be talked up or want to let it out. I don't give advice unless you ask for it out loud, and silence is fine.
+You start by telling me whether you want to be talked up or want to let it out. I don't give advice unless you ask for it out loud, and silence is fine. If the comments about your cooking are the loudest thing right now, you can spend the whole hour on them, and nobody will tell you to relax.
 
 Nothing is recorded, I don't keep notes, and nothing you say is repeated or ever used as an example. I've never met your in-law, and I have no opinion about how anyone in your family should live.
 

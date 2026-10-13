@@ -19,7 +19,7 @@ Most of the time you're glad for them, and you mean it. They worked for this. Th
 
 Your partner is the first person you'd talk to about almost anything. This one is different, because the thing bothering you is their success. Any way you try to phrase it can sound like resentment, or like you'd rather they hadn't done so well. You know that's unfair to them, and you also know the feeling is real. Holding both of those at once is exhausting, and it's easier to change the subject whenever money comes up. Over time, you notice you've been avoiding money talk at home altogether.
 
-Friends can make it worse without meaning to. Some will turn it into a joke about being kept, or about who wears the pants now. The joke lands, you laugh along, and it stings for days. Others will say you should be thrilled and move on, which leaves you feeling petty on top of everything else. And there's the dinner out with friends when the check comes and your partner reaches for it first. Nobody else notices. You notice.
+Friends can make it worse without meaning to. Some will turn it into a joke about being kept, or about who's really in charge now. The joke lands, you laugh along, and it stings for days. Others will say you should be thrilled and move on, which leaves you feeling petty on top of everything else. And there's the dinner out with friends when the check comes and your partner reaches for it first. Nobody else notices. You notice.
 
 Your parents may be the worst audience of all. If you were raised to believe that providing is what makes you worth something, there's a good chance that's where you learned it. Telling them could get you a dose of the same message, or a look that says they always worried about this.
 
@@ -31,9 +31,9 @@ And underneath it all is the voice that says you shouldn't feel this way in the 
 
 There's the version you'd say if you were being careful: I'm proud of them, I'm just adjusting. Then there's the version you'd say if nobody would judge you for it. The second one tends to be messier. It might include envy. It might include grief for the person you thought you'd be by now. It might include something your father used to say.
 
-Saying the messy version to a person with no stake in your relationship lets you hear it without having to defend it. Feelings like this usually shrink a little once they've been said plainly, because they lose some of the power they get from being hidden. You might hear what's really underneath: worry about your own direction, or a fear that you matter less at home than you used to.
+Saying the messy version to a person with no stake in your relationship lets you hear it without having to defend it. Feelings like this can lose some of their grip once they've been said plainly, since a lot of their weight comes from staying hidden. You might hear what's really underneath: worry about your own direction, or a fear that you matter less at home than you used to.
 
-You don't have to come out of it with a neat conclusion. The point is that it got said somewhere.
+Sometimes it's enough that it finally got said somewhere.
 
 ## What the hour looks like
 

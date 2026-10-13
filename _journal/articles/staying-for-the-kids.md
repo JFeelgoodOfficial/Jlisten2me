@@ -32,6 +32,8 @@ You've rehearsed the reasoning in your head so many times that it's smooth. Sayi
 
 You can also say the counting out loud without anyone gasping. The years left, the plan for after, the guilt about having a plan at all. In your head those feel like secrets. Spoken to someone with no stake in your family, they sound like what they are, an adult weighing hard tradeoffs with people they love on both sides.
 
+You might also hear what you're proud of: the birthdays you pulled off together, the way the kids still laugh at dinner, the steadiness you've kept up for them through all of it.
+
 The arrangement is the same when you hang up. One more person has heard what it costs you, and that person won't bring it up at the next family dinner.
 
 ## What happens in the hour

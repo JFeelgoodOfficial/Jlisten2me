@@ -28,7 +28,7 @@ That leaves the loneliest part of the whole thing, the part about who's still in
 
 ## Saying it to someone outside the circle
 
-Losing friends in a divorce is a strange kind of grief, because nobody died and nobody announced anything. It happens through silence: a missing invite, a slower reply, a conversation that stops when you walk in. Saying it out loud gives it edges. You can name the people one at a time, say what each of them meant to you, and hear how much of your ordinary week went with them.
+Losing friends in a divorce is a strange, slow kind of grief. It happens through silence: a missing invite, a slower reply, a conversation that stops when you walk in. Saying it out loud gives it edges. You can name the people one at a time, say what each of them meant to you, and hear how much of your ordinary week went with them.
 
 It also matters to talk to someone who has heard nothing from your ex. There's no version of the story to correct and no impression to defend yourself against. You get to tell it from the beginning, in your own words, to someone with no side to pick and no reason to repeat it.
 
