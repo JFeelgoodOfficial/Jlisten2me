@@ -2,7 +2,7 @@
 title: When you're getting divorced and your friends are picking sides
 slug: friends-picking-sides
 description: You're getting divorced, mutual friends have gone quiet or drifted to your ex, and the invitations stopped. Somewhere to say it.
-date: 2099-01-01
+date: 2026-10-20
 ---
 
 # When you're getting divorced and your friends are picking sides
@@ -40,7 +40,7 @@ You can talk by phone from anywhere, or meet in person in Austin on a Wednesday 
 
 At the start, you tell me whether you want to be talked up or want to let it out. On a weekend with the house empty, either one is a reasonable choice. I don't give advice unless you ask for it out loud. Silence is fine.
 
-I don't take notes and nothing is recorded. I don't know your ex or anyone in your circle, and nothing you say is repeated or ever used as an example. If it would help to know you've got hours waiting, five phone hours are $225 and they don't expire.
+I don't take notes and nothing is recorded. I don't know your ex or anyone in your circle, and nothing you say is repeated or ever used as an example.
 
 ## Who's better for the rest
 

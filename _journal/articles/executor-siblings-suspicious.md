@@ -2,7 +2,7 @@
 title: When you're the executor and your siblings think you're cheating them
 slug: executor-siblings-suspicious
 description: You're settling your parent's estate while grieving, and your siblings question every decision. Somewhere to say what that's like.
-date: 2099-01-01
+date: 2027-04-06
 ---
 
 # When you're the executor and your siblings think you're cheating them

@@ -2,7 +2,7 @@
 title: When you have to let go of someone who's also your friend
 slug: letting-go-a-friend
 description: You have to fire or write up a friend next week, HR says keep it quiet, and the dread keeps building. Somewhere to say it first.
-date: 2099-01-01
+date: 2027-04-13
 ---
 
 # When you have to let go of someone who's also your friend

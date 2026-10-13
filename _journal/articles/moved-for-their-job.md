@@ -2,7 +2,7 @@
 title: When you moved for your partner's job and you're lonely in a new city
 slug: moved-for-their-job
 description: You gave up your job and your friends for their big opportunity, everyone says how lucky you are, and you're alone most days.
-date: 2099-01-01
+date: 2027-03-30
 ---
 
 # When you moved for your partner's job and you're lonely in a new city

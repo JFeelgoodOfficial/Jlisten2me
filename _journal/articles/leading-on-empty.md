@@ -2,7 +2,7 @@
 title: When you lead a congregation or nonprofit and you're running on empty
 slug: leading-on-empty
 description: You lead a church or nonprofit, you're worn through, and everyone you'd tell is someone you serve. Somewhere to say it.
-date: 2099-01-01
+date: 2027-03-23
 ---
 
 # When you lead a congregation or nonprofit and you're running on empty

@@ -2,7 +2,7 @@
 title: When you have to give the eulogy and it's complicated
 slug: complicated-eulogy
 description: You've been asked to speak at your parent's funeral, the relationship was hard, and you want to be honest without being harsh.
-date: 2099-01-01
+date: 2026-11-17
 ---
 
 # When you have to give the eulogy and it's complicated

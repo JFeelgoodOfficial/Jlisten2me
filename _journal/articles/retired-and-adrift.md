@@ -2,7 +2,7 @@
 title: When you retired and don't know who you are anymore
 slug: retired-and-adrift
 description: You retired, the title and the routine are gone, and you feel underfoot at home. Somewhere to say it without sounding ungrateful.
-date: 2099-01-01
+date: 2027-01-19
 ---
 
 # When you retired and don't know who you are anymore
@@ -30,7 +30,7 @@ Kept inside, this turns into a low irritability that spills onto whoever's close
 
 Saying it to a person gives it a shape. You start with the dishwasher and end up describing the meeting where everyone turned to you for the answer. You hear which part you miss most. It might be the title. It might be being asked. It might be the plain structure of a calendar that told you where to be at nine. You might hear yourself say "I don't know who I am now," and notice that it's the first time the sentence has been out loud.
 
-You can also say the ungrateful things. You can say you're bored, that you miss being important, that some mornings you'd trade the freedom for a parking spot with your name on it. Those thoughts are easier to look at once they're said than they are while they're circling.
+You can also say the ungrateful things. You can say you're bored, that you miss being important, that some mornings you'd trade the freedom for a parking spot with your name on it. Once they're said, you can look at them in daylight.
 
 For an hour, someone is on the other end of the line waiting to hear what you think. That alone can feel strange at first.
 
@@ -44,7 +44,7 @@ I don't take notes and nothing is recorded. I don't know your spouse, your old c
 
 ## Where an hour ends
 
-An hour of listening won't build you a new routine or tell you what to do with the next twenty years. A retirement coach can help with structure, purpose, and the practical shape of the week. If the low mood won't lift, if you're losing interest in things you used to like, sleeping badly, or finding it hard to get going most days, a licensed therapist is the right person to see.
+An hour of listening won't build you a new routine or tell you what to do with the years ahead. A retirement coach can help with structure, purpose, and the practical shape of the week. If the low mood won't lift, if you're losing interest in things you used to like, sleeping badly, or finding it hard to get going most days, a licensed therapist is the right person to see.
 
 If you're in crisis, call or text 988 in the US.
 

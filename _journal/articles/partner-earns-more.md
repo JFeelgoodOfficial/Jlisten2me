@@ -2,7 +2,7 @@
 title: When your partner earns more than you and it's eating at you
 slug: partner-earns-more
 description: Your partner out-earns you now, it bothers you, and you're ashamed that it bothers you. Somewhere to say it out loud.
-date: 2099-01-01
+date: 2027-03-16
 ---
 
 # When your partner earns more than you and it's eating at you
@@ -35,7 +35,7 @@ Saying the messy version to a person with no stake in your relationship lets you
 
 Sometimes it's enough that it finally got said somewhere.
 
-## What the hour looks like
+## How the hour runs
 
 You can call from anywhere, or meet in person in Austin on one of a few Wednesdays a month at noon, at a public spot we agree on after you book. A first name is fine. Stripe takes the payment, so I never see your card.
 
@@ -43,7 +43,7 @@ At the start, you tell me whether you'd like to be talked up or want to let it o
 
 I don't take notes and nothing is recorded. Nothing you say gets repeated or used as an example. I don't know your partner, your friends, or your family, so nothing you say about them travels anywhere.
 
-## What it won't do
+## When it's showing up between you
 
 An hour of being heard won't settle anything between you and your partner. If the feeling has started showing up in how the two of you treat each other, in arguments about money, coldness, or long stretches of avoiding the subject, a couples counselor can help you talk about it together.
 

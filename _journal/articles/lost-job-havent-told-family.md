@@ -2,7 +2,7 @@
 title: When you lost your job and haven't told your family yet
 slug: lost-job-havent-told-family
 description: You lost your job weeks ago, you still leave the house every morning, and nobody at home knows. Somewhere to say it first.
-date: 2099-01-01
+date: 2027-01-12
 ---
 
 # When you lost your job and haven't told your family yet
@@ -29,7 +29,7 @@ Friends ask how work is going because it's a normal thing to ask. Saying "I got 
 
 So you sit at the table in the coffee shop, apply for jobs, refresh your email, and keep the whole thing inside.
 
-## What it's like to say it to someone
+## Hearing the story in order
 
 You've probably said the words in your head a hundred times, in a hundred versions. Saying them to an actual person for the first time is different. Your voice might shake. You might laugh at the wrong moment. You might hear yourself say "I didn't know how to tell them" and realize that's the truest sentence you've said in weeks.
 
@@ -37,7 +37,7 @@ Getting it out once, to someone with no stake in your family, can make it feel m
 
 You can also say the parts you're ashamed of without watching anyone's face change.
 
-## What the hour looks like
+## An hour at your own pace
 
 You can call from anywhere, including the car or a quiet corner of the library. In Austin, we can meet in person on one of a few Wednesdays a month at noon, at a public spot we agree on after you book. A first name is enough. Stripe handles the payment, so I never see your card.
 
@@ -45,7 +45,7 @@ When we start, you tell me whether you'd like to be talked up or want to let it 
 
 I don't take notes and nothing is recorded. Nothing you say gets repeated or used as an example. When the hour ends, what you do next is still entirely up to you.
 
-## What it won't do
+## When you need more than a listener
 
 An hour of listening won't cover a bill or find you work. For the money side, your state's unemployment office can tell you what you may be able to claim, and a financial advisor can help with the numbers. If this has turned into something you can't shake, the dread, the sleepless nights, the feeling of being stuck inside the secret, a licensed therapist is the right person to talk to.
 

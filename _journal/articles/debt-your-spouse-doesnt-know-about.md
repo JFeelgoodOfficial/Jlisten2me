@@ -2,7 +2,7 @@
 title: When there's debt your spouse doesn't know about
 slug: debt-your-spouse-doesnt-know-about
 description: There's debt your spouse doesn't know about, and the secret has gotten as heavy as the balance. Somewhere to say it out loud.
-date: 2099-01-01
+date: 2026-12-29
 ---
 
 # When there's debt your spouse doesn't know about
@@ -43,7 +43,7 @@ At the start you tell me whether you want to be talked up or want to let it out.
 
 I don't take notes and nothing is recorded. Nothing you tell me gets repeated or used as an example. I've worked in finance and payroll, and I still won't tell you what to do with your money. You'll just have said it.
 
-## What it won't do
+## Who can help with the balance
 
 An hour of being listened to won't lower the balance and isn't financial advice. For a plan to pay it down, a nonprofit credit counselor or a financial advisor is the right person. When you're ready to tell your spouse, a couples counselor can help the two of you have that conversation and what comes after it.
 

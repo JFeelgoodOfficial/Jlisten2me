@@ -2,7 +2,7 @@
 title: When you're thinking about divorce and haven't said it to anyone
 slug: thinking-about-divorce
 description: You've thought about divorce for a long time and haven't said the word to anyone. Somewhere to say it first, privately.
-date: 2099-01-01
+date: 2027-01-05
 ---
 
 # When you're thinking about divorce and haven't said it to anyone

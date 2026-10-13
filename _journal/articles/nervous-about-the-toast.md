@@ -2,7 +2,7 @@
 title: When you're giving the wedding toast and you're already nervous
 slug: nervous-about-the-toast
 description: You're giving the toast at a wedding, your hands are already shaking, and you want to practice it on someone who'll just listen.
-date: 2099-01-01
+date: 2027-04-27
 ---
 
 # When you're giving the wedding toast and you're already nervous

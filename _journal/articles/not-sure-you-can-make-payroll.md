@@ -2,7 +2,7 @@
 title: When you're not sure you can make payroll
 slug: not-sure-you-can-make-payroll
 description: Checking the bank balance before every payday, covering the gap yourself, and nobody you can tell. Somewhere to say it out loud.
-date: 2099-01-01
+date: 2026-10-27
 ---
 
 # When you're not sure you can make payroll

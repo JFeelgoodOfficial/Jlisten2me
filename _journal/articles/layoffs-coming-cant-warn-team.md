@@ -2,7 +2,7 @@
 title: When you know layoffs are coming and can't warn your team
 slug: layoffs-coming-cant-warn-team
 description: You were told before the announcement, you have to act normal, and someone just asked if they're safe. Somewhere to say it.
-date: 2099-01-01
+date: 2027-01-26
 ---
 
 # When you know layoffs are coming and can't warn your team

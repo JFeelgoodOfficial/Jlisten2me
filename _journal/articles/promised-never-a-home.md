@@ -2,7 +2,7 @@
 title: When you promised your mom you'd never put her in a home
 slug: promised-never-a-home
 description: You promised you'd never move her into a home, and now she's in memory care. The relief and the guilt show up together.
-date: 2099-01-01
+date: 2026-11-03
 ---
 
 # When you promised your mom you'd never put her in a home

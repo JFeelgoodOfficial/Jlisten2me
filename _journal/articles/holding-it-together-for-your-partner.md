@@ -2,7 +2,7 @@
 title: When you're holding everything together while your partner is struggling
 slug: holding-it-together-for-your-partner
 description: Your partner has been low for months, you're carrying the whole household, and you feel guilty for being worn out. Somewhere to say it.
-date: 2099-01-01
+date: 2026-12-01
 ---
 
 # When you're holding everything together while your partner is struggling

@@ -2,7 +2,7 @@
 title: When your spouse's parent moved in and your marriage is paying for it
 slug: in-law-moved-in
 description: Your spouse's parent moved in, your privacy is gone, and your spouse won't take sides. Somewhere to say it without sounding heartless.
-date: 2099-01-01
+date: 2027-02-02
 ---
 
 # When your spouse's parent moved in and your marriage is paying for it

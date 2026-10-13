@@ -2,7 +2,7 @@
 title: When it's time to take your dad's car keys
 slug: taking-the-car-keys
 description: Your dad shouldn't be driving anymore, and the talk feels like taking his independence. Somewhere to say it out loud first.
-date: 2099-01-01
+date: 2027-03-09
 ---
 
 # When it's time to take your dad's car keys
@@ -32,7 +32,7 @@ This is a conversation that goes better if you've heard yourself say it once. In
 
 So you say it to someone who won't react. You try the opening line you've been planning and hear how it sounds in the air. You try it again a different way. You notice whether you reach first for the dent, the neighbor, or the doctor. You say what you'll offer him, the rides and the standing trip to the store, and you hear whether you mean it. You say his answers back to yourself, the ones you already know are coming, and hear what you'd say to each.
 
-Somewhere in there your voice will probably catch. It tends to be the part about him getting older, the part where the man who taught you to drive is the one who has to stop. Better to meet that feeling in a practice run than for the first time across his kitchen table.
+Somewhere in there your voice will probably catch. It tends to be the part about him getting older, the part where the man who taught you to drive is the one who has to stop. You get to meet that feeling in a practice run, before you're sitting across his kitchen table.
 
 You can also just say how much you hate being the one who has to do this. That part needs saying too, and he's the one person who can't hear it.
 

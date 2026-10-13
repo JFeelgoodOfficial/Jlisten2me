@@ -2,7 +2,7 @@
 title: When you're staying married for the kids and counting the years
 slug: staying-for-the-kids
 description: You're staying married until the kids are grown, living like roommates and keeping up appearances. Somewhere to say what it costs.
-date: 2099-01-01
+date: 2026-12-22
 ---
 
 # When you're staying married for the kids and counting the years

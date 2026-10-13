@@ -2,7 +2,7 @@
 title: When you're looking for a new job and haven't told anyone at home
 slug: secret-job-search
 description: You're interviewing quietly, hiding it at work and at home until there's an offer. Somewhere to say it out loud first.
-date: 2099-01-01
+date: 2026-11-10
 ---
 
 # When you're looking for a new job and haven't told anyone at home
@@ -26,7 +26,7 @@ So the plan is to tell them once it's settled. Meanwhile, everything that happen
 
 Friends would listen, but a lot of them know your partner, and the next time everyone's at the same table someone might ask how the search is going. Keeping a secret from your partner is hard enough without spreading it around.
 
-## What saying it out loud does
+## Letting the cover story drop for an hour
 
 Holding all of this alone makes it louder than it needs to be. Each rejection rattles around with nowhere to land. Each good sign builds into a fantasy you can't check against anyone.
 
@@ -34,7 +34,7 @@ Saying it to another person puts it back in proportion. You hear yourself descri
 
 It also helps to have one place where the cover story can come off. For an hour you don't have to remember which excuse you used with whom.
 
-## What the hour looks like
+## How a call fits around a workday
 
 You can call from anywhere, which works well from a parked car on a lunch break. If you're in Austin, we can meet in person on one of a few Wednesdays a month at noon, at a public spot we settle on after you book. A first name is enough. Stripe handles the payment, so I never see your card.
 
@@ -42,7 +42,7 @@ When we start, you tell me whether you want to be talked up before the next inte
 
 I don't take notes and nothing is recorded. I don't know your boss, your coworkers, or your partner, and nothing you tell me gets repeated or used as an example. When the call ends, the secret is still yours to tell when you're ready.
 
-## What it won't do
+## What a career coach is for
 
 An hour of being heard won't get you the job, and I won't rewrite your resume or coach you through salary talks. If you want help with the search itself, a career coach is the right person for that. If the strain of keeping it quiet has started following you into your sleep or your relationship, a licensed therapist can help you sort through it.
 

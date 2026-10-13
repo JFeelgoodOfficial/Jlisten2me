@@ -2,7 +2,7 @@
 title: When you got a diagnosis and haven't told anyone yet
 slug: diagnosis-havent-told-anyone
 description: You got news from the doctor and you're still deciding who to tell, when, and how much. Somewhere to say it out loud first.
-date: 2099-01-01
+date: 2027-02-23
 ---
 
 # When you got a diagnosis and haven't told anyone yet

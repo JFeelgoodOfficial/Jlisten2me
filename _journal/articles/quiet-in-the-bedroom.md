@@ -2,7 +2,7 @@
 title: When your marriage has gone quiet in the bedroom and you can't talk about it
 slug: quiet-in-the-bedroom
 description: Intimacy in your marriage faded or stopped, you feel rejected and lonely, and it's too embarrassing to tell anyone. Somewhere to say it.
-date: 2099-01-01
+date: 2027-02-09
 ---
 
 # When your marriage has gone quiet in the bedroom and you can't talk about it

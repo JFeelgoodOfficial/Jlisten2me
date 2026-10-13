@@ -2,7 +2,7 @@
 title: When you got promoted over your friends and it's lonely now
 slug: promoted-over-your-friends
 description: You manage the people you used to eat lunch with, and the other managers haven't let you in yet. Somewhere to say how that feels.
-date: 2099-01-01
+date: 2027-03-02
 ---
 
 # When you got promoted over your friends and it's lonely now

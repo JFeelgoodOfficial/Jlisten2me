@@ -2,7 +2,7 @@
 title: When you're building a company and your partner doesn't get it
 slug: partner-doesnt-get-the-company
 description: Your partner sees the risk and the missing paychecks, and you've stopped bringing the company home. Somewhere to say all of it.
-date: 2099-01-01
+date: 2026-12-15
 ---
 
 # When you're building a company and your partner doesn't get it

@@ -2,7 +2,7 @@
 title: When you got laid off in your fifties and it feels like nobody wants you
 slug: laid-off-in-your-fifties
 description: Laid off in your fifties after decades at one place, and the job search feels like a wall. Somewhere to say it out loud.
-date: 2099-01-01
+date: 2027-04-20
 ---
 
 # When you got laid off in your fifties and it feels like nobody wants you
@@ -18,7 +18,7 @@ You know how to work. You've trained half the people who were in that building. 
 
 Your friends still think of you as the one with the solid job. Some of them have asked how retirement planning is going, or joked that you'll be the last one standing at that company. Telling them you're out, and that the search is going badly, means watching them recalculate who you are. Pride is a big part of it, and pride at this stage of life has a lot of years behind it.
 
-Your spouse knows about the layoff. What they may not know is how the search is really going. You've seen what happens behind their eyes when the subject turns to money: the retirement date moving, the savings that were supposed to last, the house. If you tell them how few calls you're getting, you're afraid they'll start to panic, and then you'll be managing their fear on top of your own. So you give them the hopeful version and keep the rest.
+Your spouse knows about the layoff, and much less about how the search is really going. You've seen what happens behind their eyes when the subject turns to money: the retirement date moving, the savings that were supposed to last, the house. If you tell them how few calls you're getting, you're afraid they'll start to panic, and then you'll be managing their fear on top of your own. So you give them the hopeful version and keep the rest.
 
 Former colleagues are awkward in a different way. Some of them survived the cut and still work there, and they don't quite know what to say to you. Others went out the same door you did and are dealing with their own version. Reaching out to network feels necessary and a little humiliating at the same time, like asking for a favor from people who used to ask favors of you.
 
@@ -34,7 +34,7 @@ You might hear how much of your identity was built around that one employer, and
 
 There's no audience for this to perform in front of. That alone makes it easier to be honest.
 
-## What the hour looks like
+## The hour, start to finish
 
 You can call from anywhere. In Austin, we can meet in person on one of a few Wednesdays a month at noon, at a public spot we agree on after you book. A first name is enough. Stripe handles the payment, so I never see your card.
 
@@ -42,7 +42,7 @@ When we start, you tell me whether you want to be talked up, which some people l
 
 I don't take notes and nothing is recorded. Nothing you tell me gets repeated or used as an example. I don't know your old company, your industry contacts, or your family.
 
-## What it won't do
+## For the legal questions and the math
 
 An hour of listening won't find you a job, and it won't tell you whether what happened to you was legal. If you think age played a part in how you were let go or how you're being treated in interviews, talk to an employment lawyer. For the retirement math, how long savings will last and what the next few years look like, a financial planner is the right person.
 

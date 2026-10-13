@@ -2,7 +2,7 @@
 title: When the last kid left and the house is too quiet
 slug: the-house-is-too-quiet
 description: The last kid moved out, it's hitting you harder than you expected, and your partner seems fine. Somewhere to say how much you miss them.
-date: 2099-01-01
+date: 2027-05-11
 ---
 
 # When the last kid left and the house is too quiet

@@ -2,7 +2,7 @@
 title: When you and your cofounder have stopped trusting each other
 slug: cofounder-trust-gone
 description: Power struggles, uneven effort, a split vision, and you can't tell anyone without hurting the company. Somewhere to say it first.
-date: 2099-01-01
+date: 2027-02-16
 ---
 
 # When you and your cofounder have stopped trusting each other

@@ -2,7 +2,7 @@
 title: When you have to tell the boss who mentored you that you're leaving
 slug: telling-your-mentor-youre-leaving
 description: You accepted a new job and dread telling the boss who invested in you. Somewhere to rehearse the first sentence before you say it.
-date: 2099-01-01
+date: 2027-05-04
 ---
 
 # When you have to tell the boss who mentored you that you're leaving
