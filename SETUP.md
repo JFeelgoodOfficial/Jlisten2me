@@ -55,8 +55,8 @@ Step 5 covers how to handle it.
 ## 2. Cal.com account and three event types
 
 1. Sign up at **cal.com**. The free plan covers everything here.
-2. Pick your username carefully; it's in every booking URL you'll ever send. `jfeelgood`
-   is what the code currently assumes.
+2. Pick your username carefully; it's in every booking URL you'll ever send. `jlisten2me`
+   is what the code uses.
 3. Connect your calendar (Google, Apple, or Outlook) so Cal blocks out times you're busy.
    Skip this and you will get double-booked.
 4. Set your **availability**: Availability → set real hours, including the evenings and
@@ -70,8 +70,8 @@ Step 5 covers how to handle it.
 
    | Event type | Slug | Location | Price |
    | --- | --- | --- | --- |
-   | Listening hour, phone | `phone-hour` | Attendee phone number | $60 |
-   | Listening hour, in person | `in-person-hour` | Attendee address / custom text | $100 |
+   | Listening hour, phone | `listening-session-phone` | Attendee phone number | $60 |
+   | Listening hour, in person | `listening-session-in-person` | Attendee address / custom text | $100 |
    | Bundle hour | `bundle-hour` | Attendee phone number | $0, hidden |
 
    For the in-person one, set the location to "Somewhere else" or a custom text field so you
@@ -168,7 +168,7 @@ One object, near the top of the `<script>` block in `index.html`:
 ```js
 const CONFIG = {
   calOrigin: "https://app.cal.com",
-  calLink: "jfeelgood/phone-hour",   // username/event-slug from your public Cal URL
+  calLink: "jlisten2me",   // your Cal username: the embed lists every public event type
   checkout: {
     phone:    null,   // null on purpose: Cal.com takes payment at booking
     inperson: null,   // same
@@ -177,13 +177,11 @@ const CONFIG = {
 };
 ```
 
-`calLink` is whatever comes after `cal.com/` on your public booking URL. If your page is
-`cal.com/jfeelgood/phone-hour`, the value is `jfeelgood/phone-hour`.
-
-The embedded calendar shows one event type. Point it at the phone hour, since that's where
-most people start; the in-person card's button still sends people to the calendar, and they
-can switch event from inside the embed. If you'd rather each card open its own calendar,
-that's a small change to the page and worth asking for.
+`calLink` is whatever comes after `cal.com/` on your public booking URL. Set to just the
+username (`jlisten2me`), the embed shows your profile: every public event type, so the
+visitor picks phone or in person. Hidden event types, like the bundle hour, stay off it.
+To lock the embed to a single event instead, use `username/event-slug`, for example
+`jlisten2me/listening-session-phone`.
 
 A `null` checkout entry makes that button scroll to the calendar instead of dead-ending, so
 the page works at every stage of this setup.
