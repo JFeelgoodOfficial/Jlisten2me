@@ -38,7 +38,7 @@ You can also say the unfair things, the ones you'd never say to your siblings' f
 
 ## The hour itself
 
-A phone hour is $60 and works from anywhere, including a parked car outside the pharmacy. If you're in Austin, we can meet in person for $100 at a public spot we agree on, on one of a few Wednesdays a month at noon. You can book under a first name, and Stripe takes the payment, so I never see your card.
+A phone hour is $60 and works from anywhere, including a parked car outside the pharmacy. If you're in Austin, we can meet in person for $200, by request, at a public spot we agree on, on one of a few Wednesdays a month at noon. You can book under a first name, and Stripe takes the payment, so I never see your card.
 
 At the start you tell me whether you want to be talked up or want to let it out. You might just want an hour where nobody needs anything from you. I won't give advice unless you ask for it out loud. You can start anywhere, circle back, or sit quiet for a minute.
 

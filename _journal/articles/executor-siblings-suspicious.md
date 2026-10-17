@@ -36,7 +36,7 @@ I've worked in finance and payroll, so if you want to talk through the spreadshe
 
 ## What the hour is like
 
-You can call from anywhere for $60, or meet in person in Austin for $100 at a public spot we agree on, on one of a few Wednesdays a month at noon. You can book under a first name. Stripe takes the payment, so I never see your card.
+You can call from anywhere for $60, or meet in person in Austin for $200, by request, at a public spot we agree on, on one of a few Wednesdays a month at noon. You can book under a first name. Stripe takes the payment, so I never see your card.
 
 At the start you tell me whether you want to be talked up or want to let it out. Some days you'll want someone to say you've been fair. Other days you'll want to say every uncharitable thing you've thought about your brother. I won't give advice unless you ask for it out loud. If you need a quiet minute, take it.
 

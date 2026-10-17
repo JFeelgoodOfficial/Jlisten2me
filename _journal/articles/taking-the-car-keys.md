@@ -38,7 +38,7 @@ You can also just say how much you hate being the one who has to do this. That p
 
 ## How the hour runs
 
-You can call from anywhere for $60, or meet in person in Austin for $100 at a public spot we agree on, on one of a few Wednesdays a month at noon. Book under a first name if you want. Stripe takes the payment, so I never see your card.
+You can call from anywhere for $60, or meet in person in Austin for $200, by request, at a public spot we agree on, on one of a few Wednesdays a month at noon. Book under a first name if you want. Stripe takes the payment, so I never see your card.
 
 At the start you tell me whether you want to be talked up or want to let it out. If the talk with your dad is tomorrow, you may want someone in your corner for an hour. If you're still furious at the whole situation, you may want to vent first and rehearse after. I don't give advice unless you ask for it out loud. If you want to know how a line came across, ask, and I'll tell you plainly.
 

@@ -71,7 +71,7 @@ Step 5 covers how to handle it.
    | Event type | Slug | Location | Price |
    | --- | --- | --- | --- |
    | Listening hour, phone | `listening-session-phone` | Attendee phone number | $60 |
-   | Listening hour, in person | `listening-session-in-person` | Attendee address / custom text | $100 |
+   | Listening hour, in person | `listening-session-in-person` | Attendee address / custom text | $200 |
    | Bundle hour | `bundle-hour` | Attendee phone number | $0, hidden |
 
    For the in-person one, set the location to "Somewhere else" or a custom text field so you
@@ -96,8 +96,13 @@ Verified against Cal.com's current help docs:
    Cal.com with Stripe listed under your connected apps.
 4. Open the **Listening hour, phone** event type, go to its **Apps** tab, enable Stripe, set
    the price to **60** and the currency to **USD**, and save.
-5. Do the same for **Listening hour, in person** at **100**.
-6. Leave **Bundle hour** with no Stripe app enabled. It's already paid for.
+5. Do the same for **Listening hour, in person** at **200**.
+6. On the in-person event, open **Advanced** and turn on **Requires confirmation**. The site
+   sells in person as "by request", so every in-person booking waits for you to approve it.
+   Approve or decline from the email Cal.com sends you, or from Bookings → Unconfirmed.
+   Before going live, make one test booking and check when the card is charged, at request
+   or at approval, so you know what to tell anyone you decline.
+7. Leave **Bundle hour** with no Stripe app enabled. It's already paid for.
 
 Payment is taken at the moment of booking. An unpaid booking never lands on your calendar,
 which is the whole point.
@@ -267,7 +272,7 @@ Things the site currently asserts that only you can make true:
   marks the spot.
 - Evenings and weekends really being on the calendar for phone hours.
 - The bundle's "swap an hour for in person by paying the difference" — decide how you
-  collect that $55. Simplest is a one-off Stripe invoice.
+  collect that $155 ($200 less the $45 the hour already cost). Simplest is a one-off Stripe invoice.
 - The testimonials section is gone. Ask your first few clients, in writing, whether you may
   quote them anonymously, and only use what you're given. Given what the service is, expect
   most to say no, and treat that as normal rather than a problem.
