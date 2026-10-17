@@ -734,14 +734,15 @@
   /* ------------------------------------------------------------------
      CONFIG - the only block you need to edit to go live.
 
-     calLink:  your cal.com event path, e.g. "jfeelgood/listening-hour"
+     calLink:  your cal.com username (shows every public event type) or
+               username/event-slug for a single event
      checkout: Stripe Payment Link URLs (Dashboard > Payment Links > Create).
                Any link left as null falls back to scrolling to the calendar,
                so the page stays usable until you paste the real ones in.
   ------------------------------------------------------------------ */
   const CONFIG = {
     calOrigin: "https://app.cal.com",
-    calLink: "jfeelgood/listening-hour",
+    calLink: "jlisten2me",
     checkout: {
       phone:    null,  // e.g. "https://buy.stripe.com/xxxxxxxxxxxx"
       inperson: null,

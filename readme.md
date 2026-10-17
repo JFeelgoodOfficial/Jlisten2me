@@ -49,7 +49,7 @@ Everything you need to edit sits in one object near the top of the `<script>` in
 ```js
 const CONFIG = {
   calOrigin: "https://app.cal.com",
-  calLink: "jfeelgood/listening-hour",   // your cal.com event path
+  calLink: "jlisten2me",   // cal.com username, or username/event-slug
   checkout: {
     phone:    null,   // "https://buy.stripe.com/..."
     inperson: null,
@@ -58,8 +58,8 @@ const CONFIG = {
 };
 ```
 
-**Cal.com** — create an event type (60 min) at cal.com, then set `calLink` to the
-`username/event-slug` from its public URL. Add a required booking question for
+**Cal.com** — create the event types (60 min) at cal.com, then set `calLink` to your
+username so the embed lists them all, or to `username/event-slug` for just one. Add a required booking question for
 "Phone or in person?" and another for "Hyped up or venting?" so the answers arrive
 with the booking. If you self-host Cal, change `calOrigin` too.
 
