@@ -34,7 +34,7 @@ You can say the things you'd never say to your friends, like how much you dread 
 
 ## The hour
 
-You can call from anywhere for $60, or meet in person in Austin for $100 at a public spot we agree on, on one of a few Wednesdays a month at noon. You can book under a first name. Stripe takes the payment, so I never see your card.
+You can call from anywhere for $60, or meet in person in Austin for $200, by request, at a public spot we agree on, on one of a few Wednesdays a month at noon. You can book under a first name. Stripe takes the payment, so I never see your card.
 
 At the start you tell me whether you want to be talked up or want to let it out. I won't tell you whether to reach out, and I won't take sides. If you ask for my thoughts out loud, I'll give them, and otherwise I'll just listen. If you need to sit quiet for a while, that's fine.
 

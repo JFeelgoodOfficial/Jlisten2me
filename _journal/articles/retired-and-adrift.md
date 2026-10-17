@@ -36,7 +36,7 @@ For an hour, someone is on the other end of the line waiting to hear what you th
 
 ## How the hour works
 
-You can call from anywhere for $60, or meet in person in Austin for $100 at a public spot we agree on, on one of a few Wednesdays a month at noon. You can book under a first name. Stripe takes the payment, so I never see your card.
+You can call from anywhere for $60, or meet in person in Austin for $200, by request, at a public spot we agree on, on one of a few Wednesdays a month at noon. You can book under a first name. Stripe takes the payment, so I never see your card.
 
 At the start you tell me whether you want to be talked up or want to let it out. I don't give advice unless you ask for it out loud. You can talk about your career, your marriage, or the garage. Silence is fine.
 

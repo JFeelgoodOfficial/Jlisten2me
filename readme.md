@@ -7,7 +7,7 @@ Confidential: nothing recorded, no notes kept, nothing repeated.
 
 ## Pricing
 - **By phone**: $60/hr
-- **In person**: $100/hr (Austin, public location, noon on a few Wednesdays a month)
+- **In person**: $200/hr by request (Austin, public location, noon on a few Wednesdays a month; each booking confirmed by hand)
 - **Five-hour bundle**: $45/hr, $225 prepaid (phone hours; swap one for in person by paying the difference)
 
 ## Features

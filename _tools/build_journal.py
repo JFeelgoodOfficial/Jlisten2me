@@ -473,7 +473,7 @@ def article_page(a, published, today):
   <p class="j-note">Journal articles describe situations in general. None of them is drawn from a session, and nothing anyone says in an hour ever appears here. Jlisten2me is not therapy, and not legal or financial advice.</p>
   <aside class="j-cta" aria-labelledby="cta-h">
     <h2 id="cta-h">An hour that belongs to you</h2>
-    <p>Phone $60 an hour, in person in Austin $100, five hours for $225. Book under a first name. Nothing recorded, nothing kept.</p>
+    <p>Phone $60 an hour, in person in Austin $200 by request, five hours for $225. Book under a first name. Nothing recorded, nothing kept.</p>
     <a class="btn btn-primary" href="/#book">Pick a time</a>
   </aside>
 {more}</article>
