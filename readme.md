@@ -51,7 +51,7 @@ const CONFIG = {
   calOrigin: "https://app.cal.com",
   calLink: "jlisten2me",   // cal.com username, or username/event-slug
   checkout: {
-    phone:    "https://cal.com/jlisten2me/listening-session-phone",
+    phone:    "https://cal.com/jlisten2me/phone-hour",
     inperson: "https://cal.com/jlisten2me/in-person-hour",
     bundle:   "https://cal.com/jlisten2me/bundle-hour"
   }

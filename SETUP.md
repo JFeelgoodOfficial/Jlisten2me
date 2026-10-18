@@ -69,7 +69,7 @@ books the first hour. Step 5 covers the other four.
 
    | Event type | Slug | Location | Price |
    | --- | --- | --- | --- |
-   | Listening hour, phone | `listening-session-phone` | Attendee phone number | $60 |
+   | Listening hour, phone | `phone-hour` | Attendee phone number | $60 |
    | Listening hour, in person | `in-person-hour` | Attendee address / custom text | $200 |
    | Bundle hour | `bundle-hour` | Attendee phone number | $225, hidden |
 
@@ -162,7 +162,7 @@ const CONFIG = {
   calOrigin: "https://app.cal.com",
   calLink: "jlisten2me",   // your Cal username: the embed lists every public event type
   checkout: {
-    phone:    "https://cal.com/jlisten2me/listening-session-phone",   // each card opens its own event
+    phone:    "https://cal.com/jlisten2me/phone-hour",   // each card opens its own event
     inperson: "https://cal.com/jlisten2me/in-person-hour",
     bundle:   "https://cal.com/jlisten2me/bundle-hour"   // the paid bundle event from step 5
   }
@@ -173,7 +173,7 @@ const CONFIG = {
 username (`jlisten2me`), the embed shows your profile: every public event type, so the
 visitor picks phone or in person. Hidden event types, like the bundle hour, stay off it.
 To lock the embed to a single event instead, use `username/event-slug`, for example
-`jlisten2me/listening-session-phone`.
+`jlisten2me/phone-hour`.
 
 A `null` checkout entry makes that button scroll to the calendar instead of dead-ending, so
 the page works at every stage of this setup.
