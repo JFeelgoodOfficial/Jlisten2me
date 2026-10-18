@@ -20,8 +20,8 @@ Confidential: nothing recorded, no notes kept, nothing repeated.
   with a fallback panel if the embed is blocked. It doesn't download until the booking
   section is near the viewport or a "Book" link is clicked; it's the heaviest thing on the
   page and most visits never reach it.
-- **Stripe**: payment at booking through Cal.com's Stripe app for the hourly rates, and a
-  Stripe Payment Link for the bundle
+- **Stripe**: payment at booking through Cal.com's Stripe app, for the hourly rates and the
+  bundle alike
 - **Inter self-hosted** from `fonts/` (variable, latin, 48 KB, SIL OFL) with `preload` and
   `font-display: swap`. No Google Fonts request, no third-party origin before first paint.
 - **Structured data**: one JSON-LD block with `ProfessionalService`, three `Offer`s,
@@ -51,9 +51,9 @@ const CONFIG = {
   calOrigin: "https://app.cal.com",
   calLink: "jlisten2me",   // cal.com username, or username/event-slug
   checkout: {
-    phone:    null,   // "https://buy.stripe.com/..."
-    inperson: null,
-    bundle:   null
+    phone:    "https://cal.com/jlisten2me/listening-session-phone",
+    inperson: "https://cal.com/jlisten2me/in-person-hour",
+    bundle:   "https://cal.com/jlisten2me/bundle-hour"
   }
 };
 ```
@@ -64,9 +64,9 @@ username so the embed lists them all, or to `username/event-slug` for just one. 
 with the booking. If you self-host Cal, change `calOrigin` too.
 
 **Stripe** — the recommended setup is Cal.com's Stripe app, which takes payment at the
-moment of booking, so `phone` and `inperson` stay `null` and those buttons route to the
-calendar. The five-hour bundle has no booking to attach to, so it needs its own Stripe
-Payment Link (Dashboard → Payment Links → Create) pasted into `bundle`. Any entry left as
+moment of booking. Each `checkout` entry holds that offer's own Cal.com event page, so a
+price card opens exactly the right booking. The five-hour bundle is its own $225 event that
+books the first hour; the other four are arranged by email. Any entry left as
 `null` makes that button scroll to the calendar instead of dead-ending, so the page stays
 usable at every stage of setup. Payment Links are hosted by Stripe, so no server and no
 keys live in this repo. SETUP.md walks through both paths and why.
