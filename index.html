@@ -543,7 +543,7 @@
       </div>
       <div class="faq-item fade-up">
         <h3>How does the five-hour bundle work?</h3>
-        <p>You pay $225 once and get a private booking link for five phone hours. Use them whenever you want; they don't expire. If you'd like one of them in person, you pay the difference. It's meant for a stretch that's going to take more than one conversation.</p>
+        <p>You pay $225 when you book your first hour, and that first hour is on the calendar right away. Afterward I email you to set up the other four whenever suits you. They don't expire. If you'd like one of them in person, you pay the difference. It's meant for a stretch that's going to take more than one conversation.</p>
       </div>
       <div class="faq-item fade-up">
         <h3>Where and when do in-person sessions happen?</h3>
@@ -585,7 +585,8 @@
         <p class="plan-desc">For a stretch that's going to take more than one conversation. A quarter, a negotiation, a divorce, a launch.</p>
         <ul>
           <li>Five hours, $75 off the phone rate</li>
-          <li>Use them whenever, no expiry</li>
+          <li>Book the first hour now, the rest by email</li>
+          <li>No expiry on the other four</li>
           <li>Swap one for in person by paying the difference</li>
           <li>Same confidentiality on every hour</li>
         </ul>
@@ -723,7 +724,7 @@
         { "@type": "Question", "name": "Phone or in person: which should I pick?", "acceptedAnswer": { "@type": "Answer", "text": "Most people start by phone. It's cheaper, it's private, and you can take it from wherever you already are. In person is for people who think better across a table or on a walk. Both are the same sixty minutes; the only difference is the room." } },
         { "@type": "Question", "name": "What if I just need to vent?", "acceptedAnswer": { "@type": "Answer", "text": "Then vent. Say at the start whether you want to be talked up or want to let it out, and that's the hour you get. There's no format, no worksheet, and no advice unless you ask for it out loud. Silence is fine too." } },
         { "@type": "Question", "name": "Can I book without giving my full name?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Book under a first name and pay through Stripe, which handles your card details so I never see them. I don't need to know who you are to listen to you. If you want to say more later, that's your call, not a requirement." } },
-        { "@type": "Question", "name": "How does the five-hour bundle work?", "acceptedAnswer": { "@type": "Answer", "text": "You pay $225 once and get a private booking link for five phone hours. Use them whenever you want; they don't expire. If you'd like one of them in person, you pay the difference. It's meant for a stretch that's going to take more than one conversation." } },
+        { "@type": "Question", "name": "How does the five-hour bundle work?", "acceptedAnswer": { "@type": "Answer", "text": "You pay $225 when you book your first hour, and that first hour is on the calendar right away. Afterward I email you to set up the other four whenever suits you. They don't expire. If you'd like one of them in person, you pay the difference. It's meant for a stretch that's going to take more than one conversation." } },
         { "@type": "Question", "name": "Where and when do in-person sessions happen?", "acceptedAnswer": { "@type": "Answer", "text": "In-person hours are by request, at noon on a few Wednesdays each month, somewhere public in Austin we agree on: a quiet coffee shop, a park bench, or a walk if you'd rather move while you talk. Pick one of the open Wednesdays on the calendar and I confirm each request myself by email. An hour in person is $200. If no Wednesday works, phone hours run evenings and weekends too." } }
       ]
     }
@@ -737,17 +738,17 @@
 
      calLink:  your cal.com username (shows every public event type) or
                username/event-slug for a single event
-     checkout: Stripe Payment Link URLs (Dashboard > Payment Links > Create).
-               Any link left as null falls back to scrolling to the calendar,
-               so the page stays usable until you paste the real ones in.
+     checkout: where each price card's button goes, usually that event's own
+               Cal.com page. Any link left as null scrolls to the calendar instead.
   ------------------------------------------------------------------ */
   const CONFIG = {
     calOrigin: "https://app.cal.com",
     calLink: "jlisten2me",
     checkout: {
-      phone:    null,  // e.g. "https://buy.stripe.com/xxxxxxxxxxxx"
-      inperson: null,
-      bundle:   null
+      // Each price card opens its own Cal.com event; Cal.com takes payment at booking.
+      phone:    "https://cal.com/jlisten2me/listening-session-phone",
+      inperson: "https://cal.com/jlisten2me/in-person-hour",   // by request: you approve each one
+      bundle:   "https://cal.com/jlisten2me/bundle-hour"       // $225, books the first of five hours
     }
   };
 

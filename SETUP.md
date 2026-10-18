@@ -29,9 +29,8 @@ Take Option A for the hourly rates. The page is already built for it: leave the 
 `inperson` entries in `CONFIG.checkout` set to `null` and those buttons scroll to the
 calendar, where Cal collects the money.
 
-The five-hour bundle is different and needs Option B. A bundle isn't a booking, it's a
-prepayment for five future bookings, so there's no single calendar slot to attach it to.
-Step 5 covers how to handle it.
+The five-hour bundle works the same way: it's its own Cal.com event that charges $225 and
+books the first hour. Step 5 covers the other four.
 
 ---
 
@@ -71,15 +70,15 @@ Step 5 covers how to handle it.
    | Event type | Slug | Location | Price |
    | --- | --- | --- | --- |
    | Listening hour, phone | `listening-session-phone` | Attendee phone number | $60 |
-   | Listening hour, in person | `listening-session-in-person` | Attendee address / custom text | $200 |
-   | Bundle hour | `bundle-hour` | Attendee phone number | $0, hidden |
+   | Listening hour, in person | `in-person-hour` | Attendee address / custom text | $200 |
+   | Bundle hour | `bundle-hour` | Attendee phone number | $225, hidden |
 
    For the in-person one, set the location to "Somewhere else" or a custom text field so you
    can agree the spot after booking, rather than publishing a fixed address.
 
    Mark **Bundle hour** as hidden (the toggle on the event type list). Hidden events don't
-   appear on your public page but the direct link still works, which is exactly what you
-   want: only people who bought the bundle get the link.
+   appear on your public page but the direct link still works, and the site's "Buy five
+   hours" button uses that direct link.
 
 6. Add a **buffer** of 15 minutes after each event and a **minimum notice** of a few hours.
    Back-to-back emotional hours with no gap is a mistake you only make once.
@@ -102,7 +101,7 @@ Verified against Cal.com's current help docs:
    Approve or decline from the email Cal.com sends you, or from Bookings → Unconfirmed.
    Before going live, make one test booking and check when the card is charged, at request
    or at approval, so you know what to tell anyone you decline.
-7. Leave **Bundle hour** with no Stripe app enabled. It's already paid for.
+7. Enable Stripe on **Bundle hour** at **225**. It books and pays for the first of the five hours.
 
 Payment is taken at the moment of booking. An unpaid booking never lands on your calendar,
 which is the whole point.
@@ -137,32 +136,20 @@ week has a low tolerance for forms.
 
 ## 5. The five-hour bundle
 
-The bundle is a Stripe Payment Link, because there's no single booking to attach it to.
+The bundle is sold through Cal.com, as its own event, so the buyer pays and books their first
+hour in one step.
 
-Verified against Stripe's docs: Payment Links are created in the Dashboard with no code and
-no server.
+1. The `bundle-hour` event type costs **$225** (enable Stripe on its Apps tab, like the
+   others). Keep it **hidden**: the site's "Buy five hours" button links straight to
+   `cal.com/jlisten2me/bundle-hour`, and hiding it keeps it out of the main calendar so
+   nobody confuses it with a single hour.
+2. When a bundle booking comes in, email the buyer after the first session to arrange the
+   other four. Schedule those however suits you: add them to your calendar yourself, or send
+   a link to a separate hidden, free event with **Requires confirmation** turned on.
+3. Keep a tally per buyer, for example "Sam, 2 of 5". A note or a spreadsheet row is plenty.
 
-1. In the Stripe Dashboard, go to **Payment Links** and click **Create**.
-2. Add a new product: name it `Five listening hours`, price **$225**, one-time.
-3. Under **After the payment**, choose **Confirmation page** and either write a custom
-   message containing your `bundle-hour` Cal.com link, or redirect to a small thank-you page
-   on your own site that carries the link. The custom message is simpler and needs no extra
-   page.
-4. Optionally add a **custom field** asking for the buyer's first name, so you know who the
-   prepaid hours belong to.
-5. Copy the resulting `https://buy.stripe.com/...` URL.
-
-Redemption works like this: they pay once, get the hidden `bundle-hour` link, and book five
-free sessions with it whenever they want. You track the count.
-
-Five is small enough for a note in a spreadsheet or a Stripe customer note. Don't build
-anything. If the bundle takes off and counting becomes a chore, that's a good problem and
-you can solve it then.
-
-One gap to be aware of: nothing stops someone from booking a sixth free hour on that link.
-At this volume it's a trust problem, not an engineering one. If you'd rather close it, the
-cheapest fix is to stop sharing a standing link and instead send a single-use booking link
-after each session.
+No Stripe Payment Link is needed for the bundle. If you made one earlier, deactivate it so
+nobody pays twice.
 
 ---
 
@@ -175,9 +162,9 @@ const CONFIG = {
   calOrigin: "https://app.cal.com",
   calLink: "jlisten2me",   // your Cal username: the embed lists every public event type
   checkout: {
-    phone:    null,   // null on purpose: Cal.com takes payment at booking
-    inperson: null,   // same
-    bundle:   "https://buy.stripe.com/xxxxxxxxxxxx"   // from step 5
+    phone:    "https://cal.com/jlisten2me/listening-session-phone",   // each card opens its own event
+    inperson: "https://cal.com/jlisten2me/in-person-hour",
+    bundle:   "https://cal.com/jlisten2me/bundle-hour"   // the paid bundle event from step 5
   }
 };
 ```
@@ -251,15 +238,13 @@ With Stripe still in **test mode**:
    the booking appears in Cal.com, the event lands on your real calendar, and you get the
    confirmation email.
 4. Cancel that test booking and confirm the refund behaves the way you decided in step 3.
-5. Click the bundle button. Confirm it opens the Stripe Payment Link and that the
-   confirmation message contains the working `bundle-hour` link.
-6. Book a bundle hour with that link and confirm it takes no payment.
-7. Switch Stripe to **live mode**, recreate the Payment Link there (test-mode links do not
-   work in live mode — this catches people out), paste the new URL into `CONFIG`, and run
-   one real booking with your own card. Refund yourself afterward.
+5. Click the bundle button. Confirm it opens the `bundle-hour` event and charges $225.
+6. Confirm the first bundle hour lands on your calendar like any other booking.
+7. Switch Stripe to **live mode** and make sure Cal.com's Stripe connection is the live
+   one, then run one real booking with your own card. Refund yourself afterward.
 
-Step 7 is not optional. A test-mode Payment Link left in production is the single most
-common way this goes wrong.
+Step 7 is not optional. A Cal.com event still charging through a test-mode Stripe connection
+takes bookings and collects no money, and nothing on the page will tell you.
 
 ---
 
