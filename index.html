@@ -745,9 +745,9 @@
     calOrigin: "https://app.cal.com",
     calLink: "jlisten2me",
     checkout: {
-      phone:    null,  // e.g. "https://buy.stripe.com/xxxxxxxxxxxx"
-      inperson: null,
-      bundle:   null
+      phone:    null,  // null on purpose: Cal.com takes payment when the hour is booked
+      inperson: null,  // same, and in person is by request, so payment waits for approval
+      bundle:   "https://buy.stripe.com/7sY5kFb8MfjtgGX4xS2Ry00"
     }
   };
 
