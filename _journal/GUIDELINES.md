@@ -18,7 +18,7 @@ first paragraph should sound like what they typed.
 
 - One situation per article. "Carrying a decision you can't share yet" is one. "Stress at
   work" is a category, and too broad.
-- Written by JFeelgood, in the first person, to one reader addressed as "you."
+- Written by John Parsons, in the first person, to one reader addressed as "you."
 - About the situation in general. The reader supplies the details from their own life.
 - Between 700 and 1,100 words.
 - Honest about the limits. Every article says what the hour won't do and names who to see
