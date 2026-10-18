@@ -71,7 +71,7 @@ Step 5 covers how to handle it.
    | Event type | Slug | Location | Price |
    | --- | --- | --- | --- |
    | Listening hour, phone | `listening-session-phone` | Attendee phone number | $60 |
-   | Listening hour, in person | `listening-session-in-person` | Attendee address / custom text | $200 |
+   | Listening hour, in person | `in-person-hour` | Attendee address / custom text | $200 |
    | Bundle hour | `bundle-hour` | Attendee phone number | $0, hidden |
 
    For the in-person one, set the location to "Somewhere else" or a custom text field so you
