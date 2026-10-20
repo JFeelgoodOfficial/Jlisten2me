@@ -30,5 +30,6 @@ Not therapy, not counselling, not legal or financial advice, not a crisis line.
 
 Articles by JFeelgood describing hard situations in general. None is drawn from a session. Index: https://jlisten2me.com/journal/ . Full text of every published article: https://jlisten2me.com/llms-full.txt
 
+- [When you're getting divorced and your friends are picking sides](https://jlisten2me.com/journal/friends-picking-sides/): You're getting divorced, mutual friends have gone quiet or drifted to your ex, and the invitations stopped. Somewhere to say it.
 - [When you have to decide and can't tell anyone yet](https://jlisten2me.com/journal/decision-you-cant-share/): A decision about layoffs, runway, or selling, and everyone you'd normally tell has a stake in it. Somewhere to say it first.
 <!-- journal:end -->
