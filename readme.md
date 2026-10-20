@@ -104,4 +104,4 @@ client's own NDA case by case is still fine. Advertising one is what requires th
 - No `meta keywords`; search engines have ignored it since 2009
 - Domain-ready for jlisten2me.com
 
-Built by JFeelgoodOfficial - indie dev/artist in Austin, TX.
+Built by John Parsons, indie developer and artist in Austin, TX.

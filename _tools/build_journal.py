@@ -37,7 +37,7 @@ SRC = ROOT / "_journal" / "articles"
 OUT = ROOT / "journal"
 SITE = "https://jlisten2me.com"
 TZ = ZoneInfo("America/Chicago")
-AUTHOR = "JFeelgood"
+AUTHOR = "John Parsons"
 
 HOME_DEF = (
     "Jlisten2me is a confidential one-hour listening service in Austin, Texas, by phone or "
@@ -339,10 +339,10 @@ FOOTER = """<footer>
       <li><a href="/#pricing">Pricing</a></li>
       <li><a href="/journal/">Journal</a></li>
       <li><a href="/#book">Book</a></li>
-      <li><a href="https://instagram.com/JFeelgoodOfficial" target="_blank" rel="noopener">Instagram</a></li>
+      <li><a href="https://www.linkedin.com/in/parsonsjo" target="_blank" rel="noopener">LinkedIn</a></li>
     </ul>
     <p class="footer-policy">Reschedule free up to 24 hours before your session. Cancellations inside 24 hours aren't refunded.</p>
-    <p class="footer-copy">YEAR Jlisten2me · JFeelgood · Austin, TX · Not therapy, not legal or financial advice. In a crisis, call or text 988.</p>
+    <p class="footer-copy">YEAR Jlisten2me · John Parsons · Austin, TX · Not therapy, not legal or financial advice. In a crisis, call or text 988.</p>
   </div>
 </footer>"""
 
@@ -405,7 +405,7 @@ def item_html(a):
 # ---------------------------------------------------------------- pages
 
 PERSON = {"@type": "Person", "@id": f"{SITE}/#person", "name": AUTHOR, "url": f"{SITE}/#about",
-          "sameAs": ["https://instagram.com/JFeelgoodOfficial"]}
+          "jobTitle": "Founder", "sameAs": ["https://www.linkedin.com/in/parsonsjo"]}
 ORG_REF = {"@id": f"{SITE}/#service"}
 BLOG_ID = f"{SITE}/journal/#blog"
 
@@ -580,7 +580,7 @@ def update_llms(published):
     p = ROOT / "llms.txt"
     s = p.read_text(encoding="utf-8")
     lines = "\n".join(f"- [{a.title}]({a.url}): {a.description}" for a in published)
-    block = ("\n## Journal\n\nArticles by JFeelgood describing hard situations in general. None is drawn from a session. "
+    block = ("\n## Journal\n\nArticles by John Parsons describing hard situations in general. None is drawn from a session. "
              f"Index: {SITE}/journal/ . Full text of every published article: {SITE}/llms-full.txt\n\n"
              + (lines + "\n" if lines else ""))
     p.write_text(replace_between(s, "<!-- journal:start -->", "<!-- journal:end -->", block), encoding="utf-8")
