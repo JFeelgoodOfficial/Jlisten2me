@@ -2,7 +2,7 @@
 
 > A confidential one-hour listening service in Austin, Texas, by phone or in person. Not therapy. Nothing recorded, no notes kept, no names repeated.
 
-Jlisten2me is run by one person, JFeelgood, an indie developer and artist based in Austin. Before this, JFeelgood worked in finance, payroll, CAD, manufacturing, retail, design, and marketing, and has produced music, painted, written, directed, and produced film, and written and published books. A session is sixty minutes of undivided attention with someone who has no stake in the outcome: no advice unless asked for, no agenda, no follow-up. It is for people who have nobody they can hand a worry to without it landing somewhere — leaders carrying a decision alone, people going through divorce or a big life change, anyone preparing for a high-stakes moment, and anyone who needs to vent or be talked up.
+Jlisten2me is run by one person, John Parsons, an indie developer and artist based in Austin. Before this, John worked in finance, payroll, CAD, manufacturing, retail, design, and marketing, and has produced music, painted, written, directed, and produced film, and written and published books. A session is sixty minutes of undivided attention with someone who has no stake in the outcome: no advice unless asked for, no agenda, no follow-up. It is for people who have nobody they can hand a worry to without it landing somewhere — leaders carrying a decision alone, people going through divorce or a big life change, anyone preparing for a high-stakes moment, and anyone who needs to vent or be talked up.
 
 ## Pricing (USD)
 
@@ -28,7 +28,7 @@ Not therapy, not counselling, not legal or financial advice, not a crisis line.
 <!-- journal:start -->
 ## Journal
 
-Articles by JFeelgood describing hard situations in general. None is drawn from a session. Index: https://jlisten2me.com/journal/ . Full text of every published article: https://jlisten2me.com/llms-full.txt
+Articles by John Parsons describing hard situations in general. None is drawn from a session. Index: https://jlisten2me.com/journal/ . Full text of every published article: https://jlisten2me.com/llms-full.txt
 
 - [When you're getting divorced and your friends are picking sides](https://jlisten2me.com/journal/friends-picking-sides/): You're getting divorced, mutual friends have gone quiet or drifted to your ex, and the invitations stopped. Somewhere to say it.
 - [When you have to decide and can't tell anyone yet](https://jlisten2me.com/journal/decision-you-cant-share/): A decision about layoffs, runway, or selling, and everyone you'd normally tell has a stake in it. Somewhere to say it first.
