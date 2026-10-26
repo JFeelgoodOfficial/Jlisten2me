@@ -661,7 +661,7 @@ def main():
     home_lastmod = dt.date.fromtimestamp((ROOT / "index.html").stat().st_mtime).isoformat()
     old = (ROOT / "sitemap.xml").read_text(encoding="utf-8")
     m = re.search(r"<loc>https://jlisten2me.com/</loc>\s*<lastmod>([\d-]+)</lastmod>", old)
-    if m:
+    if m and m.group(1) <= today.isoformat():  # a future date left by a --today dry run is dropped
         home_lastmod = m.group(1)
     if published and published[0].date.isoformat() > home_lastmod:
         home_lastmod = published[0].date.isoformat()  # the home page lists the latest articles
