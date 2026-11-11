@@ -405,7 +405,7 @@ def item_html(a):
 # ---------------------------------------------------------------- pages
 
 PERSON = {"@type": "Person", "@id": f"{SITE}/#person", "name": AUTHOR, "url": f"{SITE}/#about",
-          "jobTitle": "Founder", "sameAs": ["https://www.linkedin.com/in/parsonsjo"]}
+          "jobTitle": "Founder", "image": f"{SITE}/john-parsons.jpg", "sameAs": ["https://www.linkedin.com/in/parsonsjo"]}
 ORG_REF = {"@id": f"{SITE}/#service"}
 BLOG_ID = f"{SITE}/journal/#blog"
 
